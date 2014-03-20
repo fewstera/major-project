@@ -1,0 +1,103 @@
+\documentclass[11pt,fleqn,twoside]{article}
+\usepackage{makeidx}
+\makeindex
+\usepackage{palatino} %or {times} etc
+\usepackage{plain} %bibliography style 
+\usepackage{amsmath} %math fonts - just in case
+\usepackage{amsfonts} %math fonts
+\usepackage{amssymb} %math fonts
+\usepackage{lastpage} %for footer page numbers
+\usepackage{fancyhdr} %header and footer package
+\usepackage{mmpv2} 
+\usepackage{url}
+
+% the following packages are used for citations - You only need to include one. 
+%
+% Use the cite package if you are using the numeric style (e.g. IEEEannot). 
+% Use the natbib package if you are using the author-date style (e.g. authordate2annot). 
+% Only use one of these and comment out the other one. 
+\usepackage{cite}
+\usepackage[parfill]{parskip}
+%\usepackage{natbib}
+
+\begin{document}
+
+\name{Aidan Wynne Fewster}
+\userid{awf1}
+\projecttitle{NHS Wales formulary and antimicrobial Android application}
+\projecttitlememoir{NHS Wales Android application} %same as the project title or abridged version for page header
+\reporttitle{Outline Project Specification}
+\version{1.0}
+\docstatus{Release}
+\modulecode{CS39440}
+\degreeschemecode{G400}
+\degreeschemename{Computer Science}
+\supervisor{Andrew Starr} % e.g. Neil Taylor
+\supervisorid{aos}
+\wordcount{}
+
+%optional - comment out next line to use current date for the document
+%\documentdate{10th February 2014} 
+\mmp
+
+\setcounter{tocdepth}{3} %set required number of level in table of contents
+
+
+%==============================================================================
+\section{Project description}
+%==============================================================================
+NHS Wales have requested a mobile application to aid NHS staff in administering a variety drugs and medicines. The NHS own a database which contains a list available drugs along with their usage, dosage and other useful information. They would like a mobile application to access this database and provide the information to their staff.
+
+The data contained within the database is updated whenever a new drug is introduced, a drugs information changes or a drug is removed from the database. An internet connection may not be available throughout an NHS establishment therefore the database must be stored on the device for offline use. As the information is used to administer drugs to patients it is vital that the application provides the most up-to date and accurate information. Due to this the NHS database and the applications database must be accurately synchronised whenever possible.
+
+To access the application and it's data a member of NHS staff must first provide correct login credentials in order to authenticate themselves. Should a user forget their login credentials they must be able to reset their password. Upon authentication the user will be able to view recently updated drugs and search for available drugs using a search field (with intelligent suggestions). Once a drug has been found, the user will be neatly presented with information about that drug. The user will also be able to enter a patients weight which will then be provide the user with dosage requirements for that patient. As the patients weight will be entered manually by the user, this field must be heavily validated.
+
+The NHS have raised concerns for the security of their database as releasing the database to the public could cause problems for the NHS. Therefore it is important that the data and all communications of the data are suitably encrypted. It is also important that the application is not released to the public via the application store or any other means. I will only be provided with a subset of the database from the NHS for security reasons. 
+
+As the application will be used to administer potentially lethal drugs, a thorough testing strategy will need to be executed throughout. Unit testing will need to be carried out extensively on the formula for calculating dosage requirements. Testing will also be used to ensure that the correct data is displayed to the user.
+
+As to improve the maintainability and customisability of the system the NHS have asked that the structure of the database to be outlined within an XML file (or other text editable file), this will allow them to create multiple applications for a variety databases using the same application code.
+
+
+%==============================================================================
+\section{Proposed tasks}
+%==============================================================================
+I will be creating the application as an Android application to be used on Android devices running a version of Android above 4.0 (ice cream sandwich). I will adhere to the design rules specified by the Android design document \cite{AndroidDesign} in order to create an application that feels native to the Android experience.
+
+I propose to retrieve database updates from the database using a JSON \cite{JSONSpec} API which will be transmitted over SSL after user authentication for security reasons. I also propose for user authentication and resetting of user credentials to be achieved using the JSON API. I will need to research how to interact with JSON API's within Android in order to achieve this. I have yet to have a meeting with the NHS representative yet, therefore I do not know if a JSON API will be available to me.
+
+Once the user has authenticated themselves the database on the device will be synchronised with the NHS database, I need to research the best methods of synchronisation. The user will then be able to search through the database by either scrolling through a list view or typing part of the drugs information in the search box (The application will provide intelligent suggestions from partially entered information). I need to figure out the best method of generating suggestions, one method is using content providers \cite{ContentProviders}.
+
+I propose to provide the user with a notification \cite{AndroidNotification} when an update to a drug has been made. I will need to learn how to send notifications to an Android device.
+
+I would like to encrypt the database stored on the device in order to prevent unauthorised personnel accessing the data. One method of achieving this is by using SQLCipher \cite{SQLCipher}, I would need to learn how to integrate SQLCipher into an Android application to achieve this.
+
+ As mentioned previously the application must be tested thoroughly in order to ensure that the correct information is outputted. I will need to learn how to efficiently test using the android test framework \cite{AndroidTesting} and integrate these tests into the project.
+
+
+
+%==============================================================================
+\section{Project deliverables}
+%==============================================================================
+
+\begin{description}
+  \item[Requirements specification] This document will list all the requirements for the systems and outline the features of the final system. This document can later be used to test that the system meets the required needs.
+  \item[Test specification] A comprehensive test specification must also be provide so that the NHS can see that the application has been thoroughly tested as well as guide them in executing the tests for themselves. This will improve the NHS's confidence within the final application.
+  \item[Final Android Application] I should provide a usable, stable and secure Android application that will achieve the tasks outlined within the requirements specification. The application should be aesthetically pleasing as well as be intuitive for the user to use. The application should be packaged ready for distribution on a multitude of devices.
+  \item[Documentation] This project will also include a large amount of documentation, this is has even greater importance with this project as this project will be delivered to a large organisation, therefore the documentation must be comprehensive in order to improve maintainability of the provided system. Documentation will include design decisions made and documents to support the design (UML). The documentation will also provide a list of libraries that have been used, their licences and the reasons the library has been used.
+ \item[User Manual] As the system will be used by staff of the NHS, who may not be technically minded, I will provide a user manual for the users so that they can learn how to use the application correctly and effectively.
+ \item[Final Report] This is the full report that will include all the documentation created. It will outline design choices that have been made, any changes from the original requirement specifications, any issues I have found whilst executing this project, my diary entries I have made whilst working on the project, acceptance testing with the NHS and a self evaluation.
+\end{description}
+\nocite{*} % include everything from the bibliography, irrespective of whether it has been referenced.
+
+% the following line is included so that the bibliography is also shown in the table of contents. There is the possibility that this is added to the previous page for the bibliography. To address this, a newline is added so that it appears on the first page for the bibliography. 
+\newpage
+\addcontentsline{toc}{section}{Initial Annotated Bibliography} 
+
+%
+% example of including an annotated bibliography. The current style is an author date one. If you want to change, comment out the line and uncomment the subsequent line. You should also modify the packages included at the top (see the notes earlier in the file) and then trash your aux files and re-run. 
+\bibliographystyle{IEEEannot}
+\renewcommand{\refname}{Annotated Bibliography}  % if you put text into the final {} on this line, you will get an extra title, e.g. References. This isn't necessary for the outline project specification. 
+\bibliography{mmp} % References file
+
+\end{document}

@@ -16,6 +16,7 @@
 - Data will be requested from the JSON api using url's such as **https://example.com/fetchDrugs.json?last_update=123412321&access_token=XXXX**
 - The above URL will return all drugs which have been updated since the last_update timestamp
 - All data must be sent over **SSL**
+- Think about what happens when a drug is deleted, how will the API solve this?
 
 #Notifications
 

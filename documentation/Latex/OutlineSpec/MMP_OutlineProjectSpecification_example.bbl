@@ -1,0 +1,67 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{AndroidDesign}
+Google, ``Android design,''
+  \url{https://developer.android.com/design/index.html}, accessed February
+  2014.
+ \begin{quotation}\noindent This document is useful as it provides information
+  on how to design android application so that they feel intuative to the user
+  given they have a knowledge of how to use Android. \end{quotation}
+
+\bibitem{AndroidNotification}
+------, ``Android notifications,''
+  \url{http://developer.android.com/guide/topics/ui/notifiers/notifications.html},
+  accessed February 2014.
+ \begin{quotation}\noindent This document provides information on how to send
+  notifications to an Android device from your application. \end{quotation}
+
+\bibitem{ContentProviders}
+------, ``Content providers,''
+  \url{http://developer.android.com/guide/topics/providers/content-providers.html},
+  accessed February 2014.
+ \begin{quotation}\noindent This document is useful as it provides information
+  on content providers for Android. Content providers allow you to distribute
+  your database between multiple applications on your device as well as provide
+  help with intelligent suggestions. \end{quotation}
+
+\bibitem{SQLCipher}
+SQLCipher, ``Sqlcipher homepage,'' \url{http://sqlcipher.net/}, accessed
+  February 2014.
+ \begin{quotation}\noindent This webpage provides the download and
+  documentation for the SQLCipher library. SQLCipher allows you to easily
+  encrypt and SQLite database. \end{quotation}
+
+\bibitem{AndroidTesting}
+L.~Vogel, ``Android application testing with the android test framework,''
+  \url{http://www.vogella.com/tutorials/AndroidTesting/article.html}, Sept.
+  2011, accessed February 2014.
+ \begin{quotation}\noindent This document provides information on how to
+  effectively test Android applications using the Android test framework.
+  \end{quotation}
+
+\bibitem{JSONSpec}
+W3C, ``Json specification,''
+  \url{http://www.w3.org/TR/2014/REC-json-ld-20140116/}, accessed February
+  2014.
+ \begin{quotation}\noindent This document provides the specification and
+  structure of JSON. \end{quotation}
+
+\end{thebibliography}
