@@ -32,10 +32,10 @@ public class SplashActivity extends Activity {
 					}
 				} catch (InterruptedException e) {}
 				finally {
-					finish();
 					Intent intent = new Intent();
 					intent.setClass(SplashActivity.this, startActivityClass);
 					startActivity(intent);
+					finish();
 				}
 
 			}

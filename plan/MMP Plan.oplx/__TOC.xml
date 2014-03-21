@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <omniplan xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
-  <window x="13" y="290" w="1148" h="630">
+  <window x="-3" y="205" w="1148" h="630">
     <editing-scenario>cBJuqZTk2nf</editing-scenario>
     <view>task</view>
     <change-tracking/>
@@ -13,9 +13,9 @@
         <column name="Notes" width="20"/>
         <column name="Title" width="191"/>
         <column name="Effort" width="70"/>
-        <selected-items-at-filter-time idrefs="t8 t24 t4 t33 t16 t5 t31 t6 t23 t2 t7 t15 t32 t3"/>
+        <selected-items-at-filter-time idrefs="t4 t23 t16 t32 t8 t31 t3 t24"/>
       </outline>
-      <gantt-view x="-27" y="0" w="841" h="526">
+      <gantt-view x="-52" y="0" w="841" h="526">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>
@@ -67,9 +67,8 @@
         <column name="Type" width="49"/>
         <column name="Resource" width="135"/>
         <column name="#" width="75"/>
-        <selected-items-at-filter-time idrefs="r3 r2"/>
       </outline>
-      <timeline x="-152" y="0" w="564" h="526">
+      <timeline x="-140" y="0" w="813" h="526">
         <show-project-end/>
         <task-bar-label task-type="group" position="left">
           <key>Title</key>
@@ -112,7 +111,7 @@
     </resource-view>
     <calendar>
       <split-view-divider-position>290</split-view-divider-position>
-      <outline x="0" y="0" w="290" h="491">
+      <outline x="0" y="0" w="290" h="495">
         <column name="IM" width="20"/>
         <column name="Notes" width="20"/>
         <column name="Type" width="49"/>

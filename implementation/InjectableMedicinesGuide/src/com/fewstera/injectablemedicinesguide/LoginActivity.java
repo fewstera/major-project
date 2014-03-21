@@ -2,21 +2,23 @@ package com.fewstera.injectablemedicinesguide;
 
 import java.util.ArrayList;
 
-
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	
-	private ArrayList<Drug> _drugsIndex;
+	//private ArrayList<Drug> _drugsIndex;
 	private Button _loginButton;
+	private String _username;
+	private String _password;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,38 +38,43 @@ public class LoginActivity extends Activity {
 	
 	public void loginClick(View view){
 		EditText usernameText = (EditText) findViewById(R.id.username_input);
-		String username = usernameText.getText().toString();
+		_username = usernameText.getText().toString();
 		
 		EditText passwordText = (EditText) findViewById(R.id.password_input);
-		String password = passwordText.getText().toString();
+		_password = passwordText.getText().toString();
 		
 		_loginButton.setEnabled(false);
-
-		System.out.println("STARTING TASK");
 		
 		RetrieveIndexTask retrieveIndexTask = new RetrieveIndexTask();
-		retrieveIndexTask.execute(new String[] { username, password });
+		retrieveIndexTask.execute(new String[] { _username, _password });
 		this.setProgressBarIndeterminateVisibility(true); 
 	
 	}
 	
 	public void loginFailed(){
 		_loginButton.setEnabled(true);
-		System.out.println("Login failed.");
+		Toast toast = Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT);
+		toast.show();
 	}
 	
 	public void indexError(){
 		_loginButton.setEnabled(true);
-		System.out.println("Error downloading index");
+		Toast toast = Toast.makeText(getApplicationContext(), "Error downloading index", Toast.LENGTH_SHORT);
+		toast.show();
 	}
 	
 	public void loginComplete(){
+		Preferences.setString(this, Preferences.USERNAME_KEY, _username);
+    	Preferences.setString(this, Preferences.PASSWORD_KEY, _password);
+		
+		Toast toast = Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT);
+		toast.show();
 		Intent intent;
+		
+		//Check if we already have a database
 		if(true){
 			intent = new Intent(this, MainActivity.class);
 			//intent.putParcelableArrayListExtra (EXTRA_DRUG_INDEX, _drugsIndex);
-		}else{
-			intent = new Intent(this, MainActivity.class);
 		}
 		startActivity(intent);
 		finish();
@@ -94,16 +101,14 @@ public class LoginActivity extends Activity {
 		}
 
 		@Override
-		protected void onPostExecute(ArrayList<Drug> drugsIndex) {
-			System.out.println("ASYNC TASK COMPLETE");
-			
+		protected void onPostExecute(ArrayList<Drug> drugsIndex) {			
 			LoginActivity.this.setProgressBarIndeterminateVisibility(false); 
 			if(loginFailed){
 				LoginActivity.this.loginFailed();
 			}else if(drugsIndex == null){
 				LoginActivity.this.indexError();
 			}else{
-				_drugsIndex = drugsIndex;
+				//_drugsIndex = drugsIndex;
 				LoginActivity.this.loginComplete();
 			}
 		}

@@ -24,4 +24,11 @@ public class Preferences {
              return null;
         }
     }
+    
+    public static void delete(Context context, String key) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(key);
+        editor.commit();
+    }
 }
