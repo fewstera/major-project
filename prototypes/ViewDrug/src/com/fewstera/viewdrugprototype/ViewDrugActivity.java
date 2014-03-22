@@ -33,7 +33,8 @@ public class ViewDrugActivity extends Activity {
 	}	
 	
 	private Drug loadParacetamol(){
-		Drug paracetamol = new Drug("Paraceramol");
+		Drug paracetamol = new Drug();
+		paracetamol.setName("Paracetamol");
 		paracetamol.addDrugInformation(new DrugInformation("Medical uses", "Fever and Pain. Paracetamol is approved for reducing fever in people of all ages. Paracetamol is used for the relief of pains associated with many parts of the body. It has analgesic properties comparable to those of aspirin, while its anti-inflammatory effects are weaker. It is better tolerated than aspirin in patients in whom excessive gastric acid secretion or prolongation of bleeding time may be a concern."));
 		paracetamol.addDrugInformation(new DrugInformation("Adverse effects", "Liver damage, Cancer, Skin reactions, Asthma and Overdose"));
 		paracetamol.addDrugInformation(new DrugInformation("Structure and reactivity", "Paracetamol consists of a benzene ring core, substituted by one hydroxyl group and the nitrogen atom of an amide group in the para (1,4) pattern. The amide group is acetamide (ethanamide). It is an extensively conjugated system, as the lone pair on the hydroxyl oxygen, the benzene pi cloud, the nitrogen lone pair, the p orbital on the carbonyl carbon, and the lone pair on the carbonyl oxygen are all conjugated."));

@@ -25,6 +25,13 @@ public class DownloadInformationActivity extends Activity {
 		Drug[] drugArray = drugList.toArray(new Drug[drugList.size()]);
 		retrieveDrugInfoTask.execute(drugArray);
 		
+		System.out.println("Downloaded drugs index");
+		System.out.println("=====================================================");
+		for(Drug d:drugList){
+			System.out.println(d.getName() + " ("+ d.getId() + ")");
+		}
+		System.out.println("=====================================================");
+		System.out.println("End of list");
 	}
 
 	@Override
@@ -38,8 +45,7 @@ public class DownloadInformationActivity extends Activity {
 	private class RetrieveDrugInfoTask extends AsyncTask<Drug, Void, ArrayList<Drug>> {
 		
 		@Override
-		protected ArrayList<Drug> doInBackground(Drug... drugs) {
-			
+		protected ArrayList<Drug> doInBackground(Drug... drugs)
 			ArrayList<Drug> drugList = new ArrayList<Drug>(Arrays.asList(drugs));
 			
 			DataRetrieval dataRetrival = DataRetrieval.getInstance();

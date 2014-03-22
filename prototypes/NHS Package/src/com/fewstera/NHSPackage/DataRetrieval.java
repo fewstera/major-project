@@ -89,8 +89,6 @@ public class DataRetrieval {
 			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -99,8 +97,7 @@ public class DataRetrieval {
 		
 	}
 
-	private String _getDataFromURL(String url) throws ClientProtocolException,
-			IOException {
+	private String _getDataFromURL(String url) throws IOException {
 		String data = null;
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(url);

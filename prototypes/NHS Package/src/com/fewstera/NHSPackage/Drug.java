@@ -13,6 +13,7 @@ public class Drug implements Parcelable{
 	private int _id;
 	private String _name;
 	private ArrayList<DrugInformation> _drugInformations = new ArrayList<DrugInformation>();
+	private float _dosgaeKg;
 
 	public Drug(){
 		super();
@@ -47,6 +48,13 @@ public class Drug implements Parcelable{
 		_drugInformations.add(drugInfo);
 	}
 	
+	public void setDosagePerKg(float dosgaeKg){
+		_dosgaeKg = dosgaeKg;	
+	}
+	
+	public float getDosage(float patientWeight) {
+		return _dosgaeKg*patientWeight;
+	}
 	
 	/* 
 	 * BELOW IS THE METHODS FOR MAKING THE OBJECT PARCELABLE 
