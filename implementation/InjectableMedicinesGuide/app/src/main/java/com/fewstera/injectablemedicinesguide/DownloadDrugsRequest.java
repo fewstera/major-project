@@ -32,11 +32,8 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
 
-    private final String url;
-
-    public DownloadDrugsRequest(final String url) {
+    public DownloadDrugsRequest() {
         super(Drug[].class);
-        this.url = url;
     }
 
     // can't use activity here or any non serializable field
@@ -45,102 +42,87 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     public Drug[] loadDataFromNetwork() throws Exception {
         Log.d("MyApplication", "Loaded");
 
+        ArrayList<Drug> newDrugs = new ArrayList<Drug>();
 
-        //Download the XML from the API
-        //SimpleTextRequest xmlTextRequest = new SimpleTextRequest(getUrl());
-        //String xmlText = xmlTextRequest.loadDataFromNetwork();
-
-        Log.d("MyApplication", "Fetched XML");
-
+        char[] letters = "JKLMNOPQRSTUVWXYZ".toCharArray();
+        for(char letter : letters) {
+            Log.d("MyApplication", "Downloading letter: " + letter);
+            newDrugs.addAll(fetchDrugsWithLetter(letter));
+        }
         //Parse the XML into ArrayList of Drugs
-        ArrayList<Drug> newDrugs = parseXML();
+
         Log.d("MyApplication", "Got all drugs");
 
         Drug[] newDrugsArr = new Drug[newDrugs.size()];
         return newDrugs.toArray(newDrugsArr);
     }
 
-    private ArrayList<Drug> parseXML() throws Exception{
+    // Returns URL given Letter
+    protected final String getUrl(char letter) {
+        return "http://www.injguide.nhs.uk/IMGDrugData.asp?username=ivgdemo&password=bolus7&Part=" + letter;
+    }
+
+    private ArrayList<Drug> fetchDrugsWithLetter(char letter) throws Exception{
         ArrayList<Drug> drugs = new ArrayList<Drug>();
 
         //Remove null characters before XML
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Log.d("MyApplication", "Starting to parse XML");
-            InputStream stream = new URL(getUrl()).openStream();
+            InputStream stream = new URL(getUrl(letter)).openStream();
             stream.skip(2);
             Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
-            Log.d("MyApplication", "NOrmalise");
-            doc.getDocumentElement().normalize();
+            if(doc.getDocumentElement()!=null){
+                doc.getDocumentElement().normalize();
 
-            Log.d("MyApplication", "PARSED");
+                //Find all drug nodes and loop over them
+                NodeList drugList = doc.getElementsByTagName("drug");
+                for (int drugCount = 0; drugCount < drugList.getLength(); drugCount++) {
+                    Drug newDrug = new Drug();
 
-            NodeList drugList = doc.getElementsByTagName("drug");
-            for (int drugCount = 0; drugCount < drugList.getLength(); drugCount++) {
-                Log.d("MyApplication", "GOT TO LOOP");
-                Drug newDrug = new Drug();
-                Element drugElement = (Element) drugList.item(drugCount);
+                    Element drugElement = (Element) drugList.item(drugCount);
 
-                int id = Integer.parseInt(drugElement.getElementsByTagName("drugno").item(0).getTextContent());
-                newDrug.setId(id);
+                    int id = Integer.parseInt(drugElement.getElementsByTagName("drugno").item(0).getTextContent());
+                    newDrug.setId(id);
 
-                Log.d("MyApplication", "GOT ID:" + id);
+                    //Fetch all sections of a drug and loop over them.
+                    NodeList sectionList = drugElement.getElementsByTagName("section");
+                    for (int sectionCount = 0; sectionCount < sectionList.getLength(); sectionCount++) {
 
-                NodeList sectionList = drugElement.getElementsByTagName("section");
-                for (int sectionCount = 0; sectionCount < sectionList.getLength(); sectionCount++) {
+                        //Get section element
+                        Element sectionElement = (Element) sectionList.item(sectionCount);
 
-                    Log.d("MyApplication", "GOT TO LOOP 2");
+                        //To fix inconsistencies in XML cases from the API
+                        NodeList headerTextNode = sectionElement.getElementsByTagName("header_text");
+                        if(headerTextNode.getLength()==0){
+                            headerTextNode = sectionElement.getElementsByTagName("Header_text");
+                        }
+                        String headerText = headerTextNode.item(0).getTextContent();
 
-                    Element sectionElement = (Element) sectionList.item(sectionCount);
-                    Log.d("MyApplication", "1");
-                    //To fix inconsistencies in XML cases from the API
-                    NodeList headerTextNode = sectionElement.getElementsByTagName("header_text");
-                    if(headerTextNode.getLength()==0){
-                        headerTextNode = sectionElement.getElementsByTagName("Header_text");
-                    }
-                    Log.d("MyApplication", "2");
-
-                    String headerText = headerTextNode.item(0).getTextContent();
-                    Log.d("MyApplication", "Header: " + headerText);
-                    Log.d("MyApplication", "3");
-                    String headerHelper = null;
-                    Log.d("MyApplication", "4");
-                    NodeList headingHelpNode = sectionElement.getElementsByTagName("heading_help");
-                    Log.d("MyApplication", "5");
-                    if(headingHelpNode.getLength()>0){
-                        headerHelper = headingHelpNode.item(0).getTextContent();
-                        Log.d("MyApplication", "Header_helper: " + headerHelper);
-                    }
+                        String headerHelper = null;
+                        NodeList headingHelpNode = sectionElement.getElementsByTagName("heading_help");
+                        if(headingHelpNode.getLength()>0){
+                            headerHelper = headingHelpNode.item(0).getTextContent();
+                        }
 
 
+                        String sectionText = null;
+                        NodeList sectionTextNode = sectionElement.getElementsByTagName("Section_text");
+                        if(sectionTextNode.getLength()>0){
+                            sectionText = sectionTextNode.item(0).getTextContent();
+                        }
 
-                    Log.d("MyApplication", "6");
-
-                    String sectionText = null;
-                    Log.d("MyApplication", "4");
-                    NodeList sectionTextNode = sectionElement.getElementsByTagName("Section_text");
-                    Log.d("MyApplication", "5");
-                    if(sectionTextNode.getLength()>0){
-                        sectionText = sectionTextNode.item(0).getTextContent();
-                        Log.d("MyApplication", "Header_helper: " + headerHelper);
-                    }
-
-                    Log.d("MyApplication", "sectionText: " + sectionText);
-                    if(headerText.equals("DRUG:")){
-                        newDrug.setName(sectionText);
-                        Log.d("MyApplication", "New drug: " + sectionText);
-                    }else{
-                        Log.d("MyApplication", "Added drug info: " + headerText);
-                        if(sectionText!=null){
-                            newDrug.addDrugInformation(new DrugInformation(headerText, headerHelper, sectionText));
+                        if(headerText.equals("DRUG:")){
+                            newDrug.setName(sectionText);
+                        }else{
+                            if(sectionText!=null){
+                                newDrug.addDrugInformation(new DrugInformation(headerText, headerHelper, sectionText));
+                            }
                         }
                     }
+                    drugs.add(newDrug);
                 }
-                Log.d("MyApplication", "Adding new drug");
-                drugs.add(newDrug);
             }
-            Log.d("MyApplication", "Finished for loop");
         } catch (SAXException e) {
             e.printStackTrace();
             throw(e);
@@ -153,12 +135,6 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
         }
 
         return drugs;
-    }
-
-    // can't use activity here or any non serializable field
-    // will be invoked in remote service
-    protected final String getUrl() {
-        return this.url;
     }
 
 }
