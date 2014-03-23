@@ -1,6 +1,9 @@
 package com.fewstera.injectablemedicinesguide;
 
+import android.util.Log;
+
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.MalformedURLException;
@@ -40,68 +43,104 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     // will be invoked in remote service
     @Override
     public Drug[] loadDataFromNetwork() throws Exception {
+        Log.d("MyApplication", "Loaded");
+
 
         //Download the XML from the API
-        SimpleTextRequest xmlTextRequest = new SimpleTextRequest(getUrl());
-        String xmlText = xmlTextRequest.loadDataFromNetwork();
+        //SimpleTextRequest xmlTextRequest = new SimpleTextRequest(getUrl());
+        //String xmlText = xmlTextRequest.loadDataFromNetwork();
+
+        Log.d("MyApplication", "Fetched XML");
 
         //Parse the XML into ArrayList of Drugs
-        ArrayList<Drug> newDrugs = parseXML(xmlText);
+        ArrayList<Drug> newDrugs = parseXML();
+        Log.d("MyApplication", "Got all drugs");
 
         Drug[] newDrugsArr = new Drug[newDrugs.size()];
         return newDrugs.toArray(newDrugsArr);
     }
 
-    private ArrayList<Drug> parseXML(String xmlString) throws Exception{
+    private ArrayList<Drug> parseXML() throws Exception{
         ArrayList<Drug> drugs = new ArrayList<Drug>();
 
         //Remove null characters before XML
-        xmlString = xmlString.substring(xmlString.indexOf("<"));
-
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(new InputSource(new StringReader (xmlString)));
+            Log.d("MyApplication", "Starting to parse XML");
+            InputStream stream = new URL(getUrl()).openStream();
+            stream.skip(2);
+            Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
+            Log.d("MyApplication", "NOrmalise");
             doc.getDocumentElement().normalize();
+
+            Log.d("MyApplication", "PARSED");
 
             NodeList drugList = doc.getElementsByTagName("drug");
             for (int drugCount = 0; drugCount < drugList.getLength(); drugCount++) {
+                Log.d("MyApplication", "GOT TO LOOP");
                 Drug newDrug = new Drug();
                 Element drugElement = (Element) drugList.item(drugCount);
 
                 int id = Integer.parseInt(drugElement.getElementsByTagName("drugno").item(0).getTextContent());
                 newDrug.setId(id);
 
+                Log.d("MyApplication", "GOT ID:" + id);
+
                 NodeList sectionList = drugElement.getElementsByTagName("section");
                 for (int sectionCount = 0; sectionCount < sectionList.getLength(); sectionCount++) {
 
-                    Element sectionElement = (Element) sectionList.item(sectionCount);
+                    Log.d("MyApplication", "GOT TO LOOP 2");
 
+                    Element sectionElement = (Element) sectionList.item(sectionCount);
+                    Log.d("MyApplication", "1");
                     //To fix inconsistencies in XML cases from the API
                     NodeList headerTextNode = sectionElement.getElementsByTagName("header_text");
                     if(headerTextNode.getLength()==0){
                         headerTextNode = sectionElement.getElementsByTagName("Header_text");
                     }
+                    Log.d("MyApplication", "2");
 
                     String headerText = headerTextNode.item(0).getTextContent();
+                    Log.d("MyApplication", "Header: " + headerText);
+                    Log.d("MyApplication", "3");
                     String headerHelper = null;
-
+                    Log.d("MyApplication", "4");
                     NodeList headingHelpNode = sectionElement.getElementsByTagName("heading_help");
-                    if(headerTextNode.getLength()>0){
+                    Log.d("MyApplication", "5");
+                    if(headingHelpNode.getLength()>0){
                         headerHelper = headingHelpNode.item(0).getTextContent();
+                        Log.d("MyApplication", "Header_helper: " + headerHelper);
                     }
 
-                    String sectionText = sectionElement.getElementsByTagName("Section_text").item(0).getTextContent();
 
+
+                    Log.d("MyApplication", "6");
+
+                    String sectionText = null;
+                    Log.d("MyApplication", "4");
+                    NodeList sectionTextNode = sectionElement.getElementsByTagName("Section_text");
+                    Log.d("MyApplication", "5");
+                    if(sectionTextNode.getLength()>0){
+                        sectionText = sectionTextNode.item(0).getTextContent();
+                        Log.d("MyApplication", "Header_helper: " + headerHelper);
+                    }
+
+                    Log.d("MyApplication", "sectionText: " + sectionText);
                     if(headerText.equals("DRUG:")){
                         newDrug.setName(sectionText);
+                        Log.d("MyApplication", "New drug: " + sectionText);
                     }else{
-                        newDrug.addDrugInformation(new DrugInformation(headerText, headerHelper, sectionText));
+                        Log.d("MyApplication", "Added drug info: " + headerText);
+                        if(sectionText!=null){
+                            newDrug.addDrugInformation(new DrugInformation(headerText, headerHelper, sectionText));
+                        }
                     }
                 }
-
+                Log.d("MyApplication", "Adding new drug");
                 drugs.add(newDrug);
             }
+            Log.d("MyApplication", "Finished for loop");
         } catch (SAXException e) {
             e.printStackTrace();
             throw(e);

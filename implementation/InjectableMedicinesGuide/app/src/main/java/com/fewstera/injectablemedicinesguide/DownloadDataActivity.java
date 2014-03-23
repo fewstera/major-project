@@ -2,6 +2,7 @@ package com.fewstera.injectablemedicinesguide;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class DownloadDataActivity extends Activity {
 
         progressText = (TextView) findViewById(R.id.progressText);
 
+        Log.d("MyApplication", "Starting");
 
         startDownload();
 
@@ -55,9 +57,10 @@ public class DownloadDataActivity extends Activity {
     }
 
     private void downloadLetter(Character letter){
+        Log.d("MyApplication", "Downlaoding next");
         progressText.setText("Downloading monographs starting with " + letter + "...");
-        DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest("http://myhttp.info/?" + letter);
-        spiceManager.execute(downloadRequest, "drugsData_" + letter, DurationInMillis.ONE_MINUTE, new drugsDownloadRequestListener(letter));
+        DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest("http://www.injguide.nhs.uk/IMGDrugData.asp?username=ivgdemo&password=bolus7&Part=" + letter);
+        spiceManager.execute(downloadRequest, "NO_CACHE", -1, new drugsDownloadRequestListener(letter));
     }
 
     public final class drugsDownloadRequestListener implements RequestListener<Drug[]> {
@@ -68,17 +71,19 @@ public class DownloadDataActivity extends Activity {
             _letter = letter;
         }
         public void onRequestFailure(SpiceException spiceException) {
+            System.out.println("Failed ");
+
             Toast.makeText(DownloadDataActivity.this, "Failed downloading " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
         }
 
         public void onRequestSuccess(final Drug[] drugs) {
             Toast.makeText(DownloadDataActivity.this, "Downloaded " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
             for(Drug d: drugs){
-                System.out.println(d.getName() + " (" + d.getId() + ")");
-                System.out.println("=====================================");
+                Log.d("MyApplication", d.getName() + " (" + d.getId() + ")");
+                Log.d("MyApplication", "=====================================");
                 DrugInformation info = d.getDrugInformations().get(2);
-                System.out.println("===" + info.getHeaderText() + "===\n");
-                System.out.println("" + info.getSectionText() + "");
+                Log.d("MyApplication", "===" + info.getHeaderText() + "===\n");
+                Log.d("MyApplication", info.getSectionText() + "");
             }
             downloadNext();
         }
