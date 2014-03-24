@@ -33,9 +33,11 @@
 
     <TextView
         android:id="@+id/progressText"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_below="@+id/downloadProgress"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        />
 
 </RelativeLayout>

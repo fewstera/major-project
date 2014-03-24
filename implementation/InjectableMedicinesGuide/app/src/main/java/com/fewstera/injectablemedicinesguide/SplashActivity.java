@@ -22,7 +22,7 @@ public class SplashActivity extends Activity {
 		}else{
 			//startActivityClass = MainActivity.class;
 		}
-        startActivityClass = DownloadDataActivity.class;
+        startActivityClass = LoginActivity.class;
 		Thread splashTread = new Thread() {
 			@Override
 			public void run() {

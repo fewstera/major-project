@@ -100,6 +100,22 @@ public class DataRetrieval {
 		
 	}
 
+    public int[] getUniqueIdsFromIndex(ArrayList<Drug> drugs){
+        ArrayList<Integer> uniqueIds = new ArrayList<Integer>();
+        for(Drug d : drugs){
+            Integer id = new Integer(d.getId());
+            if(!uniqueIds.contains(id)){
+                uniqueIds.add(id);
+            }
+        }
+
+        int[] returnUniqueIds = new int[uniqueIds.size()];
+        for(int count = 0; count < uniqueIds.size(); count++){
+            returnUniqueIds[count] = uniqueIds.get(count);
+        }
+        return returnUniqueIds;
+    }
+
 	private String _getDataFromURL(String url) throws ClientProtocolException,
 			IOException {
 		String data = null;

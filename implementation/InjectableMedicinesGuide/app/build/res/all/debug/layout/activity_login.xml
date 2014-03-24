@@ -31,7 +31,7 @@
         android:layout_below="@id/login_explain"
         android:layout_marginTop="15dp"
         android:hint="@string/username_hint"
-    />
+        android:text="ivgdemo" />
 
     <EditText
         android:id="@+id/password_input"
@@ -40,8 +40,8 @@
         android:layout_below="@id/username_input"
         android:layout_marginTop="5dp"
         android:hint="@string/password_hint"
-        android:inputType="textPassword"  
-   	/>
+        android:inputType="textPassword"
+        android:text="bolus7" />
     
     <Button
         android:id="@+id/login_button"

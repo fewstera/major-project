@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	
-	//private ArrayList<Drug> _drugsIndex;
+	private DataRetrieval _dataRetrival;
 	private Button _loginButton;
 	private String _username;
 	private String _password;
@@ -27,6 +27,8 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 		
 		_loginButton = (Button)findViewById(R.id.login_button);
+
+        _dataRetrival = new DataRetrieval();
 	}
 
 	@Override
@@ -44,7 +46,7 @@ public class LoginActivity extends Activity {
 		_password = passwordText.getText().toString();
 		
 		_loginButton.setEnabled(false);
-		
+
 		RetrieveIndexTask retrieveIndexTask = new RetrieveIndexTask();
 		retrieveIndexTask.execute(new String[] { _username, _password });
 		this.setProgressBarIndeterminateVisibility(true); 
@@ -63,13 +65,14 @@ public class LoginActivity extends Activity {
 		toast.show();
 	}
 	
-	public void loginComplete(){
-		Preferences.setString(this, Preferences.USERNAME_KEY, _username);
-    	Preferences.setString(this, Preferences.PASSWORD_KEY, _password);
+	public void loginComplete(int drugCount){
+		//Preferences.setString(this, Preferences.USERNAME_KEY, _username);
+    	//Preferences.setString(this, Preferences.PASSWORD_KEY, _password);
 		
 		Toast toast = Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT);
 		toast.show();
 		Intent intent = new Intent(this, DownloadDataActivity.class);
+        intent.putExtra("num_of_drugs", drugCount);
 		startActivity(intent);
 		finish();
 	}
@@ -82,12 +85,12 @@ public class LoginActivity extends Activity {
 			
 			String username = params[0];
 			String password = params[1];
-			
-			DataRetrieval dataRetrival = DataRetrieval.getInstance();
-			dataRetrival.setCredentials(username, password);
+
+
+            _dataRetrival.setCredentials(username, password);
 			
 			try{
-				return dataRetrival.fetchIndex();
+				return _dataRetrival.fetchIndex();
 			}catch(AuthException e){
 				loginFailed = true;
 				return null;
@@ -102,8 +105,8 @@ public class LoginActivity extends Activity {
 			}else if(drugsIndex == null){
 				LoginActivity.this.indexError();
 			}else{
-				//_drugsIndex = drugsIndex;
-				LoginActivity.this.loginComplete();
+                int drugCount = _dataRetrival.getUniqueIdsFromIndex(drugsIndex).length;
+				LoginActivity.this.loginComplete(drugCount);
 			}
 		}
 	}
