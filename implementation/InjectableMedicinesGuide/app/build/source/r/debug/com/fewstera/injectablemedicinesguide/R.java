@@ -67,9 +67,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int login_explain=0x7f060007;
         public static final int login_message=0x7f060008;
         public static final int password_hint=0x7f060009;
-        public static final int title_activity_download_data=0x7f06000a;
-        public static final int title_activity_login=0x7f06000b;
-        public static final int username_hint=0x7f06000c;
+        public static final int service_message=0x7f06000a;
+        public static final int title_activity_download_data=0x7f06000b;
+        public static final int title_activity_login=0x7f06000c;
+        public static final int username_hint=0x7f06000d;
     }
     public static final class style {
         /** 

@@ -2,8 +2,10 @@ package com.fewstera.injectablemedicinesguide.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.fewstera.injectablemedicinesguide.*;
 
@@ -16,7 +18,7 @@ import java.util.Date;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database Version and Name
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "drugDatabase";
 
     //Table names
@@ -50,9 +52,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //DrugInformations table creates
     private static final String CREATE_TABLE_DRUG_INFORMATIONS = "CREATE TABLE "
-            + TABLE_DRUG_INFOS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_HEADER_TEXT
-            + F_KEY_DRUG_ID + " INTEGER, " + " TEXT NOT NULL, " + KEY_HEADER_HELPER
-            + " TEXT, "  + KEY_SECTION_TEXT + " TEXT NOT NULL)";
+            + TABLE_DRUG_INFOS + "(" + KEY_ID + " INTEGER PRIMARY KEY, "
+            + F_KEY_DRUG_ID + " INTEGER NOT NULL, " + KEY_HEADER_TEXT
+            + " TEXT NOT NULL, " + KEY_HEADER_HELPER + " TEXT, "
+            + KEY_SECTION_TEXT + " TEXT NOT NULL)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -74,7 +77,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /*
+        *   Saves the given drug to the database, including its drugInformations
+     */
     public long createDrug(Drug drug) {
+        Log.d("MyApplication", "Saving drug: " + drug.getName() + "(" + drug.getId() + ")");
+
         SQLiteDatabase db = this.getWritableDatabase();
         SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -86,21 +94,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_MEDICINE_NAME, drug.getMedicineName());
         values.put(KEY_VERSION, drug.getVersion());
         values.put(KEY_DATE_PUBLISHED, parser.format(drug.getDatePublished()));
-
         // insert row
         long drugId = db.insert(TABLE_DRUGS, null, values);
 
-        // assigning tags to todo
-        for (long tag_id : tag_ids) {
-            createTodoTag(todo_id, tag_id);
+        // assigning drug informations to drug
+        for (DrugInformation info : drug.getDrugInformations()) {
+            createDrugInfo(drugId, info);
         }
 
-        return todo_id;
+        return drugId;
     }
 
-    private String getDateStringNow(){
-        Date date= new Date();
-        return ;
+    /*
+        *   Saves the given drug information to the database
+    */
+    private long createDrugInfo(long drugId, DrugInformation info) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(F_KEY_DRUG_ID, drugId);
+        values.put(KEY_HEADER_TEXT, info.getHeaderText());
+        values.put(KEY_HEADER_HELPER, info.getHeaderHelper());
+        values.put(KEY_SECTION_TEXT, info.getSectionText());
+
+        return db.insert(TABLE_DRUG_INFOS, null, values);
+
     }
+
+    public void truncateAll(){
+        //Drop tables
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUGS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INFOS);
+
+        //Create new ones
+        onCreate(db);
+    }
+
+    public long getDrugsCount(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return DatabaseUtils.queryNumEntries(db, TABLE_DRUGS);
+    }
+
 
 }

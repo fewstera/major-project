@@ -15,5 +15,6 @@
     <string name="title_activity_download_data">Downloading monographs</string>
     <string name="downloading_header">Drug information is downloading</string>
     <string name="downloading_message">As the drug database is large this may take some time, please wait.</string>
+    <string name="service_message">Downloading drug data...</string>
 
 </resources>

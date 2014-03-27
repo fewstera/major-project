@@ -18,11 +18,10 @@ public class SplashActivity extends Activity {
 		/* If no credentials are stored, ask user to login. */
 		if( (Preferences.getString(this, Preferences.USERNAME_KEY)==null) ||
 			(Preferences.getString(this, Preferences.PASSWORD_KEY)==null)){
-			//startActivityClass = LoginActivity.class;
+			startActivityClass = LoginActivity.class;
 		}else{
-			//startActivityClass = MainActivity.class;
+			startActivityClass = MainActivity.class;
 		}
-        startActivityClass = LoginActivity.class;
 		Thread splashTread = new Thread() {
 			@Override
 			public void run() {

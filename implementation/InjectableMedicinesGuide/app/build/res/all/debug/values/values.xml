@@ -32,6 +32,7 @@
     <string name="login_explain">Please login using your NHS account, your credentials will be stored for ease of use.</string>
     <string name="login_message">Login to your account</string>
     <string name="password_hint">Password</string>
+    <string name="service_message">Downloading drug data...</string>
     <string name="title_activity_download_data">Downloading monographs</string>
     <string name="title_activity_login">Account Login</string>
     <string name="username_hint">Username</string>

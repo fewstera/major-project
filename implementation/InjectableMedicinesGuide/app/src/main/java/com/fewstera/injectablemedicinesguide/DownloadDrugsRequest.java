@@ -1,30 +1,25 @@
 package com.fewstera.injectablemedicinesguide;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.CharEncoding;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import roboguice.util.temp.Ln;
-
+import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
-import com.octo.android.robospice.request.simple.SimpleTextRequest;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -37,9 +32,14 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
 
     private char _letter;
 
-    public DownloadDrugsRequest(char letter) {
+    private DatabaseHelper _db;
+    private DataProgress _dataProgress;
+
+    public DownloadDrugsRequest(Context context, char letter) {
         super(Drug[].class);
         _letter = letter;
+        _db = new DatabaseHelper(context);
+        _dataProgress = DataProgress.getInstance();
     }
 
     // can't use activity here or any non serializable field
@@ -48,6 +48,7 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     public Drug[] loadDataFromNetwork() throws Exception {
         Log.d("MyApplication", "Loaded " + _letter);
         ArrayList<Drug> newDrugs = fetchDrugsWithLetter(_letter);
+        _dataProgress.addSucceededLetter(_letter);
         Drug[] newDrugsArr = new Drug[newDrugs.size()];
         return newDrugs.toArray(newDrugsArr);
     }
@@ -65,9 +66,6 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             InputStream stream = new URL(getUrl(letter)).openStream();
 
-            //Skips the first two bytes of the input stream as the XML contains whitespace.
-            stream.skip(2);
-
             Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
             if(doc.getDocumentElement()!=null){
                 doc.getDocumentElement().normalize();
@@ -76,7 +74,10 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
                 NodeList drugList = doc.getElementsByTagName("drug");
                 for (int drugCount = 0; drugCount < drugList.getLength(); drugCount++) {
                     Element drugElement = (Element) drugList.item(drugCount);
-                    drugs.add(parseDrugFromElement(drugElement));
+                    Drug newDrug = parseDrugFromElement(drugElement);
+                    _db.createDrug(newDrug);
+                    _dataProgress.addDrug(newDrug);
+                    drugs.add(newDrug);
                 }
             }
         } catch (SAXException e) {
@@ -133,7 +134,7 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
 
 
         String sectionText = null;
-        NodeList sectionTextNode = sectionElement.getElementsByTagName("Section_text");
+        NodeList sectionTextNode = sectionElement.getElementsByTagName("section_text");
         if(sectionTextNode.getLength()>0){
             sectionText = sectionTextNode.item(0).getTextContent();
         }

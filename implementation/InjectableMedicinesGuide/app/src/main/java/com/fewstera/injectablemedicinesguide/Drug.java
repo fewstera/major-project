@@ -88,6 +88,7 @@ public class Drug implements Comparable<Drug>{
 
     //Get an ArrayList of all the drug information
     public ArrayList<DrugInformation> getDrugInformations(){
+        if(_drugInformations==null){ _drugInformations = new ArrayList<DrugInformation>(); }
         return _drugInformations;
     }
 

@@ -66,13 +66,15 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void loginComplete(int drugCount){
-		//Preferences.setString(this, Preferences.USERNAME_KEY, _username);
-    	//Preferences.setString(this, Preferences.PASSWORD_KEY, _password);
+		Preferences.setString(this, Preferences.USERNAME_KEY, _username);
+    	Preferences.setString(this, Preferences.PASSWORD_KEY, _password);
 		
 		Toast toast = Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT);
 		toast.show();
 		Intent intent = new Intent(this, DownloadDataActivity.class);
         intent.putExtra("num_of_drugs", drugCount);
+        intent.putExtra("username", _username);
+        intent.putExtra("password", _password);
 		startActivity(intent);
 		finish();
 	}
