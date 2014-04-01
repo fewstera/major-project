@@ -1,4 +1,6 @@
-package com.fewstera.injectablemedicinesguide;
+package com.fewstera.injectablemedicinesguide.dataDownload;
+
+import com.fewstera.injectablemedicinesguide.Drug;
 
 import java.util.ArrayList;
 

@@ -3,8 +3,11 @@ package com.fewstera.injectablemedicinesguide;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -12,6 +15,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+        TextView updateText = (TextView) findViewById(R.id.last_update_textview);
+        String textHtml = String.format(getResources().getString(R.string.last_updated_text), "01/04/2014");
+        updateText.setText(Html.fromHtml(textHtml));
 	}
 
 	@Override
@@ -26,8 +33,7 @@ public class MainActivity extends Activity {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.action_logout:
-	        	Preferences.delete(this, Preferences.USERNAME_KEY);
-	        	Preferences.delete(this, Preferences.PASSWORD_KEY);
+	        	Auth.logout(this);
 	        	Intent intent = new Intent();
 				intent.setClass(MainActivity.this, LoginActivity.class);
 				startActivity(intent);
@@ -36,6 +42,17 @@ public class MainActivity extends Activity {
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
-	}	
+	}
+
+    public void updateClick(View view){
+        Intent intent = new Intent(this, DownloadDataActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void viewDrugsClick(View view){
+        Intent intent = new Intent(this, DownloadDataActivity.class);
+        startActivity(intent);
+    }
 
 }

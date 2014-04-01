@@ -1,6 +1,5 @@
-package com.fewstera.injectablemedicinesguide;
+package com.fewstera.injectablemedicinesguide.dataDownload;
 
-import android.app.Application;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -9,12 +8,8 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.octo.android.robospice.SpiceService;
+import com.fewstera.injectablemedicinesguide.R;
 import com.octo.android.robospice.UncachedSpiceService;
-import com.octo.android.robospice.persistence.CacheManager;
-import com.octo.android.robospice.persistence.binary.InFileBitmapObjectPersister;
-import com.octo.android.robospice.persistence.exception.CacheCreationException;
-import com.octo.android.robospice.persistence.string.InFileStringObjectPersister;
 import com.octo.android.robospice.request.notifier.RequestListenerNotifier;
 
 /**

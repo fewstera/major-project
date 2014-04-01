@@ -1,5 +1,6 @@
 package com.fewstera.injectablemedicinesguide;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	
-	private DataRetrieval _dataRetrival;
+	private Auth _auth;
 	private Button _loginButton;
 	private String _username;
 	private String _password;
@@ -27,8 +28,11 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 		
 		_loginButton = (Button)findViewById(R.id.login_button);
+        _auth = new Auth();
 
-        _dataRetrival = new DataRetrieval();
+        // Reset the download complete boolean so that if a data download has failed
+        // the user isn't displayed with a partial database.
+        Preferences.setDownloadComplete(this, false);
 	}
 
 	@Override
@@ -47,8 +51,8 @@ public class LoginActivity extends Activity {
 		
 		_loginButton.setEnabled(false);
 
-		RetrieveIndexTask retrieveIndexTask = new RetrieveIndexTask();
-		retrieveIndexTask.execute(new String[] { _username, _password });
+        ValidateLoginTask validateLoginTask = new ValidateLoginTask();
+        validateLoginTask.execute();
 		this.setProgressBarIndeterminateVisibility(true); 
 	
 	}
@@ -58,57 +62,43 @@ public class LoginActivity extends Activity {
 		Toast toast = Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT);
 		toast.show();
 	}
-	
-	public void indexError(){
+
+	public void connectionError(){
 		_loginButton.setEnabled(true);
-		Toast toast = Toast.makeText(getApplicationContext(), "Error downloading index", Toast.LENGTH_SHORT);
+		Toast toast = Toast.makeText(getApplicationContext(), "Connection error", Toast.LENGTH_SHORT);
 		toast.show();
 	}
 	
-	public void loginComplete(int drugCount){
-		Preferences.setString(this, Preferences.USERNAME_KEY, _username);
-    	Preferences.setString(this, Preferences.PASSWORD_KEY, _password);
-		
+	public void loginComplete(){
+        _auth.saveCredentials(this);
 		Toast toast = Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT);
 		toast.show();
 		Intent intent = new Intent(this, DownloadDataActivity.class);
-        intent.putExtra("num_of_drugs", drugCount);
-        intent.putExtra("username", _username);
-        intent.putExtra("password", _password);
 		startActivity(intent);
 		finish();
 	}
 	
-	private class RetrieveIndexTask extends AsyncTask<String, Void, ArrayList<Drug>> {
-		private boolean loginFailed = false;
-		
+	private class ValidateLoginTask extends AsyncTask<Void, Void, Boolean> {
 		@Override
-		protected ArrayList<Drug> doInBackground(String... params) {
-			
-			String username = params[0];
-			String password = params[1];
+		protected Boolean doInBackground(Void... p) {
 
-
-            _dataRetrival.setCredentials(username, password);
-			
-			try{
-				return _dataRetrival.fetchIndex();
-			}catch(AuthException e){
-				loginFailed = true;
-				return null;
-			}
+            _auth.setCredentials(_username, _password);
+            try{
+			    return new Boolean(_auth.isValid());
+            }catch(Exception e){
+                return null;
+            }
 		}
 
 		@Override
-		protected void onPostExecute(ArrayList<Drug> drugsIndex) {			
+		protected void onPostExecute(Boolean isValid) {
 			LoginActivity.this.setProgressBarIndeterminateVisibility(false); 
-			if(loginFailed){
+			if(isValid==null){
+                LoginActivity.this.connectionError();
+            }else if(!isValid.booleanValue()){
 				LoginActivity.this.loginFailed();
-			}else if(drugsIndex == null){
-				LoginActivity.this.indexError();
 			}else{
-                int drugCount = _dataRetrival.getUniqueIdsFromIndex(drugsIndex).length;
-				LoginActivity.this.loginComplete(drugCount);
+				LoginActivity.this.loginComplete();
 			}
 		}
 	}

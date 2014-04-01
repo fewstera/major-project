@@ -10,22 +10,30 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fewstera.injectablemedicinesguide.dataDownload.DataProgress;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadDrugsRequest;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadIndexRequest;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadService;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.PendingRequestListener;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-import java.util.ArrayList;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 public class DownloadDataActivity extends Activity {
 
     private SpiceManager _spiceManager = new SpiceManager(DownloadService.class);
     private final char[] _letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-    int _drugCount;
+    int _drugCount = 0;
     DataProgress _dataProgress;
     ProgressBar _progressBar;
     TextView _progressText;
+
+    String _encodedUsername;
+    String _encodedPassword;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +44,6 @@ public class DownloadDataActivity extends Activity {
         _progressText = (TextView) findViewById(R.id.progressText);
         _progressBar = (ProgressBar) findViewById(R.id.downloadProgress);
         _progressBar.setMax(100);
-        _drugCount = getIntent().getIntExtra("num_of_drugs", 100);
 
         _dataProgress = DataProgress.getInstance();
         _dataProgress.reset();
@@ -44,23 +51,37 @@ public class DownloadDataActivity extends Activity {
         DatabaseHelper db = new DatabaseHelper(getApplicationContext());
         db.truncateAll();
 
-        startDownloads();
+        try {
+            _encodedUsername = URLEncoder.encode(Auth.getSavedUsername(this), "UTF-8");
+            _encodedPassword = URLEncoder.encode(Auth.getSavedPassword(this), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            _encodedUsername = Auth.getSavedUsername(this);
+            _encodedPassword = Auth.getSavedPassword(this);
+            e.printStackTrace();
+        }
+
+        startDownload();
 
 	}
 
-    private void startDownloads(){
+    private void startDownload(){
         this.setProgressBarIndeterminateVisibility(true);
-        updateDownloadProgress();
-        for(char letter : _letters) {
-            DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest(getApplicationContext(), letter);
-            _spiceManager.execute(downloadRequest, "drug_download_" + letter, -1, new drugsDownloadRequestListener(letter));
-        }
-
+        _progressText.setText("Downloading drug index information");
+        DownloadIndexRequest downloadRequest = new DownloadIndexRequest(getApplicationContext(), _encodedUsername, _encodedPassword);
+        _spiceManager.execute(downloadRequest, "index_download", -1, new indexDownloadRequestListener());
     }
 
-    private void updateDownloadProgress(){
+    private void startLetterDownloads(){
+        updateDownloadLetterProgress();
+        for (char letter : _letters) {
+            DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest(getApplicationContext(), _encodedUsername, _encodedPassword, letter);
+            _spiceManager.execute(downloadRequest, "drug_download_" + letter, -1, new drugsDownloadRequestListener(letter));
+        }
+    }
+
+    private void updateDownloadLetterProgress(){
         _progressText.setText("Downloading (" + _dataProgress.getDrugList().size() + " of " + _drugCount + ")");
-        _progressBar.setProgress((int) Math.round((float)_dataProgress.getDrugList().size()/(float)_drugCount*100));
+        _progressBar.setProgress(10 + Math.round((float)_dataProgress.getDrugList().size()/(float)_drugCount*90));
 
     }
 
@@ -77,6 +98,8 @@ public class DownloadDataActivity extends Activity {
                     }
                 }
             }else{
+                //Set the download complete to complete.
+                Preferences.setDownloadComplete(this, true);
                 Log.d("MyApplication", "Finished");
                 Intent intent = new Intent();
                 intent.setClass(DownloadDataActivity.this, MainActivity.class);
@@ -87,7 +110,7 @@ public class DownloadDataActivity extends Activity {
         }
     }
 
-    public final class drugsDownloadRequestListener implements RequestListener<Drug[]>, PendingRequestListener<Drug[]> {
+    private final class drugsDownloadRequestListener implements RequestListener<Drug[]>, PendingRequestListener<Drug[]> {
 
         private char _letter;
 
@@ -105,14 +128,34 @@ public class DownloadDataActivity extends Activity {
         public void onRequestSuccess(final Drug[] drugs) {
             Log.d("MyApplication", "Downloaded: " + _letter);
             Toast.makeText(DownloadDataActivity.this, "Downloaded " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
-            updateDownloadProgress();
+            updateDownloadLetterProgress();
             checkIfFinished();
         }
 
         public void onRequestNotFound() {}
-
-
     }
+    private final class indexDownloadRequestListener implements RequestListener<Integer>, PendingRequestListener<Integer> {
+
+        public indexDownloadRequestListener(){
+            super();
+        }
+
+        public void onRequestFailure(SpiceException spiceException) {
+            Log.d("MyApplication", "Failed downloading index");
+            Toast.makeText(DownloadDataActivity.this, "Failed downloading index", Toast.LENGTH_SHORT).show();
+        }
+
+        public void onRequestSuccess(final Integer indexNo) {
+            Log.d("MyApplication", "Downloaded index");
+            Toast.makeText(DownloadDataActivity.this, "Downloaded drug index", Toast.LENGTH_SHORT).show();
+            _drugCount = indexNo.intValue();
+            startLetterDownloads();
+        }
+
+        public void onRequestNotFound() {}
+    }
+
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -123,7 +166,7 @@ public class DownloadDataActivity extends Activity {
     @Override
     protected void onStart() {
         checkIfFinished();
-        updateDownloadProgress();
+        if(_drugCount!=0) updateDownloadLetterProgress();
         _spiceManager.start(this);
         for(char letter : _letters) {
             _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + letter, new drugsDownloadRequestListener(letter));

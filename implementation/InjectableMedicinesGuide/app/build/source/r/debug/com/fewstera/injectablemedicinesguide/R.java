@@ -19,9 +19,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int buttonBarStyle=0x7f010000;
     }
     public static final class color {
-        public static final int action_bar_bg=0x7f040000;
-        public static final int action_bar_text=0x7f040001;
-        public static final int black_overlay=0x7f040002;
+        public static final int black_overlay=0x7f040000;
+        public static final int nhs_blue=0x7f040001;
+        public static final int white=0x7f040002;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f050000;
@@ -29,14 +29,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int splash_screen=0x7f020001;
+        public static final int rounded_corners_blue=0x7f020001;
+        public static final int splash_screen=0x7f020002;
     }
     public static final class id {
-        public static final int action_logout=0x7f09000a;
-        public static final int action_settings=0x7f090009;
+        public static final int action_logout=0x7f09000b;
+        public static final int action_settings=0x7f09000a;
         public static final int downloadProgress=0x7f090002;
         public static final int downloading_header=0x7f090000;
         public static final int downloading_message=0x7f090001;
+        public static final int last_update_textview=0x7f090009;
         public static final int login_button=0x7f090008;
         public static final int login_explain=0x7f090005;
         public static final int login_message=0x7f090004;
@@ -62,15 +64,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f060002;
         public static final int downloading_header=0x7f060003;
         public static final int downloading_message=0x7f060004;
-        public static final int loading_description=0x7f060005;
-        public static final int login_button_text=0x7f060006;
-        public static final int login_explain=0x7f060007;
-        public static final int login_message=0x7f060008;
-        public static final int password_hint=0x7f060009;
-        public static final int service_message=0x7f06000a;
-        public static final int title_activity_download_data=0x7f06000b;
-        public static final int title_activity_login=0x7f06000c;
-        public static final int username_hint=0x7f06000d;
+        public static final int last_updated_text=0x7f060005;
+        public static final int loading_description=0x7f060006;
+        public static final int login_button_text=0x7f060007;
+        public static final int login_explain=0x7f060008;
+        public static final int login_message=0x7f060009;
+        public static final int password_hint=0x7f06000a;
+        public static final int service_message=0x7f06000b;
+        public static final int title_activity_download_data=0x7f06000c;
+        public static final int title_activity_login=0x7f06000d;
+        public static final int username_hint=0x7f06000e;
     }
     public static final class style {
         /** 

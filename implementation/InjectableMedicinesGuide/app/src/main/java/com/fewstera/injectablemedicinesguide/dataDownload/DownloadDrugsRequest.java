@@ -1,4 +1,4 @@
-package com.fewstera.injectablemedicinesguide;
+package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,7 +9,6 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 
 import org.apache.commons.lang3.CharEncoding;
@@ -18,6 +17,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.fewstera.injectablemedicinesguide.Drug;
+import com.fewstera.injectablemedicinesguide.DrugInformation;
+import com.fewstera.injectablemedicinesguide.dataDownload.DataProgress;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
 
@@ -34,10 +36,15 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
 
     private DatabaseHelper _db;
     private DataProgress _dataProgress;
+    private String _accountUsername;
+    private String _accountPassword;
 
-    public DownloadDrugsRequest(Context context, char letter) {
+    public DownloadDrugsRequest(Context context, String username, String password, char letter) {
         super(Drug[].class);
+        _accountUsername = username;
+        _accountPassword = password;
         _letter = letter;
+
         _db = new DatabaseHelper(context);
         _dataProgress = DataProgress.getInstance();
     }
@@ -55,7 +62,9 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
 
     // Returns URL given Letter
     protected final String getUrl(char letter) {
-        return "http://www.injguide.nhs.uk/IMGDrugData.asp?username=ivgdemo&password=bolus7&Part=" + letter;
+        return "http://www.injguide.nhs.uk/IMGDrugData.asp?username="
+                + _accountUsername + "&password=" +
+                _accountPassword + "&Part=" + letter;
     }
 
     private ArrayList<Drug> fetchDrugsWithLetter(char letter) throws Exception{

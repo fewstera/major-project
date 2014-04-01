@@ -83,11 +83,11 @@
             <file
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/colors.xml"
                 qualifiers="" >
-                <color name="action_bar_bg" >#007AC3
+                <color name="white" >#FFFFFF
+                </color>
+                <color name="nhs_blue" >#007AC3
                 </color>
                 <color name="black_overlay" >#66000000
-                </color>
-                <color name="action_bar_text" >#FFFFFF
                 </color>
             </file>
             <file
@@ -110,6 +110,13 @@
                 <string name="title_activity_download_data" >Downloading monographs
                 </string>
                 <string name="action_logout" >Logout
+                </string>
+                <string name="last_updated_text" >
+<![CDATA[<b>Welcome to the injectable medicines guide.</b><br/><br/>
+    It is recommended that you update the drug database regularly, so that you have the most recent information
+        <br/><br/>
+        You last performed an update on: <br/>
+        <b>%1$s</b>]]>
                 </string>
                 <string name="login_message" >Login to your account
                 </string>
@@ -134,17 +141,6 @@
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/styles.xml"
                 qualifiers="" >
 
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Light" >
-
-                    <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-                    -->
-                </style>
-
                 <style name="ButtonBar" >
                     <item name="android:paddingLeft">
 2dp
@@ -161,6 +157,17 @@
                     <item name="android:background">
 @android:drawable/bottom_bar
                     </item>
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
                 </style>
 
                 <style
@@ -186,7 +193,18 @@
                     name="AppTheme.BlueActionBar.Text"
                     parent="@android:style/TextAppearance" >
                     <item name="android:textColor">
-@color/action_bar_text
+@color/white
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme.BlueActionBar"
+                    parent="@android:style/Widget.Holo.Light.ActionBar" >
+                    <item name="android:background">
+@color/nhs_blue
+                    </item>
+                    <item name="android:titleTextStyle">
+@style/AppTheme.BlueActionBar.Text
                     </item>
                 </style>
 
@@ -195,17 +213,6 @@
                     parent="AppBaseTheme" >
                     <item name="android:actionBarStyle">
 @style/AppTheme.BlueActionBar
-                    </item>
-                </style>
-
-                <style
-                    name="AppTheme.BlueActionBar"
-                    parent="@android:style/Widget.Holo.Light.ActionBar" >
-                    <item name="android:background">
-@color/action_bar_bg
-                    </item>
-                    <item name="android:titleTextStyle">
-@style/AppTheme.BlueActionBar.Text
                     </item>
                 </style>
             </file>
@@ -265,6 +272,11 @@ true
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="rounded_corners_blue"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/rounded_corners_blue.xml"
+                qualifiers=""
+                type="drawable" />
         </source>
         <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/res/rs/debug" />
     </dataSet>

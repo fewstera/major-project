@@ -18,15 +18,17 @@ import java.util.Date;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database Version and Name
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
     private static final String DATABASE_NAME = "drugDatabase";
 
     //Table names
     private static final String TABLE_DRUGS = "drugs";
     private static final String TABLE_DRUG_INFOS = "drugInformations";
+    private static final String TABLE_DRUG_INDEXS = "drugIndexs";
 
     //Common column names
     private static final String KEY_ID = "id";
+    private static final String F_KEY_DRUG_ID = "drug_id";
 
     //Drugs table columns
     private static final String KEY_NAME = "name";
@@ -37,11 +39,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_DATE_PUBLISHED = "date_published";
 
     //DrugInformations table columns
-    private static final String F_KEY_DRUG_ID = "drug_id";
     private static final String KEY_HEADER_TEXT = "header_text";
     private static final String KEY_HEADER_HELPER = "header_helper";
     private static final String KEY_SECTION_TEXT = "key_section_text";
 
+    //DrugIndex table columns
+    private static final String KEY_INDEX_NAME = "name";
 
     //Drug table creates
     private static final String CREATE_TABLE_DRUGS = "CREATE TABLE "
@@ -57,6 +60,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " TEXT NOT NULL, " + KEY_HEADER_HELPER + " TEXT, "
             + KEY_SECTION_TEXT + " TEXT NOT NULL)";
 
+    //DrugIndex table creates
+    private static final String CREATE_TABLE_DRUG_INDEX = "CREATE TABLE "
+            + TABLE_DRUG_INDEXS + "(" + KEY_ID + " INTEGER PRIMARY KEY, "
+            + F_KEY_DRUG_ID + " INTEGER NOT NULL, " + KEY_INDEX_NAME + " TEXT NOT NULL)";
+
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -65,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_DRUGS);
         db.execSQL(CREATE_TABLE_DRUG_INFORMATIONS);
+        db.execSQL(CREATE_TABLE_DRUG_INDEX);
     }
 
     @Override
@@ -72,6 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Delete old tables
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUGS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INFOS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INDEXS);
 
         //Create new ones
         onCreate(db);
@@ -119,12 +130,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_DRUG_INFOS, null, values);
 
     }
+    /*
+        *   Saves the given drug index to the database
+    */
+    public long createDrugIndex(DrugIndex index) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(F_KEY_DRUG_ID, index.getDrugId());
+        values.put(KEY_INDEX_NAME, index.getName());
+
+        return db.insert(TABLE_DRUG_INDEXS, null, values);
+
+    }
 
     public void truncateAll(){
         //Drop tables
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUGS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INFOS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INDEXS);
 
         //Create new ones
         onCreate(db);

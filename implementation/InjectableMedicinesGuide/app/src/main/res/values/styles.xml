@@ -19,12 +19,12 @@
     </style>
 
     <style name="AppTheme.BlueActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">@color/action_bar_bg</item>
+        <item name="android:background">@color/nhs_blue</item>
         <item name="android:titleTextStyle">@style/AppTheme.BlueActionBar.Text</item>
     </style>
     
     <style name="AppTheme.BlueActionBar.Text" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/action_bar_text</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     
     <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">

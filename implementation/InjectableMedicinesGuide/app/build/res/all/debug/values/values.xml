@@ -4,9 +4,9 @@
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/colors.xml -->
     <eat-comment />
 
-    <color name="action_bar_bg">#007AC3</color>
-    <color name="action_bar_text">#FFFFFF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="nhs_blue">#007AC3</color>
+    <color name="white">#FFFFFF</color>
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/attrs.xml -->
     <eat-comment />
 
@@ -27,6 +27,13 @@
     <string name="app_name">Injectable Medicines Guide</string>
     <string name="downloading_header">Drug information is downloading</string>
     <string name="downloading_message">As the drug database is large this may take some time, please wait.</string>
+    <string name="last_updated_text">
+<![CDATA[<b>Welcome to the injectable medicines guide.</b><br/><br/>
+    It is recommended that you update the drug database regularly, so that you have the most recent information
+        <br/><br/>
+        You last performed an update on: <br/>
+        <b>%1$s</b>]]>
+    </string>
     <string name="loading_description">Splash loading image</string>
     <string name="login_button_text">Login</string>
     <string name="login_explain">Please login using your NHS account, your credentials will be stored for ease of use.</string>
@@ -52,12 +59,12 @@
     </style>
 
     <style name="AppTheme.BlueActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">@color/action_bar_bg</item>
+        <item name="android:background">@color/nhs_blue</item>
         <item name="android:titleTextStyle">@style/AppTheme.BlueActionBar.Text</item>
     </style>
 
     <style name="AppTheme.BlueActionBar.Text" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/action_bar_text</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="ButtonBar">

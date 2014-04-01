@@ -1,4 +1,4 @@
-package com.fewstera.injectablemedicinesguide;
+package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import java.util.Set;
 
@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 
+import com.fewstera.injectablemedicinesguide.dataDownload.DataProgress;
 import com.octo.android.robospice.exception.RequestCancelledException;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.CachedSpiceRequest;

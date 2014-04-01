@@ -3,6 +3,7 @@ package com.fewstera.injectablemedicinesguide;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.preference.Preference;
 import android.view.Menu;
 
 public class SplashActivity extends Activity {
@@ -16,11 +17,16 @@ public class SplashActivity extends Activity {
 		final Class<?> startActivityClass;
 		
 		/* If no credentials are stored, ask user to login. */
-		if( (Preferences.getString(this, Preferences.USERNAME_KEY)==null) ||
-			(Preferences.getString(this, Preferences.PASSWORD_KEY)==null)){
+		if(!Auth.isLogged(this)){
 			startActivityClass = LoginActivity.class;
 		}else{
-			startActivityClass = MainActivity.class;
+            /* If data isn't downloaded yet, begin download. */
+            if(!Preferences.getDownloadComplete(this)){
+                startActivityClass = DownloadDataActivity.class;
+            }else{
+                startActivityClass = MainActivity.class;
+            }
+
 		}
 		Thread splashTread = new Thread() {
 			@Override
