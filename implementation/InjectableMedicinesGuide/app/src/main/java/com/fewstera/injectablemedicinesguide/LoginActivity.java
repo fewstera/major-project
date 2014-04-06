@@ -29,10 +29,6 @@ public class LoginActivity extends Activity {
 		
 		_loginButton = (Button)findViewById(R.id.login_button);
         _auth = new Auth();
-
-        // Reset the download complete boolean so that if a data download has failed
-        // the user isn't displayed with a partial database.
-        Preferences.setDownloadComplete(this, false);
 	}
 
 	@Override
@@ -84,7 +80,7 @@ public class LoginActivity extends Activity {
 
             _auth.setCredentials(_username, _password);
             try{
-			    return new Boolean(_auth.isValid());
+			    return _auth.isValid();
             }catch(Exception e){
                 return null;
             }

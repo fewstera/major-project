@@ -35,6 +35,10 @@ public class DataProgress {
         _finishedCount++;
     }
 
+    public void decreaseFinishedCountBy(int x){
+        _finishedCount = _finishedCount - x;
+    }
+
     public int getFinishedCount(){
         return _finishedCount;
     }

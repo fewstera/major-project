@@ -1,5 +1,7 @@
 package com.fewstera.injectablemedicinesguide;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -20,8 +22,14 @@ import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.PendingRequestListener;
 import com.octo.android.robospice.request.listener.RequestListener;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class DownloadDataActivity extends Activity {
 
@@ -48,6 +56,9 @@ public class DownloadDataActivity extends Activity {
         _dataProgress = DataProgress.getInstance();
         _dataProgress.reset();
 
+        // Reset the download complete boolean so that if a data download has failed
+        // the user isn't displayed with a partial database.
+        Preferences.setDownloadComplete(this, false);
         DatabaseHelper db = new DatabaseHelper(getApplicationContext());
         db.truncateAll();
 
@@ -59,7 +70,6 @@ public class DownloadDataActivity extends Activity {
             _encodedPassword = Auth.getSavedPassword(this);
             e.printStackTrace();
         }
-
         startDownload();
 
 	}
@@ -74,10 +84,15 @@ public class DownloadDataActivity extends Activity {
     private void startLetterDownloads(){
         updateDownloadLetterProgress();
         for (char letter : _letters) {
-            DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest(getApplicationContext(), _encodedUsername, _encodedPassword, letter);
-            _spiceManager.execute(downloadRequest, "drug_download_" + letter, -1, new drugsDownloadRequestListener(letter));
+            startLetterDownload(letter);
         }
     }
+
+    private void startLetterDownload(char letter) {
+        DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest(getApplicationContext(), _encodedUsername, _encodedPassword, letter);
+        _spiceManager.execute(downloadRequest, "drug_download_" + letter, -1, new drugsDownloadRequestListener(letter));
+    }
+
 
     private void updateDownloadLetterProgress(){
         _progressText.setText("Downloading (" + _dataProgress.getDrugList().size() + " of " + _drugCount + ")");
@@ -91,15 +106,11 @@ public class DownloadDataActivity extends Activity {
         if((_dataProgress.getFinishedCount()>=_letters.length) || (_dataProgress.getDrugList().size()>=_drugCount)){
             this.setProgressBarIndeterminateVisibility(false);
             if(_dataProgress.getSucceededLetters().size()<_letters.length){
-                Log.d("MyApplication", "=====Failed letters:===");
-                for(char c : _letters){
-                    if(!_dataProgress.getSucceededLetters().contains(new Character(c))){
-                        Log.d("MyApplication", "FAILED:" + c);
-                    }
-                }
+                //Decrease the amount of finished services to allow the user to try again.
+                _dataProgress.decreaseFinishedCountBy(_letters.length-_dataProgress.getSucceededLetters().size());
+                onDownloadFail(false);
             }else{
-                //Set the download complete to complete.
-                Preferences.setDownloadComplete(this, true);
+                updateCompletePrefs();
                 Log.d("MyApplication", "Finished");
                 Intent intent = new Intent();
                 intent.setClass(DownloadDataActivity.this, MainActivity.class);
@@ -108,6 +119,60 @@ public class DownloadDataActivity extends Activity {
             }
 
         }
+    }
+
+    private void updateCompletePrefs() {
+        //Set the download complete to complete.
+        Preferences.setDownloadComplete(this, true);
+        SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date dateNow = new Date();
+        String dateString = dataFormat.format(dateNow);
+        Preferences.setString(this, Preferences.UPDATE_DATE_KEY, dateString);
+    }
+
+    private void onDownloadFail(boolean index) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Download failed, try again?");
+        String message;
+        if(index){
+            message = "Failed to download drug index.\n\nWould you like to try again?";
+            builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    startDownload();
+                }
+            });
+        }else{
+            String failedLetterString = "";
+            final ArrayList<Character> failedLetters = new ArrayList<Character>();
+            for(char c : _letters){
+                if(!_dataProgress.getSucceededLetters().contains(new Character(c))){
+                    failedLetterString = failedLetterString + c + ", ";
+                    failedLetters.add(new Character(c));
+                }
+            }
+            failedLetterString = failedLetterString.substring(0 , failedLetterString.length() - 1);
+            message = "Failed to download drugs starting with the letters " +
+                    failedLetterString + "\n\nWould you like to try again?";
+
+            builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    for(Character failedLetter : failedLetters){
+                        startLetterDownload(failedLetter.charValue());
+                    }
+                }
+            });
+        }
+        builder.setMessage(message);
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent intent = new Intent();
+                intent.setClass(DownloadDataActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private final class drugsDownloadRequestListener implements RequestListener<Drug[]>, PendingRequestListener<Drug[]> {
@@ -143,6 +208,7 @@ public class DownloadDataActivity extends Activity {
         public void onRequestFailure(SpiceException spiceException) {
             Log.d("MyApplication", "Failed downloading index");
             Toast.makeText(DownloadDataActivity.this, "Failed downloading index", Toast.LENGTH_SHORT).show();
+            onDownloadFail(true);
         }
 
         public void onRequestSuccess(final Integer indexNo) {
@@ -165,12 +231,14 @@ public class DownloadDataActivity extends Activity {
 
     @Override
     protected void onStart() {
-        checkIfFinished();
-        if(_drugCount!=0) updateDownloadLetterProgress();
         _spiceManager.start(this);
-        for(char letter : _letters) {
-            _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + letter, new drugsDownloadRequestListener(letter));
+        if(_drugCount!=0){
+            checkIfFinished();
+            updateDownloadLetterProgress();
+            for(char letter : _letters) {
+                _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + letter, new drugsDownloadRequestListener(letter));
 
+            }
         }
         super.onStart();
     }

@@ -51,4 +51,7 @@
     <change idref="t32" attribute="noEarlierThanConstraintDate" type="date" from="2014-03-14T15:15:00.000Z" to="2014-03-18T16:00:00.000Z" resolved="yes"/>
     <change idref="t32" attribute="resourceLeveledDate" type="date" from="2014-03-14T15:15:00.000Z" resolved="yes"/>
   </task-change-set>
+  <task-change-set user="Aidan Fewster" date="2014-04-03T16:57:47.031Z" timestamp="2014-04-03T16:57:47.031Z">
+    <change idref="t16" attribute="internalEffortDone" type="real" from="70200" to="127800"/>
+  </task-change-set>
 </changelog>

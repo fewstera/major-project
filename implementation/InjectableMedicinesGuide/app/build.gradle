@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:+'
+    compile 'com.android.support:support-v4:18.0.0'
     compile 'com.octo.android.robospice:robospice:1.4.11'
     compile 'com.android.support:appcompat-v7:+'
 }

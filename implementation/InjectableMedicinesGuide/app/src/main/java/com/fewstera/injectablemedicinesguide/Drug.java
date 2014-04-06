@@ -18,10 +18,6 @@ public class Drug implements Comparable<Drug>{
 
     private ArrayList<DrugInformation> _drugInformations;
 
-    public Drug(){
-        super();
-    }
-
     public int getId(){
         return _id;
     }

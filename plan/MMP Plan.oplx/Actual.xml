@@ -132,7 +132,6 @@
     <title>Build prototypes</title>
     <effort>172800</effort>
     <min-estimate>0</min-estimate>
-    <max-estimate>144000</max-estimate>
     <effort-done>172800</effort-done>
     <start-constraint-date>2014-02-25T15:45:00.000Z</start-constraint-date>
     <prerequisite-task idref="t3"/>
@@ -155,7 +154,7 @@
     <effort>201600</effort>
     <min-estimate>28800</min-estimate>
     <max-estimate>288000</max-estimate>
-    <effort-done>70200</effort-done>
+    <effort-done>127800</effort-done>
     <start-constraint-date>2014-03-17T12:15:00.000Z</start-constraint-date>
     <prerequisite-task idref="t9"/>
     <assignment idref="r1"/>

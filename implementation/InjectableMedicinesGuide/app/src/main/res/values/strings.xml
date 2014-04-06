@@ -15,16 +15,22 @@
     <string name="downloading_header">Drug information is downloading</string>
     <string name="downloading_message">As the drug database is large this may take some time, please wait.</string>
     <string name="service_message">Downloading drug data...</string>
-    <string name="last_updated_text">
+    <string name="welcome_text">
 <![CDATA[<b>Welcome to the injectable medicines guide.</b><br/><br/>
-    It is recommended that you update the drug database regularly, so that you have the most recent information
-        <br/><br/>
-        You last performed an update on: <br/>
-        <b>%1$s</b>]]>
+   If this is your first time using the app, press the help button to learn how to use this application.
+   Otherwise press the <b>Browse Drugs</b> button below to begin searching for drugs.]]>
+    </string>
+    <string name="last_updated_text">
+<![CDATA[<b>Last database update: %1$s</b><br/><br/>
+    It is recommended that you update the drug database regularly (at least once every 3 months), so that you have the most recent
+     and correct information.<br/><br/>To update the database press the <b>Update now</b> now button below.
+    ]]>
     </string>
     <string name="update_button">Update now</string>
     <string name="view_drugs_button">Browse Drugs</string>
     <string name="title_activity_browse_drugs">Browse drugs</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="help_button">Help</string>
+
+    <string name="title_activity_view_drug">View Drug</string>
 
 </resources>

@@ -21,7 +21,7 @@ public class Auth {
 		_accountPassword = password;
 	}
 
-    public boolean isValid() {
+    public Boolean isValid() {
         try {
             String encodedUsername = URLEncoder.encode(_accountUsername, "UTF-8");
             String encodedPassword = URLEncoder.encode(_accountPassword, "UTF-8");
@@ -39,11 +39,11 @@ public class Auth {
             //Grabs the login result
             String loginResult = doc.getElementsByTagName("LoginResult").item(0).getTextContent();
 
-            return (loginResult.equals("true"));
+            return new Boolean(loginResult.equals("true"));
 
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
     }
 

@@ -16,8 +16,14 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+        TextView welcomeText = (TextView) findViewById(R.id.welcome_text_view);
+        String welcomeHtml = getResources().getString(R.string.welcome_text);
+        welcomeText.setText(Html.fromHtml(welcomeHtml));
+
         TextView updateText = (TextView) findViewById(R.id.last_update_textview);
-        String textHtml = String.format(getResources().getString(R.string.last_updated_text), "01/04/2014");
+        String lastUpdate = Preferences.getString(this, Preferences.UPDATE_DATE_KEY, "never");
+
+        String textHtml = String.format(getResources().getString(R.string.last_updated_text), lastUpdate);
         updateText.setText(Html.fromHtml(textHtml));
 	}
 
@@ -51,7 +57,7 @@ public class MainActivity extends Activity {
     }
 
     public void viewDrugsClick(View view){
-        Intent intent = new Intent(this, DownloadDataActivity.class);
+        Intent intent = new Intent(this, BrowseDrugsActivity.class);
         startActivity(intent);
     }
 

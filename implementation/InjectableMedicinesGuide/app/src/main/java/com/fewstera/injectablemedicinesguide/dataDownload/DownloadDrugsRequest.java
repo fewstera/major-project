@@ -53,7 +53,6 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     // will be invoked in remote service
     @Override
     public Drug[] loadDataFromNetwork() throws Exception {
-        Log.d("MyApplication", "Loaded " + _letter);
         ArrayList<Drug> newDrugs = fetchDrugsWithLetter(_letter);
         _dataProgress.addSucceededLetter(_letter);
         Drug[] newDrugsArr = new Drug[newDrugs.size()];

@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 public class Preferences {
     public static final String USERNAME_KEY = "_CRED_USERNAME_" ;
     public static final String PASSWORD_KEY = "_CRED_PASSWORD_" ;
+    public static final String UPDATE_DATE_KEY = "_UPDATE_DATE_" ;
     public static final String DOWNLOAD_COMPLETE = "_DOWNLOAD_COMPLETE_" ;
 
     public static void setString(Context context, String key, String value) {
@@ -16,14 +17,18 @@ public class Preferences {
         editor.commit();
     }
 
-    public static String getString(Context context, String key) {
+    public static String getString(Context context, String key, String fallback) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         try {
-            return sharedPreferences.getString(key, null);
+            return sharedPreferences.getString(key, fallback);
         } catch (Exception e) {
-             e.printStackTrace();
-             return null;
+            e.printStackTrace();
+            return fallback;
         }
+    }
+
+    public static String getString(Context context, String key) {
+        return Preferences.getString(context, key, null);
     }
     
     public static void delete(Context context, String key) {
