@@ -32,12 +32,26 @@
     <string name="help_button">Help</string>
 
     <string name="title_activity_view_drug">Monograph of %1$s</string>
-    <string name="sup_css"><![CDATA[<style type="text/css">sup { vertical-align: top; font-size: 0.6em; }</style>]]></string>
     <string name="action_home">Home</string>
     <string name="action_browse_drugs">Browse drugs</string>
     <string name="action_update">Update database</string>
     <string name="action_exit">Exit</string>
     <string name="calculator_button">Calculator</string>
     <string name="title_activity_calc_drug_select">Select a drug for the calculator</string>
-
+    <string name="title_activity_calculate">Calculator for %1$s</string>
+    <string name="calc_dose_from_ir">Dose from Infusion Rate</string>
+    <string name="calc_ir_from_dose">Infusion Rate from Dose</string>
+    <string name="patient_weight_header">Patient weight (kg)</string>
+    <string name="time_header">Time (minutes)</string>
+    <string name="concentration_header">Concentration (%1$s)</string>
+    <string name="dose_header">Dose (%1$s)</string>
+    <string name="infusion_rate_header">Infusion rate (%1$s)</string>
+    <string name="calculate_button">Calculate</string>
+    <string name="enter_value">Enter a value</string>
+    <string name="calculator_explain">Enter in the information below and click calculate to perform calculation.</string>
+    <string name="time">60</string>
+    <string-array name="calculation_types">
+        <item>@string/calc_dose_from_ir</item>
+        <item>@string/calc_ir_from_dose</item>
+    </string-array>
 </resources>

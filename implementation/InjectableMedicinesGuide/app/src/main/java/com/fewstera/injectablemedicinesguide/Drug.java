@@ -18,7 +18,7 @@ public class Drug implements Comparable<Drug>{
     private String _medicineName;
     private String _version;
     private Date _datePublished;
-    private DatabaseHelper _db;
+    private DrugCalculatorInfo _calculatorInfo;
 
     private ArrayList<DrugInformation> _drugInformations;
 
@@ -99,6 +99,14 @@ public class Drug implements Comparable<Drug>{
             _drugInformations = db.getDrugInformationsFromDrugId(this.getId());
         }
         return _drugInformations;
+    }
+
+    public DrugCalculatorInfo getCalculatorInfo(Context context){
+        if(_calculatorInfo==null){
+            DatabaseHelper db = new DatabaseHelper(context);
+            _calculatorInfo = db.getDrugCalcInfoFromDrugId(this.getId());
+        }
+        return _calculatorInfo;
     }
 
     public int compareTo(Drug test) {

@@ -312,7 +312,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return drugInfos;
-
     }
 
     private DrugInformation cursorToDrugInfo(Cursor cursor) {
@@ -323,5 +322,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         headerHelper = (headerHelper=="") ? null : headerHelper;
 
         return new DrugInformation(id, headerText, headerHelper, sectionText);
+    }
+
+
+    public DrugCalculatorInfo getDrugCalcInfoFromDrugId(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        DrugCalculatorInfo calcInfo;
+
+        String[] calcInfoColumns = {DatabaseHelper.F_KEY_DRUG_ID, DatabaseHelper.KEY_INFUSION_LABEL,
+                DatabaseHelper.KEY_INFUSION_UNITS, DatabaseHelper.KEY_DOSE_UNITS,
+                DatabaseHelper.KEY_WEIGHT_REQ, DatabaseHelper.KEY_TIME_REQ, DatabaseHelper.KEY_FACTOR,
+                DatabaseHelper.KEY_CONCENTRATION_UNITS};
+
+        String idString = String.valueOf(id);
+        Cursor cursor = db.query(DatabaseHelper.TABLE_DRUG_CALCS,
+                calcInfoColumns, DatabaseHelper.F_KEY_DRUG_ID + "=?", new String[] {idString}, null, null, null);
+
+        cursor.moveToFirst();
+        if(cursor.isAfterLast()) {
+            calcInfo = null;
+        }else{
+            calcInfo = cursorToDrugCalculatorInfo(cursor);
+        }
+        cursor.close();
+        return calcInfo;
+
+    }
+
+    private DrugCalculatorInfo cursorToDrugCalculatorInfo(Cursor cursor) {
+        DrugCalculatorInfo calculatorInfo = new DrugCalculatorInfo();
+        calculatorInfo.setDrugId(cursor.getInt(0));
+        calculatorInfo.setInfusionRateLabel(cursor.getString(1));
+        calculatorInfo.setInfusionRateUnits(cursor.getString(2));
+        calculatorInfo.setDoseUnits(cursor.getString(3));
+        boolean weightRequired = (cursor.getInt(4)==1);
+        calculatorInfo.setPatientWeightRequired(weightRequired);
+        boolean timeRequired = (cursor.getInt(5)==1);
+        calculatorInfo.setTimeRequired(timeRequired);
+        Integer factor = (cursor.isNull(6)) ? null : new Integer(cursor.getInt(6));
+        calculatorInfo.setFactor(factor);
+        calculatorInfo.setConcentrationUnits(cursor.getString(7));
+
+        return calculatorInfo;
     }
 }

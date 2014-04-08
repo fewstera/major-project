@@ -107,7 +107,7 @@ public class DownloadDataActivity extends LoggedInActivity {
     }
 
     private void checkIfFinished() {
-        if((_dataProgress.getFinishedCount()>=_letters.length) || (_dataProgress.getDrugList().size()>=_drugCount)){
+        if((_dataProgress.getFinishedCount()>=(_letters.length+2)) || (_dataProgress.getDrugList().size()>=_drugCount)){
             this.setProgressBarIndeterminateVisibility(false);
             if(_dataProgress.getSucceededLetters().size()<_letters.length){
                 //Decrease the amount of finished services to allow the user to try again.

@@ -40,14 +40,9 @@ public class CalcDrugSelectActivity extends LoggedInActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc_drug_select);
-        Log.d(MainActivity.DEBUG_NAME, "Started calc activity");
         getActionBar().setDisplayHomeAsUpEnabled(true);
-        Log.d(MainActivity.DEBUG_NAME, "Populating");
         poplateDrugsListView();
-        Log.d(MainActivity.DEBUG_NAME, "Listener");
         startTextChangedListener();
-
-        Log.d(MainActivity.DEBUG_NAME, "Loaded");
 
 
     }
@@ -57,13 +52,8 @@ public class CalcDrugSelectActivity extends LoggedInActivity {
      */
     private void poplateDrugsListView() {
         /* Fetches all drug index from DB */
-        Log.d(MainActivity.DEBUG_NAME, "Fetching data");
         List<Drug> drugsWithCalcs = _db.getAllDrugsWithCalcs();
-        Log.d(MainActivity.DEBUG_NAME, "Got data");
 
-        for(Drug d: drugsWithCalcs){
-            Log.d(MainActivity.DEBUG_NAME, "Drug name" + d.getName());
-        }
         /* Starts a new list adapter using the drugsIndex */
         _listAdapter = new ArrayAdapter<Drug>(this,
                 android.R.layout.simple_list_item_1, drugsWithCalcs);
@@ -81,7 +71,7 @@ public class CalcDrugSelectActivity extends LoggedInActivity {
                 /* Fetch the drug index for the index which has been click */
                 Drug drug = (Drug)adapter.getItemAtPosition(position);
 
-                Intent in = new Intent(CalcDrugSelectActivity.this, ViewDrugActivity.class);
+                Intent in = new Intent(CalcDrugSelectActivity.this, CalculateActivity.class);
                 /* Adds needed information for the view drug activity */
                 in.putExtra(BrowseDrugsActivity.EXTRA_DRUG_ID, drug.getId());
 

@@ -28,6 +28,8 @@
         </activity>
         <activity android:label="@string/title_activity_view_drug" android:name="com.fewstera.injectablemedicinesguide.ViewDrugActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity">
         </activity>
+        <activity android:label="@string/title_activity_calculate" android:name="com.fewstera.injectablemedicinesguide.CalculateActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.CalcDrugSelectActivity" android:windowSoftInputMode="stateHidden">
+        </activity>
     </application>
 
 </manifest>

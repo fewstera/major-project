@@ -62,6 +62,12 @@
             android:parentActivityName="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity"
             android:label="@string/title_activity_view_drug" >
         </activity>
+        <activity
+            android:name="com.fewstera.injectablemedicinesguide.CalculateActivity"
+            android:parentActivityName="com.fewstera.injectablemedicinesguide.CalcDrugSelectActivity"
+            android:label="@string/title_activity_calculate"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
     </application>
 
 </manifest>

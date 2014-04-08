@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string-array name="calculation_types">
+        <item>@string/calc_dose_from_ir</item>
+        <item>@string/calc_ir_from_dose</item>
+    </string-array>
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml -->
     <eat-comment />
 
@@ -530,10 +537,18 @@
     <string name="action_settings">Settings</string>
     <string name="action_update">Update database</string>
     <string name="app_name">Injectable Medicines Guide</string>
+    <string name="calc_dose_from_ir">Dose from Infusion Rate</string>
+    <string name="calc_ir_from_dose">Infusion Rate from Dose</string>
+    <string name="calculate_button">Calculate</string>
     <string name="calculator_button">Calculator</string>
+    <string name="calculator_explain">Enter in the information below and click calculate to perform calculation.</string>
+    <string name="concentration_header">Concentration (%1$s)</string>
+    <string name="dose_header">Dose (%1$s)</string>
     <string name="downloading_header">Drug information is downloading</string>
     <string name="downloading_message">As the drug database is large this may take some time, please wait.</string>
+    <string name="enter_value">Enter a value</string>
     <string name="help_button">Help</string>
+    <string name="infusion_rate_header">Infusion rate (%1$s)</string>
     <string name="last_updated_text">
 <![CDATA[<b>Last database update: %1$s</b><br/><br/>
     It is recommended that you update the drug database regularly (at least once every 3 months), so that you have the most recent
@@ -545,10 +560,13 @@
     <string name="login_explain">Please login using your NHS account, your credentials will be stored for ease of use.</string>
     <string name="login_message">Login to your account</string>
     <string name="password_hint">Password</string>
+    <string name="patient_weight_header">Patient weight (kg)</string>
     <string name="service_message">Downloading drug data...</string>
-    <string name="sup_css"><![CDATA[<style type="text/css">sup { vertical-align: top; font-size: 0.6em; }</style>]]></string>
+    <string name="time">60</string>
+    <string name="time_header">Time (minutes)</string>
     <string name="title_activity_browse_drugs">Browse drugs</string>
     <string name="title_activity_calc_drug_select">Select a drug for the calculator</string>
+    <string name="title_activity_calculate">Calculator for %1$s</string>
     <string name="title_activity_download_data">Downloading monographs</string>
     <string name="title_activity_login">Account Login</string>
     <string name="title_activity_view_drug">Monograph of %1$s</string>
