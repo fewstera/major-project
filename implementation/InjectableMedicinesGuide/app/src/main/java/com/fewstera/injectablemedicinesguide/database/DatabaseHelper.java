@@ -6,16 +6,12 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.fewstera.injectablemedicinesguide.*;
-
-import org.w3c.dom.Comment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,13 +20,14 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database Version and Name
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
     private static final String DATABASE_NAME = "drugDatabase";
 
     //Table names
     private static final String TABLE_DRUGS = "drugs";
     private static final String TABLE_DRUG_INFOS = "drugInformations";
     private static final String TABLE_DRUG_INDEXS = "drugIndexs";
+    private static final String TABLE_DRUG_CALCS = "drugCalcs";
 
     //Common column names
     private static final String KEY_ID = "id";
@@ -48,6 +45,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_HEADER_TEXT = "header_text";
     private static final String KEY_HEADER_HELPER = "header_helper";
     private static final String KEY_SECTION_TEXT = "key_section_text";
+
+    //DrugCalcs table columns
+    private static final String KEY_INFUSION_LABEL = "infusion_rate_label";
+    private static final String KEY_INFUSION_UNITS = "infusion_rate_units";
+    private static final String KEY_DOSE_UNITS = "dose_units";
+    private static final String KEY_WEIGHT_REQ = "patient_weight_req";
+    private static final String KEY_TIME_REQ = "time_req";
+    private static final String KEY_FACTOR = "factor";
+    private static final String KEY_CONCENTRATION_UNITS = "concentration_units";
 
     //DrugIndex table columns
     private static final String KEY_INDEX_NAME = "name";
@@ -71,6 +77,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TABLE_DRUG_INDEXS + "(" + KEY_ID + " INTEGER PRIMARY KEY, "
             + F_KEY_DRUG_ID + " INTEGER NOT NULL, " + KEY_INDEX_NAME + " TEXT NOT NULL)";
 
+    //DrugIndex table creates
+    private static final String CREATE_TABLE_DRUG_CALCS = "CREATE TABLE "
+            + TABLE_DRUG_CALCS + "(" + KEY_ID + " INTEGER PRIMARY KEY, "
+            + F_KEY_DRUG_ID + " INTEGER NOT NULL, " + KEY_INFUSION_LABEL + " TEXT NOT NULL,"
+            + KEY_INFUSION_UNITS + " TEXT NOT NULL, " + KEY_DOSE_UNITS + " TEXT NOT NULL,"
+            + KEY_WEIGHT_REQ + " INTEGER NOT NULL, " + KEY_TIME_REQ + " INTEGER NOT NULL, "
+            + KEY_FACTOR + " INTEGER, " + KEY_CONCENTRATION_UNITS + " TEXT NOT NULL)";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -81,6 +95,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_DRUGS);
         db.execSQL(CREATE_TABLE_DRUG_INFORMATIONS);
         db.execSQL(CREATE_TABLE_DRUG_INDEX);
+        db.execSQL(CREATE_TABLE_DRUG_CALCS);
     }
 
     @Override
@@ -89,6 +104,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUGS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INFOS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INDEXS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_CALCS);
+
+        //Create new ones
+        onCreate(db);
+    }
+
+    public void truncateAll(){
+        //Drop tables
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUGS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INFOS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INDEXS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_CALCS);
 
         //Create new ones
         onCreate(db);
@@ -147,15 +175,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void truncateAll(){
-        //Drop tables
+    /*
+        *   Saves the given drug index to the database
+    */
+    public long createDrugCalcInfo(DrugCalculatorInfo drugCalculatorInfo) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUGS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INFOS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INDEXS);
+        ContentValues values = new ContentValues();
+        values.put(F_KEY_DRUG_ID, drugCalculatorInfo.getDrugId());
+        values.put(KEY_INFUSION_LABEL, drugCalculatorInfo.getInfusionRateLabel());
+        values.put(KEY_INFUSION_UNITS, drugCalculatorInfo.getInfusionRateUnits());
+        values.put(KEY_DOSE_UNITS, drugCalculatorInfo.getDoseUnits());
 
-        //Create new ones
-        onCreate(db);
+        int weightReq = (drugCalculatorInfo.isPatientWeightRequired()) ? 1 : 0;
+        values.put(KEY_WEIGHT_REQ, weightReq);
+
+        int timeReq = (drugCalculatorInfo.isTimeRequired()) ? 1 : 0;
+        values.put(KEY_TIME_REQ, timeReq);
+
+        values.put(KEY_FACTOR, drugCalculatorInfo.getFactor());
+        values.put(KEY_CONCENTRATION_UNITS, drugCalculatorInfo.getConcentrationUnits());
+
+        return db.insert(TABLE_DRUG_CALCS, null, values);
+
     }
 
     public long getDrugsCount(){
@@ -167,6 +208,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return DatabaseUtils.queryNumEntries(db, TABLE_DRUGS);
     }
+
+    public List<Drug> getAllDrugsWithCalcs() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        List<Drug> drugs = new ArrayList<Drug>();
+        String[] drugCalcColumns = {DatabaseHelper.F_KEY_DRUG_ID};
+
+        Cursor cursor = db.query(DatabaseHelper.TABLE_DRUG_CALCS,
+                drugCalcColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Drug drug = getDrugFromId(cursor.getInt(0));
+            if(drug!=null){ drugs.add(drug); }
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return drugs;
+    }
+
 
     public List<DrugIndex> getAllDrugIndexes() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -183,7 +244,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             drugIndexes.add(cursorToDrugIndex(cursor));
             cursor.moveToNext();
         }
-        // make sure to close the cursor
         cursor.close();
         return drugIndexes;
     }
@@ -196,6 +256,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Drug getDrugFromId(int id){
+        Drug returnDrug;
         String[] drugColumns = {DatabaseHelper.KEY_ID, DatabaseHelper.KEY_NAME,
                 DatabaseHelper.KEY_ROUTE, DatabaseHelper.KEY_TRADE_NAME, DatabaseHelper.KEY_MEDICINE_NAME,
                 DatabaseHelper.KEY_VERSION, DatabaseHelper.KEY_DATE_PUBLISHED};
@@ -206,10 +267,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 drugColumns, DatabaseHelper.KEY_ID + "=?", new String[] {idString}, null, null, null);
         drugCursor.moveToFirst();
         if(drugCursor.isAfterLast()){
-            return null;
+            returnDrug = null;
         }else{
-            return cursorToDrug(drugCursor);
+            returnDrug = cursorToDrug(drugCursor);
         }
+        drugCursor.close();
+        return returnDrug;
     }
 
     private Drug cursorToDrug(Cursor cursor) {
@@ -230,4 +293,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return drug;
     }
 
+    public ArrayList<DrugInformation> getDrugInformationsFromDrugId(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ArrayList<DrugInformation> drugInfos = new ArrayList<DrugInformation>();
+
+        String[] drugInfoColumns = {DatabaseHelper.KEY_ID, DatabaseHelper.KEY_HEADER_TEXT,
+                DatabaseHelper.KEY_HEADER_HELPER, DatabaseHelper.KEY_SECTION_TEXT};
+
+        String idString = String.valueOf(id);
+        Cursor cursor = db.query(DatabaseHelper.TABLE_DRUG_INFOS,
+                drugInfoColumns, DatabaseHelper.F_KEY_DRUG_ID + "=?", new String[] {idString}, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            drugInfos.add(cursorToDrugInfo(cursor));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return drugInfos;
+
+    }
+
+    private DrugInformation cursorToDrugInfo(Cursor cursor) {
+        int id = cursor.getInt(0);
+        String headerText = cursor.getString(1);
+        String headerHelper = cursor.getString(2);
+        String sectionText = cursor.getString(3);
+        headerHelper = (headerHelper=="") ? null : headerHelper;
+
+        return new DrugInformation(id, headerText, headerHelper, sectionText);
+    }
 }

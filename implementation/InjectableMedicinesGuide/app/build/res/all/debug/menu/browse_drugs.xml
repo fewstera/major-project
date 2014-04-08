@@ -1,9 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:showAsAction="never"
-        android:orderInCategory="100" />
-</menu>
-<!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/menu/browse_drugs.xml -->

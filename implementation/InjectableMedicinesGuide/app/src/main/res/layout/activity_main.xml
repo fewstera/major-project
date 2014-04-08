@@ -44,6 +44,15 @@
         android:text="@string/view_drugs_button"
         android:textColor="@color/white"
         android:onClick="viewDrugsClick"/>
+    <Button
+        android:id="@+id/calculator_button"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/view_drugs_button"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/calculator_button"
+        android:textColor="@color/white"
+        android:onClick="calculatorClick"/>
     </RelativeLayout>
 
     <RelativeLayout

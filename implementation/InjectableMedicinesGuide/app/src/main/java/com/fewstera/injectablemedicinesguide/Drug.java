@@ -3,8 +3,11 @@ package com.fewstera.injectablemedicinesguide;
 import java.util.ArrayList;
 import java.util.Date;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 
 public class Drug implements Comparable<Drug>{
 	
@@ -15,6 +18,7 @@ public class Drug implements Comparable<Drug>{
     private String _medicineName;
     private String _version;
     private Date _datePublished;
+    private DatabaseHelper _db;
 
     private ArrayList<DrugInformation> _drugInformations;
 
@@ -88,9 +92,22 @@ public class Drug implements Comparable<Drug>{
         return _drugInformations;
     }
 
+    //Get an ArrayList of all the drug information from database
+    public ArrayList<DrugInformation> getDrugInformations(Context context){
+        if(_drugInformations==null){
+            DatabaseHelper db = new DatabaseHelper(context);
+            _drugInformations = db.getDrugInformationsFromDrugId(this.getId());
+        }
+        return _drugInformations;
+    }
+
     public int compareTo(Drug test) {
         return getName().compareTo(test.getName());
     }
 
+    @Override
+    public String toString(){
+        return getName();
+    }
 	
 }

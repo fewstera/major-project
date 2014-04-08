@@ -1,11 +1,9 @@
 package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.fewstera.injectablemedicinesguide.Drug;
 import com.fewstera.injectablemedicinesguide.DrugIndex;
-import com.fewstera.injectablemedicinesguide.DrugInformation;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
 
@@ -18,10 +16,7 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -96,7 +91,7 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
             e.printStackTrace();
             throw(e);
         }
-
+        _dataProgress.setIndexSize(_uniqueIds.size());
         return _uniqueIds.size();
     }
 

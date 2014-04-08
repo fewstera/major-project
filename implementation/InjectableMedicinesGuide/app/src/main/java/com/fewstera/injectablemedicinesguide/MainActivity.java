@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends LoggedInActivity {
+
+    public static final String DEBUG_NAME = "com.fewstera.IMG";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,33 +29,15 @@ public class MainActivity extends Activity {
         updateText.setText(Html.fromHtml(textHtml));
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
-	    switch (item.getItemId()) {
-	        case R.id.action_logout:
-	        	Auth.logout(this);
-	        	Intent intent = new Intent();
-				intent.setClass(MainActivity.this, LoginActivity.class);
-				startActivity(intent);
-	            finish();
-	            return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
-	}
-
     public void updateClick(View view){
         Intent intent = new Intent(this, DownloadDataActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void calculatorClick(View view){
+        Intent intent = new Intent(this, CalcDrugSelectActivity.class);
+        startActivity(intent);
     }
 
     public void viewDrugsClick(View view){

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,34 +18,36 @@ import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import java.util.List;
 
 /**
- * Activity for browsing drugs
+ * Activity for selecting which drug to calculate dosgae for
  *
- * This activity is used to display a list of all drugs within the database. The user can search
- * for drugs by entering a string. Once the user has found a drug, they can click it, which will
- * open a ViewDrugActivity.
+ * This activity is used to display a list of all drugs which have a calculator within the database.
+ * The user can search for drugs by entering a string. Once the user has found a drug, they can click it,
+ * which will open the calculator activity.
  *
  * @author Aidan Wynne Fewster
  * @version 1.0
  * @since 1.0
  */
-public class BrowseDrugsActivity extends LoggedInActivity {
+public class CalcDrugSelectActivity extends LoggedInActivity {
 
-    /* The Extras which are passed to the ViewDrug activity */
+    /* The Extras which are passed to the CalculateDrug activity */
     public final static String EXTRA_DRUG_ID = "com.fewstera.injectablemedicinesguide.extras.drugId";
-    public final static String EXTRA_INDEX_NAME = "com.fewstera.injectablemedicinesguide.extras.drugName";
 
     DatabaseHelper _db = new DatabaseHelper(this);
-    ArrayAdapter<DrugIndex> _listAdapter;
+    ArrayAdapter<Drug> _listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browse_drugs);
-
+        setContentView(R.layout.activity_calc_drug_select);
+        Log.d(MainActivity.DEBUG_NAME, "Started calc activity");
         getActionBar().setDisplayHomeAsUpEnabled(true);
-
+        Log.d(MainActivity.DEBUG_NAME, "Populating");
         poplateDrugsListView();
+        Log.d(MainActivity.DEBUG_NAME, "Listener");
         startTextChangedListener();
+
+        Log.d(MainActivity.DEBUG_NAME, "Loaded");
 
 
     }
@@ -54,11 +57,16 @@ public class BrowseDrugsActivity extends LoggedInActivity {
      */
     private void poplateDrugsListView() {
         /* Fetches all drug index from DB */
-        List<DrugIndex> drugsIndex = _db.getAllDrugIndexes();
+        Log.d(MainActivity.DEBUG_NAME, "Fetching data");
+        List<Drug> drugsWithCalcs = _db.getAllDrugsWithCalcs();
+        Log.d(MainActivity.DEBUG_NAME, "Got data");
 
+        for(Drug d: drugsWithCalcs){
+            Log.d(MainActivity.DEBUG_NAME, "Drug name" + d.getName());
+        }
         /* Starts a new list adapter using the drugsIndex */
-        _listAdapter = new ArrayAdapter<DrugIndex>(this,
-                android.R.layout.simple_list_item_1, drugsIndex);
+        _listAdapter = new ArrayAdapter<Drug>(this,
+                android.R.layout.simple_list_item_1, drugsWithCalcs);
 
         ListView myList=(ListView)findViewById(android.R.id.list);
         /* Adds the adapter to the ListView */
@@ -71,12 +79,11 @@ public class BrowseDrugsActivity extends LoggedInActivity {
                                     long arg3)
             {
                 /* Fetch the drug index for the index which has been click */
-                DrugIndex drugIndex = (DrugIndex)adapter.getItemAtPosition(position);
+                Drug drug = (Drug)adapter.getItemAtPosition(position);
 
-                Intent in = new Intent(BrowseDrugsActivity.this, ViewDrugActivity.class);
+                Intent in = new Intent(CalcDrugSelectActivity.this, ViewDrugActivity.class);
                 /* Adds needed information for the view drug activity */
-                in.putExtra(BrowseDrugsActivity.EXTRA_INDEX_NAME, drugIndex.getName());
-                in.putExtra(BrowseDrugsActivity.EXTRA_DRUG_ID, drugIndex.getDrugId());
+                in.putExtra(BrowseDrugsActivity.EXTRA_DRUG_ID, drug.getId());
 
                 /* Starts the view drug activity */
                 startActivity(in);

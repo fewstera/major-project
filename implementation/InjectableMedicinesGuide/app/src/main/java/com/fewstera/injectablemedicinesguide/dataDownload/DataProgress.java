@@ -12,7 +12,8 @@ public class DataProgress {
 
     private ArrayList<Character> _successLetters;
     private ArrayList<Drug> _drugList;
-    private int _finishedCount;
+    private int _finishedCount, _indexSize;
+    private boolean _calcsDownloaded, _calcsStarted, _lettersStarted;
 
     protected DataProgress() {
         // Prevents object being instantiated
@@ -28,7 +29,8 @@ public class DataProgress {
     public void reset(){
         _successLetters = new ArrayList<Character>();
         _drugList = new ArrayList<Drug>();
-        _finishedCount = 0;
+        _finishedCount = _indexSize = 0;
+        _calcsStarted = _calcsDownloaded = _lettersStarted = false;
     }
 
     public void increaseFinishedCount(){
@@ -57,5 +59,29 @@ public class DataProgress {
 
     public ArrayList<Drug> getDrugList(){
         return _drugList;
+    }
+
+    public void lettersHasStarted(){
+        _lettersStarted = true;
+    }
+
+    public boolean shouldStartCalcsDownload(){
+        return (_indexSize>0&&!_calcsStarted);
+    }
+
+    public boolean shouldStartLetters(){
+        return (_calcsDownloaded&&!_lettersStarted);
+    }
+
+    public void setIndexSize(int indexSize) {
+        _indexSize = indexSize;
+    }
+
+    public int getIndexSize() {
+        return _indexSize;
+    }
+
+    public void calcsHaveDownloaded() {
+        _calcsDownloaded = true;
     }
 }

@@ -74,6 +74,7 @@
     <orderEntry type="library" exported="" name="commons-lang3-3.2.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="commons-io-1.3.2" level="project" />
+    <orderEntry type="library" exported="" name="ComAndroidSupportAppcompatV71901.aar" level="project" />
     <orderEntry type="library" exported="" name="robospice-1.4.11" level="project" />
   </component>
 </module>

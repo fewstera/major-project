@@ -20,11 +20,13 @@
         </activity>
         <activity android:label="@string/title_activity_login" android:name="com.fewstera.injectablemedicinesguide.LoginActivity">
         </activity>
-        <activity android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:label="@string/title_activity_download_data" android:name="com.fewstera.injectablemedicinesguide.DownloadDataActivity">
+        <activity android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:label="@string/title_activity_download_data" android:name="com.fewstera.injectablemedicinesguide.DownloadDataActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.LoginActivity">
         </activity>
-        <activity android:label="@string/title_activity_browse_drugs" android:name="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity" android:windowSoftInputMode="stateHidden">
+        <activity android:label="@string/title_activity_browse_drugs" android:name="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.MainActivity" android:windowSoftInputMode="stateHidden">
         </activity>
-        <activity android:label="@string/title_activity_view_drug" android:name="com.fewstera.injectablemedicinesguide.ViewDrugActivity">
+        <activity android:label="@string/title_activity_calc_drug_select" android:name="com.fewstera.injectablemedicinesguide.CalcDrugSelectActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.MainActivity" android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:label="@string/title_activity_view_drug" android:name="com.fewstera.injectablemedicinesguide.ViewDrugActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity">
         </activity>
     </application>
 

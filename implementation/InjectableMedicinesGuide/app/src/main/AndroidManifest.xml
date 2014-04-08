@@ -41,16 +41,25 @@
         </activity>
         <activity
             android:name="com.fewstera.injectablemedicinesguide.DownloadDataActivity"
+            android:parentActivityName="com.fewstera.injectablemedicinesguide.LoginActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/title_activity_download_data" >
         </activity>
         <activity
             android:name="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity"
+            android:parentActivityName="com.fewstera.injectablemedicinesguide.MainActivity"
             android:label="@string/title_activity_browse_drugs"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
+            android:name="com.fewstera.injectablemedicinesguide.CalcDrugSelectActivity"
+            android:parentActivityName="com.fewstera.injectablemedicinesguide.MainActivity"
+            android:label="@string/title_activity_calc_drug_select"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
             android:name="com.fewstera.injectablemedicinesguide.ViewDrugActivity"
+            android:parentActivityName="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity"
             android:label="@string/title_activity_view_drug" >
         </activity>
     </application>

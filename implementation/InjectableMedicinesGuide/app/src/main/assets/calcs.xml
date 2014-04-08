@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DrugCalculations>
+   <DrugCalculation>
+      <DrugNo>1135</DrugNo>
+      <InfusionRateLabel>Dopamine infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1201</DrugNo>
+      <InfusionRateLabel>Noradrenaline infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1232</DrugNo>
+      <InfusionRateLabel>Adrenaline infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1529</DrugNo>
+      <InfusionRateLabel>Midazolam infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>147</DrugNo>
+      <InfusionRateLabel>Glyceryl trinitrate infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/minute</DoseUnits>
+      <PatientWeightRequired>FALSE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1620</DrugNo>
+      <InfusionRateLabel>Dobutamine infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1149</DrugNo>
+      <InfusionRateLabel>Epoprostenol 1.5mg  infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>nanograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>nanograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1428</DrugNo>
+      <InfusionRateLabel>Epoprostenol 500micrograms  infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>nanograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>nanograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1087</DrugNo>
+      <InfusionRateLabel>Clonidine infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>983</DrugNo>
+      <InfusionRateLabel>Aminophylline maintenance dose infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1102</DrugNo>
+      <InfusionRateLabel>Sodium nitroprusside infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1773</DrugNo>
+      <InfusionRateLabel>Aminophylline maintenance dose infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1887</DrugNo>
+      <InfusionRateLabel>Adrenaline infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1823</DrugNo>
+      <InfusionRateLabel>Glyceryl trinitrate infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/minute</DoseUnits>
+      <PatientWeightRequired>FALSE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1890</DrugNo>
+      <InfusionRateLabel>Epoprostenol 500micrograms  infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>nanograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>nanograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1866</DrugNo>
+      <InfusionRateLabel>Clonidine infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1622</DrugNo>
+      <InfusionRateLabel>Levosimendan infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1555</DrugNo>
+      <InfusionRateLabel>Pentagastrin infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor>0</Factor>
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1899</DrugNo>
+      <InfusionRateLabel>Argatroban infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>2229</DrugNo>
+      <InfusionRateLabel>Mivacurium infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>1585</DrugNo>
+      <InfusionRateLabel>Rocuronium bromide infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/hour</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>FALSE</TimeRequired>
+      <Factor>1000</Factor>
+      <ConcentrationUnits>mg/mL</ConcentrationUnits>
+   </DrugCalculation>
+   <DrugCalculation>
+      <DrugNo>2169</DrugNo>
+      <InfusionRateLabel>Dopexamine infusion rate</InfusionRateLabel>
+      <InfusionRateUnits>mL/hour</InfusionRateUnits>
+      <DoseUnits>micrograms/kg/minute</DoseUnits>
+      <PatientWeightRequired>TRUE</PatientWeightRequired>
+      <TimeRequired>TRUE</TimeRequired>
+      <Factor />
+      <ConcentrationUnits>micrograms/mL</ConcentrationUnits>
+   </DrugCalculation>
+</DrugCalculations>

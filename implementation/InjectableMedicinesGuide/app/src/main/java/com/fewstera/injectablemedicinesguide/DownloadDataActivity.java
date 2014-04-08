@@ -4,34 +4,27 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
-import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.Window;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fewstera.injectablemedicinesguide.dataDownload.DataProgress;
-import com.fewstera.injectablemedicinesguide.dataDownload.DownloadDrugsRequest;
-import com.fewstera.injectablemedicinesguide.dataDownload.DownloadIndexRequest;
-import com.fewstera.injectablemedicinesguide.dataDownload.DownloadService;
+import com.fewstera.injectablemedicinesguide.dataDownload.*;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.PendingRequestListener;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public class DownloadDataActivity extends Activity {
+public class DownloadDataActivity extends LoggedInActivity {
 
     private SpiceManager _spiceManager = new SpiceManager(DownloadService.class);
     private final char[] _letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
@@ -40,8 +33,11 @@ public class DownloadDataActivity extends Activity {
     ProgressBar _progressBar;
     TextView _progressText;
 
-    String _encodedUsername;
-    String _encodedPassword;
+    private String _encodedUsername, _encodedPassword;
+
+    private final int INDEX_FAIL = 0;
+    private final int CALCS_FAIL = 1;
+    private final int LETTERS_FAIL = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +52,10 @@ public class DownloadDataActivity extends Activity {
         _dataProgress = DataProgress.getInstance();
         _dataProgress.reset();
 
-        // Reset the download complete boolean so that if a data download has failed
-        // the user isn't displayed with a partial database.
+        /*
+           *  Reset the download complete boolean so that if a data download has failed
+           *  the user isn't displayed with a partial database.
+        */
         Preferences.setDownloadComplete(this, false);
         DatabaseHelper db = new DatabaseHelper(getApplicationContext());
         db.truncateAll();
@@ -81,7 +79,15 @@ public class DownloadDataActivity extends Activity {
         _spiceManager.execute(downloadRequest, "index_download", -1, new indexDownloadRequestListener());
     }
 
+    private void startCalcInfoDownload(){
+        this.setProgressBarIndeterminateVisibility(true);
+        _progressText.setText("Downloading drug calculation information");
+        DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(getApplicationContext(), _encodedUsername, _encodedPassword);
+        _spiceManager.execute(downloadRequest, "calcs_download", -1, new calcsDownloadRequestListener());
+    }
+
     private void startLetterDownloads(){
+        _dataProgress.lettersHasStarted();
         updateDownloadLetterProgress();
         for (char letter : _letters) {
             startLetterDownload(letter);
@@ -101,17 +107,14 @@ public class DownloadDataActivity extends Activity {
     }
 
     private void checkIfFinished() {
-        Log.d("MyApplication", "CheckIfFinished: FinishedCount: " + _dataProgress.getFinishedCount()
-                + ", ListSize: " + _dataProgress.getDrugList().size());
         if((_dataProgress.getFinishedCount()>=_letters.length) || (_dataProgress.getDrugList().size()>=_drugCount)){
             this.setProgressBarIndeterminateVisibility(false);
             if(_dataProgress.getSucceededLetters().size()<_letters.length){
                 //Decrease the amount of finished services to allow the user to try again.
                 _dataProgress.decreaseFinishedCountBy(_letters.length-_dataProgress.getSucceededLetters().size());
-                onDownloadFail(false);
+                onDownloadFail(LETTERS_FAIL);
             }else{
                 updateCompletePrefs();
-                Log.d("MyApplication", "Finished");
                 Intent intent = new Intent();
                 intent.setClass(DownloadDataActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -130,15 +133,22 @@ public class DownloadDataActivity extends Activity {
         Preferences.setString(this, Preferences.UPDATE_DATE_KEY, dateString);
     }
 
-    private void onDownloadFail(boolean index) {
+    private void onDownloadFail(int type) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Download failed, try again?");
         String message;
-        if(index){
+        if(type==INDEX_FAIL){
             message = "Failed to download drug index.\n\nWould you like to try again?";
             builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     startDownload();
+                }
+            });
+        }else if(type==CALCS_FAIL){
+            message = "Failed to download drug calculation info.\n\nWould you like to try again?";
+            builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    startCalcInfoDownload();
                 }
             });
         }else{
@@ -185,13 +195,11 @@ public class DownloadDataActivity extends Activity {
         }
 
         public void onRequestFailure(SpiceException spiceException) {
-            Log.d("MyApplication", "Failed: " + _letter);
             Toast.makeText(DownloadDataActivity.this, "Failed downloading " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
             checkIfFinished();
         }
 
         public void onRequestSuccess(final Drug[] drugs) {
-            Log.d("MyApplication", "Downloaded: " + _letter);
             Toast.makeText(DownloadDataActivity.this, "Downloaded " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
             updateDownloadLetterProgress();
             checkIfFinished();
@@ -199,6 +207,7 @@ public class DownloadDataActivity extends Activity {
 
         public void onRequestNotFound() {}
     }
+
     private final class indexDownloadRequestListener implements RequestListener<Integer>, PendingRequestListener<Integer> {
 
         public indexDownloadRequestListener(){
@@ -206,15 +215,32 @@ public class DownloadDataActivity extends Activity {
         }
 
         public void onRequestFailure(SpiceException spiceException) {
-            Log.d("MyApplication", "Failed downloading index");
             Toast.makeText(DownloadDataActivity.this, "Failed downloading index", Toast.LENGTH_SHORT).show();
-            onDownloadFail(true);
+            onDownloadFail(INDEX_FAIL);
         }
 
         public void onRequestSuccess(final Integer indexNo) {
-            Log.d("MyApplication", "Downloaded index");
             Toast.makeText(DownloadDataActivity.this, "Downloaded drug index", Toast.LENGTH_SHORT).show();
             _drugCount = indexNo.intValue();
+            startCalcInfoDownload();
+        }
+
+        public void onRequestNotFound() {}
+    }
+
+    private final class calcsDownloadRequestListener implements RequestListener<Void>, PendingRequestListener<Void> {
+
+        public calcsDownloadRequestListener(){
+            super();
+        }
+
+        public void onRequestFailure(SpiceException spiceException) {
+            Toast.makeText(DownloadDataActivity.this, "Failed downloading calcs", Toast.LENGTH_SHORT).show();
+            onDownloadFail(CALCS_FAIL);
+        }
+
+        public void onRequestSuccess(final Void indexNo) {
+            Toast.makeText(DownloadDataActivity.this, "Downloaded calculation", Toast.LENGTH_SHORT).show();
             startLetterDownloads();
         }
 
@@ -222,16 +248,15 @@ public class DownloadDataActivity extends Activity {
     }
 
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.download_data, menu);
-		return true;
-	}
 
     @Override
     protected void onStart() {
         _spiceManager.start(this);
+        _spiceManager.addListenerIfPending(Integer.class, "index_download", new indexDownloadRequestListener());
+        _spiceManager.addListenerIfPending(Void.class, "calcs_download", new calcsDownloadRequestListener());
+        _drugCount = _dataProgress.getIndexSize();
+        if(_dataProgress.shouldStartCalcsDownload()){ startCalcInfoDownload(); }
+        if(_dataProgress.shouldStartLetters()){ startLetterDownloads(); }
         if(_drugCount!=0){
             checkIfFinished();
             updateDownloadLetterProgress();
@@ -247,6 +272,34 @@ public class DownloadDataActivity extends Activity {
     protected void onStop() {
         _spiceManager.shouldStop();
         super.onStop();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        /* Inflate the menu; this adds items to the action bar if it is present. */
+        getMenuInflater().inflate(R.menu.login, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        /* Handle item selection */
+        Intent intent = new Intent();
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                _spiceManager.cancelAllRequests();
+                Auth.logout(this);
+                intent.setClass(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.action_exit:
+                System.exit(0);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

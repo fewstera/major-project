@@ -523,9 +523,14 @@
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
+    <string name="action_browse_drugs">Browse drugs</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_home">Home</string>
     <string name="action_logout">Logout</string>
     <string name="action_settings">Settings</string>
+    <string name="action_update">Update database</string>
     <string name="app_name">Injectable Medicines Guide</string>
+    <string name="calculator_button">Calculator</string>
     <string name="downloading_header">Drug information is downloading</string>
     <string name="downloading_message">As the drug database is large this may take some time, please wait.</string>
     <string name="help_button">Help</string>
@@ -541,10 +546,12 @@
     <string name="login_message">Login to your account</string>
     <string name="password_hint">Password</string>
     <string name="service_message">Downloading drug data...</string>
+    <string name="sup_css"><![CDATA[<style type="text/css">sup { vertical-align: top; font-size: 0.6em; }</style>]]></string>
     <string name="title_activity_browse_drugs">Browse drugs</string>
+    <string name="title_activity_calc_drug_select">Select a drug for the calculator</string>
     <string name="title_activity_download_data">Downloading monographs</string>
     <string name="title_activity_login">Account Login</string>
-    <string name="title_activity_view_drug">View Drug</string>
+    <string name="title_activity_view_drug">Monograph of %1$s</string>
     <string name="update_button">Update now</string>
     <string name="username_hint">Username</string>
     <string name="view_drugs_button">Browse Drugs</string>

@@ -31,6 +31,13 @@
     <string name="title_activity_browse_drugs">Browse drugs</string>
     <string name="help_button">Help</string>
 
-    <string name="title_activity_view_drug">View Drug</string>
+    <string name="title_activity_view_drug">Monograph of %1$s</string>
+    <string name="sup_css"><![CDATA[<style type="text/css">sup { vertical-align: top; font-size: 0.6em; }</style>]]></string>
+    <string name="action_home">Home</string>
+    <string name="action_browse_drugs">Browse drugs</string>
+    <string name="action_update">Update database</string>
+    <string name="action_exit">Exit</string>
+    <string name="calculator_button">Calculator</string>
+    <string name="title_activity_calc_drug_select">Select a drug for the calculator</string>
 
 </resources>
