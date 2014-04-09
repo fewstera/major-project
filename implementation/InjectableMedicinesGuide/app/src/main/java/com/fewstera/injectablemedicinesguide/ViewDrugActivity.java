@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,9 +46,18 @@ public class ViewDrugActivity extends LoggedInActivity {
         loadDrugToView();
     }
 
+    public void openCalcClick(View view){
+        Intent in = new Intent(this, CalculateActivity.class);
+        /* Adds needed information for the calculate activity */
+        in.putExtra(MainActivity.EXTRA_DRUG_ID, _drug.getId());
+         /* Starts the calculate activity */
+        startActivity(in);
+    }
+
     private void loadDrugToView() {
         TextView drugHeader = (TextView) findViewById(R.id.drug_name_header);
         drugHeader.setText(_drug.getName());
+        enableCalculator();
         addDrugInformation("ROUTE:", _drug.getRoute());
         addDrugInformation("TRADE NAME:", _drug.getTradeName());
         addDrugInformation("MEDICINE NAME:", _drug.getMedicineName());
@@ -57,18 +67,25 @@ public class ViewDrugActivity extends LoggedInActivity {
         addDrugInformation("DATE PUBLISHED:", parser.format(_drug.getDatePublished()));
     }
 
+    private void enableCalculator() {
+        if(_drug.getCalculatorInfo(this)!=null){
+            ((TextView) findViewById(R.id.calculator_header)).setVisibility(ViewGroup.VISIBLE);
+            ((Button) findViewById(R.id.open_calc_button)).setVisibility(ViewGroup.VISIBLE);
+        }
+    }
+
     private void loadDrugInformations() {
         for(DrugInformation information: _drug.getDrugInformations(this)){
             String informationHtml = information.getSectionText();
-            informationHtml = informationHtml.replace("<SUP>o</SUP>", "&deg;");
-            informationHtml = informationHtml.replace("<SUP>", "<small><small>");
-            informationHtml = informationHtml.replace("</SUP>", "</small></small>");
             addDrugInformation(information.getHeaderText(), informationHtml);
         }
     }
 
     private void addDrugInformation(String header, String informationHtml) {
         if(!informationHtml.isEmpty()){
+            informationHtml = informationHtml.replace("<SUP>o</SUP>", "&deg;");
+            informationHtml = informationHtml.replace("<SUP>", "<small><small>");
+            informationHtml = informationHtml.replace("</SUP>", "</small></small>");
             LayoutInflater inflater = getLayoutInflater();
             View newInformation = inflater.inflate(R.layout.drug_information, null, false);
             TextView infoName = (TextView) newInformation.findViewById(R.id.information_name);
@@ -79,29 +96,5 @@ public class ViewDrugActivity extends LoggedInActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.action_logout:
-                Auth.logout(this);
-                Intent intent = new Intent();
-                intent.setClass(ViewDrugActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-                return true;
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
 }

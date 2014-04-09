@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="ComAndroidSupportAppcompatV71901.aar" >
+        <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/assets" >
+            <file
+                name="calcs.xml"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/assets/calcs.xml" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/debug/assets" />
+    </dataSet>
+
+</merger>

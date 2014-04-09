@@ -120,4 +120,15 @@ public class Auth {
         Preferences.delete(context, Preferences.USERNAME_KEY);
         Preferences.delete(context, Preferences.PASSWORD_KEY);
     }
+
+    /**
+     * Loads credentials from the preferences
+     *
+     * @param context the context
+     */
+    public void loadCredentials(Context context) {
+        String username = getSavedUsername(context);
+        String password = getSavedPassword(context);
+        setCredentials(username, password);
+    }
 }

@@ -50,8 +50,76 @@
     <string name="enter_value">Enter a value</string>
     <string name="calculator_explain">Enter in the information below and click calculate to perform calculation.</string>
     <string name="time">60</string>
+    <string name="open_calculator">OPEN CALCULATOR:</string>
+    <string name="open_calc_button">Open calculator</string>
     <string-array name="calculation_types">
         <item>@string/calc_dose_from_ir</item>
         <item>@string/calc_ir_from_dose</item>
     </string-array>
+        <string name="display_calculation_html">
+        <![CDATA[
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style type="text/css">
+                    body{
+                        margin-left: 0.5em;
+                        margin-right: 0.5em;
+                    }
+                    #equationFirst{
+                        display: inline-block;
+                        white-space: nowrap;
+                        clear: both;
+                        float: left;
+                        margin-bottom: 2em;
+                        text-align: center;
+                        font-size: 0.8em;
+                    }
+                    #equationSecond{
+                        display: inline-block;
+                        white-space: nowrap;
+                        clear: both;
+                        float: left;
+                        margin-bottom: 1em;
+                        text-align: center;
+                    }
+                    #small{
+                        font-size: 0.8em;
+                    }
+                    .top{
+                        padding-bottom:0.5em;
+                    }
+                    .bottom{
+                        border-top:#000 1px solid;
+                        padding-top:0.5em;
+                    }
+                    h2{
+                        margin-top: 0;
+                        float: left;
+                        clear: both;
+                        white-space: nowrap;
+                    }
+                    h3{
+                        float: left;
+                        clear: both;
+                        white-space: nowrap;
+                    }
+                </style>
+            </head>
+            <body>
+            <h2>%1$s</h2>
+            <div id="equationFirst">
+                <div class="top">= %2$s</div>
+                <div class="bottom">%3$s</div>
+            </div>
+
+            <div id="equationSecond">
+                <div class="top">= %4$s</div>
+                <div class="bottom">%5$s</div>
+            </div><br/>
+
+            <h3> = %6$s</h3><br/>
+            </body></html>
+        ]]>
+    </string>
 </resources>

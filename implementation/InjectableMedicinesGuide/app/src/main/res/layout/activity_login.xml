@@ -30,18 +30,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/login_explain"
         android:layout_marginTop="15dp"
+        android:inputType="textVisiblePassword"
         android:hint="@string/username_hint"
-        android:text="ivgdemo" />
+        android:nextFocusForward="@+id/password_input"/>
 
     <EditText
-        android:id="@+id/password_input"
+        android:id="@id/password_input"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username_input"
         android:layout_marginTop="5dp"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
-        android:text="bolus7" />
+        android:nextFocusForward="@+id/login_button"/>
     
     <Button
         android:id="@+id/login_button"

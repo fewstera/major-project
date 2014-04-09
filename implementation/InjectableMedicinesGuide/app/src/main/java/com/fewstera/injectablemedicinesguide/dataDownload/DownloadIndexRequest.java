@@ -68,6 +68,11 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
             Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
             doc.getDocumentElement().normalize();
 
+            if(doc.getElementsByTagName("LoginError").getLength()>0){
+                _dataProgress.loginErrorOccured();
+                return -1;
+            }
+
             //Find all drug nodes and loop over them
             NodeList drugIndexList = doc.getElementsByTagName("drug_index_line");
             for (int indexCount = 0; indexCount < drugIndexList.getLength(); indexCount++) {

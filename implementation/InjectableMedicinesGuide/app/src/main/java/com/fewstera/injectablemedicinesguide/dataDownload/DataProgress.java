@@ -13,7 +13,7 @@ public class DataProgress {
     private ArrayList<Character> _successLetters;
     private ArrayList<Drug> _drugList;
     private int _finishedCount, _indexSize;
-    private boolean _calcsDownloaded, _calcsStarted, _lettersStarted;
+    private boolean _calcsDownloaded, _calcsStarted, _lettersStarted, _loginError;
 
     protected DataProgress() {
         // Prevents object being instantiated
@@ -30,7 +30,7 @@ public class DataProgress {
         _successLetters = new ArrayList<Character>();
         _drugList = new ArrayList<Drug>();
         _finishedCount = _indexSize = 0;
-        _calcsStarted = _calcsDownloaded = _lettersStarted = false;
+        _calcsStarted = _calcsDownloaded = _lettersStarted = _loginError = false;
     }
 
     public void increaseFinishedCount(){
@@ -83,5 +83,13 @@ public class DataProgress {
 
     public void calcsHaveDownloaded() {
         _calcsDownloaded = true;
+    }
+
+    public void loginErrorOccured() {
+        _loginError = true;
+    }
+
+    public boolean isLoginError(){
+        return _loginError;
     }
 }

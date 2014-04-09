@@ -30,9 +30,6 @@ import java.util.List;
  */
 public class CalcDrugSelectActivity extends LoggedInActivity {
 
-    /* The Extras which are passed to the CalculateDrug activity */
-    public final static String EXTRA_DRUG_ID = "com.fewstera.injectablemedicinesguide.extras.drugId";
-
     DatabaseHelper _db = new DatabaseHelper(this);
     ArrayAdapter<Drug> _listAdapter;
 
@@ -73,7 +70,7 @@ public class CalcDrugSelectActivity extends LoggedInActivity {
 
                 Intent in = new Intent(CalcDrugSelectActivity.this, CalculateActivity.class);
                 /* Adds needed information for the view drug activity */
-                in.putExtra(BrowseDrugsActivity.EXTRA_DRUG_ID, drug.getId());
+                in.putExtra(MainActivity.EXTRA_DRUG_ID, drug.getId());
 
                 /* Starts the view drug activity */
                 startActivity(in);

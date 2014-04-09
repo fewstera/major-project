@@ -12,8 +12,10 @@ import android.widget.TextView;
 public class MainActivity extends LoggedInActivity {
 
     public static final String DEBUG_NAME = "com.fewstera.IMG";
+    public final static String EXTRA_DRUG_ID = "com.fewstera.injectablemedicinesguide.extras.drugId";
 
-	@Override
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);

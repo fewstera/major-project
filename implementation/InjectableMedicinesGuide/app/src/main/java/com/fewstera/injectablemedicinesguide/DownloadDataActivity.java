@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
@@ -215,11 +216,19 @@ public class DownloadDataActivity extends LoggedInActivity {
         }
 
         public void onRequestFailure(SpiceException spiceException) {
+            if(_dataProgress.isLoginError()){
+                invalidLogin();
+                return ;
+            }
             Toast.makeText(DownloadDataActivity.this, "Failed downloading index", Toast.LENGTH_SHORT).show();
             onDownloadFail(INDEX_FAIL);
         }
 
         public void onRequestSuccess(final Integer indexNo) {
+            if(_dataProgress.isLoginError()){
+                invalidLogin();
+                return ;
+            }
             Toast.makeText(DownloadDataActivity.this, "Downloaded drug index", Toast.LENGTH_SHORT).show();
             _drugCount = indexNo.intValue();
             startCalcInfoDownload();
@@ -247,10 +256,23 @@ public class DownloadDataActivity extends LoggedInActivity {
         public void onRequestNotFound() {}
     }
 
+    private void invalidLogin(){
+        Toast.makeText(DownloadDataActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+        logout();
+    }
 
+    private void logout(){
+        _spiceManager.cancelAllRequests();
+        Intent intent = new Intent();
+        Auth.logout(this);
+        intent.setClass(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onStart() {
+        if(_dataProgress.isLoginError()){ invalidLogin(); }
         _spiceManager.start(this);
         _spiceManager.addListenerIfPending(Integer.class, "index_download", new indexDownloadRequestListener());
         _spiceManager.addListenerIfPending(Void.class, "calcs_download", new calcsDownloadRequestListener());
@@ -278,7 +300,7 @@ public class DownloadDataActivity extends LoggedInActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         /* Inflate the menu; this adds items to the action bar if it is present. */
-        getMenuInflater().inflate(R.menu.login, menu);
+        getMenuInflater().inflate(R.menu.download_data, menu);
         return true;
     }
 
@@ -288,11 +310,7 @@ public class DownloadDataActivity extends LoggedInActivity {
         Intent intent = new Intent();
         switch (item.getItemId()) {
             case R.id.action_logout:
-                _spiceManager.cancelAllRequests();
-                Auth.logout(this);
-                intent.setClass(this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                logout();
                 return true;
             case R.id.action_exit:
                 System.exit(0);

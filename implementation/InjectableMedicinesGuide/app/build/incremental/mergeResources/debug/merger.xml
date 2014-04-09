@@ -7486,6 +7486,16 @@ false
                 qualifiers=""
                 type="layout" />
             <file
+                name="activity_calc_drug_select"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/activity_calc_drug_select.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_calculate"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/activity_calculate.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_download_data"
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/activity_download_data.xml"
                 qualifiers=""
@@ -7508,6 +7518,16 @@ false
             <file
                 name="activity_view_drug"
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/activity_view_drug.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="drug_information"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/drug_information.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="show_calculation_layout"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/show_calculation_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -7546,13 +7566,13 @@ false
             <file
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml"
                 qualifiers="" >
-                <string name="time" >60
-                </string>
                 <string name="patient_weight_header" >Patient weight (kg)
                 </string>
-                <string name="time_header" >Time (minutes)
+                <string name="time" >60
                 </string>
                 <string name="action_settings" >Settings
+                </string>
+                <string name="time_header" >Time (minutes)
                 </string>
                 <string name="downloading_message" >As the drug database is large this may take some time, please wait.
                 </string>
@@ -7566,9 +7586,9 @@ false
                     </item>
                 </string-array>
 
-                <string name="action_browse_drugs" >Browse drugs
-                </string>
                 <string name="action_update" >Update database
+                </string>
+                <string name="action_browse_drugs" >Browse drugs
                 </string>
                 <string name="title_activity_download_data" >Downloading monographs
                 </string>
@@ -7601,6 +7621,72 @@ false
                 </string>
                 <string name="calc_ir_from_dose" >Infusion Rate from Dose
                 </string>
+                <string name="display_calculation_html" >
+<![CDATA[
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style type="text/css">
+                    body{
+                        margin-left: 0.5em;
+                        margin-right: 0.5em;
+                    }
+                    #equationFirst{
+                        display: inline-block;
+                        white-space: nowrap;
+                        clear: both;
+                        float: left;
+                        margin-bottom: 2em;
+                        text-align: center;
+                        font-size: 0.8em;
+                    }
+                    #equationSecond{
+                        display: inline-block;
+                        white-space: nowrap;
+                        clear: both;
+                        float: left;
+                        margin-bottom: 1em;
+                        text-align: center;
+                    }
+                    #small{
+                        font-size: 0.8em;
+                    }
+                    .top{
+                        padding-bottom:0.5em;
+                    }
+                    .bottom{
+                        border-top:#000 1px solid;
+                        padding-top:0.5em;
+                    }
+                    h2{
+                        margin-top: 0;
+                        float: left;
+                        clear: both;
+                        white-space: nowrap;
+                    }
+                    h3{
+                        float: left;
+                        clear: both;
+                        white-space: nowrap;
+                    }
+                </style>
+            </head>
+            <body>
+            <h2>%1$s</h2>
+            <div id="equationFirst">
+                <div class="top">= %2$s</div>
+                <div class="bottom">%3$s</div>
+            </div>
+
+            <div id="equationSecond">
+                <div class="top">= %4$s</div>
+                <div class="bottom">%5$s</div>
+            </div><br/>
+
+            <h3> = %6$s</h3><br/>
+            </body></html>
+        ]]>
+                </string>
                 <string name="enter_value" >Enter a value
                 </string>
                 <string name="title_activity_calc_drug_select" >Select a drug for the calculator
@@ -7613,9 +7699,9 @@ false
                 </string>
                 <string name="update_button" >Update now
                 </string>
-                <string name="action_home" >Home
-                </string>
                 <string name="action_exit" >Exit
+                </string>
+                <string name="action_home" >Home
                 </string>
                 <string name="last_updated_text" >
 <![CDATA[<b>Last database update: %1$s</b><br/><br/>
@@ -7625,7 +7711,11 @@ false
                 </string>
                 <string name="dose_header" >Dose (%1$s)
                 </string>
+                <string name="open_calc_button" >Open calculator
+                </string>
                 <string name="password_hint" >Password
+                </string>
+                <string name="open_calculator" >OPEN CALCULATOR:
                 </string>
                 <string name="title_activity_calculate" >Calculator for %1$s
                 </string>
@@ -7635,9 +7725,9 @@ false
                 </string>
                 <string name="service_message" >Downloading drug data...
                 </string>
-                <string name="title_activity_login" >Account Login
-                </string>
                 <string name="title_activity_view_drug" >Monograph of %1$s
+                </string>
+                <string name="title_activity_login" >Account Login
                 </string>
                 <string name="calc_dose_from_ir" >Dose from Infusion Rate
                 </string>
@@ -7783,26 +7873,6 @@ true
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
-            <file
-                name="drug_information"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/drug_information.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_calc_drug_select"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/activity_calc_drug_select.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_calculate"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/activity_calculate.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="show_calculation_layout"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/show_calculation_layout.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/res/rs/debug" />
     </dataSet>

@@ -25,7 +25,35 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        />
+    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/calculator_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text = "@string/open_calculator"
+                android:textStyle="bold"
+                android:visibility="gone"
+                />
+            <Button
+                android:id="@+id/open_calc_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:text="@string/open_calc_button"
+                android:onClick="openCalcClick"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
 </ScrollView>

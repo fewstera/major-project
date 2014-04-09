@@ -1,6 +1,8 @@
 package com.fewstera.injectablemedicinesguide;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,7 +47,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         setContentView(R.layout.activity_calculate);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        int drugId = getIntent().getIntExtra(BrowseDrugsActivity.EXTRA_DRUG_ID, -1);
+        int drugId = getIntent().getIntExtra(MainActivity.EXTRA_DRUG_ID, -1);
         if(drugId==-1){
             Intent i = new Intent(this, BrowseDrugsActivity.class);
             startActivity(i);
@@ -134,6 +139,10 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
 
     public void calculateClick(View view){
 
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        if(getCurrentFocus()!=null){
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
         _calculator.setType(_calcType);
 
         if(_calcType==Calculator.TYPE_DOSE_FROM_IR){
@@ -225,6 +234,10 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.show_calculation_layout, null);
         WebView displayCalcView = (WebView) layout.findViewById(R.id.display_calc_html);
+        WebSettings settings = displayCalcView.getSettings();
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setBuiltInZoomControls(true);
 
         float val = _calculator.calculate();
         String displayHtml = (_calcType==Calculator.TYPE_DOSE_FROM_IR) ? getDosCalcHtml(val) : getIRCalcHtml(val);
@@ -237,33 +250,73 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     }
 
     private String getIRCalcHtml(float val) {
-        //        return (_dose*_weight*_time)/(_concentration*factor);
         String dose = _twoDp.format(_calculator.getDose());
         String weight = _twoDp.format(_calculator.getWeight());
         String time = _twoDp.format(_calculator.getTime());
         String concentration = _twoDp.format(_calculator.getConcentration());
         String answer = _twoDp.format(val);
 
-        String returnHtml = "<html><body>"
-                + "<b>Infusion rate from dose</b><br/><br/>"
-                + "<center><small><small>dose (" + _calculatorInfo.getDoseUnits() + ") &times; "
-                + "weight (kg) &times; "
-                + "time (mins) <hr/>"
-                + "concentration (" + _calculatorInfo.getConcentrationUnits() + ")</center><br/><br/>"
-                + dose + " <small><small>dose</small></small> &times; "
-                + weight + " <small><small>weight</small></small> &times; "
-                + time + "<small><small>time</small></small>"
-                + "<hr/>"
-                + concentration + " <small><small>concentration</small></small>"
-                + "<br/><br/>"
-                + "<big><b> = " + answer + " " + _calculatorInfo.getInfusionRateUnits() + "</b></big>"
-                + "</body></html>";
-        Log.d(MainActivity.DEBUG_NAME, returnHtml);
+        String firstEquationTop = "dose (" + _calculatorInfo.getDoseUnits() + ") "
+                + ((_calculatorInfo.isPatientWeightRequired()) ? "&times; weight (kg) " : "")
+                + ((_calculatorInfo.isTimeRequired()) ? " &times; time (mins)" : "");
+
+        String firstEquationBottom = "concentration (" + _calculatorInfo.getConcentrationUnits() + ")";
+
+        String secondEquationTop = dose + " " + _calculatorInfo.getDoseUnits() + " "
+                + ((_calculatorInfo.isPatientWeightRequired()) ? "&times; " + weight + " kg " : "")
+                + ((_calculatorInfo.isTimeRequired()) ? " &times; " + time + " mins" : "");
+
+        String secondEquationBottom = concentration + " " + _calculatorInfo.getConcentrationUnits();
+
+        String answerText = answer + " " + _calculatorInfo.getInfusionRateUnits();
+
+        String returnHtml = getResources().getString(R.string.display_calculation_html);
+
+        String type = getResources().getString(R.string.calc_ir_from_dose);
+
+        returnHtml = String.format(returnHtml, type, firstEquationTop, firstEquationBottom,
+                secondEquationTop, secondEquationBottom, answerText);
+
         return returnHtml;
     }
 
-    private String getDosCalcHtml(float calculatedValue) {
-        return null;
+    private String getDosCalcHtml(float val) {
+        String infusionRate = _twoDp.format(_calculator.getInfusionRate());
+        String weight = _twoDp.format(_calculator.getWeight());
+        String time = _twoDp.format(_calculator.getTime());
+        String concentration = _twoDp.format(_calculator.getConcentration());
+        String answer = _twoDp.format(val);
+
+        String firstEquationTop = "infusion rate (" + _calculatorInfo.getInfusionRateUnits() + ") "
+                + "&times; concentration (" + _calculatorInfo.getInfusionRateUnits()  + ")";
+
+        String firstEquationBottom = ((_calculatorInfo.isTimeRequired()) ? " time (mins) &times;" : "")
+                + ((_calculatorInfo.isPatientWeightRequired()) ? " weight (kg) &times;" : "");
+
+        /* Remove the extra ' &times;' from the string */
+        firstEquationBottom = firstEquationBottom.substring(0, firstEquationBottom.length() - 8);
+
+
+        String secondEquationTop = infusionRate + " " + _calculatorInfo.getInfusionRateUnits() + " "
+                + "&times; " + concentration + " " + _calculatorInfo.getInfusionRateUnits();
+
+
+        String secondEquationBottom = ((_calculatorInfo.isTimeRequired()) ? " " + time + " mins &times;" : "")
+                + ((_calculatorInfo.isPatientWeightRequired()) ? " " + weight + " kg &times;" : "");
+
+        /* Remove the extra ' &times;' from the string */
+        secondEquationBottom = secondEquationBottom.substring(0, secondEquationBottom.length() - 8);
+
+        String answerText = answer + " " + _calculatorInfo.getDoseUnits();
+
+        String returnHtml = getResources().getString(R.string.display_calculation_html);
+
+        String type = getResources().getString(R.string.calc_dose_from_ir);
+
+        returnHtml = String.format(returnHtml, type, firstEquationTop, firstEquationBottom,
+                secondEquationTop, secondEquationBottom, answerText);
+
+        return returnHtml;
     }
 
     private void displayToast(String message){
