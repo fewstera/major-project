@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     >
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="19sp"
+        android:layout_height="19sp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginRight="7sp"
+        android:src="@drawable/info_button"/>
     <TextView
         android:id="@+id/information_name"
+        android:layout_toRightOf="@id/infoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-3sp"
         android:textSize="18sp"
         android:textStyle="bold"
         />
     <TextView
+        android:layout_below="@id/information_name"
         android:id="@+id/information_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,4 +34,4 @@
         android:paddingTop="10dp"
         android:textSize="12sp"
         />
-</LinearLayout><!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/drug_information.xml -->
+</RelativeLayout><!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/drug_information.xml -->

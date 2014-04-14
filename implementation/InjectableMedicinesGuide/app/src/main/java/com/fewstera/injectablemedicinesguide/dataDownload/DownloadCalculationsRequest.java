@@ -2,8 +2,8 @@ package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
 
-import com.fewstera.injectablemedicinesguide.Drug;
-import com.fewstera.injectablemedicinesguide.DrugCalculatorInfo;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.models.DrugCalculatorInfo;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
 
@@ -15,6 +15,7 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -53,7 +54,7 @@ public class DownloadCalculationsRequest extends SpiceRequest<Void> {
 
     // Returns URL given Letter
     protected final String getUrl() {
-        return "http://www.injguide.nhs.uk/IMGDrugIndex.asp?username="
+        return "http://www.injguide.nhs.uk/IMGPopupdata.asp?username="
                 + _accountUsername + "&password=" +
                 _accountPassword;
     }
@@ -64,8 +65,8 @@ public class DownloadCalculationsRequest extends SpiceRequest<Void> {
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            InputStream stream = _context.getAssets().open("calcs.xml");
-            //InputStream stream = new URL(getUrl()).openStream();
+            //InputStream stream = _context.getAssets().open("calcs.xml");
+            InputStream stream = new URL(getUrl()).openStream();
 
             Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
             doc.getDocumentElement().normalize();

@@ -1,7 +1,6 @@
 package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,9 +16,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.fewstera.injectablemedicinesguide.Drug;
-import com.fewstera.injectablemedicinesguide.DrugInformation;
-import com.fewstera.injectablemedicinesguide.dataDownload.DataProgress;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
 

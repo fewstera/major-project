@@ -740,13 +740,14 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060005;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070006;
+        public static final int abc_search_url_text_holo=0x7f070007;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070001;
         public static final int abc_search_url_text_selected=0x7f070002;
         public static final int black_overlay=0x7f070003;
         public static final int nhs_blue=0x7f070004;
-        public static final int white=0x7f070005;
+        public static final int transparent=0x7f070005;
+        public static final int white=0x7f070006;
     }
     public static final class dimen {
         public static final int abc_action_bar_default_height=0x7f090000;
@@ -858,8 +859,11 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ic_launcher=0x7f020057;
-        public static final int rounded_corners_blue=0x7f020058;
-        public static final int splash_screen=0x7f020059;
+        public static final int info_button=0x7f020058;
+        public static final int info_clicked=0x7f020059;
+        public static final int info_norm=0x7f02005a;
+        public static final int rounded_corners_blue=0x7f02005b;
+        public static final int splash_screen=0x7f02005c;
     }
     public static final class id {
         public static final int action_bar=0x7f08001c;
@@ -869,16 +873,16 @@ containing a value of this type.
         public static final int action_bar_root=0x7f08001a;
         public static final int action_bar_subtitle=0x7f080023;
         public static final int action_bar_title=0x7f080022;
-        public static final int action_browse_drugs=0x7f080063;
+        public static final int action_browse_drugs=0x7f080064;
         public static final int action_context_bar=0x7f08001d;
-        public static final int action_exit=0x7f080061;
-        public static final int action_home=0x7f080062;
-        public static final int action_logout=0x7f080060;
+        public static final int action_exit=0x7f080062;
+        public static final int action_home=0x7f080063;
+        public static final int action_logout=0x7f080061;
         public static final int action_menu_divider=0x7f080015;
         public static final int action_menu_presenter=0x7f080016;
         public static final int action_mode_close_button=0x7f080024;
-        public static final int action_settings=0x7f080065;
-        public static final int action_update=0x7f080064;
+        public static final int action_settings=0x7f080066;
+        public static final int action_update=0x7f080065;
         public static final int activity_chooser_view_content=0x7f080025;
         public static final int always=0x7f08000f;
         public static final int beginning=0x7f08000a;
@@ -893,7 +897,7 @@ containing a value of this type.
         public static final int default_activity_button=0x7f080028;
         public static final int dialog=0x7f080012;
         public static final int disableHome=0x7f080008;
-        public static final int display_calc_html=0x7f08005f;
+        public static final int display_calc_html=0x7f080060;
         public static final int dose=0x7f080042;
         public static final int dose_header=0x7f080041;
         public static final int downloadProgress=0x7f08004c;
@@ -912,8 +916,9 @@ containing a value of this type.
         public static final int icon=0x7f08002a;
         public static final int ifRoom=0x7f08000e;
         public static final int image=0x7f080027;
-        public static final int information_content=0x7f08005e;
-        public static final int information_name=0x7f08005d;
+        public static final int infoButton=0x7f08005d;
+        public static final int information_content=0x7f08005f;
+        public static final int information_name=0x7f08005e;
         public static final int infusion_rate=0x7f080040;
         public static final int infusion_rate_header=0x7f08003f;
         public static final int last_update_textview=0x7f080058;

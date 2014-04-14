@@ -1,5 +1,7 @@
 package com.fewstera.injectablemedicinesguide;
 
+import com.fewstera.injectablemedicinesguide.models.DrugCalculatorInfo;
+
 /**
  * Created by fewstera on 08/04/2014.
  */

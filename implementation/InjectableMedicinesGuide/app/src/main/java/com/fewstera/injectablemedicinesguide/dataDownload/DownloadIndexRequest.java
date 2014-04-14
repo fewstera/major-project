@@ -2,8 +2,8 @@ package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
 
-import com.fewstera.injectablemedicinesguide.Drug;
-import com.fewstera.injectablemedicinesguide.DrugIndex;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.models.DrugIndex;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
 

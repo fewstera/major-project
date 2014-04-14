@@ -1,13 +1,9 @@
 package com.fewstera.injectablemedicinesguide;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.text.Html;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 
 import java.text.SimpleDateFormat;
 

@@ -1,20 +1,17 @@
 package com.fewstera.injectablemedicinesguide;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+
 import java.util.List;
 
 /**

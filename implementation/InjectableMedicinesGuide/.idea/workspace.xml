@@ -24,26 +24,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b8b27ac-123c-48d0-92e4-2d5d98b8ecc4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/apk/app-release-unsigned.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/source/buildConfig/release/com/fewstera/injectablemedicinesguide/BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/source/r/release/android/support/v7/appcompat/R.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/source/r/release/com/fewstera/injectablemedicinesguide/R.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Auth.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Auth.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/info_button.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/assets/calcs.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Drug.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/Drug.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugCalculatorInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugIndex.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugIndex.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugInformation.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugInformation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/BrowseDrugsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/BrowseDrugsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalculateActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalculateActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Calculator.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Calculator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/com/fewstera/injectablemedicinesguide/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/com/fewstera/injectablemedicinesguide/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../TODO.md" afterPath="$PROJECT_DIR$/../../TODO.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/ViewDrugActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/ViewDrugActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_calculate.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_calculate.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_drug.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_drug.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/show_calculation_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/show_calculation_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/app/build/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/bin/app/build/incremental/mergeAssets/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InjectableMedicinesGuide.iws" />
@@ -109,10 +111,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ViewDrugActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ViewDrugActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/ViewDrugActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="18" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+            <state line="59" column="37" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.17883211" vertical-offset="577" max-vertical-offset="1350">
               <folding />
             </state>
           </provider>
@@ -120,41 +122,68 @@
       </file>
       <file leaf-file-name="activity_view_drug.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_drug.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="41" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-5.703704" vertical-offset="446" max-vertical-offset="960">
-              <folding>
-                <element signature="e#1432#1457#0" expanded="true" />
-                <element signature="e#1952#1978#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
           <provider editor-type-id="android-designer">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="60" selection-start="3277" selection-end="3277" vertical-scroll-proportion="1.8150685" vertical-offset="0" max-vertical-offset="1965">
+            <state line="40" column="41" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-6.6666665" vertical-offset="420" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DownloadDataActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java">
+      <file leaf-file-name="drug_information.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="54" selection-start="12171" selection-end="12171" vertical-scroll-proportion="0.0" vertical-offset="3927" max-vertical-offset="4470">
+            <state line="15" column="32" selection-start="571" selection-end="571" vertical-scroll-proportion="-6.111111" vertical-offset="60" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="download_data.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/download_data.xml">
+      <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="35" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+            <state line="5" column="28" selection-start="163" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="info_button.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/info_button.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="11" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Auth.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="326" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="138" column="13" selection-start="5845" selection-end="5845" vertical-scroll-proportion="0.0" vertical-offset="1409" max-vertical-offset="5430">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalcDrugSelectActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="2753" selection-end="2753" vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="1395">
               <folding />
             </state>
           </provider>
@@ -163,68 +192,29 @@
       <file leaf-file-name="CalculateActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalculateActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="235" column="88" selection-start="8891" selection-end="8891" vertical-scroll-proportion="0.0" vertical-offset="3822" max-vertical-offset="5340">
+            <state line="44" column="58" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="6252" max-vertical-offset="6690">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2072#2131#0" expanded="true" />
-                <element signature="e#2555#2601#0" expanded="true" />
-                <element signature="e#2950#3005#0" expanded="true" />
-                <element signature="e#10685#10744#0" expanded="true" />
-                <element signature="e#10769#10821#0" expanded="true" />
-                <element signature="e#12616#12675#0" expanded="true" />
-                <element signature="e#12700#12752#0" expanded="true" />
-                <element signature="e#13296#13348#0" expanded="true" />
+                <element signature="e#2400#2459#0" expanded="true" />
+                <element signature="e#3003#3049#0" expanded="true" />
+                <element signature="e#3398#3453#0" expanded="true" />
+                <element signature="e#10318#10549#0" expanded="true" />
+                <element signature="e#10538#10539#0" expanded="true" />
+                <element signature="e#13493#13552#0" expanded="true" />
+                <element signature="e#13577#13629#0" expanded="true" />
+                <element signature="e#15752#15811#0" expanded="true" />
+                <element signature="e#15836#15888#0" expanded="true" />
+                <element signature="e#17003#17055#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoggedInActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoggedInActivity.java">
+      <file leaf-file-name="Drug.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/Drug.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="16" selection-start="1309" selection-end="1452" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="825">
+            <state line="104" column="58" selection-start="2637" selection-end="2662" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="0" selection-start="1987" selection-end="1987" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1650">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calculator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Calculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="32" selection-start="1523" selection-end="1538" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="2190">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_login.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="46" selection-start="1334" selection-end="1334" vertical-scroll-proportion="-4.962963" vertical-offset="346" max-vertical-offset="915">
-              <folding>
-                <element signature="e#233#266#0" expanded="true" />
-                <element signature="e#291#326#0" expanded="true" />
-                <element signature="e#352#387#0" expanded="true" />
-                <element signature="e#411#444#0" expanded="true" />
-                <element signature="e#645#668#0" expanded="true" />
-                <element signature="e#992#1015#0" expanded="true" />
-                <element signature="e#1357#1380#0" expanded="true" />
-                <element signature="e#1691#1714#0" expanded="true" />
-                <element signature="e#2104#2131#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -606,13 +596,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadRequestListenerNotifier.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDrugsRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DataRetrieval.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexData.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/rounded_corners_blue.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/BrowseDrugs.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/browse_drugs.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java" />
@@ -621,7 +607,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_browse_drugs.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Preferences.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugInformation.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/SplashActivity.java" />
@@ -634,7 +619,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calc_drug_select.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugCalcInfo.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugCalculatorInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Drug.java" />
@@ -653,18 +637,24 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Auth.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalculateActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_drug.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java" />
+        <option value="$PROJECT_DIR$/bin/app/build/incremental/mergeAssets/debug/merger.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalculateActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/Drug.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/info_button.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="184" />
-    <option name="y" value="84" />
-    <option name="width" value="1348" />
-    <option name="height" value="865" />
+    <option name="x" value="54" />
+    <option name="y" value="37" />
+    <option name="width" value="1565" />
+    <option name="height" value="962" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -692,8 +682,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -826,6 +814,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InjectableMedicinesGuide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InjectableMedicinesGuide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InjectableMedicinesGuide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InjectableMedicinesGuide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -856,12 +904,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="injectablemedicinesguide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -920,19 +978,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -958,6 +1003,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1077,33 +1135,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="184" y="84" width="1348" height="865" extended-state="0" />
+    <frame x="54" y="37" width="1565" height="962" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1328" y="502" width="352" height="94" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28370607" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.49925816" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3779221" sideWeight="0.2596439" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33564013" sideWeight="0.25942492" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.25928572" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.49925816" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3779221" sideWeight="0.7403561" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33564013" sideWeight="0.7399361" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30267063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26070288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.49925816" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1446" y="502" width="352" height="94" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1129,6 +1187,16 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="46" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="5" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
@@ -1154,18 +1222,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="555" selection-end="555" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="375">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="22" selection-start="123" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+        <state line="12" column="23" selection-start="555" selection-end="555" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
@@ -1178,13 +1239,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_download_data.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="56" selection-start="15" selection-end="444" vertical-scroll-proportion="-3.8888888" vertical-offset="0" max-vertical-offset="735">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml">
@@ -1195,13 +1256,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_browse_drugs.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="747" selection-end="747" vertical-scroll-proportion="-10.555555" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java">
@@ -1240,29 +1301,6 @@
         <state line="20" column="17" selection-start="629" selection-end="629" vertical-scroll-proportion="-0.38036808" vertical-offset="336" max-vertical-offset="825" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/calcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="40" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="46" selection-start="3415" selection-end="3489" vertical-scroll-proportion="0.006849315" vertical-offset="1467" max-vertical-offset="1905" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="338" column="41" selection-start="13313" selection-end="13313" vertical-scroll-proportion="0.0" vertical-offset="4619" max-vertical-offset="5430">
-          <folding>
-            <element signature="e#8578#8584#0" expanded="true" />
-            <element signature="e#9215#9226#0" expanded="true" />
-            <element signature="e#11608#11625#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="15" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1185">
@@ -1271,40 +1309,38 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="23" selection-start="1845" selection-end="1852" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1365">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calc_drug_select.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calc_drug_select.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_calculation_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_calculation_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="68" selection-start="181" selection-end="181" vertical-scroll-proportion="-1.6666666" vertical-offset="0" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.0" vertical-offset="26" max-vertical-offset="1305">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.0" vertical-offset="26" max-vertical-offset="1305" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/app/build/incremental/mergeResources/debug/merger.xml">
@@ -1321,61 +1357,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="39" selection-end="831" vertical-scroll-proportion="-0.5555556" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculate.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="5" selection-start="2341" selection-end="2811" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Drug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="58" selection-start="2686" selection-end="2711" vertical-scroll-proportion="0.0" vertical-offset="749" max-vertical-offset="1380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculate.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="12" selection-start="5408" selection-end="5433" vertical-scroll-proportion="-7.185185" vertical-offset="1906" max-vertical-offset="2445">
           <folding>
-            <element signature="e#891#919#0" expanded="true" />
-            <element signature="e#2172#2193#0" expanded="true" />
-            <element signature="e#2874#2895#0" expanded="true" />
-            <element signature="e#3575#3596#0" expanded="true" />
-            <element signature="e#3980#4011#0" expanded="true" />
-            <element signature="e#4412#4433#0" expanded="true" />
-            <element signature="e#4809#4830#0" expanded="true" />
-            <element signature="e#5459#5473#0" expanded="true" />
-            <element signature="e#5499#5520#0" expanded="true" />
-            <element signature="e#5799#5825#0" expanded="true" />
+            <element signature="e#891#919#0" expanded="false" />
+            <element signature="e#2172#2193#0" expanded="false" />
+            <element signature="e#2874#2895#0" expanded="false" />
+            <element signature="e#3575#3596#0" expanded="false" />
+            <element signature="e#3980#4011#0" expanded="false" />
+            <element signature="e#4412#4433#0" expanded="false" />
+            <element signature="e#4809#4830#0" expanded="false" />
+            <element signature="e#5459#5473#0" expanded="false" />
+            <element signature="e#5499#5520#0" expanded="false" />
+            <element signature="e#5799#5825#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/BrowseDrugsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="3147" selection-end="3147" vertical-scroll-proportion="0.0" vertical-offset="569" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
@@ -1387,25 +1392,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugInformation.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugIndex.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="0" selection-start="608" selection-end="683" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="570">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DrugCalculatorInfo.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="0" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="825">
           <folding>
-            <element signature="e#1789#1790#0" expanded="true" />
+            <element signature="e#1796#1797#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1421,37 +1426,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="5" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.0" vertical-offset="869" max-vertical-offset="1320">
           <folding>
-            <element signature="e#2209#2210#0" expanded="true" />
-            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2216#2217#0" expanded="false" />
+            <element signature="e#2250#2251#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Auth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="15" selection-start="3164" selection-end="3164" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="1965">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="46" selection-start="1334" selection-end="1334" vertical-scroll-proportion="-4.962963" vertical-offset="346" max-vertical-offset="915">
-          <folding>
-            <element signature="e#233#266#0" expanded="true" />
-            <element signature="e#291#326#0" expanded="true" />
-            <element signature="e#352#387#0" expanded="true" />
-            <element signature="e#411#444#0" expanded="true" />
-            <element signature="e#645#668#0" expanded="true" />
-            <element signature="e#992#1015#0" expanded="true" />
-            <element signature="e#1357#1380#0" expanded="true" />
-            <element signature="e#1691#1714#0" expanded="true" />
-            <element signature="e#2104#2131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="46" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="915">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoggedInActivity.java">
@@ -1475,60 +1463,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="54" selection-start="12171" selection-end="12171" vertical-scroll-proportion="0.0" vertical-offset="3927" max-vertical-offset="4470">
+        <state line="72" column="36" selection-start="3947" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Calculator.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="1523" selection-end="1538" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="2190">
+        <state line="67" column="38" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/app/build/incremental/mergeAssets/debug/merger.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="35" selection-start="3179" selection-end="3179" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="4470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/BrowseDrugsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="3087" selection-end="3213" vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="1500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2753" selection-end="2753" vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="1395">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CalculateActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="235" column="88" selection-start="8891" selection-end="8891" vertical-scroll-proportion="0.0" vertical-offset="3822" max-vertical-offset="5340">
+        <state line="44" column="58" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="6252" max-vertical-offset="6690">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2072#2131#0" expanded="true" />
-            <element signature="e#2555#2601#0" expanded="true" />
-            <element signature="e#2950#3005#0" expanded="true" />
-            <element signature="e#10685#10744#0" expanded="true" />
-            <element signature="e#10769#10821#0" expanded="true" />
-            <element signature="e#12616#12675#0" expanded="true" />
-            <element signature="e#12700#12752#0" expanded="true" />
-            <element signature="e#13296#13348#0" expanded="true" />
+            <element signature="e#2400#2459#0" expanded="true" />
+            <element signature="e#3003#3049#0" expanded="true" />
+            <element signature="e#3398#3453#0" expanded="true" />
+            <element signature="e#10318#10549#0" expanded="true" />
+            <element signature="e#10538#10539#0" expanded="true" />
+            <element signature="e#13493#13552#0" expanded="true" />
+            <element signature="e#13577#13629#0" expanded="true" />
+            <element signature="e#15752#15811#0" expanded="true" />
+            <element signature="e#15836#15888#0" expanded="true" />
+            <element signature="e#17003#17055#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/ViewDrugActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/Drug.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="18" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.0" vertical-offset="861" max-vertical-offset="1350">
+        <state line="104" column="58" selection-start="2637" selection-end="2662" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="5" selection-start="1523" selection-end="1538" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/Auth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="326" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="13" selection-start="5845" selection-end="5845" vertical-scroll-proportion="0.0" vertical-offset="1409" max-vertical-offset="5430">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/info_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="11" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_drug.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="41" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-5.703704" vertical-offset="446" max-vertical-offset="960">
-          <folding>
-            <element signature="e#1432#1457#0" expanded="true" />
-            <element signature="e#1952#1978#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="60" selection-start="3277" selection-end="3277" vertical-scroll-proportion="1.8150685" vertical-offset="0" max-vertical-offset="1965">
+        <state line="40" column="41" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-6.6666665" vertical-offset="420" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="28" selection-start="163" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drug_information.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="32" selection-start="571" selection-end="571" vertical-scroll-proportion="-6.111111" vertical-offset="60" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/ViewDrugActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="37" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.17883211" vertical-offset="577" max-vertical-offset="1350">
           <folding />
         </state>
       </provider>

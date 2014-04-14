@@ -7,7 +7,10 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.fewstera.injectablemedicinesguide.*;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.models.DrugCalculatorInfo;
+import com.fewstera.injectablemedicinesguide.models.DrugIndex;
+import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

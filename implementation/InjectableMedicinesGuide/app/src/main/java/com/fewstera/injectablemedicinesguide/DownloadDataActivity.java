@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
@@ -14,6 +13,7 @@ import android.widget.Toast;
 
 import com.fewstera.injectablemedicinesguide.dataDownload.*;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
+import com.fewstera.injectablemedicinesguide.models.Drug;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.PendingRequestListener;
@@ -81,8 +81,8 @@ public class DownloadDataActivity extends LoggedInActivity {
     }
 
     private void startCalcInfoDownload(){
-        this.setProgressBarIndeterminateVisibility(true);
         _progressText.setText("Downloading drug calculation information");
+        _progressBar.setProgress(5);
         DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(getApplicationContext(), _encodedUsername, _encodedPassword);
         _spiceManager.execute(downloadRequest, "calcs_download", -1, new calcsDownloadRequestListener());
     }
