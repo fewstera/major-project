@@ -18,10 +18,10 @@ import java.util.ArrayList;
 public class DataProgress {
     private static DataProgress instance = null;
 
-    private ArrayList<Character> _successLetters;
+    private ArrayList<String> _succeededTags;
     private ArrayList<Drug> _drugList;
     private int _finishedCount, _indexSize;
-    private boolean _calcsDownloaded, _calcsStarted, _lettersStarted, _loginError;
+    private boolean _calcsDownloaded, _calcsStarted, _drugsDownload, _loginError;
 
     /**
      *  Prevents object being instantiated
@@ -44,10 +44,10 @@ public class DataProgress {
      *  Reset all statistics about download
      */
     public void reset(){
-        _successLetters = new ArrayList<Character>();
+        _succeededTags = new ArrayList<String>();
         _drugList = new ArrayList<Drug>();
         _finishedCount = _indexSize = 0;
-        _calcsStarted = _calcsDownloaded = _lettersStarted = _loginError = false;
+        _calcsStarted = _calcsDownloaded = _drugsDownload = _loginError = false;
     }
 
     /**
@@ -75,19 +75,21 @@ public class DataProgress {
     }
 
     /**
-     * Adds a letter that has succeeded to the list
-     * @param letter the letter that succeeded to be downloaded
+     * Adds a tag that has succeeded to the list of complete tags. A tag is a reference to the
+     * an API url to download part of the drug data.
+     *
+     * @param tag the tag that succeeded to be downloaded
      */
-    public void addSucceededLetter(char letter){
-        _successLetters.add(new Character(letter));
+    public void addSucceededTag(String tag){
+        _succeededTags.add(tag);
     }
 
     /**
-     * Gets a list of all letters that have successfully been downloaded
-     * @return the list of succeeded letters
+     * Gets a list of all tags that have successfully been downloaded
+     * @return the list of succeeded tags
      */
-    public ArrayList<Character> getSucceededLetters(){
-        return _successLetters;
+    public ArrayList<String> getSucceededTags(){
+        return _succeededTags;
     }
 
     /**
@@ -108,10 +110,10 @@ public class DataProgress {
     }
 
     /**
-     * Called when the letters download had began
+     * Called when the drugs download had began
      */
-    public void lettersHasStarted(){
-        _lettersStarted = true;
+    public void drugsDownloadHasStarted(){
+        _drugsDownload = true;
     }
 
     /**
@@ -124,12 +126,12 @@ public class DataProgress {
     }
 
     /**
-     * Whether the letters download should begin downloading
+     * Whether the drugs list download should begin downloading
      *
-     * @return true if the letters download should begin, false otherwise
+     * @return true if the drugs list download should begin, false otherwise
      */
-    public boolean shouldStartLetters(){
-        return (_calcsDownloaded&&!_lettersStarted);
+    public boolean shouldDrugsListStart(){
+        return (_calcsDownloaded&&!_drugsDownload);
     }
 
     /**

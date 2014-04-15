@@ -2,7 +2,7 @@ package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
 
-import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.R;
 import com.fewstera.injectablemedicinesguide.models.DrugIndex;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
@@ -11,16 +11,13 @@ import org.apache.commons.lang3.CharEncoding;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Class responsible for downloading the drugs and all drug information's.
@@ -33,18 +30,54 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
 
     private DatabaseHelper _db;
     private DataProgress _dataProgress;
-    private String _accountUsername;
-    private String _accountPassword;
-
+    private String _username, _password;
+    private String _url, _loginErrorTag, _indexRepeatTag, _drugIdTag, _indexNameTag;
     private ArrayList<Integer> _uniqueIds;
 
     public DownloadIndexRequest(Context context, String username, String password) {
         super(int.class);
-        _accountUsername = username;
-        _accountPassword = password;
+
+        _username = username;
+        _password = password;
 
         _db = new DatabaseHelper(context);
         _dataProgress = DataProgress.getInstance();
+
+        loadXMLValues(context);
+    }
+
+    /**
+     * This method loads the XML tag names and values from the dataDownload.xml resource file.
+     * The values are stored in private attributes, so they can be used throughout the object.
+     *
+     * @param context the application context
+     */
+    private void loadXMLValues(Context context){
+        int urlValue = R.string.index_url;
+        _url = context.getResources().getString(urlValue);
+
+        int indexRepeatTagRes = R.string.index_data_repeat_tag;
+        _indexRepeatTag = context.getResources().getString(indexRepeatTagRes);
+
+        int drugIdTagRes = R.string.index_data_drug_id_tag;
+        _drugIdTag = context.getResources().getString(drugIdTagRes);
+
+        int indexNameTagRes = R.string.index_data_index_name_tag;
+        _indexNameTag = context.getResources().getString(indexNameTagRes);
+
+        int loginErrorTagRes = R.string.data_login_error_tag;
+        _loginErrorTag = context.getResources().getString(loginErrorTagRes);
+    }
+
+    /**
+     * Adds the encoded username and password to the provided URL
+     *
+     * @param url the url to format
+     * @return the formatted url
+     */
+    String formatApiUrl(String url){
+
+        return url;
     }
 
     /**
@@ -63,9 +96,9 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
      * @return the url
      */
     private final String getUrl() {
-        return "http://www.injguide.nhs.uk/IMGDrugIndex.asp?username="
-                + _accountUsername + "&password=" +
-                _accountPassword;
+        String url = _url.replace("%USERNAME%", _username);
+        url = url.replace("%PASSWORD%", _password);
+        return url;
     }
 
     /**
@@ -83,13 +116,13 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
             Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
             doc.getDocumentElement().normalize();
 
-            if(doc.getElementsByTagName("LoginError").getLength()>0){
+            if(doc.getElementsByTagName(_loginErrorTag).getLength()>0){
                 _dataProgress.loginErrorOccurred();
                 return -1;
             }
 
             /* Find all drug index nodes and loop over them */
-            NodeList drugIndexList = doc.getElementsByTagName("drug_index_line");
+            NodeList drugIndexList = doc.getElementsByTagName(_indexRepeatTag);
             for (int indexCount = 0; indexCount < drugIndexList.getLength(); indexCount++) {
                 Element indexElement = (Element) drugIndexList.item(indexCount);
                 DrugIndex newIndex = parseIndexFromElement(indexElement);
@@ -114,13 +147,14 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
 
     /**
      * Retrieves drug index from the XML element
+     *
      * @param drugElement
      * @return the DrugIndex built from the XML elements.
      * @throws Exception
      */
     private DrugIndex parseIndexFromElement(Element drugElement) throws Exception{
-        int id = Integer.parseInt(drugElement.getElementsByTagName("drugno").item(0).getTextContent());
-        String name = drugElement.getElementsByTagName("drugname").item(0).getTextContent();
+        int id = Integer.parseInt(drugElement.getElementsByTagName(_drugIdTag).item(0).getTextContent());
+        String name = drugElement.getElementsByTagName(_indexNameTag).item(0).getTextContent();
 
         return new DrugIndex(id, name);
     }

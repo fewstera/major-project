@@ -23,7 +23,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class for handling and displaying the progress of the download of data from the application.
@@ -39,18 +42,19 @@ import java.util.Date;
 public class DownloadDataActivity extends LoggedInActivity {
 
     private SpiceManager _spiceManager = new SpiceManager(DownloadService.class);
-    private final char[] _letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
     int _drugCount = 0;
     DataProgress _dataProgress;
     ProgressBar _progressBar;
     TextView _progressText;
+    HashMap<String,String> _drugDataLinks = new HashMap<String,String>();
+    Toast _toast;
 
     private String _encodedUsername, _encodedPassword;
 
     /* The failure types for a request */
     private final int INDEX_FAIL = 0;
     private final int CALCS_FAIL = 1;
-    private final int LETTERS_FAIL = 2;
+    private final int DRUG_FAIL = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,8 @@ public class DownloadDataActivity extends LoggedInActivity {
         _progressBar = (ProgressBar) findViewById(R.id.downloadProgress);
         _progressBar.setMax(100);
 
+        _toast = Toast.makeText(this , "", Toast.LENGTH_SHORT);
+
         /* Fetch the DataProgress object */
         _dataProgress = DataProgress.getInstance();
         _dataProgress.reset();
@@ -90,6 +96,37 @@ public class DownloadDataActivity extends LoggedInActivity {
             _encodedPassword = Auth.getSavedPassword(this);
             e.printStackTrace();
         }
+        populateDrugDataLinks();
+    }
+
+    /**
+     * Populates the drugDataLinks attribute to contain the list of API urls for downloading
+     * drug information's
+     */
+    private void populateDrugDataLinks() {
+        String[] drugDataTags = getResources().getStringArray(R.array.drug_data_download_tags);
+        String[] drugDataLinks = getResources().getStringArray(R.array.drug_data_download_links);
+
+        /* Ensure drug link and drug tag lists are of equal length */
+        if(drugDataTags.length!=drugDataLinks.length) {
+            throw new Error("Drug tag and link list are different sizes");
+        }
+
+        for(int count = 0; count<drugDataTags.length; count++){
+            _drugDataLinks.put(drugDataTags[count], formatApiUrl(drugDataLinks[count]));
+        }
+    }
+
+    /**
+     * Adds the encoded username and password to the provided URL
+     *
+     * @param url the url to format
+     * @return the formatted url
+     */
+    String formatApiUrl(String url){
+        url = url.replace("%USERNAME%", _encodedUsername);
+        url = url.replace("%PASSWORD%", _encodedPassword);
+        return url;
     }
 
     /**
@@ -98,7 +135,7 @@ public class DownloadDataActivity extends LoggedInActivity {
     private void startIndexDownload(){
         this.setProgressBarIndeterminateVisibility(true);
         _progressText.setText("Downloading drug index information");
-        DownloadIndexRequest downloadRequest = new DownloadIndexRequest(getApplicationContext(), _encodedUsername, _encodedPassword);
+        DownloadIndexRequest downloadRequest = new DownloadIndexRequest(this, _encodedUsername, _encodedPassword);
         _spiceManager.execute(downloadRequest, "index_download", -1, new indexDownloadRequestListener());
     }
 
@@ -108,33 +145,36 @@ public class DownloadDataActivity extends LoggedInActivity {
     private void startCalcInfoDownload(){
         _progressText.setText("Downloading drug calculation information");
         _progressBar.setProgress(5);
-        DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(getApplicationContext(), _encodedUsername, _encodedPassword);
+        DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(this, _encodedUsername, _encodedPassword);
         _spiceManager.execute(downloadRequest, "calcs_download", -1, new calcsDownloadRequestListener());
     }
 
     /**
-     * Starts the download for all drug letters
+     * Starts the download for all drugs and drug informations
      */
-    private void startLetterDownloads(){
-        _dataProgress.lettersHasStarted();
-        updateDownloadLetterProgress();
-        for (char letter : _letters) {
-            startLetterDownload(letter);
+    private void startDrugDataDownloads(){
+        _dataProgress.drugsDownloadHasStarted();
+        updateDownloadDrugProgress();
+        for (Map.Entry<String, String> linkEntry: _drugDataLinks.entrySet()) {
+            startDrugDataDownload(linkEntry.getKey(), linkEntry.getValue());
         }
     }
 
     /**
-     * Starts the request to download drug information's for the drug begining with the provided letter
+     * Starts the request to download drug information's from the API link provided
      *
-     * @param letter to begin download drug information's for
+     * @param tag the tag of the link, user for tracking progress
+     * @param link the api link to donwload
      */
-    private void startLetterDownload(char letter) {
-        DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest(getApplicationContext(), _encodedUsername, _encodedPassword, letter);
-        _spiceManager.execute(downloadRequest, "drug_download_" + letter, -1, new drugsDownloadRequestListener(letter));
+    private void startDrugDataDownload(String tag, String link) {
+        DownloadDrugsRequest downloadRequest = new DownloadDrugsRequest(this, tag, link);
+        _spiceManager.execute(downloadRequest, "drug_download_" + tag, -1, new drugsDownloadRequestListener(tag));
     }
 
-
-    private void updateDownloadLetterProgress(){
+    /**
+     * Updates the progress whilst drugs download
+     */
+    private void updateDownloadDrugProgress(){
         _progressText.setText("Downloading (" + _dataProgress.getDrugList().size() + " of " + _drugCount + ")");
         _progressBar.setProgress(10 + Math.round((float) _dataProgress.getDrugList().size() / (float) _drugCount * 90));
 
@@ -145,13 +185,13 @@ public class DownloadDataActivity extends LoggedInActivity {
      */
     private void checkIfFinished() {
         /* If all requests have finished or drug list is full */
-        if((_dataProgress.getFinishedCount()>=(_letters.length+2)) || (_dataProgress.getDrugList().size()>=_drugCount)){
+        if((_dataProgress.getFinishedCount()>=(_drugDataLinks.size()+2)) || (_dataProgress.getDrugList().size()>=_drugCount)){
             /* Cancel loading spinner  */
             this.setProgressBarIndeterminateVisibility(false);
-            if(_dataProgress.getSucceededLetters().size()<_letters.length){
+            if(_dataProgress.getSucceededTags().size()<_drugDataLinks.size()){
                 /* Decrease the amount of finished services to allow the user to try again. */
-                _dataProgress.decreaseFinishedCountBy(_letters.length-_dataProgress.getSucceededLetters().size());
-                onDownloadFail(LETTERS_FAIL);
+                _dataProgress.decreaseFinishedCountBy(_drugDataLinks.size()-_dataProgress.getSucceededTags().size());
+                onDownloadFail(DRUG_FAIL);
             }else{
                 updateCompletePrefs();
 
@@ -201,24 +241,31 @@ public class DownloadDataActivity extends LoggedInActivity {
                     startCalcInfoDownload();
                 }
             });
-        }else if(type==LETTERS_FAIL){
-            String failedLetterString = "";
-            final ArrayList<Character> failedLetters = new ArrayList<Character>();
-            /* Determine the letters which have failed, from the letters that succeeded */
-            for(char c : _letters){
-                if(!_dataProgress.getSucceededLetters().contains(new Character(c))){
-                    failedLetterString = failedLetterString + c + ", ";
-                    failedLetters.add(new Character(c));
+        }else if(type==DRUG_FAIL){
+            final ArrayList<String> failedTags = new ArrayList<String>();
+            /* Determine the links which have failed, from the tags that succeeded */
+            for(String tag : _drugDataLinks.keySet()){
+                if(!_dataProgress.getSucceededTags().contains(tag)){
+                    failedTags.add(tag);
                 }
             }
-            failedLetterString = failedLetterString.substring(0 , failedLetterString.length() - 1);
+
+            /* Sort failed tags alphabetically and build failed string */
+            String failedTagString = "";
+            Collections.sort(failedTags);
+            for(String tag: failedTags){
+                failedTagString = failedTagString + tag + ", ";
+            }
+            /* Remove extra  ', ' */
+            failedTagString = failedTagString.substring(0 , failedTagString.length() - 2);
+
             message = "Failed to download drugs starting with the letters " +
-                    failedLetterString + "\n\nWould you like to try again?";
+                    failedTagString + "\n\nWould you like to try again?";
 
             builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    for(Character failedLetter : failedLetters){
-                        startLetterDownload(failedLetter.charValue());
+                    for(String failedTag : failedTags){
+                        startDrugDataDownload(failedTag, _drugDataLinks.get(failedTag));
                     }
                 }
             });
@@ -234,10 +281,20 @@ public class DownloadDataActivity extends LoggedInActivity {
     }
 
     /**
+     * Displays the provided message in a Toast
+     * @param message the message to display
+     * @see android.widget.Toast
+     */
+    private void showMessage(String message){
+        _toast.setText(message);
+        _toast.show();
+    }
+
+    /**
      * Alerts the user that their credentials are incorrect and logs them out.
      */
     private void invalidLogin(){
-        Toast.makeText(DownloadDataActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+        showMessage("Invalid credentials");
         logout();
     }
 
@@ -275,13 +332,13 @@ public class DownloadDataActivity extends LoggedInActivity {
         /* If the calculator download should start, start it */
         if(_dataProgress.shouldStartCalcsDownload()){ startCalcInfoDownload(); }
 
-        /* If the letters download should start, start them */
-        if(_dataProgress.shouldStartLetters()){ startLetterDownloads(); }
+        /* If the drugs list download should start, start them */
+        if(_dataProgress.shouldDrugsListStart()){ startDrugDataDownloads(); }
         if(_drugCount!=0){
             checkIfFinished();
-            updateDownloadLetterProgress();
-            for(char letter : _letters) {
-                _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + letter, new drugsDownloadRequestListener(letter));
+            updateDownloadDrugProgress();
+            for(String tag : _drugDataLinks.keySet()) {
+                _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + tag, new drugsDownloadRequestListener(tag));
 
             }
         }
@@ -321,7 +378,7 @@ public class DownloadDataActivity extends LoggedInActivity {
                 invalidLogin();
                 return ;
             }
-            Toast.makeText(DownloadDataActivity.this, "Failed downloading index", Toast.LENGTH_SHORT).show();
+            showMessage("Failed downloading index");
             onDownloadFail(INDEX_FAIL);
         }
 
@@ -335,7 +392,7 @@ public class DownloadDataActivity extends LoggedInActivity {
                 invalidLogin();
                 return ;
             }
-            Toast.makeText(DownloadDataActivity.this, "Downloaded drug index", Toast.LENGTH_SHORT).show();
+            showMessage("Downloaded drug index");
             _drugCount = indexNo.intValue();
             startCalcInfoDownload();
         }
@@ -360,7 +417,7 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestFailure(SpiceException spiceException) {
-            Toast.makeText(DownloadDataActivity.this, "Failed downloading calcs", Toast.LENGTH_SHORT).show();
+            showMessage("Failed downloading calcs");
             onDownloadFail(CALCS_FAIL);
         }
 
@@ -369,8 +426,8 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestSuccess(final Void indexNo) {
-            Toast.makeText(DownloadDataActivity.this, "Downloaded calculation", Toast.LENGTH_SHORT).show();
-            startLetterDownloads();
+            showMessage("Downloaded calculation");
+            startDrugDataDownloads();
         }
 
         public void onRequestNotFound() {}
@@ -379,19 +436,19 @@ public class DownloadDataActivity extends LoggedInActivity {
     /**
      * Drug information request listener
      *
-     * Methods within this class are called when a drug letter download completes or fails.
+     * Methods within this class are called when a drugs list download completes or fails.
      */
     private final class drugsDownloadRequestListener implements RequestListener<Drug[]>, PendingRequestListener<Drug[]> {
 
-        private char _letter;
+        private String _tag;
 
         /**
-         * Constructor which allows us to keep track of which letter is in question.
-         * @param letter the letter of this listener
+         * Constructor which allows us to keep track of which link is in progress.
+         * @param tag the tag of the link for this listener
          */
-        public drugsDownloadRequestListener(char letter){
+        public drugsDownloadRequestListener(String tag){
             super();
-            _letter = letter;
+            _tag = tag;
         }
 
         /**
@@ -399,7 +456,7 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestFailure(SpiceException spiceException) {
-            Toast.makeText(DownloadDataActivity.this, "Failed downloading " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
+            showMessage("Failed downloading " + _tag + "... drugs");
             checkIfFinished();
         }
 
@@ -408,8 +465,8 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestSuccess(final Drug[] drugs) {
-            Toast.makeText(DownloadDataActivity.this, "Downloaded " + _letter + "... drugs", Toast.LENGTH_SHORT).show();
-            updateDownloadLetterProgress();
+            showMessage("Downloaded " + _tag + "... drugs");
+            updateDownloadDrugProgress();
             checkIfFinished();
         }
 

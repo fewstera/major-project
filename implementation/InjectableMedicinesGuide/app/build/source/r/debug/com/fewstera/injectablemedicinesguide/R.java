@@ -18,6 +18,8 @@ public final class R {
     }
     public static final class array {
         public static final int calculation_types=0x7f050000;
+        public static final int drug_data_download_links=0x7f050001;
+        public static final int drug_data_download_tags=0x7f050002;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -740,14 +742,13 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060005;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070007;
+        public static final int abc_search_url_text_holo=0x7f070006;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070001;
         public static final int abc_search_url_text_selected=0x7f070002;
         public static final int black_overlay=0x7f070003;
         public static final int nhs_blue=0x7f070004;
-        public static final int transparent=0x7f070005;
-        public static final int white=0x7f070006;
+        public static final int white=0x7f070005;
     }
     public static final class dimen {
         public static final int abc_action_bar_default_height=0x7f090000;
@@ -1039,37 +1040,59 @@ containing a value of this type.
         public static final int calc_ir_from_dose=0x7f0b0015;
         public static final int calculate_button=0x7f0b0016;
         public static final int calculator_button=0x7f0b0017;
-        public static final int calculator_explain=0x7f0b0018;
-        public static final int concentration_header=0x7f0b0019;
-        public static final int display_calculation_html=0x7f0b001a;
-        public static final int dose_header=0x7f0b001b;
-        public static final int downloading_header=0x7f0b001c;
-        public static final int downloading_message=0x7f0b001d;
-        public static final int enter_value=0x7f0b001e;
-        public static final int help_button=0x7f0b001f;
-        public static final int infusion_rate_header=0x7f0b0020;
-        public static final int last_updated_text=0x7f0b0021;
-        public static final int loading_description=0x7f0b0022;
-        public static final int login_button_text=0x7f0b0023;
-        public static final int login_explain=0x7f0b0024;
-        public static final int login_message=0x7f0b0025;
-        public static final int open_calc_button=0x7f0b0026;
-        public static final int open_calculator=0x7f0b0027;
-        public static final int password_hint=0x7f0b0028;
-        public static final int patient_weight_header=0x7f0b0029;
-        public static final int service_message=0x7f0b002a;
-        public static final int time=0x7f0b002b;
-        public static final int time_header=0x7f0b002c;
-        public static final int title_activity_browse_drugs=0x7f0b002d;
-        public static final int title_activity_calc_drug_select=0x7f0b002e;
-        public static final int title_activity_calculate=0x7f0b002f;
-        public static final int title_activity_download_data=0x7f0b0030;
-        public static final int title_activity_login=0x7f0b0031;
-        public static final int title_activity_view_drug=0x7f0b0032;
-        public static final int update_button=0x7f0b0033;
-        public static final int username_hint=0x7f0b0034;
-        public static final int view_drugs_button=0x7f0b0035;
-        public static final int welcome_text=0x7f0b0036;
+        public static final int calculator_concentration_units_tag=0x7f0b0018;
+        public static final int calculator_data_drug_id_tag=0x7f0b0019;
+        public static final int calculator_data_repeat_tag=0x7f0b001a;
+        public static final int calculator_dose_units_tag=0x7f0b001b;
+        public static final int calculator_explain=0x7f0b001c;
+        public static final int calculator_factor_tag=0x7f0b001d;
+        public static final int calculator_infusion_rate_label_tag=0x7f0b001e;
+        public static final int calculator_infusion_rate_units_tag=0x7f0b001f;
+        public static final int calculator_time_required_tag=0x7f0b0020;
+        public static final int calculator_url=0x7f0b0021;
+        public static final int calculator_weight_required_tag=0x7f0b0022;
+        public static final int concentration_header=0x7f0b0023;
+        public static final int data_login_error_tag=0x7f0b0024;
+        public static final int display_calculation_html=0x7f0b0025;
+        public static final int dose_header=0x7f0b0026;
+        public static final int downloading_header=0x7f0b0027;
+        public static final int downloading_message=0x7f0b0028;
+        public static final int drug_data_drug_id_tag=0x7f0b0029;
+        public static final int drug_data_drug_info_header_help_tag=0x7f0b002a;
+        public static final int drug_data_drug_info_header_tag=0x7f0b002b;
+        public static final int drug_data_drug_info_repeat_tag=0x7f0b002c;
+        public static final int drug_data_drug_info_text_tag=0x7f0b002d;
+        public static final int drug_data_drug_name=0x7f0b002e;
+        public static final int drug_data_drug_repeat_tag=0x7f0b002f;
+        public static final int enter_value=0x7f0b0030;
+        public static final int help_button=0x7f0b0031;
+        public static final int index_data_drug_id_tag=0x7f0b0032;
+        public static final int index_data_index_name_tag=0x7f0b0033;
+        public static final int index_data_repeat_tag=0x7f0b0034;
+        public static final int index_url=0x7f0b0035;
+        public static final int infusion_rate_header=0x7f0b0036;
+        public static final int last_updated_text=0x7f0b0037;
+        public static final int loading_description=0x7f0b0038;
+        public static final int login_button_text=0x7f0b0039;
+        public static final int login_explain=0x7f0b003a;
+        public static final int login_message=0x7f0b003b;
+        public static final int open_calc_button=0x7f0b003c;
+        public static final int open_calculator=0x7f0b003d;
+        public static final int password_hint=0x7f0b003e;
+        public static final int patient_weight_header=0x7f0b003f;
+        public static final int service_message=0x7f0b0040;
+        public static final int time=0x7f0b0041;
+        public static final int time_header=0x7f0b0042;
+        public static final int title_activity_browse_drugs=0x7f0b0043;
+        public static final int title_activity_calc_drug_select=0x7f0b0044;
+        public static final int title_activity_calculate=0x7f0b0045;
+        public static final int title_activity_download_data=0x7f0b0046;
+        public static final int title_activity_login=0x7f0b0047;
+        public static final int title_activity_view_drug=0x7f0b0048;
+        public static final int update_button=0x7f0b0049;
+        public static final int username_hint=0x7f0b004a;
+        public static final int view_drugs_button=0x7f0b004b;
+        public static final int welcome_text=0x7f0b004c;
     }
     public static final class style {
         /** 

@@ -5,8 +5,6 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
-import android.os.IBinder;
-import android.util.Log;
 
 import com.fewstera.injectablemedicinesguide.R;
 import com.octo.android.robospice.UncachedSpiceService;

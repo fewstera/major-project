@@ -8,6 +8,65 @@
         <item>@string/calc_dose_from_ir</item>
         <item>@string/calc_ir_from_dose</item>
     </string-array>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml -->
+    <eat-comment />
+
+    <string-array name="drug_data_download_links" formatted="false">
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=A]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=B]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=C]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=D]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=E]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=F]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=G]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=H]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=I]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=J]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=K]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=L]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=M]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=N]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=O]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=P]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Q]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=R]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=S]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=T]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=U]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=V]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=W]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=X]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Y]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Z]]></item>
+    </string-array>
+    <string-array name="drug_data_download_tags" formatted="false">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml -->
     <eat-comment />
 
@@ -90,7 +149,6 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="nhs_blue">#007AC3</color>
-    <color name="transparent">#80000000</color>
     <color name="white">#FFFFFF</color>
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml -->
     <eat-comment />
@@ -542,8 +600,37 @@
     <string name="calc_ir_from_dose">Infusion Rate from Dose</string>
     <string name="calculate_button">Calculate</string>
     <string name="calculator_button">Calculator</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml -->
+    <eat-comment />
+
+    <string name="calculator_concentration_units_tag">ConcentrationUnits</string>
+    <string name="calculator_data_drug_id_tag">DrugNo</string>
+    <string name="calculator_data_repeat_tag">DrugCalculation</string>
+    <string name="calculator_dose_units_tag">DoseUnits</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="calculator_explain">Enter in the information below and click calculate to perform calculation.</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml -->
+    <eat-comment />
+
+    <string name="calculator_factor_tag">Factor</string>
+    <string name="calculator_infusion_rate_label_tag">InfusionRateLabel</string>
+    <string name="calculator_infusion_rate_units_tag">InfusionRateUnits</string>
+    <string name="calculator_time_required_tag">TimeRequired</string>
+    <string name="calculator_url" formatted="false"><![CDATA[http://www.injguide.nhs.uk/IMGPopupdata.asp?username=%USERNAME%&password=%PASSWORD%]]></string>
+    <string name="calculator_weight_required_tag">PatientWeightRequired</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="concentration_header">Concentration (%1$s)</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml -->
+    <eat-comment />
+
+    <string name="data_login_error_tag">drug</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="display_calculation_html">
 <![CDATA[
             <!DOCTYPE html>
@@ -613,8 +700,31 @@
     <string name="dose_header">Dose (%1$s)</string>
     <string name="downloading_header">Drug information is downloading</string>
     <string name="downloading_message">As the drug database is large this may take some time, please wait.</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml -->
+    <eat-comment />
+
+    <string name="drug_data_drug_id_tag">drugno</string>
+    <string name="drug_data_drug_info_header_help_tag">header_help</string>
+    <string name="drug_data_drug_info_header_tag">header_text</string>
+    <string name="drug_data_drug_info_repeat_tag">section</string>
+    <string name="drug_data_drug_info_text_tag">section_text</string>
+    <string name="drug_data_drug_name">DRUG:</string>
+    <string name="drug_data_drug_repeat_tag">drug</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="enter_value">Enter a value</string>
     <string name="help_button">Help</string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml -->
+    <eat-comment />
+
+    <string name="index_data_drug_id_tag">drugno</string>
+    <string name="index_data_index_name_tag">drugname</string>
+    <string name="index_data_repeat_tag">drug_index_line</string>
+    <string name="index_url" formatted="false"><![CDATA[http://www.injguide.nhs.uk/IMGDrugIndex.asp?username=%USERNAME%&password=%PASSWORD%]]></string>
+    <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="infusion_rate_header">Infusion rate (%1$s)</string>
     <string name="last_updated_text">
 <![CDATA[<b>Last database update: %1$s</b><br/><br/>

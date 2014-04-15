@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--
-        BELOW IS THE LIST OF URLS TO DOWNLOAD ALL THE DRUG'S AND DRUG INFORMATION'S.
+    *******************************************************************************************
+    ********************************** GENERAL XML SETTINGS **********************************
+    *******************************************************************************************
+    -->
+    <!-- This is the name of the XML tag which is present when a login error occurs -->
+    <string name="data_login_error_tag">drug</string>
+
+
+    <!--
+    *******************************************************************************************
+    ********************************* DRUG INDEX XML SETTINGS *********************************
+    *******************************************************************************************
+    -->
+    <!--
+        Below is the URL for the drug indexes XML API
 
         %USERNAME% will be replaced with the users username
         %PASSWORD% will be replaced with the users password
     -->
-    <string-array name="drug_data_download_links">
+    <string name="index_url" formatted="false">
+        <![CDATA[http://www.injguide.nhs.uk/IMGDrugIndex.asp?username=%USERNAME%&password=%PASSWORD%]]>
+    </string>
+    <!-- This is the name of the XML tag which represents the start of a new drug index -->
+    <string name="index_data_repeat_tag">drug_index_line</string>
+    <!-- This is the name of the XML tag containing the Drug id -->
+    <string name="index_data_drug_id_tag">drugno</string>
+    <!-- This is the name of the XML tag containing the index's name -->
+    <string name="index_data_index_name_tag">drugname</string>
+
+    <!--
+    *******************************************************************************************
+    ******************************* DRUGS DOWNLOAD XML SETTINGS *******************************
+    *******************************************************************************************
+    -->
+    <!--
+        Below is the list of urls to download all the drug's and drug information's..
+
+        %USERNAME% will be replaced with the users username
+        %PASSWORD% will be replaced with the users password
+    -->
+    <string-array formatted="false" name="drug_data_download_links">
         <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=A]]></item>
         <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=B]]></item>
         <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=C]]></item>
@@ -35,10 +70,12 @@
         <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Z]]></item>
     </string-array>
     <!--
-        BELOW IS THE LIST OF TAGS TO GO ALONG WITH THE ABOVE URLS, TAGS ARE USED TO ALERT THE USER ON PROGRESS
-        E.G. Downloaded %TAG%... drugs. For tag A would output "Downloaded A... drugs"
+        Below is the list of tags to go along with the above urls, tags are used to alert the user on progress
+        tags must appear in the same order as the urls above (Tag A for URL to download A drugs).
+
+        E.g. tag A would output "downloaded A... Drugs".
     -->
-    <string-array name="drug_data_download_links">
+    <string-array formatted="false" name="drug_data_download_tags">
         <item>A</item>
         <item>B</item>
         <item>C</item>
@@ -64,9 +101,10 @@
         <item>W</item>
         <item>X</item>
         <item>Y</item>
-        <item>X</item>
         <item>Z</item>
     </string-array>
+
+
     <!-- This is the name of the XML tag which represents the start of a new drug -->
     <string name="drug_data_drug_repeat_tag">drug</string>
     <!-- This is the name of the XML tag containing the Drug id -->
@@ -81,4 +119,38 @@
     <string name="drug_data_drug_info_text_tag">section_text</string>
     <!-- This is the value of the header tag which holds the drugs name -->
     <string name="drug_data_drug_name">DRUG:</string>
+
+    <!--
+    *******************************************************************************************
+    ********************************* CALCULATOR XML SETTINGS ********************************
+    *******************************************************************************************
+    -->
+    <!--
+        Below is the URL for the drug calculations XML API
+
+        %USERNAME% will be replaced with the users username
+        %PASSWORD% will be replaced with the users password
+    -->
+    <string name="calculator_url" formatted="false">
+        <![CDATA[http://www.injguide.nhs.uk/IMGPopupdata.asp?username=%USERNAME%&password=%PASSWORD%]]>
+    </string>
+    <!-- This is the name of the XML tag which represents the start of a new calculator information -->
+    <string name="calculator_data_repeat_tag">DrugCalculation</string>
+    <!-- This is the name of the XML tag containing the drug id -->
+    <string name="calculator_data_drug_id_tag">DrugNo</string>
+    <!-- This is the name of the XML tag containing the infusion rate label -->
+    <string name="calculator_infusion_rate_label_tag">InfusionRateLabel</string>
+    <!-- This is the name of the XML tag containing the infusion rate units -->
+    <string name="calculator_infusion_rate_units_tag">InfusionRateUnits</string>
+    <!-- This is the name of the XML tag containing the dose units -->
+    <string name="calculator_dose_units_tag">DoseUnits</string>
+    <!-- This is the name of the XML tag containing if patient weight is required -->
+    <string name="calculator_weight_required_tag">PatientWeightRequired</string>
+    <!-- This is the name of the XML tag containing if time is required -->
+    <string name="calculator_time_required_tag">TimeRequired</string>
+    <!-- This is the name of the XML tag containing the factor -->
+    <string name="calculator_factor_tag">Factor</string>
+    <!-- This is the name of the XML tag containing the factor -->
+    <string name="calculator_concentration_units_tag">ConcentrationUnits</string>
+
 </resources>

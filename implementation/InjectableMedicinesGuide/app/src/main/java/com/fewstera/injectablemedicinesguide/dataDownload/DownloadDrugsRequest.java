@@ -1,30 +1,20 @@
 package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
-import android.support.v7.appcompat.R;
-
-import java.io.IOException;
+import com.fewstera.injectablemedicinesguide.R;
 import java.io.InputStream;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
 import org.apache.commons.lang3.CharEncoding;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
 import com.fewstera.injectablemedicinesguide.models.Drug;
 import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Class responsible for downloading the drugs and all drug information's.
@@ -42,10 +32,11 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     private String _drugRepeatTag, _drugIdTag, _drugInfoRepeatTag, _drugInfoHeaderTag,
             _drugInfoHeaderHelpTag, _drugInfoTextTag, _drugNameValue;
 
-    public DownloadDrugsRequest(Context context, String url, String tag) {
+    public DownloadDrugsRequest(Context context, String tag, String url) {
         super(Drug[].class);
         loadXMLValues(context);
         _url = url;
+        _tag = tag;
         _db = new DatabaseHelper(context);
         _dataProgress = DataProgress.getInstance();
 
@@ -58,25 +49,25 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
      * @param context the application context
      */
     private void loadXMLValues(Context context){
-        int drugRepeatTagRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_repeat_tag;
+        int drugRepeatTagRes = R.string.drug_data_drug_repeat_tag;
         _drugRepeatTag = context.getResources().getString(drugRepeatTagRes);
 
-        int drugIdTagRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_id_tag;
+        int drugIdTagRes = R.string.drug_data_drug_id_tag;
         _drugIdTag = context.getResources().getString(drugIdTagRes);
 
-        int drugInfoRepeatTagRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_info_repeat_tag;
+        int drugInfoRepeatTagRes = R.string.drug_data_drug_info_repeat_tag;
         _drugInfoRepeatTag = context.getResources().getString(drugInfoRepeatTagRes);
 
-        int drugInfoHeaderTagRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_info_header_tag;
+        int drugInfoHeaderTagRes = R.string.drug_data_drug_info_header_tag;
         _drugInfoHeaderTag = context.getResources().getString(drugInfoHeaderTagRes);
 
-        int drugInfoHeaderHelpTagRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_info_header_help_tag;
+        int drugInfoHeaderHelpTagRes = R.string.drug_data_drug_info_header_help_tag;
         _drugInfoHeaderHelpTag = context.getResources().getString(drugInfoHeaderHelpTagRes);
 
-        int drugInfoTextTagRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_info_text_tag;
+        int drugInfoTextTagRes = R.string.drug_data_drug_info_text_tag;
         _drugInfoTextTag = context.getResources().getString(drugInfoTextTagRes);
 
-        int drugNameValueRes = com.fewstera.injectablemedicinesguide.R.string.drug_data_drug_name;
+        int drugNameValueRes = R.string.drug_data_drug_name;
         _drugNameValue = context.getResources().getString(drugNameValueRes);
     }
 
@@ -95,11 +86,11 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     }
 
     /**
-     * Get URL for the given letter download
-     * @param letter to download
+     * Get the URL to download the drug data from
+     *
      * @return the url
      */
-    private final String getUrl(char letter) {
+    private final String getUrl() {
         return _url;
     }
 
@@ -122,7 +113,7 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
                 doc.getDocumentElement().normalize();
 
                 /* Find all drug nodes and loop over them */
-                NodeList drugList = doc.getElementsByTagName("drug");
+                NodeList drugList = doc.getElementsByTagName(_drugRepeatTag);
                 for (int drugCount = 0; drugCount < drugList.getLength(); drugCount++) {
                     Element drugElement = (Element) drugList.item(drugCount);
                     Drug newDrug = parseDrugFromElement(drugElement);
@@ -152,11 +143,11 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     private Drug parseDrugFromElement(Element drugElement) throws Exception{
         Drug newDrug = new Drug();
 
-        int id = Integer.parseInt(drugElement.getElementsByTagName("drugno").item(0).getTextContent());
+        int id = Integer.parseInt(drugElement.getElementsByTagName(_drugIdTag).item(0).getTextContent());
         newDrug.setId(id);
 
         //Fetch all sections of a drug and loop over them.
-        NodeList sectionList = drugElement.getElementsByTagName("section");
+        NodeList sectionList = drugElement.getElementsByTagName(_drugInfoRepeatTag);
         for (int sectionCount = 0; sectionCount < sectionList.getLength(); sectionCount++) {
             //Get section element
             Element sectionElement = (Element) sectionList.item(sectionCount);
@@ -176,19 +167,19 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
     private Drug addSectionsDrugInfo(Drug drug, Element sectionElement) throws Exception{
 
         String headerText = null;
-        NodeList headerTextNode = sectionElement.getElementsByTagName("header_text");
+        NodeList headerTextNode = sectionElement.getElementsByTagName(_drugInfoHeaderTag);
         if(headerTextNode.getLength()>0){
             headerText = headerTextNode.item(0).getTextContent();
         }
 
         String headerHelper = null;
-        NodeList headingHelpNode = sectionElement.getElementsByTagName("heading_help");
+        NodeList headingHelpNode = sectionElement.getElementsByTagName(_drugInfoHeaderHelpTag);
         if(headingHelpNode.getLength()>0){
             headerHelper = headingHelpNode.item(0).getTextContent();
         }
 
         String sectionText = null;
-        NodeList sectionTextNode = sectionElement.getElementsByTagName("section_text");
+        NodeList sectionTextNode = sectionElement.getElementsByTagName(_drugInfoTextTag);
         if(sectionTextNode.getLength()>0){
             sectionText = sectionTextNode.item(0).getTextContent();
         }
@@ -207,7 +198,7 @@ public class DownloadDrugsRequest extends SpiceRequest<Drug[]> {
      * @return the drug with the added drug information
      */
     private Drug addDrugInformationToDrug(Drug drug, String headerText, String headerHelper, String sectionText) {
-        if(headerText.equals("DRUG:")){
+        if(headerText.equals(_drugNameValue)){
             drug.setName(sectionText);
         }else if(headerText!=null&&sectionText!=null){
             drug.addDrugInformation(new DrugInformation(headerText, headerHelper, sectionText));

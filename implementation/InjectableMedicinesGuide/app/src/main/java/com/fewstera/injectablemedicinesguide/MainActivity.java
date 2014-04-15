@@ -41,8 +41,6 @@ public class MainActivity extends LoggedInActivity {
         String lastUpdate = Preferences.getString(this, Preferences.UPDATE_DATE_KEY, "never");
         String textHtml = String.format(getResources().getString(R.string.last_updated_text), lastUpdate);
         updateText.setText(Html.fromHtml(textHtml));
-
-        getResources().getString(R.string.drug_idss);
 	}
 
     /**
