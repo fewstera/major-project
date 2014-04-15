@@ -1,36 +1,42 @@
 package com.fewstera.injectablemedicinesguide.models;
 
 /**
- * Created by fewstera on 01/04/2014.
+ * Class that represents the model of a DrugIndex
+ *
+ * @author Aidan Wynne Fewster
+ * @version 1.0
+ * @since 1.0
  */
 public class DrugIndex {
 
-    private long _dbId;
     private int _drugId;
     private String _name;
 
-    public DrugIndex(long dbId, int drugId, String name){
-        _dbId = dbId;
-        _drugId = drugId;
-        _name = name;
-    }
     public DrugIndex(int drugId, String name){
         _drugId = drugId;
         _name = name;
     }
 
-    public long getDbId() {
-        return _dbId;
-    }
-
+    /**
+     * Get the id of the drug that this Index belongs to
+     * @return the id
+     */
     public int getDrugId() {
         return _drugId;
     }
 
+    /**
+     * Get the name of this index
+     * @return the name
+     */
     public String getName() {
         return _name;
     }
 
+    /**
+     * Converts the DrugIndex to string (used by ListAdapter)
+     * @return the drugs name
+     */
     @Override
     public String toString(){
         return getName();

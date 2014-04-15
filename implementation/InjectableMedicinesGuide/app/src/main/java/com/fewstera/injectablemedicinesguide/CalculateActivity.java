@@ -292,7 +292,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
 
     /**
      * This method retrieves the value of the calculation and displays the results, along with
-     * an explanation of the calculationto the user via a web view.
+     * an explanation of the calculation to the user via a web view.
      */
     private void submitCalculation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -337,12 +337,14 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         String concentration = _twoDp.format(_calculator.getConcentration());
         String answer = _twoDp.format(val);
 
+        /* Information for the first equation (The explanation equation)  */
         String firstEquationTop = "dose (" + _calculatorInfo.getDoseUnits() + ") "
                 + ((_calculatorInfo.isPatientWeightRequired()) ? "&times; weight (kg) " : "")
                 + ((_calculatorInfo.isTimeRequired()) ? " &times; time (mins)" : "");
 
         String firstEquationBottom = "concentration (" + _calculatorInfo.getConcentrationUnits() + ")";
 
+        /* Information for the second equation (The explanation equation with numbers)  */
         String secondEquationTop = dose + " " + _calculatorInfo.getDoseUnits() + " "
                 + ((_calculatorInfo.isPatientWeightRequired()) ? "&times; " + weight + " kg " : "")
                 + ((_calculatorInfo.isTimeRequired()) ? " &times; " + time + " mins" : "");
@@ -375,6 +377,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         String concentration = _twoDp.format(_calculator.getConcentration());
         String answer = _twoDp.format(val);
 
+        /* Information for the first equation (The explanation equation)  */
         String firstEquationTop = "infusion rate (" + _calculatorInfo.getInfusionRateUnits() + ") "
                 + "&times; concentration (" + _calculatorInfo.getInfusionRateUnits()  + ")";
 
@@ -384,7 +387,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         /* Remove the extra ' &times;' from the string */
         firstEquationBottom = firstEquationBottom.substring(0, firstEquationBottom.length() - 8);
 
-
+        /* Information for the second equation (The explanation equation with numbers)  */
         String secondEquationTop = infusionRate + " " + _calculatorInfo.getInfusionRateUnits() + " "
                 + "&times; " + concentration + " " + _calculatorInfo.getInfusionRateUnits();
 

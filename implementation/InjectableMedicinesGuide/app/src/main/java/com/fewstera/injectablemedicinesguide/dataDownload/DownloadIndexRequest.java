@@ -23,7 +23,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 /**
- * Created by fewstera on 01/04/2014.
+ * Class responsible for downloading the drugs and all drug information's.
+ *
+ * @author Aidan Wynne Fewster
+ * @version 1.0
+ * @since 1.0
  */
 public class DownloadIndexRequest extends SpiceRequest<Integer> {
 
@@ -43,23 +47,34 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
         _dataProgress = DataProgress.getInstance();
     }
 
-    // Returns the number of unique drug id's from the table
-    @Override
+    /**
+     * Begins the request, this is called by the robospice service, when it's ready.
+     *
+     * @return the number of unique indexes within the database
+     * @throws Exception
+     */    @Override
     public Integer loadDataFromNetwork() throws Exception {
         _uniqueIds = new ArrayList<Integer>();
         return new Integer(downloadAndSaveIndex());
     }
 
-    // Returns URL given Letter
-    protected final String getUrl() {
+    /**
+     * Get URL for the drug indexes XML API
+     * @return the url
+     */
+    private final String getUrl() {
         return "http://www.injguide.nhs.uk/IMGDrugIndex.asp?username="
                 + _accountUsername + "&password=" +
                 _accountPassword;
     }
 
+    /**
+     * Downloads the drug index XML and populates the database with the information
+     *
+     * @return the number of unique indexes within the database
+     * @throws Exception
+     */
     private int downloadAndSaveIndex() throws Exception{
-        ArrayList<Drug> drugs = new ArrayList<Drug>();
-
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -69,41 +84,40 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
             doc.getDocumentElement().normalize();
 
             if(doc.getElementsByTagName("LoginError").getLength()>0){
-                _dataProgress.loginErrorOccured();
+                _dataProgress.loginErrorOccurred();
                 return -1;
             }
 
-            //Find all drug nodes and loop over them
+            /* Find all drug index nodes and loop over them */
             NodeList drugIndexList = doc.getElementsByTagName("drug_index_line");
             for (int indexCount = 0; indexCount < drugIndexList.getLength(); indexCount++) {
                 Element indexElement = (Element) drugIndexList.item(indexCount);
                 DrugIndex newIndex = parseIndexFromElement(indexElement);
+                /* Save new index to local database */
                 _db.createDrugIndex(newIndex);
+
+                /* If the drugno is unique add it to the list of unqiue id's */
                 Integer testUniqueId = new Integer(newIndex.getDrugId());
                 if(!_uniqueIds.contains(testUniqueId)){
                     _uniqueIds.add(testUniqueId);
                 }
 
             }
-
-        } catch (SAXException e) {
-            e.printStackTrace();
-            throw(e);
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw(e);
-        } catch (ParserConfigurationException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             throw(e);
         }
         _dataProgress.setIndexSize(_uniqueIds.size());
+        /* return the amount of unique id's */
         return _uniqueIds.size();
     }
 
-    /*
-        *  Retrieves drug index from the element
-        *  Returns: DrugIndex containing the info
-    */
+    /**
+     * Retrieves drug index from the XML element
+     * @param drugElement
+     * @return the DrugIndex built from the XML elements.
+     * @throws Exception
+     */
     private DrugIndex parseIndexFromElement(Element drugElement) throws Exception{
         int id = Integer.parseInt(drugElement.getElementsByTagName("drugno").item(0).getTextContent());
         String name = drugElement.getElementsByTagName("drugname").item(0).getTextContent();

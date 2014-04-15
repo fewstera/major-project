@@ -350,7 +350,7 @@ public final class R {
 		public static final int abc_searchview_description_voice = 0x7f0b000a;
 		public static final int abc_shareactionprovider_share_with = 0x7f0b000b;
 		public static final int abc_shareactionprovider_share_with_application = 0x7f0b000c;
-	}
+    }
 	public static final class style {
 		public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog = 0x7f0c0007;
 		public static final int TextAppearance_AppCompat_Base_SearchResult = 0x7f0c0008;

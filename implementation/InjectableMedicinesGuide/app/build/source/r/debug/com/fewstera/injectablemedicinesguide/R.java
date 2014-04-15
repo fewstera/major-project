@@ -916,7 +916,7 @@ containing a value of this type.
         public static final int icon=0x7f08002a;
         public static final int ifRoom=0x7f08000e;
         public static final int image=0x7f080027;
-        public static final int infoButton=0x7f08005d;
+        public static final int info_button=0x7f08005d;
         public static final int information_content=0x7f08005f;
         public static final int information_name=0x7f08005e;
         public static final int infusion_rate=0x7f080040;

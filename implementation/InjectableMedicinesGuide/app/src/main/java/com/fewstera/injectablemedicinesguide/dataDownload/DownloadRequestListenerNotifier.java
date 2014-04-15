@@ -18,8 +18,20 @@ import com.octo.android.robospice.request.notifier.RequestListenerNotifier;
 
 /**
  * Default implementation of RequestListenerNotifier. It will notify listeners
- * on the ui thread. Modifed by Aidan Fewster to save progress in singleton
- * @author Andrew Clark
+ * on the ui thread.
+ *
+ * I had to copy all the code from the robospice DefaultRequestListenerNotifier class, as the parameters
+ * within that class are private, so inheritance could not be used to modify the behaviour of the class.
+ *
+ * All that I have added is that when Request finishes the results are added to the DataProgress singleton.
+ *
+ * Original source:
+ * https://github.com/stephanenicolas/robospice/blob/release/robospice-core-parent/robospice/src/main/java/com/octo/android/robospice/request/notifier/DefaultRequestListenerNotifier.java
+ *
+ * @author Andrew Clark, Aidan Wynne Fewster
+ * @version 1.1
+ * @since 1.0
+ * @see com.octo.android.robospice.request.notifier.DefaultRequestListenerNotifier
  */
 public class DownloadRequestListenerNotifier implements RequestListenerNotifier {
     // ============================================================================================
@@ -58,11 +70,13 @@ public class DownloadRequestListenerNotifier implements RequestListenerNotifier 
     }
 
     public <T> void notifyListenersOfRequestSuccess(final CachedSpiceRequest<T> request, final T result, final Set<RequestListener<?>> listeners) {
+        /* Increase finish request count */
         _dataProgress.increaseFinishedCount();
         post(new ResultRunnable<T>(listeners, result), request.getRequestCacheKey());
     }
 
     public <T> void notifyListenersOfRequestFailure(final CachedSpiceRequest<T> request, final SpiceException e, final Set<RequestListener<?>> listeners) {
+        /* Increase finish request count */
         _dataProgress.increaseFinishedCount();
         post(new ResultRunnable<T>(listeners, e), request.getRequestCacheKey());
     }

@@ -7,22 +7,26 @@
     android:paddingBottom="10dp"
     >
     <ImageButton
-        android:id="@+id/infoButton"
+        android:id="@+id/info_button"
         android:layout_width="19sp"
         android:layout_height="19sp"
         android:background="@null"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
+        android:visibility="gone"
         android:layout_marginRight="7sp"
-        android:src="@drawable/info_button"/>
+        android:src="@drawable/info_button"
+        android:onClick="onInfoClicked"/>
     <TextView
         android:id="@+id/information_name"
-        android:layout_toRightOf="@id/infoButton"
+        android:layout_toRightOf="@id/info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-3sp"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:onClick="onInfoClicked"
+        android:clickable="true"
         />
     <TextView
         android:layout_below="@id/information_name"

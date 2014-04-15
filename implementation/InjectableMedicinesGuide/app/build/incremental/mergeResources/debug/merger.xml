@@ -1817,6 +1817,10 @@ normal
                     name="TextAppearance.AppCompat.Widget.PopupMenu.Large"
                     parent="TextAppearance.AppCompat.Base.Widget.PopupMenu.Large" />
 
+                <attr
+                    name="listPreferredItemHeightSmall"
+                    format="dimension" />
+
                 <declare-styleable name="MenuItem" >
 
                     <!-- The ID of the item. -->
@@ -1954,10 +1958,6 @@ normal
                         name="actionProviderClass"
                         format="string" />
                 </declare-styleable>
-
-                <attr
-                    name="listPreferredItemHeightSmall"
-                    format="dimension" />
 
                 <style
                     name="TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
@@ -7452,6 +7452,21 @@ false
     <dataSet config="main" >
         <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res" >
             <file
+                name="info_button"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/info_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="info_clicked"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/info_clicked.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="info_norm"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/info_norm.png"
+                qualifiers=""
+                type="drawable" />
+            <file
                 name="rounded_corners_blue"
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/rounded_corners_blue.xml"
                 qualifiers=""
@@ -7876,21 +7891,6 @@ true
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
-            <file
-                name="info_button"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/info_button.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="info_norm"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/info_norm.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="info_clicked"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/drawable/info_clicked.png"
-                qualifiers=""
-                type="drawable" />
         </source>
         <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/res/rs/debug" />
     </dataSet>

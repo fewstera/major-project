@@ -6,7 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /**
- * Created by fewstera on 07/04/2014.
+ * Class for an activity where the user is logged in
+ *
+ * This class enables the menu for all activity's where the user is logged in.
+ *
+ * @author Aidan Wynne Fewster
+ * @version 1.0
+ * @since 1.0
  */
 public class LoggedInActivity extends Activity{
     @Override
@@ -16,6 +22,9 @@ public class LoggedInActivity extends Activity{
         return true;
     }
 
+    /**
+     * Determines which menu item has been clicked and performs appropriate action
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection

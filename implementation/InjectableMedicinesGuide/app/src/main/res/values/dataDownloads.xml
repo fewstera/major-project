@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        BELOW IS THE LIST OF URLS TO DOWNLOAD ALL THE DRUG'S AND DRUG INFORMATION'S.
+
+        %USERNAME% will be replaced with the users username
+        %PASSWORD% will be replaced with the users password
+    -->
+    <string-array name="drug_data_download_links">
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=A]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=B]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=C]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=D]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=E]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=F]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=G]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=H]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=I]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=J]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=K]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=L]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=M]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=N]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=O]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=P]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Q]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=R]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=S]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=T]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=U]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=V]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=W]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=X]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Y]]></item>
+        <item><![CDATA[http://www.injguide.nhs.uk/IMGDrugData.asp?username=%USERNAME%&password=%PASSWORD%&Part=Z]]></item>
+    </string-array>
+    <!--
+        BELOW IS THE LIST OF TAGS TO GO ALONG WITH THE ABOVE URLS, TAGS ARE USED TO ALERT THE USER ON PROGRESS
+        E.G. Downloaded %TAG%... drugs. For tag A would output "Downloaded A... drugs"
+    -->
+    <string-array name="drug_data_download_links">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>X</item>
+        <item>Z</item>
+    </string-array>
+    <!-- This is the name of the XML tag which represents the start of a new drug -->
+    <string name="drug_data_drug_repeat_tag">drug</string>
+    <!-- This is the name of the XML tag containing the Drug id -->
+    <string name="drug_data_drug_id_tag">drugno</string>
+    <!-- This is the name of the XML tag which represents that start of a new drug information -->
+    <string name="drug_data_drug_info_repeat_tag">section</string>
+    <!-- This is the name of the XML tag which holds the drug information header -->
+    <string name="drug_data_drug_info_header_tag">header_text</string>
+    <!-- This is the name of the XML tag which holds the drug information header help -->
+    <string name="drug_data_drug_info_header_help_tag">header_help</string>
+    <!-- This is the name of the XML tag which holds the drug information's body (section_text) -->
+    <string name="drug_data_drug_info_text_tag">section_text</string>
+    <!-- This is the value of the header tag which holds the drugs name -->
+    <string name="drug_data_drug_name">DRUG:</string>
+</resources>

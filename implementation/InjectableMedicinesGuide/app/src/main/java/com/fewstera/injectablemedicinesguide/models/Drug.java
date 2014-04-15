@@ -6,91 +6,81 @@ import java.util.Date;
 import android.content.Context;
 
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
-
+/**
+ * Class that represents the model of a Drug
+ *
+ * @author Aidan Wynne Fewster
+ * @version 1.0
+ * @since 1.0
+ */
 public class Drug implements Comparable<Drug>{
 	
 	private int _id;
 	private String _name;
-	private String _route;
-	private String _tradeName;
-    private String _medicineName;
-    private String _version;
-    private Date _datePublished;
     private DrugCalculatorInfo _calculatorInfo;
 
     private ArrayList<DrugInformation> _drugInformations;
 
+    /**
+     * Get id of the drug (drug-no)
+     * @return the id
+     */
     public int getId(){
         return _id;
     }
 
+    /**
+     * Sets the drug's id
+     * @param id the id
+     */
     public void setId(int id){
         _id = id;
     }
 
+    /**
+     * Get drugs name
+     * @return the name
+     */
     public String getName(){
         return _name;
     }
 
+    /**
+     * Set drug name
+     * @param name the name
+     */
     public void setName(String name){
         _name = name;
     }
 
-    public String getRoute() {
-        return _route;
-    }
+    /**
+     * Add new information to the drug
+     *
+     * @param drugInfo DrugInformation to add
+     */
 
-    public void setRoute(String route) {
-        this._route = route;
-    }
-
-    public String getTradeName() {
-        return _tradeName;
-    }
-
-    public void setTradeName(String tradeName) {
-        _tradeName = tradeName;
-    }
-
-    public String getMedicineName() {
-        return _medicineName;
-    }
-
-    public void setMedicineName(String medicineName) {
-        _medicineName = medicineName;
-    }
-
-    public String getVersion() {
-        return _version;
-    }
-
-    public void setVersion(String version) {
-        _version = version;
-    }
-
-
-    public Date getDatePublished() {
-        return _datePublished;
-    }
-
-    public void setDatePublished(Date datePublished) {
-        _datePublished = datePublished;
-    }
-
-    // Add new information about a drug
     public void addDrugInformation(DrugInformation drugInfo){
         if(_drugInformations==null){ _drugInformations = new ArrayList<DrugInformation>(); }
 
         _drugInformations.add(drugInfo);
     }
 
-    //Get an ArrayList of all the drug information
+    /**
+     * Get an ArrayList of all the drug information's
+     *
+     * @return the list of DrugInformation's
+     */
     public ArrayList<DrugInformation> getDrugInformations(){
         if(_drugInformations==null){ _drugInformations = new ArrayList<DrugInformation>(); }
         return _drugInformations;
     }
 
-    //Get an ArrayList of all the drug information from database
+    /**
+     *  Get an ArrayList of all the drug information's from the database
+     *
+     * @param context the application context
+     * @return
+     */
     public ArrayList<DrugInformation> getDrugInformations(Context context){
         if(_drugInformations==null){
             DatabaseHelper db = new DatabaseHelper(context);
@@ -99,6 +89,11 @@ public class Drug implements Comparable<Drug>{
         return _drugInformations;
     }
 
+    /**
+     * Get the DrugCalculatorInfo for the drug
+     * @param context the application context
+     * @return the DrugCalculatorInfo or null if there isn't any
+     */
     public DrugCalculatorInfo getCalculatorInfo(Context context){
         if(_calculatorInfo==null){
             DatabaseHelper db = new DatabaseHelper(context);
@@ -107,10 +102,19 @@ public class Drug implements Comparable<Drug>{
         return _calculatorInfo;
     }
 
+    /**
+     * Compares a drug to another drug
+     * @param test the drug to test against
+     * @return the result of the comparison
+     */
     public int compareTo(Drug test) {
         return getName().compareTo(test.getName());
     }
 
+    /**
+     * Outputs a Drug as a string (Used by the ListAdapaters)
+     * @return the String for outputing the Drug as a string
+     */
     @Override
     public String toString(){
         return getName();

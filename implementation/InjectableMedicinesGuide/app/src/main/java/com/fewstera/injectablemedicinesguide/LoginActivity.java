@@ -14,7 +14,16 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+/**
+ * Activity for logging in
+ *
+ * This activity is used to allow the user to enter their NHS credentials, which logs them into
+ * the system.
+ *
+ * @author Aidan Wynne Fewster
+ * @version 1.0
+ * @since 1.0
+ */
 public class LoginActivity extends Activity {
 
     private Auth _auth;
@@ -27,40 +36,58 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_login);
-		
+
+        /* Init varaibles */
 		_loginButton = (Button)findViewById(R.id.login_button);
         _auth = new Auth();
 	}
 
-	
+    /**
+     * Called when the login button is press
+     *
+     * @param view of the login button
+     */
 	public void loginClick(View view){
+        /* Get the entered username */
 		EditText usernameText = (EditText) findViewById(R.id.username_input);
 		_username = usernameText.getText().toString();
-		
+		/* Get the entered password */
 		EditText passwordText = (EditText) findViewById(R.id.password_input);
 		_password = passwordText.getText().toString();
-		
+
+        /* Disable the login button whilst processing. */
 		_loginButton.setEnabled(false);
 
+        /* Start the login task */
         ValidateLoginTask validateLoginTask = new ValidateLoginTask();
         validateLoginTask.execute();
+        /* Set the progress spinner as loading */
 		this.setProgressBarIndeterminateVisibility(true); 
 	
 	}
-	
+
+    /**
+     *  Called when the ValidateLoginTask fails (invalid password)
+     */
 	public void loginFailed(){
 		_loginButton.setEnabled(true);
 		Toast toast = Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT);
 		toast.show();
 	}
 
-	public void connectionError(){
+    /**
+     *  Called when the ValidateLoginTask returns connection error
+     */
+    public void connectionError(){
 		_loginButton.setEnabled(true);
 		Toast toast = Toast.makeText(getApplicationContext(), "Connection error", Toast.LENGTH_SHORT);
 		toast.show();
 	}
-	
-	public void loginComplete(){
+
+    /**
+     * Called when the ValidateLoginTask returns connection error
+     */
+    public void loginComplete(){
         _auth.saveCredentials(this);
 		Toast toast = Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT);
 		toast.show();
@@ -68,7 +95,11 @@ public class LoginActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
-	
+
+    /**
+     * InnerClass for validating the users login credentials, called in an AsyncTask to keep the
+     * process off the UI thread.
+     */
 	private class ValidateLoginTask extends AsyncTask<Void, Void, Boolean> {
 		@Override
 		protected Boolean doInBackground(Void... p) {
@@ -81,9 +112,13 @@ public class LoginActivity extends Activity {
             }
 		}
 
+        /* When the task is complete */
 		@Override
 		protected void onPostExecute(Boolean isValid) {
-			LoginActivity.this.setProgressBarIndeterminateVisibility(false); 
+            /* Stop the loading spinner */
+			LoginActivity.this.setProgressBarIndeterminateVisibility(false);
+
+            /* Call appropriate method depending on tasks output */
 			if(isValid==null){
                 LoginActivity.this.connectionError();
             }else if(!isValid.booleanValue()){

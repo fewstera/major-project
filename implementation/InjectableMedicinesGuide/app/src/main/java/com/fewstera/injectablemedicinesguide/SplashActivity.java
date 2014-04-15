@@ -3,7 +3,15 @@ package com.fewstera.injectablemedicinesguide;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-
+/**
+ * Splash activity of the application
+ *
+ * This is the activity responsible for displaying the splash screen when opening the application.
+ *
+ * @author Aidan Wynne Fewster
+ * @version 1.0
+ * @since 1.0
+ */
 public class SplashActivity extends Activity {
 
     /* How long the splash screen should be displayed for. */
@@ -27,7 +35,7 @@ public class SplashActivity extends Activity {
      * then Login activity will be returned. If the user is logged in but the database isn't
      * complete then the Download activity is returned. Otherwise the Main activity is returned.
      *
-     * @return      the class of the activity to open after splash screen.
+     * @return the class of the activity to open after splash screen.
      */
     private Class<?> getActivityClass(){
         /* If no credentials are stored, ask user to login. */
@@ -48,7 +56,7 @@ public class SplashActivity extends Activity {
      * Makes the user wait *WAIT_TIME* milliseconds while displaying the splash screen, afterwards
      * the activity passed in is launched.
      *
-     * @param      startActivityClass class of the activity to open after splash screen.
+     * @param startActivityClass class of the activity to open after splash screen.
      */
     private void startSplashScreenThread(final Class<?> startActivityClass) {
         Thread splashTread = new Thread() {
