@@ -1,8 +1,5 @@
 package com.fewstera.injectablemedicinesguide.dataDownload;
 
-import java.util.Set;
-
-import roboguice.util.temp.Ln;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
@@ -15,6 +12,10 @@ import com.octo.android.robospice.request.listener.RequestListener;
 import com.octo.android.robospice.request.listener.RequestProgress;
 import com.octo.android.robospice.request.listener.RequestProgressListener;
 import com.octo.android.robospice.request.notifier.RequestListenerNotifier;
+
+import java.util.Set;
+
+import roboguice.util.temp.Ln;
 
 /**
  * Default implementation of RequestListenerNotifier. It will notify listeners

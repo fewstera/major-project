@@ -2,18 +2,22 @@ package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
 
+import com.fewstera.injectablemedicinesguide.Auth;
 import com.fewstera.injectablemedicinesguide.R;
+import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.fewstera.injectablemedicinesguide.models.Drug;
 import com.fewstera.injectablemedicinesguide.models.DrugCalculatorInfo;
-import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.octo.android.robospice.request.SpiceRequest;
+
 import org.apache.commons.lang3.CharEncoding;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -94,9 +98,7 @@ public class DownloadCalculationsRequest extends SpiceRequest<Void> {
      *  Get the URL of the calculations API
      */
     private final String getUrl() {
-        String url = _url.replace("%USERNAME%", _username);
-        url = url.replace("%PASSWORD%", _password);
-        return url;
+        return Auth.prepareUrl(_url, _username, _password);
     }
 
     /**

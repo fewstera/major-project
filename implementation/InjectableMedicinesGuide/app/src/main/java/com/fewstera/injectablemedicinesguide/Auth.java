@@ -2,12 +2,14 @@ package com.fewstera.injectablemedicinesguide;
 
 import android.content.Context;
 
+import org.apache.commons.lang3.CharEncoding;
+import org.w3c.dom.Document;
+
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import org.apache.commons.lang3.CharEncoding;
-import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -44,14 +46,14 @@ public class Auth {
      *
      * @return      the result of the validation check
      */
-    public Boolean isValid() {
+    public Boolean isValid(Context context) {
         try {
-            String encodedUsername = URLEncoder.encode(_accountUsername, "UTF-8");
-            String encodedPassword = URLEncoder.encode(_accountPassword, "UTF-8");
 
-            String indexURL = "http://www.injguide.nhs.uk/IMGLogin.asp"
-                    + "?username=" + encodedUsername + "&password="
-                    + encodedPassword;
+            String indexURL = context.getResources().getString(R.string.login_url);
+
+            /* Substitute the username and password values into the url  */
+            indexURL = indexURL.replace("%USERNAME%", _accountUsername).replace("%PASSWORD%", _accountPassword);
+
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -59,10 +61,12 @@ public class Auth {
 
             Document doc = dBuilder.parse(stream, CharEncoding.UTF_8);
 
-            //Grabs the login result
-            String loginResult = doc.getElementsByTagName("LoginResult").item(0).getTextContent();
+            String loginResultTag = context.getResources().getString(R.string.login_data_result_tag);
 
-            return new Boolean(loginResult.equals("true"));
+            //Grabs the login result
+            String loginResult = doc.getElementsByTagName(loginResultTag).item(0).getTextContent();
+
+            return new Boolean(Boolean.valueOf(loginResult));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -122,13 +126,25 @@ public class Auth {
     }
 
     /**
-     * Loads credentials from the preferences
+     * Prepares a URL from the XML customisation file to contain the user username and password
      *
-     * @param context the context
+     * @param url the url to prepare
+     * @param username the user username
+     * @param password the user password
+     * @return the prepared url
      */
-    public void loadCredentials(Context context) {
-        String username = getSavedUsername(context);
-        String password = getSavedPassword(context);
-        setCredentials(username, password);
+    public static String prepareUrl(String url, String username, String password){
+        /* Encode the users username and password ready be used for a web request.  */
+
+        String encodedUsername, encodedPassword;
+        try {
+            encodedUsername = URLEncoder.encode(username, "UTF-8");
+            encodedPassword = URLEncoder.encode(password, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            encodedUsername = username;
+            encodedPassword = password;
+            e.printStackTrace();
+        }
+        return url.replace("%USERNAME%", encodedUsername).replace("%PASSWORD%", encodedPassword);
     }
 }

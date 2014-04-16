@@ -1,11 +1,10 @@
 package com.fewstera.injectablemedicinesguide.models;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 import android.content.Context;
 
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
+
+import java.util.ArrayList;
 /**
  * Class that represents the model of a Drug
  *

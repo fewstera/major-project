@@ -1,18 +1,22 @@
 package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
+
 import com.fewstera.injectablemedicinesguide.R;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
+import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
+import com.fewstera.injectablemedicinesguide.models.Drug;
+import com.fewstera.injectablemedicinesguide.models.DrugInformation;
+import com.octo.android.robospice.request.SpiceRequest;
+
 import org.apache.commons.lang3.CharEncoding;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import com.fewstera.injectablemedicinesguide.models.Drug;
-import com.fewstera.injectablemedicinesguide.models.DrugInformation;
-import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
-import com.octo.android.robospice.request.SpiceRequest;
+
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 

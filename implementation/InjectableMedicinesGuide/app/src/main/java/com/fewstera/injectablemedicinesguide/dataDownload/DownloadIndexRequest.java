@@ -2,9 +2,10 @@ package com.fewstera.injectablemedicinesguide.dataDownload;
 
 import android.content.Context;
 
+import com.fewstera.injectablemedicinesguide.Auth;
 import com.fewstera.injectablemedicinesguide.R;
-import com.fewstera.injectablemedicinesguide.models.DrugIndex;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
+import com.fewstera.injectablemedicinesguide.models.DrugIndex;
 import com.octo.android.robospice.request.SpiceRequest;
 
 import org.apache.commons.lang3.CharEncoding;
@@ -70,17 +71,6 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
     }
 
     /**
-     * Adds the encoded username and password to the provided URL
-     *
-     * @param url the url to format
-     * @return the formatted url
-     */
-    String formatApiUrl(String url){
-
-        return url;
-    }
-
-    /**
      * Begins the request, this is called by the robospice service, when it's ready.
      *
      * @return the number of unique indexes within the database
@@ -96,9 +86,7 @@ public class DownloadIndexRequest extends SpiceRequest<Integer> {
      * @return the url
      */
     private final String getUrl() {
-        String url = _url.replace("%USERNAME%", _username);
-        url = url.replace("%PASSWORD%", _password);
-        return url;
+        return Auth.prepareUrl(_url, _username, _password);
     }
 
     /**

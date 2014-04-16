@@ -11,7 +11,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fewstera.injectablemedicinesguide.dataDownload.*;
+import com.fewstera.injectablemedicinesguide.dataDownload.DataProgress;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadCalculationsRequest;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadDrugsRequest;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadIndexRequest;
+import com.fewstera.injectablemedicinesguide.dataDownload.DownloadService;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.fewstera.injectablemedicinesguide.models.Drug;
 import com.octo.android.robospice.SpiceManager;
@@ -48,8 +52,9 @@ public class DownloadDataActivity extends LoggedInActivity {
     TextView _progressText;
     HashMap<String,String> _drugDataLinks = new HashMap<String,String>();
     Toast _toast;
+    DatabaseHelper _db;
 
-    private String _encodedUsername, _encodedPassword;
+    private String _username, _password;
 
     /* The failure types for a request */
     private final int INDEX_FAIL = 0;
@@ -71,6 +76,8 @@ public class DownloadDataActivity extends LoggedInActivity {
      * encodes the users username and password
      */
     private void beforeDownloadStart() {
+        this.setProgressBarIndeterminateVisibility(true);
+
         _progressText = (TextView) findViewById(R.id.progressText);
         _progressBar = (ProgressBar) findViewById(R.id.downloadProgress);
         _progressBar.setMax(100);
@@ -84,18 +91,13 @@ public class DownloadDataActivity extends LoggedInActivity {
         /* Reset the download complete boolean so that if a data download has failed
          * the user isn't displayed with a partial database. */
         Preferences.setDownloadComplete(this, false);
-        DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-        db.truncateAll();
+        _db = new DatabaseHelper(getApplicationContext());
+        _db.truncateAll();
 
-        /* Encode the users username and password ready be used for a web request.  */
-        try {
-            _encodedUsername = URLEncoder.encode(Auth.getSavedUsername(this), "UTF-8");
-            _encodedPassword = URLEncoder.encode(Auth.getSavedPassword(this), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            _encodedUsername = Auth.getSavedUsername(this);
-            _encodedPassword = Auth.getSavedPassword(this);
-            e.printStackTrace();
-        }
+        /* Retrieve the users username and password ready be used for the web requests.  */
+        _username = Auth.getSavedUsername(this);
+        _password = Auth.getSavedPassword(this);
+        
         populateDrugDataLinks();
     }
 
@@ -113,29 +115,18 @@ public class DownloadDataActivity extends LoggedInActivity {
         }
 
         for(int count = 0; count<drugDataTags.length; count++){
-            _drugDataLinks.put(drugDataTags[count], formatApiUrl(drugDataLinks[count]));
+            _drugDataLinks.put(drugDataTags[count], Auth.prepareUrl(drugDataLinks[count], _username, _password));
         }
-    }
-
-    /**
-     * Adds the encoded username and password to the provided URL
-     *
-     * @param url the url to format
-     * @return the formatted url
-     */
-    String formatApiUrl(String url){
-        url = url.replace("%USERNAME%", _encodedUsername);
-        url = url.replace("%PASSWORD%", _encodedPassword);
-        return url;
     }
 
     /**
      *  Starts the requests to download the drug indexes
      */
     private void startIndexDownload(){
-        this.setProgressBarIndeterminateVisibility(true);
-        _progressText.setText("Downloading drug index information");
-        DownloadIndexRequest downloadRequest = new DownloadIndexRequest(this, _encodedUsername, _encodedPassword);
+        _db.truncateIndexs();
+
+        _progressText.setText(getString(R.string.download_index_success));
+        DownloadIndexRequest downloadRequest = new DownloadIndexRequest(this, _username, _password);
         _spiceManager.execute(downloadRequest, "index_download", -1, new indexDownloadRequestListener());
     }
 
@@ -143,9 +134,11 @@ public class DownloadDataActivity extends LoggedInActivity {
      * Starts the request to download the calculator informations
      */
     private void startCalcInfoDownload(){
-        _progressText.setText("Downloading drug calculation information");
+        _db.truncateCalcs();
+
+        _progressText.setText(getString(R.string.download_calc_success));
         _progressBar.setProgress(5);
-        DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(this, _encodedUsername, _encodedPassword);
+        DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(this, _username, _password);
         _spiceManager.execute(downloadRequest, "calcs_download", -1, new calcsDownloadRequestListener());
     }
 
@@ -175,7 +168,7 @@ public class DownloadDataActivity extends LoggedInActivity {
      * Updates the progress whilst drugs download
      */
     private void updateDownloadDrugProgress(){
-        _progressText.setText("Downloading (" + _dataProgress.getDrugList().size() + " of " + _drugCount + ")");
+        _progressText.setText(String.format(getString(R.string.download_drug_progress), _dataProgress.getDrugList().size(), _drugCount));
         _progressBar.setProgress(10 + Math.round((float) _dataProgress.getDrugList().size() / (float) _drugCount * 90));
 
     }
@@ -225,18 +218,18 @@ public class DownloadDataActivity extends LoggedInActivity {
      */
     private void onDownloadFail(int type) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Download failed, try again?");
+        builder.setTitle(getString(R.string.download_failed_title));
         String message = "";
         if(type==INDEX_FAIL){
-            message = "Failed to download drug index.\n\nWould you like to try again?";
-            builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+            message = getString(R.string.download_failed_index_message);
+            builder.setPositiveButton(getString(R.string.download_failed_try_again), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     startIndexDownload();
                 }
             });
         }else if(type==CALCS_FAIL){
-            message = "Failed to download drug calculation info.\n\nWould you like to try again?";
-            builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+            message = getString(R.string.download_failed_calculator_message);
+            builder.setPositiveButton(getString(R.string.download_failed_try_again), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     startCalcInfoDownload();
                 }
@@ -259,10 +252,9 @@ public class DownloadDataActivity extends LoggedInActivity {
             /* Remove extra  ', ' */
             failedTagString = failedTagString.substring(0 , failedTagString.length() - 2);
 
-            message = "Failed to download drugs starting with the letters " +
-                    failedTagString + "\n\nWould you like to try again?";
+            message = String.format(getString(R.string.download_failed_drugs_message), failedTagString);
 
-            builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(getString(R.string.download_failed_try_again), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     for(String failedTag : failedTags){
                         startDrugDataDownload(failedTag, _drugDataLinks.get(failedTag));
@@ -271,7 +263,7 @@ public class DownloadDataActivity extends LoggedInActivity {
             });
         }
         builder.setMessage(message);
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.download_failed_cancel), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 logout();
             }
@@ -294,7 +286,7 @@ public class DownloadDataActivity extends LoggedInActivity {
      * Alerts the user that their credentials are incorrect and logs them out.
      */
     private void invalidLogin(){
-        showMessage("Invalid credentials");
+        showMessage(getString(R.string.download_failed_login_error));
         logout();
     }
 
@@ -378,7 +370,7 @@ public class DownloadDataActivity extends LoggedInActivity {
                 invalidLogin();
                 return ;
             }
-            showMessage("Failed downloading index");
+            showMessage(getString(R.string.download_index_failed_toast));
             onDownloadFail(INDEX_FAIL);
         }
 
@@ -392,7 +384,7 @@ public class DownloadDataActivity extends LoggedInActivity {
                 invalidLogin();
                 return ;
             }
-            showMessage("Downloaded drug index");
+            showMessage(getString(R.string.download_index_success_toast));
             _drugCount = indexNo.intValue();
             startCalcInfoDownload();
         }
@@ -417,7 +409,7 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestFailure(SpiceException spiceException) {
-            showMessage("Failed downloading calcs");
+            showMessage(getString(R.string.download_calcs_failed_toast));
             onDownloadFail(CALCS_FAIL);
         }
 
@@ -426,7 +418,7 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestSuccess(final Void indexNo) {
-            showMessage("Downloaded calculation");
+            showMessage(getString(R.string.download_calc_success_toast));
             startDrugDataDownloads();
         }
 
@@ -456,7 +448,7 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestFailure(SpiceException spiceException) {
-            showMessage("Failed downloading " + _tag + "... drugs");
+            showMessage(String.format(getString(R.string.download_drugs_failed_toast), _tag));
             checkIfFinished();
         }
 
@@ -465,7 +457,7 @@ public class DownloadDataActivity extends LoggedInActivity {
          * @see RequestListener, PendingRequestListener
          */
         public void onRequestSuccess(final Drug[] drugs) {
-            showMessage("Downloaded " + _tag + "... drugs");
+            showMessage(String.format(getString(R.string.download_drugs_success_toast), _tag));
             updateDownloadDrugProgress();
             checkIfFinished();
         }

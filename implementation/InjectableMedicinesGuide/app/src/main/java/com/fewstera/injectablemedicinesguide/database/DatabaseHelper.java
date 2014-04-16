@@ -3,7 +3,6 @@ package com.fewstera.injectablemedicinesguide.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -12,7 +11,6 @@ import com.fewstera.injectablemedicinesguide.models.DrugCalculatorInfo;
 import com.fewstera.injectablemedicinesguide.models.DrugIndex;
 import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -124,6 +122,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //Create new ones
         onCreate(db);
+    }
+
+    /* Truncates the calculator table */
+    public void truncateCalcs(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_CALCS);
+        db.execSQL(CREATE_TABLE_DRUG_CALCS);
+    }
+
+    /* Truncates the index table */
+    public void truncateIndexs(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRUG_INDEXS);
+        db.execSQL(CREATE_TABLE_DRUG_INDEX);
     }
 
     /**

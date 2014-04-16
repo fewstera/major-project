@@ -1,8 +1,5 @@
 package com.fewstera.injectablemedicinesguide;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -71,7 +68,7 @@ public class LoginActivity extends Activity {
      */
 	public void loginFailed(){
 		_loginButton.setEnabled(true);
-		Toast toast = Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT);
+		Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.login_error_password), Toast.LENGTH_SHORT);
 		toast.show();
 	}
 
@@ -80,7 +77,7 @@ public class LoginActivity extends Activity {
      */
     public void connectionError(){
 		_loginButton.setEnabled(true);
-		Toast toast = Toast.makeText(getApplicationContext(), "Connection error", Toast.LENGTH_SHORT);
+		Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.login_error_connection), Toast.LENGTH_SHORT);
 		toast.show();
 	}
 
@@ -89,7 +86,7 @@ public class LoginActivity extends Activity {
      */
     public void loginComplete(){
         _auth.saveCredentials(this);
-		Toast toast = Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT);
+		Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.login_success_toast), Toast.LENGTH_SHORT);
 		toast.show();
 		Intent intent = new Intent(this, DownloadDataActivity.class);
 		startActivity(intent);
@@ -106,7 +103,7 @@ public class LoginActivity extends Activity {
 
             _auth.setCredentials(_username, _password);
             try{
-			    return _auth.isValid();
+			    return _auth.isValid(getApplicationContext());
             }catch(Exception e){
                 return null;
             }

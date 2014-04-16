@@ -194,7 +194,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
             float dose = getFloatFromEditText(R.id.dose);
             _calculator.setDose(dose);
         }else{
-            displayToast("Error, no calculation type selected");
+            displayToast(getString(R.string.calculator_message_no_type));
             return ;
         }
 
@@ -241,20 +241,20 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     private void validateAndSubmit() {
         switch(_calculator.validate(false)){
             case Calculator.ERROR_DOSE:
-                displayToast("Dosage must be greater than 0");
+                displayToast(getString(R.string.calculator_error_dose));
                 break;
             case Calculator.ERROR_IR:
-                displayToast("Infusion rate must be greater than 0");
+                displayToast(getString(R.string.calculator_error_infusion_rate));
                 break;
 
             case Calculator.ERROR_CONCENTRATION:
-                displayToast("Concentration must greater than 0");
+                displayToast(getString(R.string.calculator_error_concentration));
                 break;
             case Calculator.ERROR_TIME:
-                displayToast("Time must greater than 0");
+                displayToast(getString(R.string.calculator_error_time));
                 break;
             case Calculator.ERROR_WEIGHT:
-                displayToast("Weight must greater than 0");
+                displayToast(getString(R.string.calculator_error_weight));
                 break;
             case Calculator.WARN_WEIGHT:
                 warnAboutWeight();
@@ -275,11 +275,11 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     private void warnAboutWeight() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String weightString = _twoDp.format(_calculator.getWeight());
-        builder.setTitle("Is the weight (" + weightString + "kg) correct?");
-        builder.setMessage("The weight you entered " + weightString + "kg seems incorrect. Do you want to continue using this value?");
+        builder.setTitle(String.format(getString(R.string.calculator_warn_weight_title), weightString));
+        builder.setMessage(String.format(getString(R.string.calculator_warn_weight_message), weightString));
         /* Do nothing when the user presses cancel */
-        builder.setNegativeButton("Cancel", null);
-        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.calculator_warn_cancel), null);
+        builder.setPositiveButton(getString(R.string.calculator_warn_continue), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 /* Perform calculation if user press continue */
                 submitCalculation();
@@ -296,7 +296,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      */
     private void submitCalculation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Calculation results");
+        builder.setTitle(getString(R.string.calculator_result_title));
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.show_calculation_layout, null);
@@ -318,7 +318,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         displayCalcView.loadData(displayHtml, "text/html", "utf-8");
         builder.setView(layout);
         builder.setCancelable(false)
-               .setPositiveButton("OK", null);
+               .setPositiveButton(getString(R.string.calculator_result_ok), null);
         builder.show();
 
     }

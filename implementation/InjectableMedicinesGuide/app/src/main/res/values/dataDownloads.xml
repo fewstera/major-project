@@ -2,13 +2,24 @@
 <resources>
     <!--
     *******************************************************************************************
-    ********************************** GENERAL XML SETTINGS **********************************
+    *********************************** AUTH XML SETTINGS *************************************
     *******************************************************************************************
     -->
-    <!-- This is the name of the XML tag which is present when a login error occurs -->
-    <string name="data_login_error_tag">drug</string>
+    <!--
+        Below is the URL for the authentication XML API
 
+        %USERNAME% will be replaced with the users username
+        %PASSWORD% will be replaced with the users password
+    -->
+    <string name="login_url" formatted="false">
+        <![CDATA[http://www.injguide.nhs.uk/IMGLogin.asp?username=%USERNAME%&password=%PASSWORD%]]>
+    </string>
+    <!-- This is the name of the XML tag which has the boolean for the login result -->
+    <string name="login_data_result_tag">LoginResult</string>
 
+    <!-- This is the name of the XML tag which is present when a login error occurs within
+     the calculator, drug download or index download API url -->
+    <string name="data_login_error_tag">LoginError</string>
     <!--
     *******************************************************************************************
     ********************************* DRUG INDEX XML SETTINGS *********************************
@@ -114,7 +125,7 @@
     <!-- This is the name of the XML tag which holds the drug information header -->
     <string name="drug_data_drug_info_header_tag">header_text</string>
     <!-- This is the name of the XML tag which holds the drug information header help -->
-    <string name="drug_data_drug_info_header_help_tag">header_help</string>
+    <string name="drug_data_drug_info_header_help_tag">heading_help</string>
     <!-- This is the name of the XML tag which holds the drug information's body (section_text) -->
     <string name="drug_data_drug_info_text_tag">section_text</string>
     <!-- This is the value of the header tag which holds the drugs name -->

@@ -1,16 +1,12 @@
 package com.fewstera.injectablemedicinesguide;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,8 +15,6 @@ import android.widget.Toast;
 import com.fewstera.injectablemedicinesguide.database.DatabaseHelper;
 import com.fewstera.injectablemedicinesguide.models.Drug;
 import com.fewstera.injectablemedicinesguide.models.DrugInformation;
-
-import java.text.SimpleDateFormat;
 
 /**
  * This class is an activity for displaying a drug and all its information. If a drug has
@@ -52,7 +46,7 @@ public class ViewDrugActivity extends LoggedInActivity {
         if(_drug==null){
             Intent i = new Intent(this, BrowseDrugsActivity.class);
             startActivity(i);
-            Toast toast = Toast.makeText(getApplicationContext(), "Failed to find drug", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.view_drug_error), Toast.LENGTH_SHORT);
             toast.show();
             finish();
         }
@@ -104,6 +98,7 @@ public class ViewDrugActivity extends LoggedInActivity {
 
     /**
      * Adds a DrugInformation to the view.
+     *
      * @param drugInfo the DrugInformation to display
      */
     private void addDrugInformation(DrugInformation drugInfo) {
