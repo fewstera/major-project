@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/instrumentTest/res" />
+        <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/res/rs/test/debug" />
+    </dataSet>
+
+</merger>
