@@ -23,8 +23,6 @@ import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.PendingRequestListener;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,10 +86,15 @@ public class DownloadDataActivity extends LoggedInActivity {
         _dataProgress = DataProgress.getInstance();
         _dataProgress.reset();
 
-        /* Reset the download complete boolean so that if a data download has failed
-         * the user isn't displayed with a partial database. */
-        Preferences.setDownloadComplete(this, false);
-        _db = new DatabaseHelper(getApplicationContext());
+        boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
+        if(testing){
+            _db = new DatabaseHelper(this, "test");
+        }else{
+            _db = new DatabaseHelper(this);
+            /* Reset the download complete boolean so that if a data download has failed
+            * the user isn't displayed with a partial database. */
+            Preferences.setDownloadComplete(this, false);
+        }
         _db.truncateAll();
 
         /* Retrieve the users username and password ready be used for the web requests.  */
@@ -344,6 +347,13 @@ public class DownloadDataActivity extends LoggedInActivity {
     protected void onStop() {
         _spiceManager.shouldStop();
         super.onStop();
+    }
+
+    /**
+     * Kills all robospice services
+     */
+    public void killServices(){
+        _spiceManager.cancelAllRequests();
     }
 
     /*******************************************************************************************

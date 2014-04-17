@@ -11,7 +11,7 @@ import com.fewstera.injectablemedicinesguide.models.DrugCalculatorInfo;
  */
 public class Calculator {
     private DrugCalculatorInfo _calculatorInfo;
-    private float _concentration, _dose, _infusionRate, _weight, _time = -1;
+    private double _concentration, _dose, _infusionRate, _weight, _time = -1;
     private int _calculationType;
 
     /* Validation output values */
@@ -51,7 +51,7 @@ public class Calculator {
      *
      * @param concentration the concentration value
      */
-    public void setConcentration(float concentration) {
+    public void setConcentration(double concentration) {
         _concentration = concentration;
     }
 
@@ -60,7 +60,7 @@ public class Calculator {
      *
      * @param dose the dose value
      */
-    public void setDose(float dose) {
+    public void setDose(double dose) {
         _dose = dose;
     }
 
@@ -69,7 +69,7 @@ public class Calculator {
      *
      * @param infusionRate the dose value
      */
-    public void setInfusionRate(float infusionRate) {
+    public void setInfusionRate(double infusionRate) {
         _infusionRate = infusionRate;
     }
 
@@ -78,7 +78,7 @@ public class Calculator {
      *
      * @param weight the weight of the patient in kg
      */
-    public void setWeight(float weight) {
+    public void setWeight(double weight) {
         _weight = weight;
     }
 
@@ -87,16 +87,24 @@ public class Calculator {
      *
      * @param time the time value in minutes
      */
-    public void setTime(float time) {
+    public void setTime(double time) {
         _time = time;
     }
 
+    /**
+     * Gets the type of the calculation value
+     *
+     * @return the calculation type
+     */
+    public int getType() {
+        return _calculationType;
+    }
     /**
      * Gets the concentration value
      *
      * @return the concentration value
      */
-    public float getConcentration() {
+    public double getConcentration() {
         return _concentration;
     }
 
@@ -104,7 +112,7 @@ public class Calculator {
      * Get the dose
      * @return the dose
      */
-    public float getDose() {
+    public double getDose() {
         return _dose;
     }
 
@@ -112,7 +120,7 @@ public class Calculator {
      * Get the infusion rate
      * @return the infusion rate
      */
-    public float getInfusionRate() {
+    public double getInfusionRate() {
         return _infusionRate;
     }
 
@@ -120,7 +128,7 @@ public class Calculator {
      * Get the weight of the patient in kg
      * @return the weight in kg
      */
-    public float getWeight() {
+    public double getWeight() {
         return _weight;
     }
 
@@ -128,7 +136,7 @@ public class Calculator {
      * Get the time
      * @return the time in minutes
      */
-    public float getTime() {
+    public double getTime() {
         return _time;
     }
 
@@ -166,14 +174,14 @@ public class Calculator {
      *
      * @return the value to the calculation.
      */
-    public float calculate(){
+    public double calculate(){
         /* Check for any errors */
         if(validate(true)!=Calculator.SUCCESS){
             /* This should never be called, as the the developer should run validator before
              * sending to the calculate method. */
             throw new Error("Calculations should be validated before being sent to calculator");
         }else{
-            float factor = (_calculatorInfo.getFactor()==null) ? 1 : _calculatorInfo.getFactor().floatValue();
+            double factor = (_calculatorInfo.getFactor()==null) ? 1 : _calculatorInfo.getFactor().floatValue();
             if(_calculationType == Calculator.TYPE_DOSE_FROM_IR){
                 return calculateDose(factor);
             }else{
@@ -188,7 +196,7 @@ public class Calculator {
      * @param factor the factor of the calculation
      * @return the value of the calculation
      */
-    private float calculateInfusionRate(float factor){
+    private double calculateInfusionRate(double factor){
         return (_dose*_weight*_time)/(_concentration*factor);
     }
 
@@ -198,7 +206,7 @@ public class Calculator {
      * @param factor the factor of the calculation
      * @return the value of the calculation
      */
-    private float calculateDose(float factor){
+    private double calculateDose(double factor){
         return (_infusionRate*_concentration*factor)/(_weight*_time);
     }
 

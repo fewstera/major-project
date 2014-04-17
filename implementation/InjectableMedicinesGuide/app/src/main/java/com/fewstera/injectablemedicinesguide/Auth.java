@@ -54,7 +54,6 @@ public class Auth {
             /* Substitute the username and password values into the url  */
             indexURL = indexURL.replace("%USERNAME%", _accountUsername).replace("%PASSWORD%", _accountPassword);
 
-
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             InputStream stream = new URL(indexURL).openStream();

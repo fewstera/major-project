@@ -77,12 +77,11 @@ public class Drug implements Comparable<Drug>{
     /**
      *  Get an ArrayList of all the drug information's from the database
      *
-     * @param context the application context
+     * @param db the database
      * @return
      */
-    public ArrayList<DrugInformation> getDrugInformations(Context context){
+    public ArrayList<DrugInformation> getDrugInformations(DatabaseHelper db){
         if(_drugInformations==null){
-            DatabaseHelper db = new DatabaseHelper(context);
             _drugInformations = db.getDrugInformationsFromDrugId(this.getId());
         }
         return _drugInformations;
@@ -90,12 +89,11 @@ public class Drug implements Comparable<Drug>{
 
     /**
      * Get the DrugCalculatorInfo for the drug
-     * @param context the application context
+     * @param db the database
      * @return the DrugCalculatorInfo or null if there isn't any
      */
-    public DrugCalculatorInfo getCalculatorInfo(Context context){
+    public DrugCalculatorInfo getCalculatorInfo(DatabaseHelper db){
         if(_calculatorInfo==null){
-            DatabaseHelper db = new DatabaseHelper(context);
             _calculatorInfo = db.getDrugCalcInfoFromDrugId(this.getId());
         }
         return _calculatorInfo;

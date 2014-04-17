@@ -26,7 +26,7 @@ import java.text.DecimalFormat;
 
 /**
  * Class for handling and displaying the calculate activity
- *
+ * <p/>
  * This class is used to layout the calculate values and to send the calculation to
  * the calculate class to validate and calculate.
  *
@@ -34,10 +34,10 @@ import java.text.DecimalFormat;
  * @version 1.0
  * @since 1.0
  */
-public class CalculateActivity extends LoggedInActivity  implements AdapterView.OnItemSelectedListener {
+public class CalculateActivity extends LoggedInActivity implements AdapterView.OnItemSelectedListener {
 
     Drug _drug;
-    DatabaseHelper _db = new DatabaseHelper(this);
+    DatabaseHelper _db;
     Calculator _calculator;
     DrugCalculatorInfo _calculatorInfo;
     private int _calcType;
@@ -52,25 +52,28 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         setContentView(R.layout.activity_calculate);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
+        boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
+        _db = (testing) ? new DatabaseHelper(this, "test") : new DatabaseHelper(this);
+
         int drugId = getIntent().getIntExtra(MainActivity.EXTRA_DRUG_ID, -1);
 
         _drug = _db.getDrugFromId(drugId);
 
         /* Check to make sure that the drug has been passed with the intent actually exists. */
-        if(_drug==null){
+        if (_drug == null) {
             Intent i = new Intent(this, BrowseDrugsActivity.class);
             startActivity(i);
             Toast toast = Toast.makeText(getApplicationContext(), "Failed to find drug", Toast.LENGTH_SHORT);
             toast.show();
             finish();
+        } else {
+            _calculatorInfo = _drug.getCalculatorInfo(_db);
+            _calculator = new Calculator(_calculatorInfo);
+
+            setTitle(String.format(getResources().getString(R.string.title_activity_calculate), _drug.getName()));
+
+            setupUI();
         }
-
-        _calculatorInfo = _drug.getCalculatorInfo(this);
-        _calculator = new Calculator(_calculatorInfo);
-
-        setTitle(String.format(getResources().getString(R.string.title_activity_calculate), _drug.getName()));
-
-        setupUI();
     }
 
     /* This method is responsible for hiding and showing the needed inputs and filling labels */
@@ -99,8 +102,12 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      * Hides and shows the patient weight and time required labels and inputs where needed.
      */
     private void showRequiredValues() {
-        if(_calculatorInfo.isPatientWeightRequired()){ showWeight(); }
-        if(_calculatorInfo.isTimeRequired()){ showTime(); }
+        if (_calculatorInfo.isPatientWeightRequired()) {
+            showWeight();
+        }
+        if (_calculatorInfo.isTimeRequired()) {
+            showTime();
+        }
 
     }
 
@@ -109,10 +116,10 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      * calculation type
      */
     private void updateCalculationtype() {
-        if(_calcType == Calculator.TYPE_IR_FROM_DOSE){
+        if (_calcType == Calculator.TYPE_IR_FROM_DOSE) {
             toggleDose(true);
             toggleInfusionRate(false);
-        }else{
+        } else {
             ((TextView) findViewById(R.id.infusion_rate)).requestFocus();
             toggleDose(false);
             toggleInfusionRate(true);
@@ -122,7 +129,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     /**
      * Shows the patient weight label and input
      */
-    private void showWeight(){
+    private void showWeight() {
         ((TextView) findViewById(R.id.patient_weight_header)).setVisibility(View.VISIBLE);
         ((EditText) findViewById(R.id.patient_weight)).setVisibility(View.VISIBLE);
     }
@@ -130,7 +137,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     /**
      * Shows the time label and input
      */
-    private void showTime(){
+    private void showTime() {
         ((TextView) findViewById(R.id.time_header)).setVisibility(View.VISIBLE);
         ((EditText) findViewById(R.id.time)).setVisibility(View.VISIBLE);
     }
@@ -138,7 +145,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     /**
      * Shows and hides the dose input and labels where needed
      */
-    private void toggleDose(boolean show){
+    private void toggleDose(boolean show) {
         int state = (show) ? View.VISIBLE : View.GONE;
         ((TextView) findViewById(R.id.dose_header)).setVisibility(state);
         EditText dose = (EditText) findViewById(R.id.dose);
@@ -149,7 +156,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
     /**
      * Shows and hides the infusion rate input and labels where needed
      */
-    private void toggleInfusionRate(boolean show){
+    private void toggleInfusionRate(boolean show) {
         int state = (show) ? View.VISIBLE : View.GONE;
         ((TextView) findViewById(R.id.infusion_rate_header)).setVisibility(state);
         EditText infusionRate = (EditText) findViewById(R.id.infusion_rate);
@@ -178,37 +185,37 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      *
      * @param view the view of the button pressed.
      */
-    public void calculateClick(View view){
+    public void calculateClick(View view) {
 
         /* Hide the keyboard from the screen */
-        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        if(getCurrentFocus()!=null){
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (getCurrentFocus() != null) {
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
         _calculator.setType(_calcType);
 
-        if(_calcType==Calculator.TYPE_DOSE_FROM_IR){
-            float infusionRate = getFloatFromEditText(R.id.infusion_rate);
+        if (_calcType == Calculator.TYPE_DOSE_FROM_IR) {
+            double infusionRate = getDoubleFromEditText(R.id.infusion_rate);
             _calculator.setInfusionRate(infusionRate);
-        }else if(_calcType==Calculator.TYPE_IR_FROM_DOSE){
-            float dose = getFloatFromEditText(R.id.dose);
+        } else if (_calcType == Calculator.TYPE_IR_FROM_DOSE) {
+            double dose = getDoubleFromEditText(R.id.dose);
             _calculator.setDose(dose);
-        }else{
+        } else {
             displayToast(getString(R.string.calculator_message_no_type));
-            return ;
+            return;
         }
 
 
-        float concentration = getFloatFromEditText(R.id.concentration);
+        double concentration = getDoubleFromEditText(R.id.concentration);
         _calculator.setConcentration(concentration);
 
-        if(_calculatorInfo.isPatientWeightRequired()){
-            float weight = getFloatFromEditText(R.id.patient_weight);
+        if (_calculatorInfo.isPatientWeightRequired()) {
+            double weight = getDoubleFromEditText(R.id.patient_weight);
             _calculator.setWeight(weight);
         }
 
-        if(_calculatorInfo.isTimeRequired()){
-            float time = getFloatFromEditText(R.id.time);
+        if (_calculatorInfo.isTimeRequired()) {
+            double time = getDoubleFromEditText(R.id.time);
             _calculator.setTime(time);
         }
 
@@ -219,16 +226,16 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
 
 
     /**
-     * Returns a float from a EditTExt
+     * Returns a double from a EditTExt
      *
      * @param editTextId the id of the EditText
-     * @return the float value of the EditText or -1 if not a number
+     * @return the duoble value of the EditText or -1 if not a number
      */
-    private float getFloatFromEditText(int editTextId){
-        float returnVal;
-        try{
-            returnVal = Float.parseFloat(((EditText) findViewById(editTextId)).getText().toString());
-        }catch (NumberFormatException e){
+    private double getDoubleFromEditText(int editTextId) {
+        double returnVal;
+        try {
+            returnVal = Double.parseDouble(((EditText) findViewById(editTextId)).getText().toString());
+        } catch (NumberFormatException e) {
             returnVal = -1;
         }
         return returnVal;
@@ -239,7 +246,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      * Validates all the entered information and alerts the user of any error / warnings
      */
     private void validateAndSubmit() {
-        switch(_calculator.validate(false)){
+        switch (_calculator.validate(false)) {
             case Calculator.ERROR_DOSE:
                 displayToast(getString(R.string.calculator_error_dose));
                 break;
@@ -309,16 +316,16 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
         settings.setBuiltInZoomControls(true);
 
         /* Retrieve the calculated value */
-        float val = _calculator.calculate();
+        double val = _calculator.calculate();
 
         /* Gets the HTML to display within the webview */
-        String displayHtml = (_calcType==Calculator.TYPE_DOSE_FROM_IR) ? getDosCalcHtml(val) : getIRCalcHtml(val);
+        String displayHtml = (_calcType == Calculator.TYPE_DOSE_FROM_IR) ? getDosCalcHtml(val) : getIRCalcHtml(val);
 
         /* Display the webview */
         displayCalcView.loadData(displayHtml, "text/html", "utf-8");
         builder.setView(layout);
         builder.setCancelable(false)
-               .setPositiveButton(getString(R.string.calculator_result_ok), null);
+                .setPositiveButton(getString(R.string.calculator_result_ok), null);
         builder.show();
 
     }
@@ -330,7 +337,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      *
      * @param val the answer to the calculation
      */
-    private String getIRCalcHtml(float val) {
+    private String getIRCalcHtml(double val) {
         String dose = _twoDp.format(_calculator.getDose());
         String weight = _twoDp.format(_calculator.getWeight());
         String time = _twoDp.format(_calculator.getTime());
@@ -370,7 +377,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      *
      * @param val the answer to the calculation
      */
-    private String getDosCalcHtml(float val) {
+    private String getDosCalcHtml(double val) {
         String infusionRate = _twoDp.format(_calculator.getInfusionRate());
         String weight = _twoDp.format(_calculator.getWeight());
         String time = _twoDp.format(_calculator.getTime());
@@ -379,7 +386,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
 
         /* Information for the first equation (The explanation equation)  */
         String firstEquationTop = "infusion rate (" + _calculatorInfo.getInfusionRateUnits() + ") "
-                + "&times; concentration (" + _calculatorInfo.getInfusionRateUnits()  + ")";
+                + "&times; concentration (" + _calculatorInfo.getInfusionRateUnits() + ")";
 
         String firstEquationBottom = ((_calculatorInfo.isTimeRequired()) ? " time (mins) &times;" : "")
                 + ((_calculatorInfo.isPatientWeightRequired()) ? " weight (kg) &times;" : "");
@@ -417,7 +424,7 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      * @param message the message to display
      * @see android.widget.Toast
      */
-    private void displayToast(String message){
+    private void displayToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
@@ -426,16 +433,16 @@ public class CalculateActivity extends LoggedInActivity  implements AdapterView.
      * down menu
      *
      * @param adapterView the adapter view of the spinner
-     * @param view the view of the selected item
-     * @param pos the position of selected item
-     * @param id the id of the selected item
+     * @param view        the view of the selected item
+     * @param pos         the position of selected item
+     * @param id          the id of the selected item
      */
     public void onItemSelected(AdapterView<?> adapterView, View view,
                                int pos, long id) {
-        String selectValue = (String)adapterView.getItemAtPosition(pos);
-        if(selectValue.equals(getResources().getString(R.string.calc_dose_from_ir))){
+        String selectValue = (String) adapterView.getItemAtPosition(pos);
+        if (selectValue.equals(getResources().getString(R.string.calc_dose_from_ir))) {
             _calcType = Calculator.TYPE_DOSE_FROM_IR;
-        }else{
+        } else {
             _calcType = Calculator.TYPE_IR_FROM_DOSE;
         }
 

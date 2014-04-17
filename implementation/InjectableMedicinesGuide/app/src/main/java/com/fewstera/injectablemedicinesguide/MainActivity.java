@@ -20,6 +20,7 @@ import android.widget.TextView;
 public class MainActivity extends LoggedInActivity {
 
     public static final String DEBUG_NAME = "com.fewstera.IMG";
+    public static final String EXTRA_TEST = "com.fewstera.injectablemedicinesguide.test.TESTING";
     public final static String EXTRA_DRUG_ID = "com.fewstera.injectablemedicinesguide.extras.drugId";
 
 

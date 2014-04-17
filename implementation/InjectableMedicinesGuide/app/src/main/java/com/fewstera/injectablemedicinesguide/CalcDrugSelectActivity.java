@@ -28,7 +28,7 @@ import java.util.List;
  */
 public class CalcDrugSelectActivity extends LoggedInActivity {
 
-    DatabaseHelper _db = new DatabaseHelper(this);
+    DatabaseHelper _db;
     ArrayAdapter<Drug> _listAdapter;
 
     @Override
@@ -36,9 +36,12 @@ public class CalcDrugSelectActivity extends LoggedInActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc_drug_select);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
+        _db = (testing) ? new DatabaseHelper(this, "test") : new DatabaseHelper(this);
+
         poplateDrugsListView();
         startTextChangedListener();
-
 
     }
 
@@ -53,7 +56,7 @@ public class CalcDrugSelectActivity extends LoggedInActivity {
         _listAdapter = new ArrayAdapter<Drug>(this,
                 android.R.layout.simple_list_item_1, drugsWithCalcs);
 
-        ListView myList=(ListView)findViewById(android.R.id.list);
+        ListView myList=(ListView)findViewById(R.id.list);
         /* Adds the adapter to the ListView */
         myList.setAdapter(_listAdapter);
 

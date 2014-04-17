@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <WebView
         android:id="@+id/display_calc_html"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout><!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/layout/show_calculation_layout.xml -->

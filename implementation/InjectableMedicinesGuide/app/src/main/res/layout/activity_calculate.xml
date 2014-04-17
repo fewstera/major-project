@@ -33,7 +33,7 @@
         <Spinner
             android:id="@+id/calculation_type_spinner"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:textSize="18sp"
             />
@@ -49,7 +49,7 @@
         <EditText
             android:id="@+id/infusion_rate"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:inputType="numberDecimal"
             android:textSize="18sp"
@@ -68,7 +68,7 @@
         <EditText
             android:id="@+id/dose"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:inputType="numberDecimal"
             android:textSize="18sp"
@@ -87,7 +87,7 @@
         <EditText
             android:id="@id/concentration"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:inputType="numberDecimal"
             android:textSize="18sp"
@@ -107,7 +107,7 @@
         <EditText
             android:id="@id/patient_weight"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:inputType="numberDecimal"
             android:textSize="18sp"
@@ -128,7 +128,7 @@
         <EditText
             android:id="@+id/time"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:inputType="none"
             android:editable="false"
@@ -145,7 +145,7 @@
         <Button
             android:id="@id/calculate_button"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:textSize="18sp"
             android:text="@string/calculate_button"

@@ -1359,6 +1359,10 @@
                 <string name="abc_searchview_description_query" >Search query
                 </string>
 
+                <item
+                    name="home"
+                    type="id"/>
+
                 <declare-styleable name="MenuView" >
 
                     <!-- Default appearance of menu item text. -->
@@ -1379,24 +1383,20 @@
                     <attr name="android:preserveIconSpacing" />
                 </declare-styleable>
 
-                <item
-                    name="home"
-                    type="id"/>
+                <string name="abc_action_bar_up_description" >Navigate up
+                </string>
 
                 <attr
                     name="actionModeStyle"
                     format="reference" />
 
-                <string name="abc_action_bar_up_description" >Navigate up
-                </string>
+                <item
+                    name="action_bar_activity_content"
+                    type="id"/>
 
                 <attr
                     name="actionBarSplitStyle"
                     format="reference" />
-
-                <item
-                    name="action_bar_activity_content"
-                    type="id"/>
 
                 <style
                     name="Widget.AppCompat.ActionBar"
@@ -1563,19 +1563,18 @@ true
                     </item>
                 </style>
 
-                <attr
-                    name="actionModeCloseDrawable"
-                    format="reference" />
-
                 <dimen name="abc_action_bar_stacked_max_height" >48dp
                 </dimen>
 
-                <color name="abc_search_url_text_selected" >@android:color/black
-                </color>
-
+                <attr
+                    name="actionModeCloseDrawable"
+                    format="reference" />
                 <attr
                     name="searchViewTextField"
                     format="reference" />
+
+                <color name="abc_search_url_text_selected" >@android:color/black
+                </color>
 
                 <declare-styleable name="Spinner" >
 
@@ -1661,26 +1660,32 @@ middle
                 </style>
 
                 <style
-                    name="Widget.AppCompat.Light.ActionBar.TabText"
-                    parent="Widget.AppCompat.Light.Base.ActionBar.TabText" />
-
-                <style
                     name="Widget.AppCompat.ActionBar.TabBar"
                     parent="Widget.AppCompat.Base.ActionBar.TabBar" />
+
+                <style
+                    name="Widget.AppCompat.Light.ActionBar.TabText"
+                    parent="Widget.AppCompat.Light.Base.ActionBar.TabText" />
 
                 <attr
                     name="isLightTheme"
                     format="boolean" />
                 <attr
-                    name="textAppearanceSearchResultSubtitle"
+                    name="actionOverflowButtonStyle"
                     format="reference" />
                 <attr
-                    name="actionOverflowButtonStyle"
+                    name="textAppearanceSearchResultSubtitle"
                     format="reference" />
 
                 <style
                     name="Widget.AppCompat.ActivityChooserView"
                     parent="Widget.AppCompat.Base.ActivityChooserView" />
+
+                <string name="abc_action_menu_overflow_description" >More options
+                </string>
+
+                <dimen name="abc_action_bar_default_height" >48dip
+                </dimen>
 
                 <style
                     name="Widget.AppCompat.Light.Base.ActionBar.TabText.Inverse"
@@ -1689,12 +1694,6 @@ middle
 ?android:attr/textColorPrimaryInverseDisableOnly
                     </item>
                 </style>
-
-                <dimen name="abc_action_bar_default_height" >48dip
-                </dimen>
-
-                <string name="abc_action_menu_overflow_description" >More options
-                </string>
 
                 <style
                     name="Widget.AppCompat.Light.Base.ActionBar.TabText"
@@ -1710,6 +1709,10 @@ middle
                 <style
                     name="Widget.AppCompat.ActionBar.TabView"
                     parent="Widget.AppCompat.Base.ActionBar.TabView" />
+
+                <style
+                    name="TextAppearance.AppCompat.Widget.ActionMode.Subtitle.Inverse"
+                    parent="TextAppearance.AppCompat.Widget.Base.ActionMode.Subtitle.Inverse" />
 
                 <style
                     name="Widget.AppCompat.Light.Base.ActionBar"
@@ -1737,10 +1740,6 @@ middle
                     </item>
                 </style>
 
-                <style
-                    name="TextAppearance.AppCompat.Widget.ActionMode.Subtitle.Inverse"
-                    parent="TextAppearance.AppCompat.Widget.Base.ActionMode.Subtitle.Inverse" />
-
                 <attr
                     name="actionModeShareDrawable"
                     format="reference" />
@@ -1766,12 +1765,12 @@ normal
                     </item>
                 </style>
 
+                <string name="abc_shareactionprovider_share_with_application" >Share with %s
+                </string>
+
                 <attr
                     name="actionBarTabStyle"
                     format="reference" />
-
-                <string name="abc_shareactionprovider_share_with_application" >Share with %s
-                </string>
 
                 <style
                     name="Widget.AppCompat.Light.Base.PopupMenu"
@@ -1785,13 +1784,13 @@ normal
                     </item>
                 </style>
 
-                <attr
-                    name="actionBarItemBackground"
-                    format="reference" />
-
                 <integer name="abc_max_action_buttons" >
 2
                 </integer>
+
+                <attr
+                    name="actionBarItemBackground"
+                    format="reference" />
 
                 <style
                     name="Widget.AppCompat.Light.Base.ActionBar.TabBar.Inverse"
@@ -1802,12 +1801,12 @@ normal
                     format="reference" />
 
                 <style
-                    name="Widget.AppCompat.Light.ActionButton"
-                    parent="Widget.AppCompat.Light.Base.ActionButton" />
-
-                <style
                     name="Widget.AppCompat.ActionMode"
                     parent="Widget.AppCompat.Base.ActionMode" />
+
+                <style
+                    name="Widget.AppCompat.Light.ActionButton"
+                    parent="Widget.AppCompat.Light.Base.ActionButton" />
 
                 <style
                     name="Widget.AppCompat.ListView.DropDown"
@@ -1816,10 +1815,6 @@ normal
                 <style
                     name="TextAppearance.AppCompat.Widget.PopupMenu.Large"
                     parent="TextAppearance.AppCompat.Base.Widget.PopupMenu.Large" />
-
-                <attr
-                    name="listPreferredItemHeightSmall"
-                    format="dimension" />
 
                 <declare-styleable name="MenuItem" >
 
@@ -1958,6 +1953,10 @@ normal
                         name="actionProviderClass"
                         format="string" />
                 </declare-styleable>
+
+                <attr
+                    name="listPreferredItemHeightSmall"
+                    format="dimension" />
 
                 <style
                     name="TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
@@ -2611,6 +2610,9 @@ false
                     name="Widget.AppCompat.Light.Spinner.DropDown.ActionBar"
                     parent="Widget.AppCompat.Light.Base.Spinner" />
 
+                <string name="abc_activitychooserview_choose_application" >Choose an app
+                </string>
+
                 <style
                     name="Theme.AppCompat.Light.DarkActionBar"
                     parent="Theme.Base.AppCompat.Light.DarkActionBar" >
@@ -2696,9 +2698,6 @@ true
                     </item>
                 </style>
 
-                <string name="abc_activitychooserview_choose_application" >Choose an app
-                </string>
-
                 <dimen name="abc_action_bar_title_text_size" >18dp
                 </dimen>
 
@@ -2732,14 +2731,15 @@ true
                     <!-- Whether the items are enabled. -->
                     <attr name="android:enabled" />
                 </declare-styleable>
-                <declare-styleable name="ActionMenuView" >
-
-                    <!-- Size of padding on either end of a divider. -->
-                </declare-styleable>
 
                 <attr
                     name="textColorSearchUrl"
                     format="reference|color" />
+
+                <declare-styleable name="ActionMenuView" >
+
+                    <!-- Size of padding on either end of a divider. -->
+                </declare-styleable>
 
                 <style
                     name="TextAppearance.AppCompat.Base.Widget.PopupMenu.Small"
@@ -2756,12 +2756,12 @@ true
 false
                 </bool>
 
+                <dimen name="abc_dropdownitem_icon_width" >32dip
+                </dimen>
+
                 <style
                     name="Widget.AppCompat.Light.Base.DropDownItem.Spinner"
                     parent="Widget.AppCompat.Base.DropDownItem.Spinner" />
-
-                <dimen name="abc_dropdownitem_icon_width" >32dip
-                </dimen>
 
                 <attr
                     name="listPreferredItemPaddingLeft"
@@ -2934,12 +2934,12 @@ true
                     format="reference" />
 
                 <style
-                    name="Widget.AppCompat.ListView.Menu"
-                    parent="Widget.AppCompat.Base.ListView.Menu" />
-
-                <style
                     name="Theme.AppCompat.CompactMenu"
                     parent="Theme.AppCompat.Base.CompactMenu" />
+
+                <style
+                    name="Widget.AppCompat.ListView.Menu"
+                    parent="Widget.AppCompat.Base.ListView.Menu" />
 
                 <style
                     name="Theme.Base.AppCompat.Light"
@@ -3088,9 +3088,11 @@ true
                     </item>
                 </style>
 
-                <style
-                    name="Widget.AppCompat.Base.PopupMenu"
-                    parent="@style/Widget.AppCompat.Base.ListPopupWindow" />
+                <string name="abc_activity_chooser_view_see_all" >See all
+                </string>
+
+                <dimen name="abc_search_view_text_min_width" >160dip
+                </dimen>
 
                 <style
                     name="Theme.AppCompat.Base.CompactMenu"
@@ -3103,11 +3105,9 @@ true
                     </item>
                 </style>
 
-                <dimen name="abc_search_view_text_min_width" >160dip
-                </dimen>
-
-                <string name="abc_activity_chooser_view_see_all" >See all
-                </string>
+                <style
+                    name="Widget.AppCompat.Base.PopupMenu"
+                    parent="@style/Widget.AppCompat.Base.ListPopupWindow" />
 
                 <style
                     name="TextAppearance.AppCompat.SearchResult.Subtitle"
@@ -3148,12 +3148,12 @@ true
                 </string>
 
                 <style
-                    name="TextAppearance.Widget.AppCompat.ExpandedMenu.Item"
-                    parent="TextAppearance.Widget.AppCompat.Base.ExpandedMenu.Item" />
-
-                <style
                     name="TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
                     parent="android:TextAppearance.Medium.Inverse" />
+
+                <style
+                    name="TextAppearance.Widget.AppCompat.ExpandedMenu.Item"
+                    parent="TextAppearance.Widget.AppCompat.Base.ExpandedMenu.Item" />
 
                 <style
                     name="Theme.AppCompat"
@@ -3240,6 +3240,9 @@ false
                     </item>
                 </style>
 
+                <dimen name="abc_config_prefDialogWidth" >320dp
+                </dimen>
+
                 <style
                     name="Widget.AppCompat.Light.Base.Spinner"
                     parent="Widget.AppCompat.Base.Spinner" >
@@ -3254,9 +3257,6 @@ false
                     </item>
                 </style>
 
-                <dimen name="abc_config_prefDialogWidth" >320dp
-                </dimen>
-
                 <declare-styleable name="ActionBarWindow" >
                     <attr
                         name="windowActionBar"
@@ -3269,13 +3269,14 @@ false
                         format="boolean" />
                 </declare-styleable>
 
+                <attr
+                    name="actionButtonStyle"
+                    format="reference" />
+
                 <style
                     name="Widget.AppCompat.Light.PopupMenu"
                     parent="Widget.AppCompat.Light.Base.PopupMenu" />
 
-                <attr
-                    name="actionButtonStyle"
-                    format="reference" />
                 <attr
                     name="searchViewAutoCompleteTextView"
                     format="reference" />
@@ -3288,27 +3289,27 @@ false
                     name="Widget.AppCompat.Light.ActionBar.TabView"
                     parent="Widget.AppCompat.Light.Base.ActionBar.TabView" />
 
-                <style
-                    name="Widget.AppCompat.Light.ActionBar.TabBar"
-                    parent="Widget.AppCompat.Light.Base.ActionBar.TabBar" />
-
                 <style name="TextAppearance.AppCompat.Base.SearchResult.Title" >
                     <item name="android:textSize">
 18sp
                     </item>
                 </style>
 
+                <style
+                    name="Widget.AppCompat.Light.ActionBar.TabBar"
+                    parent="Widget.AppCompat.Light.Base.ActionBar.TabBar" />
+
                 <attr
                     name="actionBarTabTextStyle"
                     format="reference" />
+                <attr
+                    name="searchResultListItemHeight"
+                    format="dimension" />
 
                 <style
                     name="Widget.AppCompat.ActionButton.Overflow"
                     parent="Widget.AppCompat.Base.ActionButton.Overflow" />
 
-                <attr
-                    name="searchResultListItemHeight"
-                    format="dimension" />
                 <attr
                     name="listPreferredItemHeight"
                     format="dimension" />
@@ -3366,6 +3367,9 @@ false
                 <style
                     name="Widget.AppCompat.Light.ActionButton.CloseMode"
                     parent="Widget.AppCompat.Light.Base.ActionButton.CloseMode" />
+
+                <dimen name="abc_action_bar_subtitle_top_margin" >-3dp
+                </dimen>
 
                 <style
                     name="Theme.Base.AppCompat.Light.DarkActionBar"
@@ -3432,19 +3436,16 @@ false
                     </item>
                 </style>
 
-                <dimen name="abc_action_bar_subtitle_top_margin" >-3dp
-                </dimen>
-
                 <style
                     name="TextAppearance.AppCompat.SearchResult.Title"
                     parent="TextAppearance.AppCompat.Base.SearchResult.Title" />
 
-                <dimen name="abc_action_bar_subtitle_bottom_margin" >5dip
-                </dimen>
-
                 <item
                     name="progress_horizontal"
                     type="id"/>
+
+                <dimen name="abc_action_bar_subtitle_bottom_margin" >5dip
+                </dimen>
 
                 <style
                     name="Widget.AppCompat.ActionBar.Solid"
@@ -3487,6 +3488,10 @@ false
                 </declare-styleable>
 
                 <style
+                    name="TextAppearance.AppCompat.Widget.PopupMenu.Small"
+                    parent="TextAppearance.AppCompat.Base.Widget.PopupMenu.Small" />
+
+                <style
                     name="Widget.AppCompat.Light.Base.ListPopupWindow"
                     parent="" >
                     <item name="android:dropDownSelector">
@@ -3507,16 +3512,12 @@ wrap_content
                 </style>
 
                 <style
-                    name="TextAppearance.AppCompat.Widget.PopupMenu.Small"
-                    parent="TextAppearance.AppCompat.Base.Widget.PopupMenu.Small" />
+                    name="TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                    parent="TextAppearance.AppCompat.Light.Base.Widget.PopupMenu.Large" />
 
                 <item
                     name="progress_circular"
                     type="id"/>
-
-                <style
-                    name="TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-                    parent="TextAppearance.AppCompat.Light.Base.Widget.PopupMenu.Large" />
 
                 <style
                     name="Widget.AppCompat.Light.Base.ActionBar.TabView.Inverse"
@@ -3534,6 +3535,9 @@ wrap_content
                     name="Widget.AppCompat.ProgressBar.Horizontal"
                     parent="Widget.AppCompat.Base.ProgressBar.Horizontal" />
 
+                <dimen name="abc_panel_menu_list_width" >296dp
+                </dimen>
+
                 <style
                     name="Widget.AppCompat.Light.Base.ActionButton.Overflow"
                     parent="Widget.AppCompat.Light.Base.ActionButton" >
@@ -3542,17 +3546,14 @@ wrap_content
                     </item>
                 </style>
 
-                <dimen name="abc_panel_menu_list_width" >296dp
-                </dimen>
-
-                <color name="abc_search_url_text_pressed" >@android:color/black
-                </color>
-
                 <style name="TextAppearance.AppCompat.Light.Base.SearchResult.Title" >
                     <item name="android:textSize">
 18sp
                     </item>
                 </style>
+
+                <color name="abc_search_url_text_pressed" >@android:color/black
+                </color>
 
                 <style
                     name="Widget.AppCompat.Base.AutoCompleteTextView"
@@ -3596,13 +3597,13 @@ wrap_content
                     name="TextAppearance.AppCompat.Widget.ActionBar.Title"
                     parent="TextAppearance.AppCompat.Widget.Base.ActionBar.Title" />
 
-                <bool name="abc_split_action_bar_is_narrow" >
-true
-                </bool>
-
                 <attr
                     name="spinnerStyle"
                     format="reference" />
+
+                <bool name="abc_split_action_bar_is_narrow" >
+true
+                </bool>
 
                 <style
                     name="Widget.AppCompat.Light.Base.AutoCompleteTextView"
@@ -3711,11 +3712,6 @@ useLogo|showHome|showTitle
                     <!-- The input type to set on the query text field. -->
                     <attr name="android:inputType" />
                 </declare-styleable>
-
-                <style
-                    name="Theme.AppCompat.CompactMenu.Dialog"
-                    parent="Theme.AppCompat.Base.CompactMenu.Dialog" />
-
                 <declare-styleable name="ActionMode" >
 
                     <!-- Specifies a style to use for title text. -->
@@ -3729,6 +3725,10 @@ useLogo|showHome|showTitle
                     <!-- Specifies a fixed height for the action mode bar. -->
                     <attr name="height" />
                 </declare-styleable>
+
+                <style
+                    name="Theme.AppCompat.CompactMenu.Dialog"
+                    parent="Theme.AppCompat.Base.CompactMenu.Dialog" />
 
                 <style
                     name="Widget.AppCompat.Light.Base.ActivityChooserView"
@@ -5365,20 +5365,19 @@ useLogo|showHome|showTitle
             <file
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-land/values.xml"
                 qualifiers="land" >
-                <dimen name="abc_action_bar_title_text_size" >16dp
-                </dimen>
-
                 <bool name="abc_config_allowActionMenuItemTextWithIcon" >
 true
                 </bool>
 
+                <dimen name="abc_action_bar_title_text_size" >16dp
+                </dimen>
                 <dimen name="abc_action_bar_icon_vertical_padding" >4dip
                 </dimen>
                 <dimen name="abc_action_bar_subtitle_top_margin" >-2dp
                 </dimen>
-                <dimen name="abc_action_bar_subtitle_text_size" >12dp
-                </dimen>
                 <dimen name="abc_action_bar_progress_bar_size" >32dp
+                </dimen>
+                <dimen name="abc_action_bar_subtitle_text_size" >12dp
                 </dimen>
                 <dimen name="abc_action_bar_default_height" >40dip
                 </dimen>
@@ -6652,10 +6651,6 @@ false
                     parent="android:Widget.Holo.AutoCompleteTextView" />
 
                 <style
-                    name="Widget.AppCompat.Base.ProgressBar"
-                    parent="android:Widget.Holo.ProgressBar" />
-
-                <style
                     name="Theme.Base"
                     parent="android:Theme.Holo" >
                     <item name="android:windowNoTitle">
@@ -6676,6 +6671,10 @@ false
 ?android:attr/selectableItemBackground
                     </item>
                 </style>
+
+                <style
+                    name="Widget.AppCompat.Base.ProgressBar"
+                    parent="android:Widget.Holo.ProgressBar" />
 
                 <style
                     name="Widget.AppCompat.Base.ProgressBar.Horizontal"
@@ -6837,6 +6836,10 @@ middle
                     parent="android:Widget.Holo.Light.Spinner" />
 
                 <style
+                    name="Widget.AppCompat.Base.DropDownItem.Spinner"
+                    parent="android:Widget.Holo.DropDownItem.Spinner" />
+
+                <style
                     name="Theme.Base.AppCompat.Light"
                     parent="android:Theme.Holo.Light" >
 
@@ -6896,20 +6899,16 @@ middle
                 </style>
 
                 <style
-                    name="Widget.AppCompat.Base.DropDownItem.Spinner"
-                    parent="android:Widget.Holo.DropDownItem.Spinner" />
-
-                <style
                     name="Widget.AppCompat.Light.Base.PopupMenu"
                     parent="android:Widget.Holo.Light.PopupMenu" />
 
                 <style
-                    name="Widget.AppCompat.Base.ActionBar.TabBar"
-                    parent="android:Widget.Holo.ActionBar.TabBar" />
-
-                <style
                     name="Widget.AppCompat.Base.ListPopupWindow"
                     parent="android:Widget.Holo.ListPopupWindow" />
+
+                <style
+                    name="Widget.AppCompat.Base.ActionBar.TabBar"
+                    parent="android:Widget.Holo.ActionBar.TabBar" />
 
                 <style
                     name="TextAppearance.AppCompat.Widget.Base.ActionBar.Title.Inverse"
@@ -7147,11 +7146,11 @@ middle
                 <bool name="abc_config_allowActionMenuItemTextWithIcon" >
 true
                 </bool>
-                <bool name="abc_split_action_bar_is_narrow" >
-false
-                </bool>
                 <bool name="abc_action_bar_embed_tabs_pre_jb" >
 true
+                </bool>
+                <bool name="abc_split_action_bar_is_narrow" >
+false
                 </bool>
             </file>
             <file
@@ -7181,9 +7180,9 @@ true
                 </dimen>
                 <dimen name="abc_action_bar_default_height" >56dip
                 </dimen>
-                <dimen name="abc_search_view_text_min_width" >192dip
-                </dimen>
                 <dimen name="abc_action_button_min_width" >64dip
+                </dimen>
+                <dimen name="abc_search_view_text_min_width" >192dip
                 </dimen>
             </file>
             <file
@@ -7207,20 +7206,20 @@ false
                 </dimen>
                 <dimen name="abc_action_bar_subtitle_text_size" >14dp
                 </dimen>
-                <dimen name="abc_action_bar_subtitle_top_margin" >-3dp
-                </dimen>
 
                 <bool name="abc_action_bar_expanded_action_views_exclusive" >
 false
                 </bool>
 
-                <dimen name="abc_action_bar_subtitle_bottom_margin" >9dip
+                <dimen name="abc_action_bar_subtitle_top_margin" >-3dp
                 </dimen>
                 <dimen name="abc_action_bar_default_height" >56dip
                 </dimen>
-                <dimen name="abc_action_button_min_width" >64dip
+                <dimen name="abc_action_bar_subtitle_bottom_margin" >9dip
                 </dimen>
                 <dimen name="abc_action_bar_title_text_size" >18dp
+                </dimen>
+                <dimen name="abc_action_button_min_width" >64dip
                 </dimen>
             </file>
             <file
@@ -7572,7 +7571,395 @@ false
                 </color>
             </file>
             <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dataDownloads.xml"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="patient_weight_header" >Patient weight (kg)
+                </string>
+                <string name="login_error_password" >Invalid username or password
+                </string>
+                <string name="time_header" >Time (minutes)
+                </string>
+                <string name="calculator_error_time" >Time must greater than 0
+                </string>
+                <string name="calculator_result_title" >Calculation results
+                </string>
+                <string name="action_update" >Update database
+                </string>
+                <string name="login_success_toast" >Login successful
+                </string>
+                <string name="login_error_connection" >Connection error
+                </string>
+                <string name="action_logout" >Logout
+                </string>
+                <string name="calculator_warn_cancel" >Cancel
+                </string>
+                <string name="download_failed_cancel" >Cancel
+                </string>
+                <string name="infusion_rate_header" >Infusion rate (%1$s)
+                </string>
+                <string name="login_explain" >Please login using your NHS account, your credentials will be stored for ease of use.
+                </string>
+                <string name="welcome_text" >
+<![CDATA[
+        <b>Welcome to the injectable medicines guide.</b><br/><br/>
+        If this is your first time using the app, press the help button to learn how to use this application.
+        Otherwise press the <b>Browse Drugs</b> button below to begin searching for drugs.
+        ]]>
+                </string>
+                <string name="view_drug_error" >Failed to find drug
+                </string>
+                <string name="calculator_button" >Calculator
+                </string>
+                <string name="download_failed_title" >Download failed, try again?
+                </string>
+                <string name="enter_value" >Enter a value
+                </string>
+                <string name="download_calcs_failed_toast" >Failed downloading calcs
+                </string>
+                <string name="calculator_warn_weight_message" >The weight you entered %1$skg seems incorrect. Do you want to continue using this value?
+                </string>
+                <string name="calculator_warn_weight_title" >Is the weight (%1$skg) correct?
+                </string>
+                <string name="update_button" >Update now
+                </string>
+                <string name="action_exit" >Exit
+                </string>
+                <string name="action_home" >Home
+                </string>
+                <string name="password_hint" >Password
+                </string>
+                <string name="open_calculator" >OPEN CALCULATOR:
+                </string>
+                <string name="calculator_message_no_type" >Error, no calculation type selected
+                </string>
+                <string name="title_activity_calculate" >Calculator for %1$s
+                </string>
+                <string name="download_calc_success_toast" >Downloaded calculation
+                </string>
+                <string name="calc_dose_from_ir" >Dose from Infusion Rate
+                </string>
+                <string name="title_activity_view_drug" >Monograph of %1$s
+                </string>
+                <string name="calculator_error_weight" >Weight must greater than 0
+                </string>
+                <string name="time" >60
+                </string>
+                <string name="download_failed_try_again" >Try again
+                </string>
+
+                <string-array name="calculation_types" >
+                    <item>
+@string/calc_dose_from_ir
+                    </item>
+                    <item>
+@string/calc_ir_from_dose
+                    </item>
+                </string-array>
+
+                <string name="download_index_success" >Downloading drug index information
+                </string>
+                <string name="downloading_message" >As the drug database is large this may take some time, please wait.
+                </string>
+                <string name="action_browse_drugs" >Browse drugs
+                </string>
+                <string name="download_failed_login_error" >Invalid credentials
+                </string>
+                <string name="title_activity_download_data" >Downloading monographs
+                </string>
+                <string name="calculator_result_ok" >OK
+                </string>
+                <string name="login_message" >Login to your account
+                </string>
+                <string name="calculator_error_infusion_rate" >Infusion rate must be greater than 0
+                </string>
+                <string name="concentration_header" >Concentration (%1$s)
+                </string>
+                <string name="title_activity_browse_drugs" >Browse drugs
+                </string>
+                <string name="download_failed_calculator_message" >        Failed to download drug calculation info.\n\n
+        Would you like to try again?
+                </string>
+                <string name="calculator_error_concentration" >Concentration must greater than 0
+                </string>
+                <string name="username_hint" >Username
+                </string>
+                <string name="download_index_success_toast" >Downloaded drug index
+                </string>
+                <string name="view_drugs_button" >Browse Drugs
+                </string>
+                <string name="loading_description" >Splash loading image
+                </string>
+                <string name="calculator_error_dose" >Dosage must be greater than 0
+                </string>
+                <string name="calculator_explain" >Enter in the information below and click calculate to perform calculation.
+                </string>
+                <string name="calc_ir_from_dose" >Infusion Rate from Dose
+                </string>
+                <string name="display_calculation_html" >
+<![CDATA[
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style type="text/css">
+                    body{
+                        margin-left: 0.5em;
+                        margin-right: 0.5em;
+                    }
+                    #equationFirst{
+                        display: inline-block;
+                        white-space: nowrap;
+                        clear: both;
+                        float: left;
+                        margin-bottom: 2em;
+                        text-align: center;
+                        font-size: 0.8em;
+                    }
+                    #equationSecond{
+                        display: inline-block;
+                        white-space: nowrap;
+                        clear: both;
+                        float: left;
+                        margin-bottom: 1em;
+                        text-align: center;
+                    }
+                    #small{
+                        font-size: 0.8em;
+                    }
+                    .top{
+                        padding-bottom:0.5em;
+                    }
+                    .bottom{
+                        border-top:#000 1px solid;
+                        padding-top:0.5em;
+                    }
+                    h2{
+                        margin-top: 0;
+                        float: left;
+                        clear: both;
+                        white-space: nowrap;
+                    }
+                    h3{
+                        float: left;
+                        clear: both;
+                        white-space: nowrap;
+                    }
+                </style>
+            </head>
+            <body>
+            <h2>%1$s</h2>
+            <div id="equationFirst">
+                <div class="top">= %2$s</div>
+                <div class="bottom">%3$s</div>
+            </div>
+
+            <div id="equationSecond">
+                <div class="top">= %4$s</div>
+                <div class="bottom">%5$s</div>
+            </div><br/>
+
+            <h3> = %6$s</h3><br/>
+            </body></html>
+        ]]>
+                </string>
+                <string name="download_drugs_failed_toast" >Failed downloading %1$s... drugs
+                </string>
+                <string name="download_failed_index_message" >        Failed to download drug index.\n\n
+        Would you like to try again?
+                </string>
+                <string name="title_activity_calc_drug_select" >Select a drug for the calculator
+                </string>
+                <string name="downloading_header" >Drug information is downloading
+                </string>
+                <string name="search_hint" >Search drugs...
+                </string>
+                <string name="download_drugs_success_toast" >Downloaded %1$s... drugs
+                </string>
+                <string name="calculate_button" >Calculate
+                </string>
+                <string name="download_failed_drugs_message" >        Failed to download drugs starting with the letters %1$s\n\n
+        Would you like to try again?
+                </string>
+                <string name="download_calc_success" >Downloading drug calculation information
+                </string>
+                <string name="help_button" >Help
+                </string>
+                <string name="last_updated_text" >
+<![CDATA[
+        <b>Last database update: %1$s</b><br/><br/>
+        It is recommended that you update the drug database regularly (at least once every 3 months), so that you have the most recent
+        and correct information.<br/><br/>To update the database press the <b>Update now</b> now button below.
+    ]]>
+                </string>
+                <string name="open_calc_button" >Open calculator
+                </string>
+                <string name="dose_header" >Dose (%1$s)
+                </string>
+                <string name="login_button_text" >Login
+                </string>
+                <string name="app_name" >Injectable Medicines Guide
+                </string>
+                <string name="download_index_failed_toast" >Failed downloading index
+                </string>
+                <string name="service_message" >Downloading drug data...
+                </string>
+                <string name="download_drug_progress" >Downloading (%1$d of %2$d)
+                </string>
+                <string name="title_activity_login" >Account Login
+                </string>
+                <string name="calculator_warn_continue" >Continue
+                </string>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style name="ButtonBar" >
+                    <item name="android:paddingLeft">
+2dp
+                    </item>
+                    <item name="android:paddingTop">
+5dp
+                    </item>
+                    <item name="android:paddingRight">
+2dp
+                    </item>
+                    <item name="android:paddingBottom">
+0dp
+                    </item>
+                    <item name="android:background">
+@android:drawable/bottom_bar
+                    </item>
+                </style>
+
+                <style
+                    name="FullscreenTheme"
+                    parent="android:Theme.NoTitleBar" >
+                    <item name="android:windowContentOverlay">
+@null
+                    </item>
+                    <item name="android:windowBackground">
+@null
+                    </item>
+                    <item name="buttonBarStyle">
+@style/ButtonBar
+                    </item>
+                    <item name="buttonBarButtonStyle">
+@style/ButtonBarButton
+                    </item>
+                </style>
+
+                <style name="ButtonBarButton" />
+
+                <style
+                    name="AppTheme.BlueActionBar.Text"
+                    parent="@android:style/TextAppearance" >
+                    <item name="android:textColor">
+@color/white
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+                    <item name="android:actionBarStyle">
+@style/AppTheme.BlueActionBar
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme.BlueActionBar"
+                    parent="@android:style/Widget.Holo.Light.ActionBar" >
+                    <item name="android:background">
+@color/nhs_blue
+                    </item>
+                    <item name="android:titleTextStyle">
+@style/AppTheme.BlueActionBar.Text
+                    </item>
+                </style>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="FullscreenTheme"
+                    parent="android:Theme.Holo" >
+                    <item name="android:actionBarStyle">
+@style/FullscreenActionBarStyle
+                    </item>
+                    <item name="android:windowActionBarOverlay">
+true
+                    </item>
+                    <item name="android:windowBackground">
+@null
+                    </item>
+                    <item name="buttonBarStyle">
+?android:attr/buttonBarStyle
+                    </item>
+                    <item name="buttonBarButtonStyle">
+?android:attr/buttonBarButtonStyle
+                    </item>
+                </style>
+
+                <style
+                    name="FullscreenActionBarStyle"
+                    parent="android:Widget.Holo.ActionBar" >
+                    <item name="android:background">
+@color/black_overlay
+                    </item>
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-w820dp/dimens.xml"
+                qualifiers="w820dp" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/data_downloads.xml"
                 qualifiers="" >
                 <string name="calculator_factor_tag" >Factor
                 </string>
@@ -7769,390 +8156,12 @@ Z
                 </string>
             </file>
             <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/dimens.xml"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/test_values.xml"
                 qualifiers="" >
-                <dimen name="activity_horizontal_margin" >16dp
-                </dimen>
-                <dimen name="activity_vertical_margin" >16dp
-                </dimen>
-            </file>
-            <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/strings.xml"
-                qualifiers="" >
-                <string name="patient_weight_header" >Patient weight (kg)
+                <string name="test_username" >ivgdemo
                 </string>
-                <string name="login_error_password" >Invalid username or password
+                <string name="test_password" >bolus7
                 </string>
-                <string name="time_header" >Time (minutes)
-                </string>
-                <string name="calculator_error_time" >Time must greater than 0
-                </string>
-                <string name="calculator_result_title" >Calculation results
-                </string>
-                <string name="action_update" >Update database
-                </string>
-                <string name="login_success_toast" >Login successful
-                </string>
-                <string name="login_error_connection" >Connection error
-                </string>
-                <string name="action_logout" >Logout
-                </string>
-                <string name="calculator_warn_cancel" >Cancel
-                </string>
-                <string name="download_failed_cancel" >Cancel
-                </string>
-                <string name="infusion_rate_header" >Infusion rate (%1$s)
-                </string>
-                <string name="login_explain" >Please login using your NHS account, your credentials will be stored for ease of use.
-                </string>
-                <string name="welcome_text" >
-<![CDATA[
-        <b>Welcome to the injectable medicines guide.</b><br/><br/>
-        If this is your first time using the app, press the help button to learn how to use this application.
-        Otherwise press the <b>Browse Drugs</b> button below to begin searching for drugs.
-        ]]>
-                </string>
-                <string name="view_drug_error" >Failed to find drug
-                </string>
-                <string name="calculator_button" >Calculator
-                </string>
-                <string name="download_failed_title" >Download failed, try again?
-                </string>
-                <string name="enter_value" >Enter a value
-                </string>
-                <string name="download_calcs_failed_toast" >Failed downloading calcs
-                </string>
-                <string name="calculator_warn_weight_message" >The weight you entered %1$skg seems incorrect. Do you want to continue using this value?
-                </string>
-                <string name="calculator_warn_weight_title" >Is the weight (%1$skg) correct?
-                </string>
-                <string name="update_button" >Update now
-                </string>
-                <string name="action_home" >Home
-                </string>
-                <string name="action_exit" >Exit
-                </string>
-                <string name="password_hint" >Password
-                </string>
-                <string name="open_calculator" >OPEN CALCULATOR:
-                </string>
-                <string name="calculator_message_no_type" >Error, no calculation type selected
-                </string>
-                <string name="title_activity_calculate" >Calculator for %1$s
-                </string>
-                <string name="download_calc_success_toast" >Downloaded calculation
-                </string>
-                <string name="calc_dose_from_ir" >Dose from Infusion Rate
-                </string>
-                <string name="title_activity_view_drug" >Monograph of %1$s
-                </string>
-                <string name="calculator_error_weight" >Weight must greater than 0
-                </string>
-                <string name="time" >60
-                </string>
-                <string name="download_failed_try_again" >Try again
-                </string>
-
-                <string-array name="calculation_types" >
-                    <item>
-@string/calc_dose_from_ir
-                    </item>
-                    <item>
-@string/calc_ir_from_dose
-                    </item>
-                </string-array>
-
-                <string name="download_index_success" >Downloading drug index information
-                </string>
-                <string name="downloading_message" >As the drug database is large this may take some time, please wait.
-                </string>
-                <string name="action_browse_drugs" >Browse drugs
-                </string>
-                <string name="download_failed_login_error" >Invalid credentials
-                </string>
-                <string name="title_activity_download_data" >Downloading monographs
-                </string>
-                <string name="calculator_result_ok" >OK
-                </string>
-                <string name="login_message" >Login to your account
-                </string>
-                <string name="calculator_error_infusion_rate" >Infusion rate must be greater than 0
-                </string>
-                <string name="concentration_header" >Concentration (%1$s)
-                </string>
-                <string name="title_activity_browse_drugs" >Browse drugs
-                </string>
-                <string name="download_failed_calculator_message" >        Failed to download drug calculation info.\n\n
-        Would you like to try again?
-                </string>
-                <string name="calculator_error_concentration" >Concentration must greater than 0
-                </string>
-                <string name="username_hint" >Username
-                </string>
-                <string name="download_index_success_toast" >Downloaded drug index
-                </string>
-                <string name="view_drugs_button" >Browse Drugs
-                </string>
-                <string name="calculator_error_dose" >Dosage must be greater than 0
-                </string>
-                <string name="loading_description" >Splash loading image
-                </string>
-                <string name="calculator_explain" >Enter in the information below and click calculate to perform calculation.
-                </string>
-                <string name="calc_ir_from_dose" >Infusion Rate from Dose
-                </string>
-                <string name="display_calculation_html" >
-<![CDATA[
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style type="text/css">
-                    body{
-                        margin-left: 0.5em;
-                        margin-right: 0.5em;
-                    }
-                    #equationFirst{
-                        display: inline-block;
-                        white-space: nowrap;
-                        clear: both;
-                        float: left;
-                        margin-bottom: 2em;
-                        text-align: center;
-                        font-size: 0.8em;
-                    }
-                    #equationSecond{
-                        display: inline-block;
-                        white-space: nowrap;
-                        clear: both;
-                        float: left;
-                        margin-bottom: 1em;
-                        text-align: center;
-                    }
-                    #small{
-                        font-size: 0.8em;
-                    }
-                    .top{
-                        padding-bottom:0.5em;
-                    }
-                    .bottom{
-                        border-top:#000 1px solid;
-                        padding-top:0.5em;
-                    }
-                    h2{
-                        margin-top: 0;
-                        float: left;
-                        clear: both;
-                        white-space: nowrap;
-                    }
-                    h3{
-                        float: left;
-                        clear: both;
-                        white-space: nowrap;
-                    }
-                </style>
-            </head>
-            <body>
-            <h2>%1$s</h2>
-            <div id="equationFirst">
-                <div class="top">= %2$s</div>
-                <div class="bottom">%3$s</div>
-            </div>
-
-            <div id="equationSecond">
-                <div class="top">= %4$s</div>
-                <div class="bottom">%5$s</div>
-            </div><br/>
-
-            <h3> = %6$s</h3><br/>
-            </body></html>
-        ]]>
-                </string>
-                <string name="title_activity_calc_drug_select" >Select a drug for the calculator
-                </string>
-                <string name="download_failed_index_message" >        Failed to download drug index.\n\n
-        Would you like to try again?
-                </string>
-                <string name="download_drugs_failed_toast" >Failed downloading %1$s... drugs
-                </string>
-                <string name="downloading_header" >Drug information is downloading
-                </string>
-                <string name="calculate_button" >Calculate
-                </string>
-                <string name="download_drugs_success_toast" >Downloaded %1$s... drugs
-                </string>
-                <string name="help_button" >Help
-                </string>
-                <string name="download_calc_success" >Downloading drug calculation information
-                </string>
-                <string name="download_failed_drugs_message" >        Failed to download drugs starting with the letters %1$s\n\n
-        Would you like to try again?
-                </string>
-                <string name="last_updated_text" >
-<![CDATA[
-        <b>Last database update: %1$s</b><br/><br/>
-        It is recommended that you update the drug database regularly (at least once every 3 months), so that you have the most recent
-        and correct information.<br/><br/>To update the database press the <b>Update now</b> now button below.
-    ]]>
-                </string>
-                <string name="dose_header" >Dose (%1$s)
-                </string>
-                <string name="open_calc_button" >Open calculator
-                </string>
-                <string name="app_name" >Injectable Medicines Guide
-                </string>
-                <string name="login_button_text" >Login
-                </string>
-                <string name="download_index_failed_toast" >Failed downloading index
-                </string>
-                <string name="download_drug_progress" >Downloading (%1$d of %2$d)
-                </string>
-                <string name="service_message" >Downloading drug data...
-                </string>
-                <string name="title_activity_login" >Account Login
-                </string>
-                <string name="calculator_warn_continue" >Continue
-                </string>
-            </file>
-            <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/styles.xml"
-                qualifiers="" >
-
-                <style name="ButtonBar" >
-                    <item name="android:paddingLeft">
-2dp
-                    </item>
-                    <item name="android:paddingTop">
-5dp
-                    </item>
-                    <item name="android:paddingRight">
-2dp
-                    </item>
-                    <item name="android:paddingBottom">
-0dp
-                    </item>
-                    <item name="android:background">
-@android:drawable/bottom_bar
-                    </item>
-                </style>
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Light" >
-
-                    <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-                    -->
-                </style>
-
-                <style
-                    name="FullscreenTheme"
-                    parent="android:Theme.NoTitleBar" >
-                    <item name="android:windowContentOverlay">
-@null
-                    </item>
-                    <item name="android:windowBackground">
-@null
-                    </item>
-                    <item name="buttonBarStyle">
-@style/ButtonBar
-                    </item>
-                    <item name="buttonBarButtonStyle">
-@style/ButtonBarButton
-                    </item>
-                </style>
-
-                <style name="ButtonBarButton" />
-
-                <style
-                    name="AppTheme.BlueActionBar.Text"
-                    parent="@android:style/TextAppearance" >
-                    <item name="android:textColor">
-@color/white
-                    </item>
-                </style>
-
-                <style
-                    name="AppTheme.BlueActionBar"
-                    parent="@android:style/Widget.Holo.Light.ActionBar" >
-                    <item name="android:background">
-@color/nhs_blue
-                    </item>
-                    <item name="android:titleTextStyle">
-@style/AppTheme.BlueActionBar.Text
-                    </item>
-                </style>
-
-                <style
-                    name="AppTheme"
-                    parent="AppBaseTheme" >
-                    <item name="android:actionBarStyle">
-@style/AppTheme.BlueActionBar
-                    </item>
-                </style>
-            </file>
-            <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-sw720dp-land/dimens.xml"
-                qualifiers="sw720dp-land" >
-                <dimen name="activity_horizontal_margin" >128dp
-                </dimen>
-            </file>
-            <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-v11/styles.xml"
-                qualifiers="v11" >
-
-                <style
-                    name="FullscreenTheme"
-                    parent="android:Theme.Holo" >
-                    <item name="android:actionBarStyle">
-@style/FullscreenActionBarStyle
-                    </item>
-                    <item name="android:windowActionBarOverlay">
-true
-                    </item>
-                    <item name="android:windowBackground">
-@null
-                    </item>
-                    <item name="buttonBarStyle">
-?android:attr/buttonBarStyle
-                    </item>
-                    <item name="buttonBarButtonStyle">
-?android:attr/buttonBarButtonStyle
-                    </item>
-                </style>
-
-                <style
-                    name="FullscreenActionBarStyle"
-                    parent="android:Widget.Holo.ActionBar" >
-                    <item name="android:background">
-@color/black_overlay
-                    </item>
-                </style>
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light" >
-
-                    <!-- API 11 theme customizations can go here. -->
-                </style>
-            </file>
-            <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-v14/styles.xml"
-                qualifiers="v14" >
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light.DarkActionBar" >
-
-                    <!-- API 14 theme customizations can go here. -->
-                </style>
-            </file>
-            <file
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values-w820dp/dimens.xml"
-                qualifiers="w820dp" >
-                <dimen name="activity_horizontal_margin" >64dp
-                </dimen>
             </file>
         </source>
         <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/res/rs/debug" />

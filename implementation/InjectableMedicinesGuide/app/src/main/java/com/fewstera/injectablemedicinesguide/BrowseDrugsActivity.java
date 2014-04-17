@@ -32,7 +32,7 @@ public class BrowseDrugsActivity extends LoggedInActivity {
     public final static String EXTRA_DRUG_ID = "com.fewstera.injectablemedicinesguide.extras.drugId";
     public final static String EXTRA_INDEX_NAME = "com.fewstera.injectablemedicinesguide.extras.drugName";
 
-    DatabaseHelper _db = new DatabaseHelper(this);
+    DatabaseHelper _db;
     ArrayAdapter<DrugIndex> _listAdapter;
 
     @Override
@@ -41,6 +41,9 @@ public class BrowseDrugsActivity extends LoggedInActivity {
         setContentView(R.layout.activity_browse_drugs);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
+        _db = (testing) ? new DatabaseHelper(this, "test") : new DatabaseHelper(this);
 
         poplateDrugsListView();
         startTextChangedListener();
@@ -59,7 +62,7 @@ public class BrowseDrugsActivity extends LoggedInActivity {
         _listAdapter = new ArrayAdapter<DrugIndex>(this,
                 android.R.layout.simple_list_item_1, drugsIndex);
 
-        ListView myList=(ListView)findViewById(android.R.id.list);
+        ListView myList=(ListView)findViewById(R.id.list);
         /* Adds the adapter to the ListView */
         myList.setAdapter(_listAdapter);
 

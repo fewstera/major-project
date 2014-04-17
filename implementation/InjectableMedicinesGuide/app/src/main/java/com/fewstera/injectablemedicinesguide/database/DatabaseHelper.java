@@ -27,9 +27,17 @@ import java.util.List;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    public DatabaseHelper(Context context, String dbPrefix){
+        super(context, dbPrefix + "_drugDatabase", null, DATABASE_VERSION);
+    }
+
+    public DatabaseHelper(Context context) {
+        super(context, "drugDatabase", null, DATABASE_VERSION);
+
+    }
+
     /* Database Version and Name */
     private static final int DATABASE_VERSION = 7;
-    private static final String DATABASE_NAME = "drugDatabase";
 
     /* Table names */
     private static final String TABLE_DRUGS = "drugs";
@@ -87,9 +95,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + KEY_FACTOR + " INTEGER, " + KEY_CONCENTRATION_UNITS + " TEXT NOT NULL)";
 
 
-    public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {

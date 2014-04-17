@@ -173,4 +173,5 @@
             </body></html>
         ]]>
     </string>
+    <string name="search_hint">Search drugs...</string>
 </resources>

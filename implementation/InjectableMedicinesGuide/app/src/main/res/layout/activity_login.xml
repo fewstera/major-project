@@ -26,7 +26,7 @@
     
     <EditText
         android:id="@+id/username_input"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_explain"
         android:layout_marginTop="15dp"
@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@id/password_input"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username_input"
         android:layout_marginTop="5dp"
@@ -47,7 +47,7 @@
     <Button
         android:id="@+id/login_button"
         android:onClick="loginClick"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password_input"
         android:layout_marginTop="18dp"

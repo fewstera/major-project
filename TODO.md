@@ -1,5 +1,5 @@
 #Major Project Todo list
 
 - Add use case descriptors
-- Customisable XML
-- 
+- Remove debug name from main activity
+- Final report 

@@ -13,14 +13,14 @@
         android:orientation="vertical">
     <RelativeLayout
         android:id="@+id/welcome_layout"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corners_blue"
         android:padding="10dp"
         >
         <TextView
             android:id = "@+id/welcome_text_view"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textColor="@color/white"
@@ -28,7 +28,7 @@
 
     <Button
         android:id="@+id/help_button"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_below="@id/welcome_text_view"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -37,7 +37,7 @@
         android:onClick="viewDrugsClick"/>
     <Button
         android:id="@+id/view_drugs_button"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_below="@id/help_button"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -46,7 +46,7 @@
         android:onClick="viewDrugsClick"/>
     <Button
         android:id="@+id/calculator_button"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_below="@id/view_drugs_button"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -56,7 +56,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_below="@id/welcome_layout"
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
         >
         <TextView
             android:id = "@+id/last_update_textview"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textColor="@color/white"
@@ -73,7 +73,7 @@
 
         <Button
             android:id="@+id/update_drugs_button"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_below="@id/last_update_textview"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

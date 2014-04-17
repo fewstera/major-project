@@ -26,14 +26,14 @@
     <ProgressBar
         android:id="@+id/downloadProgress"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/downloading_message"
         android:layout_marginTop="40dp" />
 
     <TextView
         android:id="@+id/progressText"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_below="@+id/downloadProgress"

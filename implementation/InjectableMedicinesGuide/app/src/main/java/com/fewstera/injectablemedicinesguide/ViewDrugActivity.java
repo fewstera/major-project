@@ -27,13 +27,16 @@ import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 public class ViewDrugActivity extends LoggedInActivity {
 
     Drug _drug;
-    DatabaseHelper _db = new DatabaseHelper(this);
+    DatabaseHelper _db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_drug);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
+        _db = (testing) ? new DatabaseHelper(this, "test") : new DatabaseHelper(this);
 
         /* Retrieve the drug to display  */
         String indexName = getIntent().getStringExtra(BrowseDrugsActivity.EXTRA_INDEX_NAME);
@@ -50,7 +53,6 @@ public class ViewDrugActivity extends LoggedInActivity {
             toast.show();
             finish();
         }
-
         loadDrugToView();
     }
 
@@ -81,7 +83,7 @@ public class ViewDrugActivity extends LoggedInActivity {
      * Displays the calculator button if the drug has a calculator
      */
     private void enableCalculator() {
-        if(_drug.getCalculatorInfo(this)!=null){
+        if(_drug.getCalculatorInfo(_db)!=null){
             ((TextView) findViewById(R.id.calculator_header)).setVisibility(ViewGroup.VISIBLE);
             ((Button) findViewById(R.id.open_calc_button)).setVisibility(ViewGroup.VISIBLE);
         }
@@ -91,7 +93,7 @@ public class ViewDrugActivity extends LoggedInActivity {
      * Display all DrugInformation's.
      */
     private void loadDrugInformations() {
-        for(DrugInformation information: _drug.getDrugInformations(this)){
+        for(DrugInformation information: _drug.getDrugInformations(_db)){
             addDrugInformation(information);
         }
     }
@@ -194,5 +196,9 @@ public class ViewDrugActivity extends LoggedInActivity {
         return html;
     }
 
+    public void onDestroy(){
+        super.onDestroy();
+        _db.close();
+    }
 
 }
