@@ -11,6 +11,7 @@
 \usepackage{mmpv2} 
 \usepackage{url}
 \usepackage{float}
+\usepackage{longtable}
 
 % the following packages are used for citations - You only need to include one. 
 %
@@ -28,7 +29,7 @@
 \projecttitle{NHS Wales formulary and antimicrobial Android application}
 \projecttitlememoir{NHS Wales Android application} %same as the project title or abridged version for page header
 \reporttitle{Requirements Specification}
-\version{1.0}
+\version{1.1}
 \docstatus{Release}
 \modulecode{CS39440}
 \degreeschemecode{G400}
@@ -55,7 +56,7 @@ This document will outline the functional, user interface and security requireme
 %==============================================================================
 \subsection{Project overview}
 %==============================================================================
-The main focus of this project is to produce a mobile application for Android which will aid NHS medical staff in obtaining useful information for drugs which are available within the NHS . For more information refer to the Outline Specification document.
+The main focus of this project is to produce a mobile application for Android which will aid NHS medical staff in obtaining useful information for injectable medicines which are available within the NHS . For more information refer to the Outline Specification document.
 
 
 %==============================================================================
@@ -75,12 +76,12 @@ As the application will be built on the Android platform the member of staff sho
 %==============================================================================
 As the application will be used in hospitals I am assuming that an internet connection will not be available at all times when the application is in use therefore the data used by the application must be stored for offline use.
 
-Another assumption I am making is that the member of staff will be installing the application on a device they are familiar with and therefore know how to use the Android operating system.
+Another assumption I am making is that the member of staff will be installing the application on a device they are familiar with and therefore know how to use the basics of the Android operating system.
 
 %==============================================================================
 \subsection{Dependencies}
 %==============================================================================
-The application must have access to the NHS database in order to retrieve updates to the list of drugs. I aim to access this database through a JSON API, but I do not yet know if this is possible as I haven''t met with the NHS yet.
+The application must have access to the NHS database in order to download the data required for the application. This access is provided via an XML API with a basic HTTP GET authentication procress (username and password are sent within the URL). All data transfered to and from the API is sent over HTTP without encryption (personally I would use an encypted connection for security reasons, but when asking the NHS about the secuirty of the data they said that secuirty was not a concern of theirs).
 
 
 %==============================================================================
@@ -90,19 +91,56 @@ The application must have access to the NHS database in order to retrieve update
 %==============================================================================
 This section will list the functional requirement's (FR)'s for this project.
 
-\begin{description}
-\item[FR1] The user must be able to login to the NHS database using their credentials.
-\item[FR2] The user must be able to reset their credentials should they forget them.
-\item[FR3] Application must synchronise it's database with the NHS's database so that the data can be used for offline use.
-\item[FR4] The user must be able to see drugs which have received updates to their information within the last 3 months.
-\item[FR5] The user must be able to scroll through a list of drugs to find a drug.
-\item[FR6] The user must be able to find a drug by entering part of the drugs name, the system must provide suggestions once the user begins typing.
-\item[FR7] Once a user has found a drug, they should be neatly presented with the appropriate information about that drug.
-\item[FR8] Once a user has found a drug, the user must be able to enter a patients weight and be presented with recommended dosage requirements for that patient.
-\item[FR9] The user must receive a notification to their device when an update to a drug has been made within the NHS database.
-\item[FR10] The user must be able to force the application to fetch updates from the NHS database.
-\item[FR11] Developers must be able to set the structure of the database within an XML file to allow easy customisation of the application in future.
-\end{description}
+\begin{center}
+\begin{longtable}{| l | p{14.3cm} |}
+\hline
+\textbf{FR 1}   & \textbf{Authentication}   \\ \hline
+\textbf{FR 1.1} & User must be able to authenticate themselves using their credentials   \\ \hline
+\textbf{FR 1.2} & User must be notified if the password they enter is incorrect\\ \hline
+\textbf{FR 1.3} & User will be notified if the authentication failed due to connection issues \\ \hline
+\textbf{FR 1.4} & User must be able to logout of the system, removing all data \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 2}   & \textbf{Database synchronisation}   \\ \hline
+\textbf{FR 2.1} & After login or when the user presses update the application must truncate all database tables and begin downloading new data  \\ \hline
+\textbf{FR 2.2} & Download complete list of drug indexes from database    \\ \hline
+\textbf{FR 2.3} & Download complete list of drugs and drug information’s  \\ \hline
+\textbf{FR 2.3} & Download all information needed for calculating doses and infusion rates.   \\ \hline
+\textbf{FR 2.4} & Download must still run when the application is in the background \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 3}   & \textbf{Menu options}\\ \hline
+\textbf{FR 3.1} & Upon pressing the Menu button on the device the user will be presented with a list of available options, which execute tasks (Logout, exit, search…)   \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 4}   & \textbf{Main screen} \\ \hline
+\textbf{FR 4.1} & Upon successful data download the user will be displayed with a screen where they can navigate to other parts of the application   \\ \hline
+\textbf{FR 4.2} & User will be see when an update was last performed, and perform an update from this screen.\\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 5}   & \textbf{Browse drugs}\\ \hline
+\textbf{FR 5.1} & This screen will allow the user to view a list of all drugs  \\ \hline
+\textbf{FR 5.2} & There will be an input box on this screen, when the user enters text into the input box the results in the list will be filtered to only show results related to the input \\ \hline
+\textbf{FR 5.3} & The user will be able to click a drug in the list to open a new screen displaying the needed information  \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 6}   & \textbf{View drug}   \\ \hline
+\textbf{FR 6.1} & When a drug has been selected the drug and all it’s information will be displayed in an easy to read format    \\ \hline
+\textbf{FR 6.2} & Where drug information headers contain help information, a help icon will be displayed next to the header.\\ \hline
+\textbf{FR 6.3} & When heading help icon is clicked the helping information will be displayed \\ \hline
+\textbf{FR 6.4} & If the drug had calculator information, then a button to open the calculator should be shown    \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 7}   & \textbf{Browse drugs with calculators}   \\ \hline
+\textbf{FR 7.1} & A view similar to the browse drugs view will allow the browsing of drugs that contain calculator information.  \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 8}   & \textbf{Calculate dose and infusion rate}\\ \hline
+\textbf{FR 8.1} & The user will be able to select calculation type   \\ \hline
+\textbf{FR 8.2} & User will be able to enter information required for the calculation    \\ \hline
+\textbf{FR 8.3} & When the calculate button has been clicked the input will be thoroughly validated\\ \hline
+\textbf{FR 8.4} & After validation the result of the calculation will be displayed to the user\\ \hline
+\textbf{FR 8.5} & The equation and values used to calculate the answer will be neatly displayed to the user  \\ \hline
+\textbf{}  &  \\ \hline
+\textbf{FR 9}   & \textbf{XML customisability – for developers} \\ \hline
+\textbf{FR 9.1} & All text within the application must be changeable through XML files.  \\ \hline
+\textbf{FR 9.2} & The structure of the XML API’s provided must be outline within XML files, allowing easy customisation for different API’s   \\ \hline
+\end{longtable}
+\end{center}
+
 
 %==============================================================================
 \subsection{User interface requirements}

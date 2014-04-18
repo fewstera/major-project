@@ -27,7 +27,7 @@ public class DrugInformation {
     /**
      * Constructor used when creating from the database
      *
-     * @param id the id in the database
+     * @param id the drug id that this belongs to
      * @param headerText the header text
      * @param headerHelper the heading help
      * @param sectionText the context of the information
@@ -40,7 +40,7 @@ public class DrugInformation {
 	}
 
     /**
-     * Gets the DB id
+     * Gets the drug id
      *
      * @return the id
      */
