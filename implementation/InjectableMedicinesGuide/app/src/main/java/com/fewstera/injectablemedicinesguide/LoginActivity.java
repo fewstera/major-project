@@ -1,11 +1,9 @@
 package com.fewstera.injectablemedicinesguide;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -21,7 +19,7 @@ import android.widget.Toast;
  * @version 1.0
  * @since 1.0
  */
-public class LoginActivity extends Activity {
+public class LoginActivity extends CommonActivity {
 
     private Auth _auth;
 	private Button _loginButton;
@@ -129,21 +127,9 @@ public class LoginActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         /* Inflate the menu; this adds items to the action bar if it is present. */
-        getMenuInflater().inflate(R.menu.login, menu);
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.common, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        /* Handle item selection */
-        Intent intent = new Intent();
-        switch (item.getItemId()) {
-            case R.id.action_exit:
-                System.exit(0);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
 }

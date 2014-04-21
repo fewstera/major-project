@@ -7551,11 +7551,6 @@ false
                 qualifiers=""
                 type="menu" />
             <file
-                name="login"
-                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/menu/login.xml"
-                qualifiers=""
-                type="menu" />
-            <file
                 name="main"
                 path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/menu/main.xml"
                 qualifiers=""
@@ -7614,6 +7609,8 @@ false
         Otherwise press the <b>Browse Drugs</b> button below to begin searching for drugs.
         ]]>
                 </string>
+                <string name="action_about" >About
+                </string>
                 <string name="view_drug_error" >Failed to find drug
                 </string>
                 <string name="calculator_button" >Calculator
@@ -7629,6 +7626,8 @@ false
                 <string name="calculator_warn_weight_title" >Is the weight (%1$skg) correct?
                 </string>
                 <string name="update_button" >Update now
+                </string>
+                <string name="about_text" >About us
                 </string>
                 <string name="action_exit" >Exit
                 </string>
@@ -7676,6 +7675,8 @@ false
                 </string>
                 <string name="calculator_result_ok" >OK
                 </string>
+                <string name="about_button" >About
+                </string>
                 <string name="login_message" >Login to your account
                 </string>
                 <string name="calculator_error_infusion_rate" >Infusion rate must be greater than 0
@@ -7689,9 +7690,9 @@ false
                 </string>
                 <string name="calculator_error_concentration" >Concentration must greater than 0
                 </string>
-                <string name="username_hint" >Username
-                </string>
                 <string name="download_index_success_toast" >Downloaded drug index
+                </string>
+                <string name="username_hint" >Username
                 </string>
                 <string name="view_drugs_button" >Browse Drugs
                 </string>
@@ -7699,9 +7700,13 @@ false
                 </string>
                 <string name="calculator_error_dose" >Dosage must be greater than 0
                 </string>
+                <string name="about_title" >About
+                </string>
                 <string name="calculator_explain" >Enter in the information below and click calculate to perform calculation.
                 </string>
                 <string name="calc_ir_from_dose" >Infusion Rate from Dose
+                </string>
+                <string name="close_button" >Close
                 </string>
                 <string name="display_calculation_html" >
 <![CDATA[
@@ -7788,8 +7793,6 @@ false
         Would you like to try again?
                 </string>
                 <string name="download_calc_success" >Downloading drug calculation information
-                </string>
-                <string name="help_button" >Help
                 </string>
                 <string name="last_updated_text" >
 <![CDATA[
@@ -8163,6 +8166,11 @@ Z
                 <string name="test_password" >bolus7
                 </string>
             </file>
+            <file
+                name="common"
+                path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/menu/common.xml"
+                qualifiers=""
+                type="menu" />
         </source>
         <source path="/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/build/res/rs/debug" />
     </dataSet>

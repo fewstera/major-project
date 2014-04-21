@@ -14,11 +14,13 @@ import android.view.MenuItem;
  * @version 1.0
  * @since 1.0
  */
-public class LoggedInActivity extends Activity{
+public class LoggedInActivity extends CommonActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
@@ -50,9 +52,6 @@ public class LoggedInActivity extends Activity{
                 intent.setClass(this, LoginActivity.class);
                 startActivity(intent);
                 finish();
-                return true;
-            case R.id.action_exit:
-                System.exit(0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

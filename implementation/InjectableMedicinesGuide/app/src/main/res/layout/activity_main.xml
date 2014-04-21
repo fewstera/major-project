@@ -27,18 +27,9 @@
             />
 
     <Button
-        android:id="@+id/help_button"
-        android:layout_width="match_parent"
-        android:layout_below="@id/welcome_text_view"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/help_button"
-        android:textColor="@color/white"
-        android:onClick="viewDrugsClick"/>
-    <Button
         android:id="@+id/view_drugs_button"
+        android:layout_below="@id/welcome_text_view"
         android:layout_width="match_parent"
-        android:layout_below="@id/help_button"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/view_drugs_button"
@@ -53,6 +44,15 @@
         android:text="@string/calculator_button"
         android:textColor="@color/white"
         android:onClick="calculatorClick"/>
+        <Button
+            android:id="@+id/about_button"
+            android:layout_width="match_parent"
+            android:layout_below="@id/calculator_button"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/about_button"
+            android:textColor="@color/white"
+            android:onClick="aboutClick"/>
     </RelativeLayout>
 
     <RelativeLayout

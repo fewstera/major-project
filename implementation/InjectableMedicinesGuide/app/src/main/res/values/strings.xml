@@ -4,9 +4,11 @@
     <!-- COMMON STRINGS -->
     <string name="app_name">Injectable Medicines Guide</string>
     <string name="loading_description">Splash loading image</string>
+    <string name="search_hint">Search drugs...</string>
     <string name="action_home">Home</string>
     <string name="action_browse_drugs">Browse drugs</string>
     <string name="action_update">Update database</string>
+    <string name="action_about">About</string>
     <string name="action_logout">Logout</string>
     <string name="action_exit">Exit</string>
 
@@ -35,7 +37,8 @@
     <string name="update_button">Update now</string>
     <string name="view_drugs_button">Browse Drugs</string>
     <string name="title_activity_browse_drugs">Browse drugs</string>
-    <string name="help_button">Help</string>
+    <string name="about_button">About</string>
+
 
 
     <!-- VIEW DRUG ACTIVITY STRINGS -->
@@ -173,5 +176,7 @@
             </body></html>
         ]]>
     </string>
-    <string name="search_hint">Search drugs...</string>
+    <string name="about_title">About</string>
+    <string name="about_text">About us</string>
+    <string name="close_button">Close</string>
 </resources>

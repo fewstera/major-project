@@ -69,5 +69,13 @@ public class MainActivity extends LoggedInActivity {
         Intent intent = new Intent(this, BrowseDrugsActivity.class);
         startActivity(intent);
     }
+    /**
+     * When the about button is clicked
+     *
+     * @param view of the button
+     */
+    public void aboutClick(View view){
+        displayAbout();
+    }
 
 }

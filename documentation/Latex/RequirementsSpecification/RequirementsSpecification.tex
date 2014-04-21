@@ -67,14 +67,14 @@ This section will describe the general factors that affect the requirements. It 
 %==============================================================================
 \subsection{User characteristics}
 %==============================================================================
-The primary users of the application will be medical staff of NHS Wales. They will be using the applications to search for information on drugs available within the NHS. They should already have broad knowledge of information displayed within the application. 
+The primary users of the application will be medical staff of NHS Wales. They will be using the applications to search for information on injectable medicines that are available within the NHS. They should already have broad knowledge of the information displayed within the application. 
 
 As the application will be built on the Android platform the member of staff should already be familiar with the user interface of Android and therefore be able to natively use applications that follow the Android design guidelines.
 
 %==============================================================================
 \subsection{Assumptions}
 %==============================================================================
-As the application will be used in hospitals I am assuming that an internet connection will not be available at all times when the application is in use therefore the data used by the application must be stored for offline use.
+As the application will be used in hospitals I am assuming that an internet connection will not be available at all times when the application is in use, therefore the data used by the application must be stored for offline use.
 
 Another assumption I am making is that the member of staff will be installing the application on a device they are familiar with and therefore know how to use the basics of the Android operating system.
 
@@ -147,21 +147,11 @@ This section will list the functional requirement's (FR)'s for this project.
 %==============================================================================
 The user interface for the application should follow the guidelines set out in the Android developer design guide. Following these guidelines will allow the user to learn to use the application with minimalistic effort.
 
-When the user first opens the application, they will be presented with a login field. Upon logging in they will be presented with the latest updates to drugs and buttons. The buttons will allow the user to begin searching for a drug, force an update of the database and open the settings panel.
+When the user first opens the application, they will be presented with a login field. Upon logging in they will be presented with the latest updates to drugs and buttons. The buttons will allow the user to begin searching for a drug, force an update of the database and open the about page.
 
-When the user selects a drug they will be presented with a neatly presented page with collapsible sections of information. This page will also contain a button to open the dosage calculation.
+When the user selects a drug they will be neatly presented with a page containing sections of information. This page will also contain a button to open the dosage calculation.
 
 The user interface must be simplistic but make it clear what action you are currently performing. For example when calculating the dosage of penicillin for a patient, the user must be able to clearly see that penicillin has been selected and the weight of the patient used to calculate the dosage.
-%==============================================================================
-\subsection{Security}
-%==============================================================================
-
-The NHS have expressed concerns over the security of the data provided by the database. A number of problems will arise for the NHS should the information contained within the database be released to the public. It Is therefore fundamentally important that all data store on the device and all data transmitted to the device be encrypted.
-
-The data stored on the device should be encrypted so that other applications can not access the information and should the device be placed in the hands of a malicious user the data should be inaccessible.
-
-When database synchronisation occurs the data being transmitted should be transmitted over SSL so that the data is encrypted.
-
 
 %==============================================================================
 \section{Use case diagram}
@@ -172,4 +162,16 @@ When database synchronisation occurs the data being transmitted should be transm
 \caption{Use case diagram for the NHS application}
 \end{figure}
 
+\subsection{Use case description}
+On the first time opening the application the user will be requested to login. Upon logging in the application will download a complete set of the data for offline use. After the download process has complete the user will be be displayed with a welcome screen, allowing them to navigate to the search page. 
+
+On the search page the user will be able to scroll through the list of drugs that have been downloaded or enter part of the drug name they're searching for in the search box to limit the result to appropiate matches.
+
+Once the user has found the drug they're searching for they can select it to be displayed with all the information available for that drug.
+
+If the drug selected has calculator information provided (from the database) the user will be presented with a button to calculate dose or infusion rate.
+
+Upon clicking the calculator button the user will be presented with input fields to enter values needed to caluclate dose or infusion rate. When the user clicks on the calculate button they wlll be displayed with the answer to calculation and shown the equations used to reach that answer.
+
+Whilst the application is running, the user will be able to press the menu button and be presented with a menu of options to complete tasks such as update, logout, exit.
 \end{document}

@@ -41,7 +41,7 @@ import java.util.Map;
  * @version 1.0
  * @since 1.0
  */
-public class DownloadDataActivity extends LoggedInActivity {
+public class DownloadDataActivity extends CommonActivity {
 
     private SpiceManager _spiceManager = new SpiceManager(DownloadService.class);
     int _drugCount = 0;
@@ -483,6 +483,7 @@ public class DownloadDataActivity extends LoggedInActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         /* Inflate the menu; this adds items to the action bar if it is present. */
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.download_data, menu);
         return true;
     }
@@ -494,9 +495,6 @@ public class DownloadDataActivity extends LoggedInActivity {
         switch (item.getItemId()) {
             case R.id.action_logout:
                 logout();
-                return true;
-            case R.id.action_exit:
-                System.exit(0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
