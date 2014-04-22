@@ -145,7 +145,9 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/download_data.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="47" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <folding />
+              <folding>
+                <element signature="e#212#235#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,9 +157,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="35" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
               <folding>
-                <element signature="e#211#232#0" expanded="true" />
-                <element signature="e#386#415#0" expanded="true" />
-                <element signature="e#563#586#0" expanded="true" />
+                <element signature="e#735#758#0" expanded="false" />
+                <marker date="1397902552000" expanded="true" signature="244:416" placeholder="..." />
+                <marker date="1397902552000" expanded="true" signature="427:587" placeholder="..." />
+                <marker date="1397902552000" expanded="true" signature="563:586" placeholder="&quot;Update database&quot;" />
               </folding>
             </state>
           </provider>
@@ -1171,7 +1174,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756633" sideWeight="0.50095844" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756633" sideWeight="0.49904153" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3356974" sideWeight="0.67756313" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3356974" sideWeight="0.67756313" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1613,7 +1616,9 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/download_data.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="47" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding />
+          <folding>
+            <element signature="e#212#235#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1621,9 +1626,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="35" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
           <folding>
-            <element signature="e#211#232#0" expanded="true" />
-            <element signature="e#386#415#0" expanded="true" />
-            <element signature="e#563#586#0" expanded="true" />
+            <element signature="e#735#758#0" expanded="false" />
+            <marker date="1397902552000" expanded="true" signature="244:416" placeholder="..." />
+            <marker date="1397902552000" expanded="true" signature="427:587" placeholder="..." />
+            <marker date="1397902552000" expanded="true" signature="563:586" placeholder="&quot;Update database&quot;" />
           </folding>
         </state>
       </provider>
