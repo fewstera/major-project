@@ -50,7 +50,9 @@ public class CalculateActivity extends LoggedInActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH){
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
         _db = (testing) ? new DatabaseHelper(this, "test") : new DatabaseHelper(this);

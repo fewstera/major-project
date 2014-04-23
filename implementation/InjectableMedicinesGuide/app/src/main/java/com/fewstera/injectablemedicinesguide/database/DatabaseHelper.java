@@ -13,6 +13,7 @@ import com.fewstera.injectablemedicinesguide.models.DrugInformation;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -272,6 +273,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.moveToNext();
         }
         cursor.close();
+
+        // Sort alphabetically
+        Collections.sort(drugs);
+
         return drugs;
     }
 
