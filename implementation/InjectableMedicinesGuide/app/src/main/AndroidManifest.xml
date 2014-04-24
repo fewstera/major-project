@@ -24,7 +24,8 @@
         <activity
             android:name="com.fewstera.injectablemedicinesguide.SplashActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:alwaysRetainTaskState="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,14 +34,17 @@
         </activity>
         <activity
             android:name="com.fewstera.injectablemedicinesguide.MainActivity"
+            android:alwaysRetainTaskState="true"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name="com.fewstera.injectablemedicinesguide.LoginActivity"
+            android:alwaysRetainTaskState="true"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
             android:name="com.fewstera.injectablemedicinesguide.DownloadDataActivity"
+            android:alwaysRetainTaskState="true"
             android:parentActivityName="com.fewstera.injectablemedicinesguide.LoginActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/title_activity_download_data" >

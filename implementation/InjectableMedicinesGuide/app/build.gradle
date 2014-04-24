@@ -1,11 +1,11 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 16
+    compileSdkVersion 19
     buildToolsVersion "19.0.1"
 
     defaultConfig {
-        minSdkVersion 8
+        minSdkVersion 11
         targetSdkVersion 18
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_5

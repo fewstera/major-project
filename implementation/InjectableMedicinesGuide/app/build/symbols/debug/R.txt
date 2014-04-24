@@ -373,11 +373,12 @@ int layout activity_calculate 0x7f030019
 int layout activity_download_data 0x7f03001a
 int layout activity_login 0x7f03001b
 int layout activity_main 0x7f03001c
-int layout activity_splash 0x7f03001d
-int layout activity_view_drug 0x7f03001e
-int layout drug_information 0x7f03001f
-int layout show_calculation_layout 0x7f030020
-int layout support_simple_spinner_dropdown_item 0x7f030021
+int layout activity_main_pre 0x7f03001d
+int layout activity_splash 0x7f03001e
+int layout activity_view_drug 0x7f03001f
+int layout drug_information 0x7f030020
+int layout show_calculation_layout 0x7f030021
+int layout support_simple_spinner_dropdown_item 0x7f030022
 int menu common 0x7f0d0000
 int menu download_data 0x7f0d0001
 int menu main 0x7f0d0002
@@ -706,7 +707,7 @@ int styleable MenuItem_android_title 7
 int styleable MenuItem_android_titleCondensed 8
 int styleable MenuItem_android_visible 4
 int styleable MenuItem_showAsAction 13
-int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x010103f8 }
+int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x01010435 }
 int styleable MenuView_android_headerBackground 4
 int styleable MenuView_android_horizontalDivider 2
 int styleable MenuView_android_itemBackground 5

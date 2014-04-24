@@ -27,7 +27,12 @@ public class MainActivity extends LoggedInActivity {
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH){
+            setContentView(R.layout.activity_main);
+        }else{
+            setContentView(R.layout.activity_main_pre);
+        }
+
 
         /* Populate the welcome text */
         TextView welcomeText = (TextView) findViewById(R.id.welcome_text_view);

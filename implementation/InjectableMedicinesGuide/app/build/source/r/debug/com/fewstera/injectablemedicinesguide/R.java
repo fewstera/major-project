@@ -1006,11 +1006,12 @@ containing a value of this type.
         public static final int activity_download_data=0x7f03001a;
         public static final int activity_login=0x7f03001b;
         public static final int activity_main=0x7f03001c;
-        public static final int activity_splash=0x7f03001d;
-        public static final int activity_view_drug=0x7f03001e;
-        public static final int drug_information=0x7f03001f;
-        public static final int show_calculation_layout=0x7f030020;
-        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int activity_main_pre=0x7f03001d;
+        public static final int activity_splash=0x7f03001e;
+        public static final int activity_view_drug=0x7f03001f;
+        public static final int drug_information=0x7f030020;
+        public static final int show_calculation_layout=0x7f030021;
+        public static final int support_simple_spinner_dropdown_item=0x7f030022;
     }
     public static final class menu {
         public static final int common=0x7f0d0000;
@@ -2371,7 +2372,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x010103f8
+            0x0101012f, 0x01010130, 0x01010131, 0x01010435
         };
         /**
           <p>

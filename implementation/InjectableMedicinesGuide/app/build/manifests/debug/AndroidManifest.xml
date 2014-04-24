@@ -4,23 +4,23 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18"/>
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="18"/>
 
     <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
         <service android:exported="false" android:label="@string/service_message" android:name="com.fewstera.injectablemedicinesguide.dataDownload.DownloadService"/>
 
-        <activity android:label="@string/app_name" android:name="com.fewstera.injectablemedicinesguide.SplashActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:alwaysRetainTaskState="true" android:label="@string/app_name" android:name="com.fewstera.injectablemedicinesguide.SplashActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:label="@string/app_name" android:name="com.fewstera.injectablemedicinesguide.MainActivity">
+        <activity android:alwaysRetainTaskState="true" android:label="@string/app_name" android:name="com.fewstera.injectablemedicinesguide.MainActivity">
         </activity>
-        <activity android:label="@string/title_activity_login" android:name="com.fewstera.injectablemedicinesguide.LoginActivity">
+        <activity android:alwaysRetainTaskState="true" android:label="@string/title_activity_login" android:name="com.fewstera.injectablemedicinesguide.LoginActivity">
         </activity>
-        <activity android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:label="@string/title_activity_download_data" android:name="com.fewstera.injectablemedicinesguide.DownloadDataActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.LoginActivity">
+        <activity android:alwaysRetainTaskState="true" android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:label="@string/title_activity_download_data" android:name="com.fewstera.injectablemedicinesguide.DownloadDataActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.LoginActivity">
         </activity>
         <activity android:label="@string/title_activity_browse_drugs" android:name="com.fewstera.injectablemedicinesguide.BrowseDrugsActivity" android:parentActivityName="com.fewstera.injectablemedicinesguide.MainActivity" android:windowSoftInputMode="stateHidden">
         </activity>

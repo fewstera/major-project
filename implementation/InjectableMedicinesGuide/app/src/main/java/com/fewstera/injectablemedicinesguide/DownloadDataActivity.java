@@ -181,10 +181,10 @@ public class DownloadDataActivity extends CommonActivity {
      */
     private void checkIfFinished() {
         /* If all requests have finished or drug list is full */
-        if((_dataProgress.getFinishedCount()>=(_drugDataLinks.size()+2)) || (_dataProgress.getDrugList().size()>=_drugCount)){
+        if((_dataProgress.getFinishedCount()>=_drugDataLinks.size()) || (_dataProgress.getDrugList().size()>=_drugCount)){
             /* Cancel loading spinner  */
             this.setProgressBarIndeterminateVisibility(false);
-            if(_dataProgress.getSucceededTags().size()<_drugDataLinks.size()){
+            if(_dataProgress.getSucceededTags().size()<_drugDataLinks.size()&&(_dataProgress.getDrugList().size()<_drugCount)){
                 /* Decrease the amount of finished services to allow the user to try again. */
                 _dataProgress.decreaseFinishedCountBy(_drugDataLinks.size()-_dataProgress.getSucceededTags().size());
                 onDownloadFail(DRUG_FAIL);

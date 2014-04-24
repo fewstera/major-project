@@ -114,6 +114,7 @@ public class DataProgress {
      */
     public void drugsDownloadHasStarted(){
         _drugsDownload = true;
+        _finishedCount = 0;
     }
 
     /**

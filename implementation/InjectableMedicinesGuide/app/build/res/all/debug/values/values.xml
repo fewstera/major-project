@@ -829,8 +829,8 @@
     <string name="welcome_text">
 <![CDATA[
         <b>Welcome to the injectable medicines guide.</b><br/><br/>
-        If this is your first time using the app, press the help button to learn how to use this application.
-        Otherwise press the <b>Browse Drugs</b> button below to begin searching for drugs.
+        Press the <b>Browse Drugs</b> button below to begin searching for drugs or if you would like
+        to only view the drugs that have calculators click the <b>Calculator</b> button.
         ]]>
     </string>
     <!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/values/styles.xml -->
