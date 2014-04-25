@@ -138,7 +138,7 @@ public class DownloadDataActivity extends CommonActivity {
      */
     private void startCalcInfoDownload(){
         _db.truncateCalcs();
-
+        _dataProgress.drugsCalcStarted();
         _progressText.setText(getString(R.string.download_calc_success));
         _progressBar.setProgress(5);
         DownloadCalculationsRequest downloadRequest = new DownloadCalculationsRequest(this, _username, _password);

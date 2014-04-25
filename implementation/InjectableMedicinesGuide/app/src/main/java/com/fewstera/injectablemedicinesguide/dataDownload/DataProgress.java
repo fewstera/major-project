@@ -118,6 +118,13 @@ public class DataProgress {
     }
 
     /**
+     * Called when the calculations download had began
+     */
+    public void drugsCalcStarted(){
+        _calcsStarted = true;
+    }
+
+    /**
      * Whether the calculator information should begin downloading
      *
      * @return true if the calculator download should begin, false otherwise
