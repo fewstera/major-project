@@ -5,7 +5,5 @@
 - Final report 
 
 #Final report ideas
-- Talk about the common activities
-- Auth class
-- preferences class
-- splash activity
+- Talk about the html fomratting inside view drug
+- mention view drug html, why it was a webview
