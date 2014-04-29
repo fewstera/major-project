@@ -5,5 +5,5 @@
 - Final report 
 
 #Final report ideas
-- Talk about the html fomratting inside view drug
 - mention view drug html, why it was a webview
+- Doubles within the calculator
