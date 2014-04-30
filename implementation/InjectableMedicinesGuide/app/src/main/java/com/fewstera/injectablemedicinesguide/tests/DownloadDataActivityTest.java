@@ -133,9 +133,4 @@ public class DownloadDataActivityTest extends ActivityInstrumentationTestCase2<D
         assertEquals(layoutParams.width, WindowManager.LayoutParams.MATCH_PARENT);
         assertEquals(layoutParams.height, WindowManager.LayoutParams.WRAP_CONTENT);
     }
-
-    public void tearDown() throws Exception{
-        _activity.killServices();
-        super.tearDown();
-    }
 }

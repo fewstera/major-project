@@ -5,5 +5,5 @@
 - Final report 
 
 #Final report ideas
-- mention view drug html, why it was a webview
+- Use of Genymotion
 - Doubles within the calculator

@@ -51,6 +51,7 @@ public class DownloadDataActivity extends CommonActivity {
     HashMap<String,String> _drugDataLinks = new HashMap<String,String>();
     Toast _toast;
     DatabaseHelper _db;
+    boolean _testing = false;
 
     private String _username, _password;
 
@@ -65,8 +66,12 @@ public class DownloadDataActivity extends CommonActivity {
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_download_data);
 
-        beforeDownloadStart();
-        startIndexDownload();
+        //If this is not being executed by the unit tests, then begin download
+        _testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
+        if(!_testing){
+            beforeDownloadStart();
+            startIndexDownload();
+        }
 	}
 
     /**
@@ -86,15 +91,11 @@ public class DownloadDataActivity extends CommonActivity {
         _dataProgress = DataProgress.getInstance();
         _dataProgress.reset();
 
-        boolean testing = getIntent().getBooleanExtra(MainActivity.EXTRA_TEST, false);
-        if(testing){
-            _db = new DatabaseHelper(this, "test");
-        }else{
-            _db = new DatabaseHelper(this);
-            /* Reset the download complete boolean so that if a data download has failed
-            * the user isn't displayed with a partial database. */
-            Preferences.setDownloadComplete(this, false);
-        }
+        _db = new DatabaseHelper(this);
+        /* Reset the download complete boolean so that if a data download has failed
+        * the user isn't displayed with a partial database. */
+        Preferences.setDownloadComplete(this, false);
+
         _db.truncateAll();
 
         /* Retrieve the users username and password ready be used for the web requests.  */
@@ -313,28 +314,30 @@ public class DownloadDataActivity extends CommonActivity {
      */
     @Override
     protected void onStart() {
-        /* Check that a login error hasn't occurred */
-        if(_dataProgress.isLoginError()){ invalidLogin(); }
-        _spiceManager.start(this);
+        if(!_testing){
+            /* Check that a login error hasn't occurred */
+            if(_dataProgress.isLoginError()){ invalidLogin(); }
+            _spiceManager.start(this);
 
-        /* Add the Listeners for the index_download and calcs_download */
-        _spiceManager.addListenerIfPending(Integer.class, "index_download", new indexDownloadRequestListener());
-        _spiceManager.addListenerIfPending(Void.class, "calcs_download", new calcsDownloadRequestListener());
+            /* Add the Listeners for the index_download and calcs_download */
+            _spiceManager.addListenerIfPending(Integer.class, "index_download", new indexDownloadRequestListener());
+            _spiceManager.addListenerIfPending(Void.class, "calcs_download", new calcsDownloadRequestListener());
 
-        /* Sets the _drugsCount to the value from the dataProgress */
-        _drugCount = _dataProgress.getIndexSize();
+            /* Sets the _drugsCount to the value from the dataProgress */
+            _drugCount = _dataProgress.getIndexSize();
 
-        /* If the calculator download should start, start it */
-        if(_dataProgress.shouldStartCalcsDownload()){ startCalcInfoDownload(); }
+            /* If the calculator download should start, start it */
+            if(_dataProgress.shouldStartCalcsDownload()){ startCalcInfoDownload(); }
 
-        /* If the drugs list download should start, start them */
-        if(_dataProgress.shouldDrugsListStart()){ startDrugDataDownloads(); }
-        if(_drugCount!=0){
-            checkIfFinished();
-            updateDownloadDrugProgress();
-            for(String tag : _drugDataLinks.keySet()) {
-                _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + tag, new drugsDownloadRequestListener(tag));
+            /* If the drugs list download should start, start them */
+            if(_dataProgress.shouldDrugsListStart()){ startDrugDataDownloads(); }
+            if(_drugCount!=0){
+                checkIfFinished();
+                updateDownloadDrugProgress();
+                for(String tag : _drugDataLinks.keySet()) {
+                    _spiceManager.addListenerIfPending(Drug[].class, "drug_download_" + tag, new drugsDownloadRequestListener(tag));
 
+                }
             }
         }
         super.onStart();
@@ -345,15 +348,10 @@ public class DownloadDataActivity extends CommonActivity {
      */
     @Override
     protected void onStop() {
-        _spiceManager.shouldStop();
+        if(!_testing){
+            _spiceManager.shouldStop();
+        }
         super.onStop();
-    }
-
-    /**
-     * Kills all robospice services
-     */
-    public void killServices(){
-        _spiceManager.cancelAllRequests();
     }
 
     /*******************************************************************************************
