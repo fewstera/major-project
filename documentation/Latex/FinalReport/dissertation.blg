@@ -1,0 +1,156 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dissertation.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: declaration.aux
+A level-1 auxiliary file: acknowledgements.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: Chapter1/chapter1.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Chapter3/chapter3.aux
+A level-1 auxiliary file: Chapter4/chapter4.aux
+A level-1 auxiliary file: Chapter5/chapter5.aux
+A level-1 auxiliary file: Appendix1/appendix1.aux
+A level-1 auxiliary file: Appendix2/appendix2.aux
+The style file: IEEEannot.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: References/references.bib
+Warning--entry type for "nhs_website" isn't style-file defined
+--line 10 of file References/references.bib
+Warning--entry type for "android" isn't style-file defined
+--line 17 of file References/references.bib
+Warning--entry type for "java" isn't style-file defined
+--line 24 of file References/references.bib
+Warning--entry type for "software_al" isn't style-file defined
+--line 31 of file References/references.bib
+Warning--entry type for "monograph" isn't style-file defined
+--line 38 of file References/references.bib
+Warning--entry type for "xml" isn't style-file defined
+--line 44 of file References/references.bib
+Warning--entry type for "mobile_inter" isn't style-file defined
+--line 51 of file References/references.bib
+Warning--entry type for "medusa" isn't style-file defined
+--line 58 of file References/references.bib
+Warning--entry type for "web_app" isn't style-file defined
+--line 65 of file References/references.bib
+Warning--entry type for "phonegap" isn't style-file defined
+--line 71 of file References/references.bib
+Warning--entry type for "phonegap_localstorage" isn't style-file defined
+--line 77 of file References/references.bib
+Warning--entry type for "phonegap_background" isn't style-file defined
+--line 83 of file References/references.bib
+Warning--entry type for "hybrid_application" isn't style-file defined
+--line 90 of file References/references.bib
+Warning--entry type for "ios" isn't style-file defined
+--line 100 of file References/references.bib
+Warning--entry type for "phone_market" isn't style-file defined
+--line 107 of file References/references.bib
+Warning--entry type for "obj_c" isn't style-file defined
+--line 114 of file References/references.bib
+Warning--entry type for "android_sdk" isn't style-file defined
+--line 122 of file References/references.bib
+Warning--entry type for "robospice" isn't style-file defined
+--line 128 of file References/references.bib
+Warning--entry type for "glyph" isn't style-file defined
+--line 134 of file References/references.bib
+Warning--entry type for "android_design" isn't style-file defined
+--line 140 of file References/references.bib
+Warning--entry type for "stackoverflow" isn't style-file defined
+--line 146 of file References/references.bib
+Warning--entry type for "genymotion" isn't style-file defined
+--line 152 of file References/references.bib
+Warning--entry type for "tdd" isn't style-file defined
+--line 158 of file References/references.bib
+Warning--entry type for "xp" isn't style-file defined
+--line 164 of file References/references.bib
+Warning--entry type for "waterfall" isn't style-file defined
+--line 170 of file References/references.bib
+Warning--entry type for "git" isn't style-file defined
+--line 177 of file References/references.bib
+Warning--entry type for "svn" isn't style-file defined
+--line 183 of file References/references.bib
+Warning--entry type for "github" isn't style-file defined
+--line 189 of file References/references.bib
+Warning--I didn't find a database entry for "mxml"
+Warning--I didn't find a database entry for "apache_poi"
+Warning--I didn't find a database entry for "apache_license"
+Warning--I didn't find a database entry for "NumericalRecipes"
+-- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for use with work to be submitted to the IEEE.
+Warning--to sort, need author or key in nhs_website
+Warning--to sort, need author or key in monograph
+Warning--to sort, need author or key in software_al
+Warning--to sort, need author or key in xml
+Warning--to sort, need author or key in android
+Warning--to sort, need author or key in mobile_inter
+Warning--to sort, need author or key in medusa
+Warning--to sort, need author or key in web_app
+Warning--to sort, need author or key in phonegap
+Warning--to sort, need author or key in phonegap_background
+Warning--to sort, need author or key in ios
+Warning--to sort, need author or key in obj_c
+Warning--to sort, need author or key in phone_market
+Warning--to sort, need author or key in java
+Warning--to sort, need author or key in android_sdk
+Warning--to sort, need author or key in android_design
+Warning--to sort, need author or key in robospice
+Warning--to sort, need author or key in glyph
+Warning--to sort, need author or key in stackoverflow
+Warning--to sort, need author or key in genymotion
+Warning--to sort, need author or key in tdd
+Warning--to sort, need author or key in xp
+Warning--to sort, need author or key in waterfall
+Warning--to sort, need author or key in git
+Warning--to sort, need author or key in github
+Warning--to sort, need author or key in phonegap_localstorage
+Warning--to sort, need author or key in svn
+
+Done.
+You've used 28 entries,
+            4538 wiz_defined-function locations,
+            1015 strings with 13907 characters,
+and the built_in function-call counts, 10553 in all, are:
+= -- 932
+> -- 34
+< -- 0
++ -- 30
+- -- 2
+* -- 438
+:= -- 1621
+add.period$ -- 56
+call.type$ -- 28
+change.case$ -- 85
+chr.to.int$ -- 0
+cite$ -- 55
+duplicate$ -- 874
+empty$ -- 1126
+format.name$ -- 2
+if$ -- 2315
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 169
+newline$ -- 132
+num.names$ -- 2
+pop$ -- 529
+preamble$ -- 1
+purify$ -- 57
+quote$ -- 2
+skip$ -- 899
+stack$ -- 0
+substring$ -- 168
+swap$ -- 407
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 252
+warning$ -- 27
+while$ -- 2
+width$ -- 30
+write$ -- 244
+(There were 59 warnings)

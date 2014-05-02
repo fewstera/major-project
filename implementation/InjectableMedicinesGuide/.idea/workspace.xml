@@ -27,8 +27,97 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b8b27ac-123c-48d0-92e4-2d5d98b8ecc4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.apk" afterPath="$PROJECT_DIR$/app/app.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoginActivity.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Appendix1/appendix1.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Appendix1/appendix1.bbl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Appendix1/appendix1.blg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Appendix1/appendix1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Appendix2/appendix2.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Appendix2/appendix2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter1/chapter1.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter1/chapter1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter2/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter2/chapter2.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter2/chapter2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter3/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter3/chapter3.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter3/chapter3.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter4/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter4/chapter4.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Chapter4/chapter4.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/IEEEannot.bst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Images/aber-uni-logo.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/Images/aber-uni-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/References/.references.bib.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/References/references.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/abstract.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/abstract.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/acknowledgements.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/acknowledgements.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/authordate2annot.bst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/cover.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/cover.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/declaration.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/declaration.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.bbl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.blg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.lof" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.lot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/dissertation.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/mmp.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/ResearchTemplate/project.cls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Appendix1/appendix1.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Appendix1/appendix1.bbl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Appendix1/appendix1.blg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Appendix1/appendix1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Appendix2/appendix2.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Appendix2/appendix2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter1/chapter1.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter1/chapter1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter2/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter2/chapter2.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter2/chapter2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter3/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter3/chapter3.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter3/chapter3.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter4/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter4/chapter4.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter4/chapter4.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter5/.chapter2.tex.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter5/chapter5.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Chapter5/chapter5.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/IEEEannot.bst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Images/aber-uni-logo.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/Images/aber-uni-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/References/.references.bib.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/References/references.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/abstract.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/abstract.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/acknowledgements.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/acknowledgements.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/authordate2annot.bst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/cover.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/cover.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/declaration.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/declaration.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.bbl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.blg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.lof" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.lot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/dissertation.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/mmp.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/LaTeX Template/SETemplate/project.cls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/Open Office Templates/MMP_Final_Report_Template_Research_Project.ott" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/Open Office Templates/MMP_Final_Report_Template_SE_Project.ott" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/Word Template/MMP_Final_Report_Template_Research_Project.dotx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/FinalReport/Word Template/MMP_Final_Report_Template_SE_Project.dotx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Chapters/Background.docx" afterPath="$PROJECT_DIR$/../../documentation/Chapters/Background.docx" />
     </list>
     <ignored path="InjectableMedicinesGuide.iws" />
     <ignored path=".idea/workspace.xml" />

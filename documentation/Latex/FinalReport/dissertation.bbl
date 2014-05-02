@@ -1,0 +1,197 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{xp}
+``{Extreme Programming: A gentle introduction},''
+  \url{http://www.extremeprogramming.org/}, 2010.
+ \begin{quotation}\noindent Extreme programming (XP) was the methodology that I
+  first planned to use for this project. It uses 12 practices each of which
+  would've benefited the project. \end{quotation}
+
+\bibitem{waterfall}
+``{Waterfall model},'' \url{http://c2.com/cgi/wiki?WaterFall}, 2011.
+ \begin{quotation}\noindent The waterfall model is a popular methodology used
+  by a large amount of software projects. The waterfall model was the
+  methodology that was used throughout this project \end{quotation}
+
+\bibitem{phonegap_background}
+``{PhoneGap API Documentation - Local storage},''
+  \url{http://stackoverflow.com/questions/14210832/can-phonegap-app-work-in-background},
+  January 2013.
+ \begin{quotation}\noindent StackOverflow question asking how to implement
+  background process within phonegap \end{quotation}
+
+\bibitem{android}
+``{Android},'' \url{http://www.android.com/}, 2014.
+ \begin{quotation}\noindent Android is the operating system that has been used
+  to create the application. \end{quotation}
+
+\bibitem{phone_market}
+``{Android and iOS Continue to Dominate the Worldwide Smartphone Market with
+  Android Shipments Just Shy of 800 Million in 2013},''
+  \url{http://www.apple.com/uk/ios/}, February 2014.
+ \begin{quotation}\noindent This press release states the 2013 market share for
+  a variety of devices and operating systems. This was used when determining
+  the most suitable platform. \end{quotation}
+
+\bibitem{android_sdk}
+``{Android SDK},'' \url{http://developer.android.com/sdk/}, 2014.
+ \begin{quotation}\noindent A brief introduction to the Android SDK, providing
+  links to other useful resources. \end{quotation}
+
+\bibitem{ios}
+``{Apple (United Kingdom) - iOS 7},'' \url{http://www.apple.com/uk/ios/}, 2014.
+ \begin{quotation}\noindent Apple's iOS is the operating system ran on the
+  popular iPhone device, as well as many other devices such as the iPad and
+  iPod. \end{quotation}
+
+\bibitem{mobile_inter}
+``{Electromagnetic interference : MHRA},''
+  \url{http://www.mhra.gov.uk/Safetyinformation/Generalsafetyinformationandadvice/Technicalinformation/Electromagneticinterference/},
+  2014.
+ \begin{quotation}\noindent A document outling the possiblities of mobile
+  interference on medical equipment. This is the reason why mobile offline
+  access most be implemented into the final application. \end{quotation}
+
+\bibitem{medusa}
+``{Electromagnetic interference : MHRA},''
+  \url{http://www.mhra.gov.uk/Safetyinformation/Generalsafetyinformationandadvice/Technicalinformation/Electromagneticinterference/},
+  2014.
+ \begin{quotation}\noindent Medua is the desktop service that the NHS currently
+  use to acces the database. Medua what was expected of the final application.
+  The Medua website was also used to test the calculator page. \end{quotation}
+
+\bibitem{genymotion}
+``{Genymotion},'' \url{http://www.genymotion.com/}, 2014.
+ \begin{quotation}\noindent Genymotion is an Android emulator. Genymotion is
+  quicker than the standard Android emulator and allows you to easily create
+  emulators of the most populat devices. \end{quotation}
+
+\bibitem{git}
+``{Git},'' \url{http://git-scm.com/}, 2014.
+ \begin{quotation}\noindent Git is a distributed version control system. Git
+  was used throughout the project to keep a log of all changes. If there was
+  ever a problem with the project, the project could be rolled back to an
+  earlier version \end{quotation}
+
+\bibitem{github}
+``{Github},'' \url{http://github.com/}, 2014.
+ \begin{quotation}\noindent Github is service used for storing git
+  repositories. Github provide a free account to students. \end{quotation}
+
+\bibitem{android_design}
+``{GLYPHICONS - library of precisely prepared monochromatic icons and
+  symbols.}'' \url{https://developer.android.com/design/index.html}, 2014.
+ \begin{quotation}\noindent Android design guidelines were used throughout the
+  design and implementation stages, to ensure the user interface followed
+  Android guidelines. \end{quotation}
+
+\bibitem{glyph}
+``{GLYPHICONS - library of precisely prepared monochromatic icons and
+  symbols.}'' \url{http://glyphicons.com/}, 2014.
+ \begin{quotation}\noindent Glyphicon is a set of icons released under the
+  Apache 2 licence. This library wasy used for some iconogprahy within the
+  application \end{quotation}
+
+\bibitem{tdd}
+``{Introduction to Test Driven Development (TDD)},''
+  \url{http://www.agiledata.org/essays/tdd.html}, 2014.
+ \begin{quotation}\noindent Test driven development is the procress of creating
+  software, were the tests for the software are written before the code is
+  implemented. Test driven development was used in parts of this project.
+  \end{quotation}
+
+\bibitem{java}
+``{Java Programming Language},'' \url{http://www.java.com/}, 2014.
+ \begin{quotation}\noindent The Java programming language is the base language
+  used throughout Android development. \end{quotation}
+
+\bibitem{monograph}
+``{Monograph format},''
+  \url{http://www.empr.com/drug-monograph-format/section/793/}, 2014.
+ \begin{quotation}\noindent This page shows an example of what a drug monograph
+  should look like, this was used to allow me to research what would be
+  created, before taking on the project \end{quotation}
+
+\bibitem{nhs_website}
+``{NHS Choices - Your health, your choices},''
+  \url{http://www.nhs.uk/Pages/HomePage.aspx}, 2014.
+ \begin{quotation}\noindent This is the homepage of the National Health
+  Service, whom this project was created for. \end{quotation}
+
+\bibitem{phonegap}
+``{Phonegap | Home},'' \url{http://phonegap.com/}, 2014.
+ \begin{quotation}\noindent Phonegap is a multi-platform hybrid application
+  builder. Phonegap allows you to create native applications for multiple
+  platforms using HTML, CSS and Javascript. \end{quotation}
+
+\bibitem{phonegap_localstorage}
+``{PhoneGap API Documentation - Local storage},''
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_storage_storage.md.html},
+  2014.
+ \begin{quotation}\noindent Documentation for Phonegaps local storage
+  functionality. Local storage allows the hybrid application to store
+  information on the devices local disc. \end{quotation}
+
+\bibitem{obj_c}
+``{Programming with Objective-C},''
+  \url{https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html},
+  February 2014.
+ \begin{quotation}\noindent A brief overview of the objective-C language and
+  how it relates to other languages like C and C++. \end{quotation}
+
+\bibitem{robospice}
+``{Robospice},'' \url{https://github.com/stephanenicolas/robospice}, 2014.
+ \begin{quotation}\noindent Robospice is a library created for Android
+  development, that allows developers to easily create asynchronous running
+  services. \end{quotation}
+
+\bibitem{software_al}
+``{Software Alliance Wales},'' \url{http://softwarealliancewales.com/}, 2014.
+ \begin{quotation}\noindent The Software Alliance is who provided this project
+  to the Abersywtyth University. \end{quotation}
+
+\bibitem{stackoverflow}
+``{StackOverflow},'' \url{http://stackoverflow.com/}, 2014.
+ \begin{quotation}\noindent StackOverflow was used throughout the project to
+  check on best practices and to solve common problems. \end{quotation}
+
+\bibitem{svn}
+``{SVN - Subversion},'' \url{http://subversion.tigris.org/}, 2014.
+ \begin{quotation}\noindent SVN is a version control system that was codcidered
+  during the background stage of the project. \end{quotation}
+
+\bibitem{xml}
+``{W3 XML Specification},'' \url{http://www.w3.org/XML/}, 2014.
+ \begin{quotation}\noindent This is the W3 specification for XML. This was used
+  as the data is provded in XML \end{quotation}
+
+\bibitem{web_app}
+``{Web applications (WEBAPPS) },'' \url{http://www.w3.org/2008/webapps/}, 2014.
+ \begin{quotation}\noindent This is the W3 specification group on web
+  applications. \end{quotation}
+
+\bibitem{hybrid_application}
+AppBuilder, ``{What is a Hybrid Mobile App?}'' \url{http://phonegap.com/}, June
+  2012.
+ \begin{quotation}\noindent Blog post explaining what a hybrid mobile
+  application is. \end{quotation}
+
+\end{thebibliography}
