@@ -22,6 +22,17 @@
 \usepackage{longtable}
 \usepackage[normalem]{ulem}
 \usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{pdfpages}
+
+
+
+\lstset{
+    breaklines=true
+}
+
+
 
 % the following packages are used for citations - You only need to include one. 
 %
@@ -60,7 +71,6 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0 pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-
 \tableofcontents   
 \newpage
 \listoffigures
@@ -106,6 +116,12 @@
 % include any appendices here
 \include{Appendix1/appendix1}
 \include{Appendix2/appendix2}
+
+\setemptyheader
+\addcontentsline{toc}{chapter}{Appendices}
+\chapter*{End of appendices}
+\pagebreak
+
 
 \fancypagestyle{plain}{%
    \fancyhead{} %[C]{Annotated Bibliography}

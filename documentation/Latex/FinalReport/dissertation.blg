@@ -97,6 +97,32 @@ Warning--entry type for "shared_pref" isn't style-file defined
 --line 254 of file References/references.bib
 Warning--entry type for "findicons" isn't style-file defined
 --line 261 of file References/references.bib
+Warning--entry type for "lucid_charts" isn't style-file defined
+--line 269 of file References/references.bib
+Warning--entry type for "dialog" isn't style-file defined
+--line 275 of file References/references.bib
+Warning--entry type for "eclipse" isn't style-file defined
+--line 281 of file References/references.bib
+Warning--entry type for "android_studio" isn't style-file defined
+--line 287 of file References/references.bib
+Warning--entry type for "progaurd" isn't style-file defined
+--line 294 of file References/references.bib
+Warning--entry type for "froyo" isn't style-file defined
+--line 300 of file References/references.bib
+Warning--entry type for "activity_test" isn't style-file defined
+--line 307 of file References/references.bib
+Warning--entry type for "gradle" isn't style-file defined
+--line 313 of file References/references.bib
+Warning--entry type for "exciser" isn't style-file defined
+--line 320 of file References/references.bib
+Warning--entry type for "robotium" isn't style-file defined
+--line 326 of file References/references.bib
+Warning--entry type for "code_style" isn't style-file defined
+--line 332 of file References/references.bib
+Warning--entry type for "javadoc" isn't style-file defined
+--line 338 of file References/references.bib
+Warning--I didn't find a database entry for "market"
+Warning--I didn't find a database entry for "apache"
 Warning--I didn't find a database entry for "apache_poi"
 Warning--I didn't find a database entry for "apache_license"
 Warning--I didn't find a database entry for "NumericalRecipes"
@@ -136,53 +162,65 @@ Warning--to sort, need author or key in sqlite_dt
 Warning--to sort, need author or key in async_task
 Warning--to sort, need author or key in service
 Warning--to sort, need author or key in apache_licence
-Warning--to sort, need author or key in phonegap_localstorage
-Warning--to sort, need author or key in svn
 Warning--to sort, need author or key in mvc
 Warning--to sort, need author or key in singleton
 Warning--to sort, need author or key in shared_pref
 Warning--to sort, need author or key in findicons
+Warning--to sort, need author or key in dialog
+Warning--to sort, need author or key in lucid_charts
+Warning--to sort, need author or key in eclipse
+Warning--to sort, need author or key in android_studio
+Warning--to sort, need author or key in gradle
+Warning--to sort, need author or key in progaurd
+Warning--to sort, need author or key in froyo
+Warning--to sort, need author or key in activity_test
+Warning--to sort, need author or key in exciser
+Warning--to sort, need author or key in robotium
+Warning--to sort, need author or key in code_style
+Warning--to sort, need author or key in javadoc
+Warning--to sort, need author or key in phonegap_localstorage
+Warning--to sort, need author or key in svn
 
 Done.
-You've used 39 entries,
+You've used 51 entries,
             4538 wiz_defined-function locations,
-            1060 strings with 16297 characters,
-and the built_in function-call counts, 14623 in all, are:
-= -- 1295
-> -- 45
+            1109 strings with 18444 characters,
+and the built_in function-call counts, 19063 in all, are:
+= -- 1691
+> -- 57
 < -- 0
-+ -- 41
++ -- 53
 - -- 2
-* -- 603
-:= -- 2237
-add.period$ -- 78
-call.type$ -- 39
-change.case$ -- 118
+* -- 783
+:= -- 2909
+add.period$ -- 102
+call.type$ -- 51
+change.case$ -- 154
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 1215
-empty$ -- 1566
+cite$ -- 101
+duplicate$ -- 1587
+empty$ -- 2046
 format.name$ -- 2
-if$ -- 3217
+if$ -- 4201
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 235
-newline$ -- 176
+int.to.str$ -- 51
+missing$ -- 307
+newline$ -- 224
 num.names$ -- 2
-pop$ -- 738
+pop$ -- 966
 preamble$ -- 1
-purify$ -- 79
+purify$ -- 103
 quote$ -- 2
-skip$ -- 1251
+skip$ -- 1635
 stack$ -- 0
-substring$ -- 234
-swap$ -- 561
+substring$ -- 306
+swap$ -- 729
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 351
-warning$ -- 38
+type$ -- 459
+warning$ -- 50
 while$ -- 2
-width$ -- 41
-write$ -- 332
-(There were 80 warnings)
+width$ -- 53
+write$ -- 428
+(There were 106 warnings)

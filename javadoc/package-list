@@ -1,9 +1,4 @@
-android.support.v7.appcompat
 com.fewstera.injectablemedicinesguide
 com.fewstera.injectablemedicinesguide.dataDownload
 com.fewstera.injectablemedicinesguide.database
-com.fewstera.injectablemedicinesguide.database.tests
 com.fewstera.injectablemedicinesguide.models
-com.fewstera.injectablemedicinesguide.models.tests
-com.fewstera.injectablemedicinesguide.tests
-com.fewstera.injectablemedicinesguide.util

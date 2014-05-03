@@ -53,6 +53,26 @@
  \begin{quotation}\noindent StackOverflow question asking how to implement
   background process within phonegap \end{quotation}
 
+\bibitem{activity_test}
+``Activity testing,''
+  \url{http://developer.android.com/tools/testing/activity_testing.html}, 2014.
+ \begin{quotation}\noindent A guide on creating tests for Android Activities
+  \end{quotation}
+
+\bibitem{exciser}
+``Activity testing,''
+  \url{http://developer.android.com/tools/help/monkey.html}, 2014.
+ \begin{quotation}\noindent Android documentation on using the Application
+  Exerciser Monkey tool, to stress test applications \end{quotation}
+
+\bibitem{dialog}
+``Alertdialog- android developers,''
+  \url{http://developer.android.com/reference/android/app/AlertDialog.html},
+  2014.
+ \begin{quotation}\noindent Alert Dialogs were used throughout the project to
+  notify the user of an action. This is the Android documentation on
+  AlertDialogs. \end{quotation}
+
 \bibitem{android}
 ``{Android},'' \url{http://www.android.com/}, 2014.
  \begin{quotation}\noindent Android is the operating system that has been used
@@ -66,6 +86,12 @@
   a variety of devices and operating systems. This was used when determining
   the most suitable platform. \end{quotation}
 
+\bibitem{code_style}
+``Android code style guidelines,''
+  \url{https://source.android.com/source/code-style.html}, 2014.
+ \begin{quotation}\noindent Android specification on their coding style
+  gudielines. \end{quotation}
+
 \bibitem{android_design}
 ``{Android developer design guidelines},''
   \url{https://developer.android.com/design/index.html}, 2014.
@@ -77,6 +103,12 @@
 ``{Android SDK},'' \url{http://developer.android.com/sdk/}, 2014.
  \begin{quotation}\noindent A brief introduction to the Android SDK, providing
   links to other useful resources. \end{quotation}
+
+\bibitem{android_studio}
+``Android studio,''
+  \url{http://developer.android.com/sdk/installing/studio.html}, 2014.
+ \begin{quotation}\noindent Android Studio is a new IDE created by Android
+  specifically for creating Android applications. \end{quotation}
 
 \bibitem{apache_licence}
 ``Apache 2.0 licence,'' \url{http://www.apache.org/licenses/LICENSE-2.0.html},
@@ -98,6 +130,11 @@
   tasks outside of the main thread called AsyncTask. This is the documentation
   for AsyncTasks. \end{quotation}
 
+\bibitem{eclipse}
+``Eclipse ide,'' \url{https://www.eclipse.org/}, 2014.
+ \begin{quotation}\noindent Eclipse is an open source IDE. There is a plugin
+  made for Eclipse allowing it to build Android applications \end{quotation}
+
 \bibitem{mobile_inter}
 ``{Electromagnetic interference : MHRA},''
   \url{http://www.mhra.gov.uk/Safetyinformation/Generalsafetyinformationandadvice/Technicalinformation/Electromagneticinterference/},
@@ -113,6 +150,13 @@
  \begin{quotation}\noindent Medua is the desktop service that the NHS currently
   use to acces the database. Medua what was expected of the final application.
   The Medua website was also used to test the calculator page. \end{quotation}
+
+\bibitem{froyo}
+``Froyo realse notes,''
+  \url{http://android-developers.blogspot.co.uk/2010/05/android-22-and-developers-goodies.html},
+  2014.
+ \begin{quotation}\noindent Froyo, the name of the Android SDK API version 8,
+  this is the minimum SDK version supported by this application \end{quotation}
 
 \bibitem{genymotion}
 ``{Genymotion},'' \url{http://www.genymotion.com/}, 2014.
@@ -139,6 +183,12 @@
   Apache 2 licence. This library wasy used for some iconogprahy within the
   application \end{quotation}
 
+\bibitem{gradle}
+``Gradle,'' \url{http://www.gradle.org/overview}, 2014.
+ \begin{quotation}\noindent Grade is an automatic build configuration tool,
+  similar to Apache’s Maven. Gradle allows you create custom build
+  configurations for a variety of setups. \end{quotation}
+
 \bibitem{findicons}
 ``Icon search engine,'' \url{http://findicons.com/}, 2014.
  \begin{quotation}\noindent A search engine built for finding icons. This was
@@ -157,11 +207,23 @@
  \begin{quotation}\noindent The Java programming language is the base language
   used throughout Android development. \end{quotation}
 
+\bibitem{javadoc}
+``Javadoc documentation,''
+  \url{http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html},
+  2014.
+ \begin{quotation}\noindent Javadoc, a tool and style used for commenting Java
+  code \end{quotation}
+
 \bibitem{junit}
 ``{JUnit Testing},'' \url{http://junit.org/}, 2014.
  \begin{quotation}\noindent JUnit is a Java framework for testing individual
   units. JUnit tests have been built for each class within the application
   \end{quotation}
+
+\bibitem{lucid_charts}
+``Lucid charts,'' \url{http://lucidcharts.com/}, 2014.
+ \begin{quotation}\noindent Lucid charts is a HTML 5 UML creator. I used this
+  to produce the mock-ups and class diagrams \end{quotation}
 
 \bibitem{monograph}
 ``{Monograph format},''
@@ -190,6 +252,13 @@
   functionality. Local storage allows the hybrid application to store
   information on the devices local disc. \end{quotation}
 
+\bibitem{progaurd}
+``Progaurd,'' \url{http://developer.android.com/tools/help/proguard.html},
+  2014.
+ \begin{quotation}\noindent ProGaurd, a feature provided by Android SDK,
+  allowing developers to protect and optimise their applications code.
+  \end{quotation}
+
 \bibitem{obj_c}
 ``{Programming with Objective-C},''
   \url{https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html},
@@ -202,6 +271,12 @@
  \begin{quotation}\noindent Robospice is a library created for Android
   development, that allows developers to easily create asynchronous running
   services. \end{quotation}
+
+\bibitem{robotium}
+``Robotium black-box testing,'' \url{https://code.google.com/p/robotium/},
+  2014.
+ \begin{quotation}\noindent Robotium is an Android library which allows
+  developers to white box test applications easily. \end{quotation}
 
 \bibitem{service}
 ``Service - android documentation,''

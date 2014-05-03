@@ -168,7 +168,7 @@ When the application first opens the application has to decide whether to open t
 
 One solution to this problem would be put the logic within the main activity and if the user needed to login or download the database they could be redirected. This would not be an ideal solution as for a brief amount of time the main activity would be opened, causing a flicker.
 
-I decided that designing a splash activity would be the best way to solve this problem. The splash activity briefly displays the NHS \cite{nhs} logo on a neatly presented background whilst the application decides where to redirect the user, the user is then redirected to the correct screen, without any flickering.
+I decided that designing a splash activity would be the best way to solve this problem. The splash activity briefly displays the NHS \cite{nhs_website} logo on a neatly presented background whilst the application decides where to redirect the user, the user is then redirected to the correct screen, without any flickering.
 
 \section{Common activities}
 Android provides the user with menu options when the user presses the menu button on the device \cite{android}. This menu contains items such as update, logout and exit. The menu buttons in most applications vary between activities, but within this project the menu items are the same throughout the application, the only time they change is when the user is logged out. 
@@ -203,7 +203,7 @@ In order to ensure that the user interface was easy to use, it was decided that 
 
 To make the application as aesthetically pleasing as possible I adapted a simplistic design using a similar colour scheme to other NHS branded services. Simplistic designs have been becoming increasingly popular on the web, as they allow the user to focus on content rather than be distracted by fancy graphics. As the information contained within the application is the most important aspect of the application I decide that a simplistic design would be the best-suited design.
 
-After creating the simplistic design I wanted to keep the user interacted by preventing the application content from being dull. To achieve this I changed the colour scheme of the applications action bar to match the standard NHS \cite{nhs} blue. This brightened up the application without distracting the user from the main content.
+After creating the simplistic design I wanted to keep the user interacted by preventing the application content from being dull. To achieve this I changed the colour scheme of the applications action bar to match the standard NHS \cite{nhs_website} blue. This brightened up the application without distracting the user from the main content.
 
  
 \subsection{Searching for drugs}
@@ -232,51 +232,9 @@ To ensure that the user entered the correct values, above each input field is a 
 To further improve the reliability of the calculator page warnings and errors are shown to the user. Errors are shown when the data enter is not valid, for example a patients weight being less than 0. Warnings are displayed to the user when the value entered seems incorrect, giving the user the option to change the value or to continue with the inputted value.
 
 \subsection{Showing the calculation}
-Once the user has entered the values for the calculation and clicked the calculate button they will be displayed with the calculated answer. I decided to use an alert dialog to display the calculated answer. This allows the user to view the answer without leaving the calculator page. 
+Once the user has entered the values for the calculation and clicked the calculate button they will be displayed with the calculated answer. I decided to use an alert dialog \cite{dialog} to display the calculated answer. This allows the user to view the answer without leaving the calculator page. 
 
-To ensure that the calculation has been calculated correctly I decided to show the original equation used to calculate the dosage, then show the equation with the users entered values and then finally display the answer. This allows the NHS staff member to ensure the application is using the correct equation and also allows them to perform the calculation manually t
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/main.png}
-  \captionof{figure}{Main activity mockup}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/browse.png}
-  \captionof{figure}{Browse activity mockup}
-\end{minipage}
-\end{figure}
-
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/calcList.png}
-  \captionof{figure}{Calculator list activity mockup}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/viewDrug.png}
-  \captionof{figure}{View drug activity mockup}
-\end{minipage}
-\end{figure}
-\begin{description}
-
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/calc.png}
-  \captionof{figure}{Calculator activity mockup}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/menu.png}
-  \captionof{figure}{Menu mockup}
-\end{minipage}
-\end{figure}hemselves. I believe this approach will improve the NHS's confidence within the application.
+To ensure that the calculation has been calculated correctly I decided to show the original equation used to calculate the dosage, then show the equation with the users entered values and then finally display the answer. This allows the NHS staff member to ensure the application is using the correct equation and also allows them to perform the calculation manually themselves. I believe this approach will improve the NHS's confidence within the application.
 
 \section{User interface mock-ups}
 After deciding the features of the design I began creating user interface mock-ups. User interface mock-ups allow you to quickly test a variety of designs without having to complete a detailed design. Mock-ups were created for the application to test designs for each view within the application. Within this section I will list all the user interface mock-ups that were created. The mock-ups within this section were created using LucidCharts \cite{lucid_charts}.
@@ -301,11 +259,11 @@ After deciding the features of the design I began creating user interface mock-u
   \centering
   \includegraphics[width=.7\linewidth]{Images/mockups/main.png}
   \captionof{figure}{Main activity mockup}
-\end{minipage}
+\end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=.7\linewidth]{Images/mockups/browse.png}
-  \captionof{figure}{Browse activity mockup}
+  \captionof{figure}{Browse drugs activity mockup}
 \end{minipage}
 \end{figure}
 
@@ -313,17 +271,15 @@ After deciding the features of the design I began creating user interface mock-u
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/calcList.png}
-  \captionof{figure}{Calculator list activity mockup}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-  \centering
   \includegraphics[width=.7\linewidth]{Images/mockups/viewDrug.png}
   \captionof{figure}{View drug activity mockup}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{Images/mockups/menu.png}
+  \captionof{figure}{Menu mockup}
 \end{minipage}
 \end{figure}
-\begin{description}
-
 
 \begin{figure}
 \centering
@@ -331,13 +287,14 @@ After deciding the features of the design I began creating user interface mock-u
   \centering
   \includegraphics[width=.7\linewidth]{Images/mockups/calc.png}
   \captionof{figure}{Calculator activity mockup}
-\end{minipage}
+\end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=.7\linewidth]{Images/mockups/menu.png}
-  \captionof{figure}{Menu mockup}
+  \includegraphics[width=.7\linewidth]{Images/mockups/calcDisplay.png}
+  \captionof{figure}{Calculator display mockup}
 \end{minipage}
 \end{figure}
+
 
 
 \begin{description}

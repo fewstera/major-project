@@ -1,0 +1,14 @@
+build.source.buildConfig.debug.com.fewstera.injectablemedicinesguide
+build.source.buildConfig.test.debug.com.fewstera.injectablemedicinesguide.test
+build.source.r.debug.android.support.v7.appcompat
+build.source.r.debug.com.fewstera.injectablemedicinesguide
+build.source.r.test.debug.com.fewstera.injectablemedicinesguide.models
+build.source.r.test.debug.com.fewstera.injectablemedicinesguide.tests
+src.main.java.com.fewstera.injectablemedicinesguide
+src.main.java.com.fewstera.injectablemedicinesguide.dataDownload
+src.main.java.com.fewstera.injectablemedicinesguide.database
+src.main.java.com.fewstera.injectablemedicinesguide.database.tests
+src.main.java.com.fewstera.injectablemedicinesguide.models
+src.main.java.com.fewstera.injectablemedicinesguide.models.tests
+src.main.java.com.fewstera.injectablemedicinesguide.tests
+src.main.java.com.fewstera.injectablemedicinesguide.util

@@ -1,0 +1,98 @@
+\contentsline {chapter}{\numberline {1}Background, Analysis and Process}{1}
+\contentsline {section}{\numberline {1.1}Project Overview}{1}
+\contentsline {section}{\numberline {1.2}Background and Analysis}{2}
+\contentsline {subsection}{\numberline {1.2.1}Medusa website}{2}
+\contentsline {subsection}{\numberline {1.2.2}Platforms and frameworks}{2}
+\contentsline {subsection}{\numberline {1.2.3}Learning Android development}{3}
+\contentsline {subsection}{\numberline {1.2.4}Existing works}{4}
+\contentsline {section}{\numberline {1.3}Objectives}{4}
+\contentsline {subsection}{\numberline {1.3.1}Original objectives}{4}
+\contentsline {subsection}{\numberline {1.3.2}Functional requirements}{5}
+\contentsline {section}{\numberline {1.4}Compromises within the functional requirements }{7}
+\contentsline {section}{\numberline {1.5}Development process}{7}
+\contentsline {section}{\numberline {1.6}Methodology}{7}
+\contentsline {section}{\numberline {1.7}Planning}{9}
+\contentsline {subsection}{\numberline {1.7.1}Prototypes}{9}
+\contentsline {section}{\numberline {1.8}Version control and backup}{10}
+\contentsline {chapter}{\numberline {2}Design}{11}
+\contentsline {section}{\numberline {2.1}Overall Architecture}{11}
+\contentsline {section}{\numberline {2.2}Data storage}{12}
+\contentsline {subsection}{\numberline {2.2.1}Store the data as XML files}{12}
+\contentsline {subsection}{\numberline {2.2.2}Store the data as a serialised object}{12}
+\contentsline {subsection}{\numberline {2.2.3}Store the data within an SQLite database}{13}
+\contentsline {subsection}{\numberline {2.2.4}Database design}{13}
+\contentsline {section}{\numberline {2.3}Downloading of data}{15}
+\contentsline {subsection}{\numberline {2.3.1}Download the data using an AsyncTask}{15}
+\contentsline {subsection}{\numberline {2.3.2}Download the data using a service}{15}
+\contentsline {subsection}{\numberline {2.3.3}Download the data using a Robospice service}{15}
+\contentsline {section}{\numberline {2.4}Design pattern used}{16}
+\contentsline {section}{\numberline {2.5}Database interactions class}{16}
+\contentsline {section}{\numberline {2.6}Download data singleton}{16}
+\contentsline {section}{\numberline {2.7}Calculation class}{17}
+\contentsline {section}{\numberline {2.8}Preferences class}{17}
+\contentsline {section}{\numberline {2.9}Authentication class}{17}
+\contentsline {section}{\numberline {2.10}Splash activity}{18}
+\contentsline {section}{\numberline {2.11}Common activities}{18}
+\contentsline {section}{\numberline {2.12}User interface design}{18}
+\contentsline {subsection}{\numberline {2.12.1}Logo design}{18}
+\contentsline {subsection}{\numberline {2.12.2}Android developer design guidelines}{19}
+\contentsline {subsection}{\numberline {2.12.3}Designing the interface to be easy to use}{19}
+\contentsline {subsection}{\numberline {2.12.4}Making the application aesthetically pleasing}{19}
+\contentsline {subsection}{\numberline {2.12.5}Searching for drugs}{20}
+\contentsline {subsection}{\numberline {2.12.6}Designing the view drugs page}{20}
+\contentsline {subsection}{\numberline {2.12.7}Designing the calculator page}{21}
+\contentsline {subsection}{\numberline {2.12.8}Showing the calculation}{21}
+\contentsline {section}{\numberline {2.13}User interface mock-ups}{21}
+\contentsline {chapter}{\numberline {3}Implementation}{25}
+\contentsline {section}{\numberline {3.1}Overview}{25}
+\contentsline {section}{\numberline {3.2}IDEs that were used}{25}
+\contentsline {subsection}{\numberline {3.2.1}Eclipse with Android developer tools}{25}
+\contentsline {subsection}{\numberline {3.2.2}Android Studio}{26}
+\contentsline {section}{\numberline {3.3}Use of Gradle}{26}
+\contentsline {section}{\numberline {3.4}Test driven-development}{27}
+\contentsline {section}{\numberline {3.5}Implementing the models}{27}
+\contentsline {section}{\numberline {3.6}Database helper class}{27}
+\contentsline {section}{\numberline {3.7}Authenticating the user}{27}
+\contentsline {section}{\numberline {3.8}Downloading the data and populating the local database}{28}
+\contentsline {section}{\numberline {3.9}Main, browse and view drug activities}{29}
+\contentsline {section}{\numberline {3.10}Calculator implementation}{29}
+\contentsline {section}{\numberline {3.11}Showing the calculation performed}{30}
+\contentsline {section}{\numberline {3.12}Adding access to the calculator}{31}
+\contentsline {section}{\numberline {3.13}Extracting strings from the Java code}{31}
+\contentsline {section}{\numberline {3.14}Implementing XML customisability}{31}
+\contentsline {section}{\numberline {3.15}Supporting older devices}{32}
+\contentsline {section}{\numberline {3.16}Completed application screenshots}{34}
+\contentsline {chapter}{\numberline {4}Testing}{37}
+\contentsline {section}{\numberline {4.1}Approach to testing}{37}
+\contentsline {section}{\numberline {4.2}Test database}{38}
+\contentsline {section}{\numberline {4.3}Unit testing}{38}
+\contentsline {section}{\numberline {4.4}Bug that was found due to unit testing}{38}
+\contentsline {section}{\numberline {4.5}Automated user interface testing}{38}
+\contentsline {section}{\numberline {4.6}Automated integration testing}{39}
+\contentsline {section}{\numberline {4.7}Integration testing}{39}
+\contentsline {section}{\numberline {4.8}Automated stress testing}{40}
+\contentsline {section}{\numberline {4.9}Acceptance testing}{40}
+\contentsline {section}{\numberline {4.10}Acceptance testing feedback}{42}
+\contentsline {chapter}{\numberline {5}Evaluation}{44}
+\contentsline {section}{\numberline {5.1}Evaluation against original goals}{44}
+\contentsline {section}{\numberline {5.2}Evaluation against functional requirements}{45}
+\contentsline {section}{\numberline {5.3}Time management}{45}
+\contentsline {section}{\numberline {5.4}Design decisions}{45}
+\contentsline {section}{\numberline {5.5}Methodology}{46}
+\contentsline {section}{\numberline {5.6}Implementation}{46}
+\contentsline {section}{\numberline {5.7}Changes to the implementation that could be made}{47}
+\contentsline {section}{\numberline {5.8}Future improvements for the application}{48}
+\contentsline {subsection}{\numberline {5.8.1}Cross platform support}{48}
+\contentsline {subsection}{\numberline {5.8.2}Allow the user to add extra notes to drugs}{48}
+\contentsline {subsection}{\numberline {5.8.3}Allow the user to add calculator information}{48}
+\contentsline {subsection}{\numberline {5.8.4}Partial database update}{48}
+\contentsline {subsection}{\numberline {5.8.5}Push notifications of database updates}{48}
+\contentsline {subsection}{\numberline {5.8.6}Ability to reset credentials}{49}
+\contentsline {subsection}{\numberline {5.8.7}Allow for online mode}{49}
+\contentsline {chapter}{Appendices}{50}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{51}
+\contentsline {chapter}{\numberline {B}Code samples}{52}
+\contentsline {section}{\numberline {2.1}Default request notifier}{52}
+\contentsline {chapter}{\numberline {C}Further documentation}{58}
+\contentsline {chapter}{Appendices}{85}
+\contentsline {chapter}{Annotated Bibliography}{86}
