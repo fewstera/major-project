@@ -94,5 +94,5 @@
 \contentsline {chapter}{\numberline {B}Code samples}{52}
 \contentsline {section}{\numberline {2.1}Default request notifier}{52}
 \contentsline {chapter}{\numberline {C}Further documentation}{58}
-\contentsline {chapter}{Appendices}{85}
-\contentsline {chapter}{Annotated Bibliography}{86}
+\contentsline {chapter}{Appendices}{93}
+\contentsline {chapter}{Annotated Bibliography}{94}

@@ -121,11 +121,6 @@ Warning--entry type for "code_style" isn't style-file defined
 --line 332 of file References/references.bib
 Warning--entry type for "javadoc" isn't style-file defined
 --line 338 of file References/references.bib
-Warning--I didn't find a database entry for "market"
-Warning--I didn't find a database entry for "apache"
-Warning--I didn't find a database entry for "apache_poi"
-Warning--I didn't find a database entry for "apache_license"
-Warning--I didn't find a database entry for "NumericalRecipes"
 -- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -184,7 +179,7 @@ Warning--to sort, need author or key in svn
 Done.
 You've used 51 entries,
             4538 wiz_defined-function locations,
-            1109 strings with 18444 characters,
+            1103 strings with 18376 characters,
 and the built_in function-call counts, 19063 in all, are:
 = -- 1691
 > -- 57
@@ -223,4 +218,4 @@ warning$ -- 50
 while$ -- 2
 width$ -- 53
 write$ -- 428
-(There were 106 warnings)
+(There were 101 warnings)

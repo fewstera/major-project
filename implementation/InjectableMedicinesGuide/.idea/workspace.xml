@@ -29,172 +29,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b8b27ac-123c-48d0-92e4-2d5d98b8ecc4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/DesignSpecification.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/Integration tests.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Images/mockups/calcList.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.synctex.gz(busy)" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/RequirementsSpecification.pdf" afterPath="$PROJECT_DIR$/../../documentation/RequirementsSpecification.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter4/chapter4.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter4/chapter4.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/DesignSpecification/DesignSpecification.pdf" afterPath="$PROJECT_DIR$/../../documentation/Latex/DesignSpecification/DesignSpecification.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.pdf" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/Auth.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/Auth.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/AuthTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/AuthTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/BrowseDrugsActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/BrowseDrugsActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/BrowseDrugsActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/BrowseDrugsActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/BuildConfig.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/BuildConfig.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/CalcDrugSelectActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/CalcDrugSelectActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/CalcDrugSelectActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/CalculateActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/CalculateActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/CalculateActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/CalculateActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/Calculator.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/Calculator.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/CalculatorTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/CalculatorTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/CommonActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/CommonActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/DatabaseHelperTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/DatabaseHelperTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.calcsDownloadRequestListener.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.calcsDownloadRequestListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.drugsDownloadRequestListener.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.drugsDownloadRequestListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.indexDownloadRequestListener.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/DownloadDataActivity.indexDownloadRequestListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/DownloadDataActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/DownloadDataActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.NotFoundRunnable.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.NotFoundRunnable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.ProgressRunnable.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.ProgressRunnable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.ResultRunnable.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.ResultRunnable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadService.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/DownloadService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/Drug.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/Drug.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugCalculatorInfoTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugCalculatorInfoTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/DrugIndex.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/DrugIndex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugIndexTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugIndexTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/DrugInformation.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/DrugInformation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugInformationTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugInformationTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/DrugTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/LoggedInActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/LoggedInActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/LoginActivity.ValidateLoginTask.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/LoginActivity.ValidateLoginTask.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/LoginActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/LoginActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/LoginActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/LoginActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/MainActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/MainActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/MainActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/MainActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/Preferences.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/Preferences.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/PreferencesTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/PreferencesTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.anim.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.anim.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.anim.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.anim.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.array.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.array.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.attr.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.attr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.attr.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.attr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.bool.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.bool.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.bool.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.bool.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.color.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.color.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.color.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.color.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.dimen.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.dimen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.dimen.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.dimen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.drawable.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.drawable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.drawable.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.drawable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.id.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.id.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.id.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.id.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.integer.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.integer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.integer.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.integer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.layout.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.layout.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.menu.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.string.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.string.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.string.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.string.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.style.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.style.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.style.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.style.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.styleable.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/R.styleable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.styleable.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/R.styleable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/SplashActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/SplashActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHider.OnVisibilityChangeListener.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHider.OnVisibilityChangeListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHider.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHider.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHiderBase.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHiderBase.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHiderHoneycomb.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/SystemUiHiderHoneycomb.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/ViewDrugActivity.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/ViewDrugActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/ViewDrugActivityTest.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/ViewDrugActivityTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/../../javadoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix1/appendix1.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix1/appendix1.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/DesignSpecification/DesignSpecification.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/DesignSpecification/DesignSpecification.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix2/appendix2.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix2/appendix2.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter3/chapter3.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter3/chapter3.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter3/chapter3.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter3/chapter3.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter4/chapter4.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter4/chapter4.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter5/chapter5.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter5/chapter5.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter5/chapter5.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter5/chapter5.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/constant-values.html" afterPath="$PROJECT_DIR$/../../javadoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/../../javadoc/deprecated-list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.bbl" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.bbl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.blg" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.blg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.lof" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.lof" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.lot" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.lot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.toc" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/help-doc.html" afterPath="$PROJECT_DIR$/../../javadoc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-19.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-19.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-20.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-20.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-21.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-21.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-22.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-22.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-23.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-23.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/../../javadoc/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/index.html" afterPath="$PROJECT_DIR$/../../javadoc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/mmp.sty" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/mmp.sty" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/package-frame.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/package-list" afterPath="$PROJECT_DIR$/../../javadoc/package-list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/package-summary.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/android/support/v7/appcompat/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/dataDownload/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/database/tests/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/models/tests/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/tests/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/package-tree.html" afterPath="$PROJECT_DIR$/../../javadoc/com/fewstera/injectablemedicinesguide/util/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/References/references.bib" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/References/references.bib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InjectableMedicinesGuide.iws" />
@@ -261,110 +103,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DownloadDataActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/DownloadDataActivity.java">
+      <file leaf-file-name="DataProgress.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="494" column="15" selection-start="19113" selection-end="19113" vertical-scroll-proportion="-11.538462" vertical-offset="6690" max-vertical-offset="7200">
+            <state line="22" column="43" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalcDrugSelectActivityTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/CalcDrugSelectActivityTest.java">
+      <file leaf-file-name="DownloadService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="13" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="2040">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4179#4235#0" expanded="false" />
-              </folding>
+            <state line="13" column="3" selection-start="412" selection-end="624" vertical-scroll-proportion="0.14395393" vertical-offset="0" max-vertical-offset="1260">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowseDrugsActivityTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/BrowseDrugsActivityTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="8" selection-start="1849" selection-end="1989" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1590">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#3093#3149#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/AuthTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="71" selection-start="3894" selection-end="3894" vertical-scroll-proportion="0.0" vertical-offset="1266" max-vertical-offset="1800">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#946#1003#0" expanded="false" />
-                <element signature="e#1032#1089#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="1290">
-              <folding>
-                <element signature="e#543#561#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.2247191" vertical-offset="0" max-vertical-offset="705">
+            <state line="8" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/CommonActivity.java">
+      <file leaf-file-name="DrugIndex.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="19" selection-start="920" selection-end="934" vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="975">
+            <state line="29" column="23" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DownloadDataActivityTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/DownloadDataActivityTest.java">
+      <file leaf-file-name="DrugCalculatorInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="5" selection-start="2152" selection-end="2152" vertical-scroll-proportion="0.0" vertical-offset="1356" max-vertical-offset="1890">
-              <folding>
-                <element signature="e#1319#1376#0" expanded="true" />
-                <element signature="e#1404#1461#0" expanded="true" />
-              </folding>
+            <state line="18" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculateActivityTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/CalculateActivityTest.java">
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="3336" max-vertical-offset="4830">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#6117#6178#0" expanded="false" />
-                <element signature="e#14057#14117#0" expanded="false" />
-              </folding>
+            <state line="138" column="0" selection-start="5441" selection-end="5441" vertical-scroll-proportion="0.0" vertical-offset="1590" max-vertical-offset="6300">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/LoginActivity.java">
+      <file leaf-file-name="DownloadRequestListenerNotifier.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="0" selection-start="3774" selection-end="3774" vertical-scroll-proportion="0.0" vertical-offset="1236" max-vertical-offset="1890">
+            <state line="75" column="20" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2715">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DownloadDrugsRequest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="0" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DownloadIndexRequest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="139" column="6" selection-start="4885" selection-end="4885" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2055">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DownloadCalculationsRequest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
               <folding />
             </state>
           </provider>
@@ -808,8 +631,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="222" />
-    <option name="y" value="28" />
+    <option name="x" value="-53" />
+    <option name="y" value="148" />
     <option name="width" value="1381" />
     <option name="height" value="962" />
   </component>
@@ -1373,8 +1196,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="222" y="28" width="1381" height="962" extended-state="0" />
-    <editor active="false" />
+    <frame x="-53" y="148" width="1381" height="962" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1398,7 +1221,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24794623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3356974" sideWeight="0.6848394" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3356974" sideWeight="0.6848394" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1201" y="424" width="479" height="238" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1452,16 +1275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="20" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2715" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="46" selection-start="3130" selection-end="3130" vertical-scroll-proportion="0.0" vertical-offset="1336" max-vertical-offset="2055" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="134" selection-end="345" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
@@ -1497,16 +1310,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="31" selection-start="3671" selection-end="3671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2355" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/MainActivityTest.java">
@@ -1611,13 +1414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="12" selection-start="2219" selection-end="2230" vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/Drug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="0" selection-start="2861" selection-end="2861" vertical-scroll-proportion="0.0" vertical-offset="951" max-vertical-offset="1710">
@@ -1635,27 +1431,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="24" selection-start="3152" selection-end="3197" vertical-scroll-proportion="55.46154" vertical-offset="2462" max-vertical-offset="2970">
-          <folding>
-            <element signature="e#1792#1826#0" expanded="true" />
-            <element signature="e#1933#1963#0" expanded="true" />
-            <element signature="e#2070#2109#0" expanded="true" />
-            <element signature="e#2232#2271#0" expanded="true" />
-            <element signature="e#2398#2442#0" expanded="true" />
-            <element signature="e#2571#2608#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="55" selection-start="5864" selection-end="5864" vertical-scroll-proportion="0.0" vertical-offset="1266" max-vertical-offset="2295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculate.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2445">
@@ -1664,27 +1439,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="39" selection-start="3598" selection-end="3618" vertical-scroll-proportion="-3.9615386" vertical-offset="1877" max-vertical-offset="2625">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1930#1931#0" expanded="false" />
-            <element signature="e#1967#1968#0" expanded="false" />
-            <element signature="e#2459#2460#0" expanded="false" />
-            <element signature="e#2496#2497#0" expanded="false" />
-            <element signature="e#2795#2796#0" expanded="false" />
-            <element signature="e#2827#2828#0" expanded="false" />
-            <element signature="e#3852#3853#0" expanded="false" />
-            <element signature="e#3890#3891#0" expanded="false" />
-            <element signature="e#4020#4021#0" expanded="false" />
-            <element signature="e#4053#4054#0" expanded="false" />
-            <element signature="e#4522#4523#0" expanded="false" />
-            <element signature="e#4556#4557#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -1720,13 +1474,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/data_downloads.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="117" column="0" selection-start="6950" selection-end="6950" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2580">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="75" selection-start="2216" selection-end="2216" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="6300">
           <folding />
         </state>
       </provider>
@@ -1836,7 +1583,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.2247191" vertical-offset="0" max-vertical-offset="705">
+        <state line="8" column="27" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="23" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/database/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="0" selection-start="5441" selection-end="5441" vertical-scroll-proportion="0.0" vertical-offset="1590" max-vertical-offset="6300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadRequestListenerNotifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="20" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2715">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DataProgress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="43" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="6" selection-start="4885" selection-end="4885" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="3" selection-start="412" selection-end="624" vertical-scroll-proportion="0.14395393" vertical-offset="0" max-vertical-offset="1260">
           <folding />
         </state>
       </provider>
