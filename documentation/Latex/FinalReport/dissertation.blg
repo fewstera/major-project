@@ -75,7 +75,28 @@ Warning--entry type for "svn" isn't style-file defined
 --line 183 of file References/references.bib
 Warning--entry type for "github" isn't style-file defined
 --line 189 of file References/references.bib
-Warning--I didn't find a database entry for "mxml"
+Warning--entry type for "sqlite" isn't style-file defined
+--line 195 of file References/references.bib
+Warning--entry type for "sqlite_dt" isn't style-file defined
+--line 201 of file References/references.bib
+Warning--entry type for "junit" isn't style-file defined
+--line 208 of file References/references.bib
+Warning--entry type for "strings_xml" isn't style-file defined
+--line 215 of file References/references.bib
+Warning--entry type for "async_task" isn't style-file defined
+--line 222 of file References/references.bib
+Warning--entry type for "service" isn't style-file defined
+--line 229 of file References/references.bib
+Warning--entry type for "apache_licence" isn't style-file defined
+--line 235 of file References/references.bib
+Warning--entry type for "mvc" isn't style-file defined
+--line 242 of file References/references.bib
+Warning--entry type for "singleton" isn't style-file defined
+--line 248 of file References/references.bib
+Warning--entry type for "shared_pref" isn't style-file defined
+--line 254 of file References/references.bib
+Warning--entry type for "findicons" isn't style-file defined
+--line 261 of file References/references.bib
 Warning--I didn't find a database entry for "apache_poi"
 Warning--I didn't find a database entry for "apache_license"
 Warning--I didn't find a database entry for "NumericalRecipes"
@@ -108,49 +129,60 @@ Warning--to sort, need author or key in xp
 Warning--to sort, need author or key in waterfall
 Warning--to sort, need author or key in git
 Warning--to sort, need author or key in github
+Warning--to sort, need author or key in sqlite
+Warning--to sort, need author or key in junit
+Warning--to sort, need author or key in strings_xml
+Warning--to sort, need author or key in sqlite_dt
+Warning--to sort, need author or key in async_task
+Warning--to sort, need author or key in service
+Warning--to sort, need author or key in apache_licence
 Warning--to sort, need author or key in phonegap_localstorage
 Warning--to sort, need author or key in svn
+Warning--to sort, need author or key in mvc
+Warning--to sort, need author or key in singleton
+Warning--to sort, need author or key in shared_pref
+Warning--to sort, need author or key in findicons
 
 Done.
-You've used 28 entries,
+You've used 39 entries,
             4538 wiz_defined-function locations,
-            1015 strings with 13907 characters,
-and the built_in function-call counts, 10553 in all, are:
-= -- 932
-> -- 34
+            1060 strings with 16297 characters,
+and the built_in function-call counts, 14623 in all, are:
+= -- 1295
+> -- 45
 < -- 0
-+ -- 30
++ -- 41
 - -- 2
-* -- 438
-:= -- 1621
-add.period$ -- 56
-call.type$ -- 28
-change.case$ -- 85
+* -- 603
+:= -- 2237
+add.period$ -- 78
+call.type$ -- 39
+change.case$ -- 118
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 874
-empty$ -- 1126
+cite$ -- 77
+duplicate$ -- 1215
+empty$ -- 1566
 format.name$ -- 2
-if$ -- 2315
+if$ -- 3217
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 169
-newline$ -- 132
+int.to.str$ -- 39
+missing$ -- 235
+newline$ -- 176
 num.names$ -- 2
-pop$ -- 529
+pop$ -- 738
 preamble$ -- 1
-purify$ -- 57
+purify$ -- 79
 quote$ -- 2
-skip$ -- 899
+skip$ -- 1251
 stack$ -- 0
-substring$ -- 168
-swap$ -- 407
+substring$ -- 234
+swap$ -- 561
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 252
-warning$ -- 27
+type$ -- 351
+warning$ -- 38
 while$ -- 2
-width$ -- 30
-write$ -- 244
-(There were 59 warnings)
+width$ -- 41
+write$ -- 332
+(There were 80 warnings)

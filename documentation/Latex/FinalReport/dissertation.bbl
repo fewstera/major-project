@@ -18,6 +18,14 @@
 \fi
 #2}}
 
+\bibitem{mvc}
+``What are the benefits of mvc?''
+  \url{http://blog.iandavis.com/2008/12/09/what-are-the-benefits-of-mvc/},
+  2008.
+ \begin{quotation}\noindent Model-View-Controller is a popular design pattern
+  that I am familar with. This document discusses the benefits of MVC.
+  \end{quotation}
+
 \bibitem{xp}
 ``{Extreme Programming: A gentle introduction},''
   \url{http://www.extremeprogramming.org/}, 2010.
@@ -30,6 +38,13 @@
  \begin{quotation}\noindent The waterfall model is a popular methodology used
   by a large amount of software projects. The waterfall model was the
   methodology that was used throughout this project \end{quotation}
+
+\bibitem{singleton}
+``Singleton design pattern in java,''
+  \url{http://howtodoinjava.com/2012/10/22/singleton-design-pattern-in-java/},
+  2012.
+ \begin{quotation}\noindent This blog post discusses singletons within the Java
+  programming language \end{quotation}
 
 \bibitem{phonegap_background}
 ``{PhoneGap API Documentation - Local storage},''
@@ -51,16 +66,37 @@
   a variety of devices and operating systems. This was used when determining
   the most suitable platform. \end{quotation}
 
+\bibitem{android_design}
+``{Android developer design guidelines},''
+  \url{https://developer.android.com/design/index.html}, 2014.
+ \begin{quotation}\noindent Android design guidelines were used throughout the
+  design and implementation stages, to ensure the user interface followed
+  Android guidelines. \end{quotation}
+
 \bibitem{android_sdk}
 ``{Android SDK},'' \url{http://developer.android.com/sdk/}, 2014.
  \begin{quotation}\noindent A brief introduction to the Android SDK, providing
   links to other useful resources. \end{quotation}
+
+\bibitem{apache_licence}
+``Apache 2.0 licence,'' \url{http://www.apache.org/licenses/LICENSE-2.0.html},
+  2014.
+ \begin{quotation}\noindent The Apache 2.0 licence is an open source software
+  licence, that allows the users to modify and resell the product, as long as
+  the original notice is kept. \end{quotation}
 
 \bibitem{ios}
 ``{Apple (United Kingdom) - iOS 7},'' \url{http://www.apple.com/uk/ios/}, 2014.
  \begin{quotation}\noindent Apple's iOS is the operating system ran on the
   popular iPhone device, as well as many other devices such as the iPad and
   iPod. \end{quotation}
+
+\bibitem{async_task}
+``Asynctask - android documentation,''
+  \url{http://developer.android.com/reference/android/os/AsyncTask.html}, 2014.
+ \begin{quotation}\noindent The Android SDK provides a class for executing
+  tasks outside of the main thread called AsyncTask. This is the documentation
+  for AsyncTasks. \end{quotation}
 
 \bibitem{mobile_inter}
 ``{Electromagnetic interference : MHRA},''
@@ -96,19 +132,17 @@
  \begin{quotation}\noindent Github is service used for storing git
   repositories. Github provide a free account to students. \end{quotation}
 
-\bibitem{android_design}
-``{GLYPHICONS - library of precisely prepared monochromatic icons and
-  symbols.}'' \url{https://developer.android.com/design/index.html}, 2014.
- \begin{quotation}\noindent Android design guidelines were used throughout the
-  design and implementation stages, to ensure the user interface followed
-  Android guidelines. \end{quotation}
-
 \bibitem{glyph}
 ``{GLYPHICONS - library of precisely prepared monochromatic icons and
   symbols.}'' \url{http://glyphicons.com/}, 2014.
  \begin{quotation}\noindent Glyphicon is a set of icons released under the
   Apache 2 licence. This library wasy used for some iconogprahy within the
   application \end{quotation}
+
+\bibitem{findicons}
+``Icon search engine,'' \url{http://findicons.com/}, 2014.
+ \begin{quotation}\noindent A search engine built for finding icons. This was
+  used to find a open source icon for the applications icon. \end{quotation}
 
 \bibitem{tdd}
 ``{Introduction to Test Driven Development (TDD)},''
@@ -122,6 +156,12 @@
 ``{Java Programming Language},'' \url{http://www.java.com/}, 2014.
  \begin{quotation}\noindent The Java programming language is the base language
   used throughout Android development. \end{quotation}
+
+\bibitem{junit}
+``{JUnit Testing},'' \url{http://junit.org/}, 2014.
+ \begin{quotation}\noindent JUnit is a Java framework for testing individual
+  units. JUnit tests have been built for each class within the application
+  \end{quotation}
 
 \bibitem{monograph}
 ``{Monograph format},''
@@ -163,15 +203,49 @@
   development, that allows developers to easily create asynchronous running
   services. \end{quotation}
 
+\bibitem{service}
+``Service - android documentation,''
+  \url{http://developer.android.com/reference/android/app/Service.html}, 2014.
+ \begin{quotation}\noindent The Android SDK provides a class for executing long
+  running tasks outside of the main thread called a Service. This is the
+  documentation for an Android Service. \end{quotation}
+
+\bibitem{shared_pref}
+``Sharedpreferences | android developers,''
+  \url{http://developer.android.com/reference/android/content/SharedPreferences.html},
+  2014.
+ \begin{quotation}\noindent A shared preference is a key-value pair accessed by
+  providing the key as a string. SharedPreferences are useful for storing
+  single pieces of information on the device. This the documentation for shared
+  preferences \end{quotation}
+
 \bibitem{software_al}
 ``{Software Alliance Wales},'' \url{http://softwarealliancewales.com/}, 2014.
  \begin{quotation}\noindent The Software Alliance is who provided this project
   to the Abersywtyth University. \end{quotation}
 
+\bibitem{sqlite}
+``{SQLite},'' \url{http://www.sqlite.org/}, 2014.
+ \begin{quotation}\noindent An SQLite database was used within the project to
+  store the data downloaded from the server. \end{quotation}
+
+\bibitem{sqlite_dt}
+``{SQLite Datatypes},'' \url{http://www.sqlite.org/datatype3.html}, 2014.
+ \begin{quotation}\noindent This is the list of available datatypes within
+  SQLite databases \end{quotation}
+
 \bibitem{stackoverflow}
-``{StackOverflow},'' \url{http://stackoverflow.com/}, 2014.
+``{Stack Overflow},'' \url{http://stackoverflow.com/}, 2014.
  \begin{quotation}\noindent StackOverflow was used throughout the project to
   check on best practices and to solve common problems. \end{quotation}
+
+\bibitem{strings_xml}
+``Strings.xml resouce,''
+  \url{http://developer.android.com/guide/topics/resources/string-resource.html},
+  2014.
+ \begin{quotation}\noindent The Android SDK provides a XML file that is used to
+  store all strings used for the project. This is the Android documentation on
+  strings.xml \end{quotation}
 
 \bibitem{svn}
 ``{SVN - Subversion},'' \url{http://subversion.tigris.org/}, 2014.
