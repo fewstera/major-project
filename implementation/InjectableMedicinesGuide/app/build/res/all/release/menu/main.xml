@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_home"
+        android:orderInCategory="1"
+        android:showAsAction="never"
+        android:title="@string/action_home"/>
+    <item
+        android:id="@+id/action_browse_drugs"
+        android:orderInCategory="2"
+        android:showAsAction="never"
+        android:title="@string/action_browse_drugs"/>
+    <item
+        android:id="@+id/action_update"
+        android:orderInCategory="3"
+        android:showAsAction="never"
+        android:title="@string/action_update"/>
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="30"
+        android:showAsAction="never"
+        android:title="@string/action_logout"/>
+</menu>
+<!-- From: file:/Users/fewstera/Documents/Dissertation/implementation/InjectableMedicinesGuide/app/src/main/res/menu/main.xml -->

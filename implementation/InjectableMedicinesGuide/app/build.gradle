@@ -5,7 +5,7 @@ android {
     buildToolsVersion "19.0.1"
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 8
         targetSdkVersion 18
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_5
@@ -13,10 +13,21 @@ android {
         }
     }
 
+    signingConfigs {
+        signConfig {
+            storeFile file("clientkeystore")
+            storePassword "y1pPM6Z645cQ20h"
+            keyAlias "client"
+            keyPassword "y1pPM6Z645cQ20h"
+        }
+    }
+
     buildTypes {
         release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            runProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            debuggable false
+            signingConfig signingConfigs.signConfig
         }
     }
 

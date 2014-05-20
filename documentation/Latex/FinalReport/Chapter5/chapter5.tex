@@ -45,9 +45,9 @@ The final implementation only varies slightly from the original design. This was
 
 The methodology used was adapted twice throughout the project. Originally a pure eXtreme programming \cite{xp} was planned, and then the methodology was changed to the waterfall model \cite{waterfall} with test-driven development \cite{tdd} throughout and then later changed to be the waterfall model with test-driven development for critical parts of the system.
 
-Reflecting on the project using the standard waterfall \cite{waterfall} method throughout would’ve been more effective for this project. I wanted to gain experience in using agile methodologies, but using a methodology that I had little experience in, was a hindrance to the project, as extra time was added.
+Reflecting on the project using the standard waterfall \cite{waterfall} method throughout would've been more effective for this project. I wanted to gain experience in using agile methodologies, but using a methodology that I had little experience in, was a hindrance to the project, as extra time was added.
 
-The test driven development \cite{tdd} that I executed did help in finding problems with the calculator class early on, but the problems would’ve still been found during the testing phase, at the end of the waterfall model.
+The test driven development \cite{tdd} that I executed did help in finding problems with the calculator class early on, but the problems would've still been found during the testing phase, at the end of the waterfall model.
 
 
 \section{Implementation}
@@ -69,9 +69,9 @@ From the onset of the project I knew that I would not be the sole person to main
 
 Although the implemented application works as expected there is ways the implementation could be improved. These improvements mainly lie within the classes responsible for downloading the database.
 
-When the application begins downloading the application first downloads the drug indexes, then the drug calculator information and then finally the drug informations are downloaded using multiple threads. When implementing the system, I believed this to be the best method of organising the download. If the application fails to download the drug indexes or the calculator information the applications has to wait for the user to decided what action they would like to perform. Another issue with this approach is that the indexes and calculation are downloaded sequentially and therefore Android’s multithreading capabilities are not used, meaning the process may take longer.
+When the application begins downloading the application first downloads the drug indexes, then the drug calculator information and then finally the drug informations are downloaded using multiple threads. When implementing the system, I believed this to be the best method of organising the download. If the application fails to download the drug indexes or the calculator information the applications has to wait for the user to decided what action they would like to perform. Another issue with this approach is that the indexes and calculation are downloaded sequentially and therefore Android's multithreading capabilities are not used, meaning the process may take longer.
 
-To improve the download task, all services should be pushed to the Robospice service manager when the download activity starts. This will allow the all downloads to start simultaneously and using multiple threads. As the download progress (Download x drugs of y) requires the drug index to be download, a higher priority should be set of the index service and before the download has been finished a standardised message could be used, such as “Download X drugs.”
+To improve the download task, all services should be pushed to the Robospice service manager when the download activity starts. This will allow all the downloads to start simultaneously, using multiple threads. As the download progress (Download x drugs of y) requires the drug index to be downloaded first, a higher priority should be set for the index service and before the download has been finished a standardised message could be used, such as “Download X drugs.”
 
 Another improvement would be to execute the drug letter SQL queries using transactions \cite{sqlite}. Currently drugs are added to the database as soon as they are downloaded. If the download fails whilst mid-way through a letter and the user retries the download, for the drugs that have already been downloaded, the application will attempt to add them again. The drugs are not added to the database, due to primary key constraints on the database, but I believe it is better practice to not have to rely on these constraints. Using a transaction to add drugs starting with each letter will prevent this, as if the download fails the transaction will be cancelled removing all changes.
 
@@ -102,7 +102,7 @@ This idea could be extended further, and the user could be able to submit there 
 
 \subsection{Partial database update}
 
-To update the database on the current system, the application first deletes all data within the database and then downloads the new data. This was the only method of implementing the update, due to the limitations of the provided API. Given more time I could’ve worked with the NHS to improve the API to allow for partial updates to the database, which would greatly improve the speed of an update.
+To update the database on the current system, the application first deletes all data within the database and then downloads the new data. This was the only method of implementing the update, due to the limitations of the provided API. Given more time I could've worked with the NHS to improve the API to allow for partial updates to the database, which would greatly improve the speed of an update.
 
 \subsection{Push notifications of database updates}
 
@@ -110,9 +110,9 @@ Once partial updates had been implemented, it would be beneficial to the user, t
 
 \subsection{Ability to reset credentials}
 
-Currently there is no method of resetting the users credentials, should they forget them. Provided extra time, I could have worked with the NHS to create API’s for resetting the users credentials with the application.
+Currently there is no method of resetting the users credentials, should they forget them. Provided extra time, I could have worked with the NHS to create API's for resetting the users credentials with the application.
 
 
 \subsection{Allow for online mode}
 
-Some users may not want to download the entire database before using the application. It would be nice to allow user to use the live database from the application, meaning a local copy of the database would not be stored and only informations that is needs is downloaded. Obviously this solution would not work when the user does not have Internet access, but could be useful in places where Internet is available, for example a doctor’s surgery.
+Some users may not want to download the entire database before using the application. It would be nice to allow user to use the live database from the application, meaning a local copy of the database would not be stored and only informations that is needs is downloaded. Obviously this solution would not work when the user does not have Internet access, but could be useful in places where Internet is available, for example a doctor's surgery.

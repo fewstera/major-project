@@ -177,6 +177,13 @@
         ]]>
     </string>
     <string name="about_title">About</string>
-    <string name="about_text">About us</string>
+    <string name="about_text"><![CDATA[
+        <strong>Injectable Medicines Guide</strong><br/><br/>
+        The Injectable Medicines Guide is an Android application, which was created by Aidan Wynne Fewster, for the NHS Wales under the Software Alliance Wales Scheme, as part of his dissertation at Aberystwyth University. The Injectable Medicines Guide aims to aid NHS staff in administering injectable medicines to patients, by providing portable access to a dataset of drug monographs.
+        <br/><br/>
+        <strong>External resources used</strong><br/><br/>
+        <strong>GlyphIcons</strong> - http://glyphicons.com/<br/>
+        <strong>RoboSpice</strong> - https://github.com/stephanenicolas/robospice
+    ]]></string>
     <string name="close_button">Close</string>
 </resources>

@@ -13,7 +13,7 @@ An Internet connection may not be available \cite{mobile_inter} in all areas of 
 
 As to improve the maintainability and customisability of the system the NHS also requested that the structure of the data to be outlined within XML \cite{xml} files, thus allowing them to create multiple applications for a variety datasets using the same application code.
 
-As the application will be used to administer potentially lethal drugs, testing had to be executed thoroughly. Therefore a major part of this project was testing the finished application, ensuring that only the correct and most accurate information is displayed to the user.
+As the application will be used to administer potentially lethal drugs, testing had to be executed thoroughly. Therefore a major part of this project was testing the finished application, ensuring that only the correct and the most accurate information is displayed to the user.
 
 
 \section{Background and Analysis}
@@ -22,18 +22,18 @@ This section will outline all background research that was executed before start
 
 \subsection{Medusa website}
 
-The Medusa \cite{medusa} website is the site that NHS staff currently use to view and print monographs for injectable medicines. The website requests the member of staff to login using their NHS credentials, upon logging in a user is able to select a drug from a drop down list (suggestive search is not available). Once a drug has been selected the user is displayed with the monograph \cite{monograph} for the selected drug. If calculator information is available then a button to open the calculator is also displayed.
+The Medusa \cite{medusa} website is the site that NHS staff currently use to view and print monographs for injectable medicines. The website requests the member of staff to login using their NHS credentials, upon logging in a user is able to select a drug from a drop down list (suggestive search is not available). Once a drug has been selected the user is displayed with the monograph \cite{monograph} for the selected drug. If calculator information is available, then a button to open the calculator is also displayed.
 
-The Medusa website \cite{medusa} does not work on the mobile devices that I tested it on (the login functionality fails) and the site is not optimized for the screen size of most mobile devices. As the Medusa website \cite{medusa} does not work effectively on mobile devices the only method of accessing the monographs \cite{monograph} in a portable manner is to print the monographs, this not an optimal solution as the printed information may also become outdated and the user will not know, also this is not an environmentally friendly method.
+The Medusa website \cite{medusa} does not work on the mobile devices that I tested it on (the login functionality fails) and the site is not optimized for the screen size of most mobile devices. As the Medusa website \cite{medusa} does not work effectively on mobile devices the only method of accessing the monographs \cite{monograph} in a portable manner is to print the monographs, this not an optimal solution as the printed information may become outdated and the user will not know, also this is not an environmentally friendly method.
 
 Using the Medusa website \cite{medusa} allowed me to see how a monograph \cite{monograph} should be displayed to the user. It also allowed me to see the shortfalls and drawbacks of the current system, such as the lack of a suggestive search functionality, which allowed me to change the projects requirements to provide a solution to these issues.
 
 \subsection{Platforms and frameworks}
 Due to the time constraints of this project, one of the major decisions for the project was which framework or platform should be used, to allow the application to be compatible for the largest amount of users.
 
-A solution that would have allowed the application to run on the majority of devices would have been to create a web application \cite{web_app}. A web application \cite{web_app} is essentially a website that has been optimized for a mobile device. The major issue with a web application was that there is no way to store data on the device persistently therefore a network connection would have been needed. As the application has to work in offline mode \cite{mobile_inter}, a web application was not a usable solution. 
+A solution that would have allowed the application to run on the majority of devices would have been to create a web application \cite{web_app}. A web application \cite{web_app} is essentially a website that has been optimized for a mobile device. The major issue with a web application was that there is no way to store data on the device persistently. Therefore a network connection would have been needed, as the application has to work in offline mode \cite{mobile_inter}, a web application is not a viable solution. 
 
-Phonegap \cite{phonegap} is a mobile development framework that allows developers to write mobile applications using HTML5, JavaScript and CSS3 instead of device specific languages. Phonegap \cite{phonegap} then compiles the application written using web technologies into a hybrid application \cite{hybrid_application} for multiple devices. A hybrid application \cite{hybrid_application} is an application that appears to be a native application to the user but is not a native application as instead of using the devices UI framework the application uses web views to display information to the user. The framework also gives developers access to the devices local storage and sensors, thus allowing developers to create web applications with similar powers to native applications. 
+Phonegap \cite{phonegap} is a mobile development framework that allows developers to write mobile applications using HTML5, JavaScript and CSS3 instead of device specific languages. Phonegap \cite{phonegap} then compiles the application, that is written using web technologies, into a hybrid application \cite{hybrid_application} for multiple devices. A hybrid application \cite{hybrid_application} is an application that appears to be a native application to the user, but is not as instead of using the devices UI framework the application uses web views to display information to the user. The framework also gives developers access to the devices local storage and sensors, thus allowing developers to create web applications with similar powers to native applications. 
 
 Phonegap \cite{phonegap} would have been an excellent framework to use for this project, as it would have allowed me to create applications to be used on multiple devices, using languages I was very familiar with. The main issue with Phonegap is that it does not allow you to run processes in the background \cite{phonegap_background}. Therefore the process of downloading and updating the local database would need to run in foreground, which is not an ideal solution as the process takes several minutes and the user is likely to move out of the application while the download is in progress. Another issue with Phonegap \cite{phonegap} is that as the application does not utilize the devices UI frameworks the application may lack the look and feel of a native application, meaning it may be harder for a user to use the application.
 
@@ -41,9 +41,9 @@ Native Android \cite{android} and iOS applications would have been suitable for 
 
 Applications for iOS \cite{ios} devices are created using the Xcode IDE and are written in Objective-C, which is an object-orientated language based on C and C++ \cite{obj_c}. I have some experience in C and C++ but no experience in Objective-C or iOS development. I also do not own an iOS device therefore testing would have been primarily executed within an emulator.
 
-Android applications are written in Java which is an object-orientated language using either Eclipse or Android Studio IDE’s. I have had a large amount of experiencing writing applications in Java, but had no experience in Android development. I also have two Android devices, which would allow me to test the application on a live device rather than an emulator.
+Android applications are written in Java \cite{java} which is an object-orientated language using either Eclipse \cite{eclipse} or Android Studio \cite{android_studio} IDE's. I have had a large amount of experiencing writing applications in Java, but had no experience in Android development. I also have two Android devices, which would allow me to test the application on a live device rather than an emulator.
 
-Android currently has the largest percentage of market share, having 78\% of the market share in 2013 \cite{phone_market}. Therefore developing the application as a native Android application will allow the application to be used by the most users. Due to this statistic and that I own Android devices resulted in me choosing to develop the application as a native Android application.
+Android currently has the largest percentage of market share, having 78\% of the market share in 2013 \cite{phone_market}. Therefore developing the application as a native Android application will allow the application to be used by the most users. Due to this statistic and that I own Android devices, resulted in me choosing to develop the application as a native Android application.
 
 \subsection{Learning Android development}
 
@@ -79,7 +79,7 @@ Within this section I will outline the objectives of the project and state how b
 	\item[Build a native Android application using the Android SDK]  Building a native application for each of the major platforms would have been the ideal solution for this project, but due to the time constraints for this project it would only have been possible to create one application. After completing the initial background work I decided that I would be developing a native Android \cite{android} application, as this approach would allow the application to be used by the most users \cite{phone_market}.
 	\item[Use the user interface framework provided by the Android SDK] Using the user interface framework provide by Android allowed me to create an application that a user already familiar with the Android OS would be able to use with ease. This also allowed me develop the interface quickly instead of having to design each element before hand.
 	\item[Easy to use user experience]  The NHS staff that will be using the application might not be technically minded therefore the application must be easy to use for people with little technical knowledge. I achieved this by following the design guidelines within the Android documentation, which I read during the background research for the project.
-	\item[Download the database so the application can be used without an active Internet connection] As the radio waves used to transmit data over Wi-Fi or the mobile data network can effect medical equipment \cite{mobile_inter} it is vital the application runs perfectly in airplane mode, through background research I found that the best way to achieve this was to store all data needed for the application on the devices local storage. Using this method the user can download the database when they have an Internet connection and then continue to use the data when they’re without an Internet connection.
+	\item[Download the database so the application can be used without an active Internet connection] As the radio waves used to transmit data over Wi-Fi or the mobile data network can effect medical equipment \cite{mobile_inter} it is vital the application runs perfectly in airplane mode, through background research I found that the best way to achieve this was to store all data needed for the application on the devices local storage. Using this method the user can download the database when they have an Internet connection and then continue to use the data when they're without an Internet connection.
 	\item[Thoroughly test the application throughout all stages] As the application is used to administer drugs to real patients it is vital that all aspects of the application are thoroughly tested. Therefore a test-driven development approach was taken towards classes that output life critical information \cite{tdd}. I believe once the application is given to the NHS they will also execute their own tests, but providing my test data and documenting these test should greatly improve their confidence in the application.
 	\item[Implement the application using only publicly licenced libraries and resources] As the NHS will use the application all libraries and resources used must not be for personal use only and therefore should be licenced under publicly free licences such as the Apache licence.
 \end{description}
@@ -101,7 +101,7 @@ After building the list of original objectives I contacted the representative of
 \textbf{FR 2}   & \textbf{Database synchronisation}   \\ \hline
 \textbf{FR 2.1} & After login or when the user presses update the application must truncate all database tables and begin downloading new data  \\ \hline
 \textbf{FR 2.2} & Download complete list of drug indexes from database    \\ \hline
-\textbf{FR 2.3} & Download complete list of drugs and drug information’s  \\ \hline
+\textbf{FR 2.3} & Download complete list of drugs and drug information's  \\ \hline
 \textbf{FR 2.3} & Download all information needed for calculating doses and infusion rates.   \\ \hline
 \textbf{FR 2.4} & Download must still run when the application is in the background \\ \hline
 \textbf{}  &  \\ \hline
@@ -118,7 +118,7 @@ After building the list of original objectives I contacted the representative of
 \textbf{FR 5.3} & The user will be able to click a drug in the list to open a new screen displaying the needed information  \\ \hline
 \textbf{}  &  \\ \hline
 \textbf{FR 6}   & \textbf{View drug}   \\ \hline
-\textbf{FR 6.1} & When a drug has been selected the drug and all it’s information will be displayed in an easy to read format    \\ \hline
+\textbf{FR 6.1} & When a drug has been selected the drug and all it's information will be displayed in an easy to read format    \\ \hline
 \textbf{FR 6.2} & Where drug information headers contain help information, a help icon will be displayed next to the header.\\ \hline
 \textbf{FR 6.3} & When heading help icon is clicked the helping information will be displayed \\ \hline
 \textbf{FR 6.4} & If the drug had calculator information, then a button to open the calculator should be shown    \\ \hline
@@ -135,7 +135,7 @@ After building the list of original objectives I contacted the representative of
 \textbf{}  &  \\ \hline
 \textbf{FR 9}   & \textbf{XML customisability – for developers} \\ \hline
 \textbf{FR 9.1} & All text within the application must be changeable through XML files.  \\ \hline
-\textbf{FR 9.2} & The structure of the XML API’s provided must be outline within XML files, allowing easy customisation for different API’s\\ \hline 
+\textbf{FR 9.2} & The structure of the XML API's provided must be outline within XML files, allowing easy customisation for different API's\\ \hline 
 \end{longtable}
 \end{center}
 
@@ -163,21 +163,21 @@ Within the initial methodology it was planned that I would engage in meetings wi
 
 After creating stories for the project the methodology stated to carry out spike work by completing prototypes for predicted difficult stories of the project thus gaining a better understanding of the complexity of the stories. These prototypes could then later be used to demonstrate work completed during the mid-project demonstration.
 
-Once the complexity of all stories had been estimates and spike work had been carried out it was intended that a meeting with the NHS would be organised so that stories could be ranked in order of importance, that that stories with greater importance could be implemented first, thus allowing the application to made useful to the NHS sooner.
+Once the complexity of all stories had been estimates and spike work had been carried out it was intended that a meeting with the NHS would be organised so that stories could be ranked in order of importance, then stories with greater importance could be implemented first, thus allowing the application to made useful to the NHS sooner.
 
-As I started working on the project I soon released that an eXtreme programming approach to completing this project would likely lead to failure, this was mainly due to the fact that regular contact with the NHS representative was not possible.  I also began to believe that using eXtreme programming \cite{xp} might not be an acceptable methodology for a medical system because maintaining a system created by another developer that is not well documented would be hard and easy to create errors.
+As I started working on the project I soon released that an eXtreme programming approach to completing this project would likely lead to failure, this was mainly due to the fact that regular contact with the NHS representative was not possible.  I also began to believe that using eXtreme programming \cite{xp} might not be an acceptable methodology for a medical system because maintaining a system created by another developer that is not well documented would be hard and error prone.
 
 After realising that eXtreme programming \cite{xp} was not the best methodology for this project I decided to move the project to use the waterfall model \cite{waterfall}, whilst still using features from eXtreme programing \cite{xp} that I believed would enhance the project. Using the waterfall model \cite{waterfall} would allow the project to be completed with as little contact with the NHS as possible whilst enforcing me to create a list a detailed documentation to be delivered along with the project
 
-Using then waterfall the model meant that a detailed analysis of the project would be needed, this was completed whilst carrying out background and analysis work as seen in the previous section and was compiled into the outline specification document \cite{waterfall}.
+Using the waterfall the model meant that a detailed analysis of the project would be needed, this was completed whilst carrying out background and analysis work as seen in the previous section and was compiled into the outline specification document \cite{waterfall}.
 
 The next stage in the waterfall model was to compile a list of requirements; the list of requirements along with a use case diagram and description was used to create the requirements specification.
 
 Using the functional requirements, prototypes were then created for any requirements that the complexity was unknown for. This was a practice that I had taken from the eXtreme programming methodology because I believe that creating a prototype for a task that seems challenging helps to simplify that task.
 
-Once the prototypes had been built for the major parts of the system the next step was to design the application. For this I followed the waterfall model’s method of design and created a design specification containing user interface design, UI mock-ups and class structure and design using UML diagrams with appropriate descriptions \cite{waterfall}. 
+Once the prototypes had been built for the major parts of the system the next step was to design the application. For this I followed the waterfall model's method of design and created a design specification containing user interface design, UI mock-ups and class structure and design using UML diagrams with appropriate descriptions \cite{waterfall}. 
 
-After the design process for the application was complete implementation began. Implementation followed the structure laid out in the design specification and used the prototypes created to build a working well-engineered Android application.
+After the design process for the application was complete implementation began. Implementation followed the structure laid out in the design specification and used the prototypes created to build a working and well-engineered Android application.
 
 Test-driven development was used for parts of the system that outputted important information. Test-driven development is a practice that I integrated into my methodology from eXtreme programming. Using test-driven development for critical parts of the system ensured that those parts of the system were well tested.
 
@@ -190,7 +190,7 @@ The final step in the waterfall model \cite{waterfall} is to verify and test the
 \section{Planning}
 Planning is vital to the success of a project and was inherently brought to the project through the waterfall method \cite{waterfall}. Both the analysis and design stages of the waterfall model are planning stages therefore completing this stages ensured the project was well planned.
 
-After the analysis stage of the project and a full list of dates for the project had been published, I produced a Gantt chart plan for the project time span. I set out the Gantt chart plan to fit with the academic calendar for the module, which ensured I had a large amount of work complete before the mid-project demonstration. I also planned the Gantt chart so that to allow for 3 weeks of spare time at the end of the project. This extra time was reserved in case I encountered any unseen problems during any stages of the project, meaning I wouldn’t have to worry about time constraints should this have happened. 
+After the analysis stage of the project and a full list of dates for the project had been published, I produced a Gantt chart plan for the project time span. I set out the Gantt chart plan to fit with the academic calendar for the module, which ensured I had a large amount of work complete before the mid-project demonstration. I also planned the Gantt chart so that to allow for 3 weeks of spare time at the end of the project. This extra time was reserved in case I encountered any unseen problems during any stages of the project, meaning I wouldn't have to worry about time constraints should this have happened. 
 
 Throughout the development process the projects progress was compared to the Gantt chart plan, which allowed me to keep track of how far ahead or behind the project was with the timeline.
 
@@ -205,7 +205,7 @@ Before starting the design stage of the waterfall model \cite{waterfall} I wante
 A Java \cite{java} package containing common models that would be used between prototypes was created, this ensured that the prototypes would work together flawlessly once implemented into the final application whilst also making the code written DRY.
 
 \item[View Drug Prototype]
-The main purpose of this prototype was to display a drug to the user. All information for the example drug was hard coded into the prototype. The prototype displayed the example drug and all its information onto the screen dynamically. This prototype taught me how to use the Android layout inflator, which was used to display the drug information’s. This prototype also taught me how to implement a view that scrolls when the view size exceeds the screen size.
+The main purpose of this prototype was to display a drug to the user. All information for the example drug was hard coded into the prototype. The prototype displayed the example drug and all its information onto the screen dynamically. This prototype taught me how to use the Android layout inflator, which was used to display the drug information's. This prototype also taught me how to implement a view that scrolls when the view size exceeds the screen size.
 
 \item[Calculator prototype]
 The purpose of the calculator prototype was to create an application that would accept user entered information and provide the user with an answer to a calculation. At this stage in the project I had not been provided with any information on how the NHS performed their calculations, so the equations used were made up. Although this prototype was never used in the final application, completing this prototype taught me how to accept and validate user input.
@@ -220,7 +220,7 @@ Due to the size of this project, it was vital that a version control system was 
 
 SVN is a centralised version control system where as git \cite{git} is a distributed version control system, but as a single developer will develop this project the difference is negligible. One advantage of SVN is that the University can provide students with a free SVN repository.
 
-I have greater experience in using git as I have used git for the majority or my academic and freelance projects. I also have a free Github students account and therefore decided to use git as the version control and to use Github \cite{github} as a backup for the repository. Should the developers of the NHS want to see the process I used to create they application I can share the repository along will all previous versions to them via Github.
+I have greater experience in using git as I have used git for the majority or my academic and freelance projects. I also have a free Github students account and therefore decided to use git as the version control and to use Github \cite{github} as a backup for the repository. Should the developers of the NHS want to see the process I used to create the application I can share the repository along with all previous versions to them, via Github.
 
 After every considerable change made within the repository the change was committed and pushed to Github. I decided to keep all contents of this project, including all documentation within the repository. This ensured that all data was securely backed up.
 

@@ -81,7 +81,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     @SmallTest
     public void testUpdateText() throws Exception{
-        String updateDate = Preferences.getString(_context, Preferences.UPDATE_DATE_KEY, "01/01/1970");
+        String updateDate = Preferences.getString(_context, Preferences.UPDATE_DATE_KEY, "never");
         /* Check the title on the activity is set correctly */
         String updateText = String.format(_activity.getResources().getString(R.string.last_updated_text), updateDate);
         assertEquals("Update text set incorrectly",

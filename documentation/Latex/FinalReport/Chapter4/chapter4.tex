@@ -3,13 +3,13 @@ Testing is extremely important to the success of any software development projec
 
 \section{Approach to testing}
 
-Testing was used throughout the implementation process to help create a robust and effective application. Originally it was planned to use a test-driven development \cite{tdd} throughout the entire implementation process, but this was later found to be detrimental to the progress of the application.  Although test-driven development was not used throughout the implementation progress it was used when developing classes that had could potentially be fatal, such as the calculation classes. 
+Testing was used throughout the implementation process to help create a robust and effective application. Originally it was planned to use a test-driven development \cite{tdd} throughout the entire implementation process, but this was later found to be detrimental to the progress of the application.  Although test-driven development was not used throughout the implementation process it was used when developing classes that could potentially be fatal, such as the calculation classes. 
 
 Throughout development the application was ran on a real device and any new features were thoroughly tested, using a variety of behaviours and carefully monitoring the applications state for any anomalies. This approach to implementation allowed for a well-tested application, before any test strategy had been complete.
 
-After the implementation phase of the project had been complete, thorough testing of the application was executed. Unit tests \cite{junit} were written for all classes that had not already had unit tests created. User interface tests were created and executed using android activity unit tests \cite{activity_test}. The application was also stress tested by using Android’s exerciser’s monkey application \cite{exciser}.
+After the implementation phase of the project had been complete, thorough testing of the application was executed. Unit tests \cite{junit} were written for all classes that had not already had unit tests created. User interface tests were created and executed using android activity unit tests \cite{activity_test}. The application was also stress tested by using Android's exerciser's monkey application \cite{exciser}.
 
-Once the tests had been written, several devices of varying setups using the Genymotion emulator \cite{genymotion}, the full list of tests were then executed on each individual device. This ensured that the application runs well on an array of devices.
+Once the tests had been written, several devices of varying setups were created using the Genymotion emulator \cite{genymotion}. The full list of tests were then executed on each individual device. This ensured that the application runs well on an array of devices.
 
 
 \section{Test database}
@@ -18,7 +18,7 @@ When the testing process began an extra parameter was added to the database cons
 
 \section{Unit testing}
 
-The Android SDK \cite{android_sdk} provides classes for unit testing your application. These classes are based off the JUnit framework \cite{junit}, they add extra feature such as the ability to access the applications context allowing you to test the database of the application.
+The Android SDK \cite{android_sdk} provides classes for unit testing your application. These classes are based off the JUnit framework \cite{junit}, they add extra features such as the ability to access the applications context allowing you to test the database of the application.
 
 Unit tests \cite{junit} were written for every class of the application, testing each public and protected method. Most tests contained multiple assertions, testing that the expected output was returned when correct information is entered and that an error is raised when the incorrect data is entered.
 
@@ -33,27 +33,27 @@ Test data had been gathered for testing the calculator class. This data was then
 
 Within the original implementation of the calculator class I had used floats to store all values and results of the calculation. After executing the unit tests, most tests were succeeding, but few were returning values slightly off the expected value. As the dosage given to patients must be correct to good level accuracy I began investigating the cause of the problem. 
 
-It was found that the issue lay with the data types used, the NHS’s website \cite{medusa} used doubles whereas I had used floats. Due to doubles being more accurate than floats, the data types were changed to doubles. The unit test were then executed again and all tests succeeded. 
+It was found that the issue lay with the data types used, the NHS's website \cite{medusa} used doubles whereas I had used floats. Due to doubles being more accurate than floats, the data types were changed to doubles. The unit test were then executed again and all tests succeeded. 
 
 
 \section{Automated user interface testing}
 
-Android’s activity tests allow you to comprehensively test the user interface of the application \cite{activity_test}. Activity tests simulate the launching of the application’s activity \cite{activity_test} and perform a set of unit tests on that activity. These activity unit tests can test a variety of user interface values.
+Android's activity tests allow you to comprehensively test the user interface of the application \cite{activity_test}. Activity tests simulate the launching of the application's activity \cite{activity_test} and perform a set of unit tests on that activity. These activity unit tests can test a variety of user interface values.
 
 Activity tests were created for every activity. Within the tests each element is checked to ensure that the element is displayed on the screen, the width and height of the element as set correctly, and if the element contains text that the text is set correctly.
 
-Whether an element is visible to the user at that current moment, for example an element may not be visible when the element is displayed at the bottom of a scrollable view. On both the browse drugs and browse calculator activities the search box must be visible to the user at all times. Activity tests were created to ensure the search box is visible to the user.
+Activity tests can test whether an element is visible to the user at that current moment, for example an element may not be visible when the element is displayed at the bottom of a scrollable view. On both the browse drugs and browse calculator activities the search box must be visible to the user at all times. Activity tests were created to ensure the search box is visible to the user.
 
 When the user changes the calculation type on the calculator activity, the dosage and infusion rate fields are toggled, depending on the selected option. As well as this, when a drug calculator is opened for a drug that does not require time or patient weight, the appropriate fields must also be hidden. Activity tests \cite{activity_test} were created to test the calculator activity under a variety of situations to ensure that only the correct fields were displayed.
 
-It was very important to run the activity tests on a variety of devices, this ensured that the user interface functions the same on all devices, without having to manual test each device’s user interface.
+It was very important to run the activity tests on a variety of devices, this ensured that the user interface functions the same on all devices, without having to manual test each device's user interface.
 
 
 \section{Automated integration testing}
 
 Due to Android security policies you cannot test the functionality of a user interface element by using activity tests \cite{activity_test}, for example when running an activity test you cannot simulate the user entering text into a text field. Robotium is an automated black-box testing framework \cite{robotium} for Android licenced under the Apache 2 licence \cite{apache_licence}. Robotium allows a developer to implemented black-box integration tests using code \cite{robotium}. There is also a commercially available version of Robotium, which will record user interface actions and monitor the results \cite{robotium}, then automatically generate the Robotium code.
 
-Although automated black-box testing using Robotium would be useful for the project, it was decided that automated tests would not be needed for a project this size. The amount of time spent learning Robotinium and then implementing it, would’ve taken longer than manual executing the integration tests. If the amount of activities and the functionality within them increase, Robotinium tests should be implemented.
+Although automated black-box testing using Robotium would be useful for the project, it was decided that automated tests would not be needed for a project this size. The amount of time spent learning Robotinium and then implementing it, would've taken longer than manual executing the integration tests. If the amount of activities and the functionality within them increase, Robotinium tests should be implemented.
 
 
 \section{Integration testing}
@@ -89,7 +89,7 @@ To test that the application was at an acceptable level, acceptance testing was 
 \textbf{FR 2}                   & \textbf{Database synchronisation}                                                                                                                                          &           \\ \hline
 \textbf{FR 2.1}                 & After login or when the user presses update the application must truncate all database tables and begin downloading new data                                               & PASS      \\ \hline
 \textbf{FR 2.2}                 & Download complete list of drug indexes from database                                                                                                                       & PASS      \\ \hline
-\textbf{FR 2.3}                 & Download complete list of drugs and drug information’s                                                                                                                     & PASS      \\ \hline
+\textbf{FR 2.3}                 & Download complete list of drugs and drug information's                                                                                                                     & PASS      \\ \hline
 \textbf{FR 2.3}                 & Download all information needed for calculating doses and infusion rates.                                                                                                  & PASS      \\ \hline
 \textbf{FR 2.4}                 & Download must still run when the application is in the background                                                                                                          & PASS      \\ \hline
 \textbf{}                       &                                                                                                                                                                            &           \\ \hline
@@ -106,7 +106,7 @@ To test that the application was at an acceptable level, acceptance testing was 
 \textbf{FR 5.3}                 & The user will be able to click a drug in the list to open a new screen displaying the needed information                                                                   & PASS      \\ \hline
 \textbf{}                       &                                                                                                                                                                            &           \\ \hline
 \textbf{FR 6}                   & \textbf{View drug}                                                                                                                                                         &           \\ \hline
-\textbf{FR 6.1}                 & When a drug has been selected the drug and all it’s information will be displayed in an easy to read format                                                                & PASS      \\ \hline
+\textbf{FR 6.1}                 & When a drug has been selected the drug and all it's information will be displayed in an easy to read format                                                                & PASS      \\ \hline
 \textbf{FR 6.2}                 & Where drug information headers contain help information, a help icon will be displayed next to the header.                                                                 & PASS      \\ \hline
 \textbf{FR 6.3}                 & When heading help icon is clicked the helping information will be displayed                                                                                                & PASS      \\ \hline
 \textbf{FR 6.4}                 & If the drug had calculator information, then a button to open the calculator should be shown                                                                               & PASS      \\ \hline
@@ -123,13 +123,13 @@ To test that the application was at an acceptable level, acceptance testing was 
 \textbf{}                       &                                                                                                                                                                            &           \\ \hline
 \textbf{FR 9}                   & \textbf{XML customisability – for developers}                                                                                                                              &           \\ \hline
 \textbf{FR 9.1}                 & All text within the application must be changeable through XML files.                                                                                                      & PASS      \\ \hline
-\textbf{FR 9.2}                 & The structure of the XML API’s provided must be outline within XML files, allowing easy customisation for different API’s                                                  & PASS      \\ \hline
+\textbf{FR 9.2}                 & The structure of the XML API's provided must be outline within XML files, allowing easy customisation for different API's                                                  & PASS      \\ \hline
 \end{longtable}
 \end{center}
 
 As shown in the table above the application fulfilled the complete list of functional requirements. The next logical step was to send the compiled APK to the NHS representative for approval.
 
-The representative was very pleased with the final application and only suggested one change, which was to order the calculator’s in alphabetical order. This change was implemented and an updated sent to the NHS. Once the changes had been made, the NHS representative demonstrated the application to the IMG Executives Group that consisted of pharmacists and nurse experts, whom stated that the application was intuitive to use and easy to navigate.
+The representative was very pleased with the final application and only suggested one change, which was to order the calculator's in alphabetical order. This change was implemented and an updated sent to the NHS. Once the changes had been made, the NHS representative demonstrated the application to the IMG Executives Group that consisted of pharmacists and nurse experts, whom stated that the application was intuitive to use and easy to navigate.
  
 \section{Acceptance testing feedback}
 

@@ -154,7 +154,7 @@
     <effort>201600</effort>
     <min-estimate>28800</min-estimate>
     <max-estimate>288000</max-estimate>
-    <effort-done>127800</effort-done>
+    <effort-done>201600</effort-done>
     <start-constraint-date>2014-03-17T12:15:00.000Z</start-constraint-date>
     <prerequisite-task idref="t9"/>
     <assignment idref="r1"/>
@@ -165,6 +165,7 @@
     <leveled-start>2014-03-31T10:30:00.000Z</leveled-start>
     <effort>144000</effort>
     <min-estimate>4</min-estimate>
+    <effort-done>144000</effort-done>
     <start-constraint-date>2014-03-31T10:30:00.000Z</start-constraint-date>
     <end-constraint-date>2014-04-23T23:00:00.000Z</end-constraint-date>
     <prerequisite-task idref="t16"/>
@@ -186,11 +187,11 @@
     <effort>144000</effort>
     <min-estimate>28800</min-estimate>
     <max-estimate>704700</max-estimate>
-    <effort-done>9900</effort-done>
-    <start-constraint-date>2014-04-08T15:30:00.000Z</start-constraint-date>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2014-04-10T16:15:00.000Z</start-constraint-date>
     <end-constraint-date>2014-05-05T16:45:00.000Z</end-constraint-date>
     <assignment idref="r1"/>
-    <start-no-earlier-than>2014-04-08T15:30:00.000Z</start-no-earlier-than>
+    <start-no-earlier-than>2014-04-10T16:15:00.000Z</start-no-earlier-than>
     <end-no-later-than>2014-05-05T16:45:00.000Z</end-no-later-than>
   </task>
   <task id="t32">

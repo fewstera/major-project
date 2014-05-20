@@ -1,57 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
   <version>2.1</version>
-  <task-change-set user="Aidan Fewster" date="2014-03-21T01:27:51.887Z" timestamp="2014-03-21T01:27:51.887Z">
-    <change idref="t13" from="t-1" from-position="5" resolved="yes">
-      <change idref="t13" attribute="effort" type="real" from="28800" to="86400"/>
-      <change idref="t13" attribute="internalAssignments" type="string" from="" to="1"/>
-      <change idref="t13" attribute="internalEffortDone" type="real" from="0" to="6300"/>
-      <change idref="t13" attribute="internalPrerequisitesString" type="string" to="3FS, 4FS"/>
-      <change idref="t13" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-05T13:15:00.000Z"/>
-      <change idref="t13" attribute="resourceLeveledDate" type="date" to="2014-03-05T13:15:00.000Z"/>
-      <change idref="t13" attribute="title" type="string" to="Test Specification"/>
-    </change>
-    <change idref="t3" attribute="resourceLeveledDate" type="date" from="2014-02-11T14:00:00.000Z" to="2014-02-19T12:45:00.000Z" resolved="yes"/>
-    <change idref="t3" attribute="noLaterThanConstraintDate" type="date" to="2014-02-26T13:15:00.000Z" resolved="yes"/>
-    <change idref="t4" attribute="effort" type="real" from="86400" to="144000" resolved="yes"/>
-    <change idref="t4" attribute="internalEffortDone" type="real" from="86400" to="144000" resolved="yes"/>
-    <change idref="t8" attribute="effort" type="real" from="115200" to="172800" resolved="yes"/>
-    <change idref="t8" attribute="resourceLeveledDate" type="date" from="2014-02-13T12:15:00.000Z" resolved="yes"/>
-    <change idref="t8" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-25T15:45:00.000Z" resolved="yes"/>
-    <change idref="t8" attribute="isSplitTask" type="real" from="1" to="0" resolved="yes"/>
-    <change idref="t8" attribute="internalEffortDone" type="real" from="91800" to="172800" resolved="yes"/>
-    <change idref="t35" from="t8" from-position="1" resolved="yes">
-      <change idref="t35" attribute="effort" type="real" from="28800" to="23400"/>
-      <change idref="t35" attribute="isSplitChunk" type="real" from="0" to="1"/>
-      <change idref="t35" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T11:00:00.000Z"/>
-      <change idref="t35" attribute="resourceLeveledDate" type="date" to="2014-03-04T11:00:00.000Z"/>
-      <change idref="t35" attribute="title" type="string" to="Build prototypes #2"/>
-    </change>
-    <change idref="t34" from="t8" from-position="0" resolved="yes">
-      <change idref="t34" attribute="effort" type="real" from="28800" to="91800"/>
-      <change idref="t34" attribute="internalEffortDone" type="real" from="0" to="91800"/>
-      <change idref="t34" attribute="isSplitChunk" type="real" from="0" to="1"/>
-      <change idref="t34" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-17T13:30:00.000Z"/>
-      <change idref="t34" attribute="resourceLeveledDate" type="date" to="2014-02-17T13:30:00.000Z"/>
-      <change idref="t34" attribute="title" type="string" to="Build prototypes #1"/>
-    </change>
-    <change idref="t9" attribute="noEarlierThanConstraintDate" type="date" from="2014-02-26T12:45:00.000Z" to="2014-03-06T17:30:00.000Z" resolved="yes"/>
-    <change idref="t9" attribute="resourceLeveledDate" type="date" from="2014-02-26T12:45:00.000Z" resolved="yes"/>
-    <change idref="t9" attribute="internalEffortDone" type="real" from="65700" to="115200" resolved="yes"/>
-    <change idref="t16" attribute="noEarlierThanConstraintDate" type="date" from="2014-03-10T12:00:00.000Z" to="2014-03-17T12:15:00.000Z" resolved="yes"/>
-    <change idref="t16" attribute="resourceLeveledDate" type="date" from="2014-03-13T16:45:00.000Z" resolved="yes"/>
-    <change idref="t16" attribute="internalEffortDone" type="real" from="0" to="70200" resolved="yes"/>
-    <change idref="t23" attribute="effort" type="real" from="115200" to="144000" resolved="yes"/>
-    <change idref="t24" attribute="noLaterThanConstraintDate" type="date" from="2014-03-15T00:00:00.000Z" resolved="yes"/>
-    <change idref="t24" attribute="noEarlierThanConstraintDate" type="date" from="2014-03-10T17:30:00.000Z" to="2014-03-17T12:15:00.000Z" resolved="yes"/>
-    <change idref="t24" attribute="resourceLeveledDate" type="date" from="2014-03-11T18:00:00.000Z" resolved="yes"/>
-    <change idref="t24" attribute="internalEffortDone" type="real" from="0" to="28800" resolved="yes"/>
-    <change idref="t31" attribute="noEarlierThanConstraintDate" type="date" from="2014-03-01T16:45:00.000Z" to="2014-04-08T15:30:00.000Z" resolved="yes"/>
-    <change idref="t31" attribute="resourceLeveledDate" type="date" from="2014-04-07T15:30:00.000Z" resolved="yes"/>
-    <change idref="t32" attribute="noEarlierThanConstraintDate" type="date" from="2014-03-14T15:15:00.000Z" to="2014-03-18T16:00:00.000Z" resolved="yes"/>
-    <change idref="t32" attribute="resourceLeveledDate" type="date" from="2014-03-14T15:15:00.000Z" resolved="yes"/>
-  </task-change-set>
   <task-change-set user="Aidan Fewster" date="2014-04-03T16:57:47.031Z" timestamp="2014-04-03T16:57:47.031Z">
     <change idref="t16" attribute="internalEffortDone" type="real" from="70200" to="127800"/>
+  </task-change-set>
+  <task-change-set user="Aidan Fewster" date="2014-05-04T08:24:53.111Z" timestamp="2014-05-04T08:24:53.111Z">
+    <change idref="t23" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t31" attribute="noEarlierThanConstraintDate" type="date" from="2014-04-08T15:30:00.000Z" to="2014-04-10T16:15:00.000Z" resolved="yes"/>
+    <change idref="t31" attribute="internalEffortDone" type="real" from="9900" to="144000" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="Aidan Fewster" date="2014-05-04T08:26:29.457Z" timestamp="2014-05-04T08:26:29.457Z">
+    <change idref="t16" attribute="internalEffortDone" type="real" from="127800" to="201600"/>
   </task-change-set>
 </changelog>

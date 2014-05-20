@@ -15,14 +15,14 @@ I intended to design the system in a modular format thus the system contains fou
 	\item[Data download package] The data download package contains the Robospice \cite{robospice} requests classes, which are responsible for downloading the individual API URLs and then parsing the data obtained. Each class within this package downloads a specific API XML file \cite{xml}. Having all the data download classes in one package makes it easy to add new classes to download additional data in the future.
 	\item[Database package] The database package contains the class that is responsible for the interacting with the SQLite database \cite{sqlite}. This class is responsible for fetching, creating and deleting data from the database. Having this class within its own package will allow the database and database code to be reused within other applications. If the code within the database helper class becomes to large using a package will also allow the code to be broken into smaller classes.
 	\item[Tests packages] Each package contains a package called tests. Within each test package is classes testing each class of the original package through both JUnit \cite{junit} tests and Android instrument tests.
-	\item[XML edibility] As the application will be given to a team of developers who may not have extensive experience in Android development it was essential that I make the basics of the application editable by an inexperienced developer, to achieve this all string values have been set in one XML file (strings.xml) \cite{strings_xml}. Having done this, any text within the application can be changed by editing this XML file \cite{xml}. As this application is produced for NHS Wales \cite{nhs_website} they may in the future want to translate the application to Welsh, to adding Welsh language support would be relatively easy due to this design choice.
+	\item[XML edibility] As the application will be given to a team of developers who may not have extensive experience in Android development it was essential that I make the basics of the application editable by an inexperienced developer, to achieve this all string values have been set in one XML file (strings.xml) \cite{strings_xml}. Having done this, any text within the application can be changed by editing this XML file \cite{xml}. As this application is produced for NHS Wales \cite{nhs_website} they may in the future want to translate the application to Welsh, adding Welsh language support would be relatively easy due to this design choice.
 
-	To further improve the customisability of the application all API URL’s and the structure of the XML files is set within a single XML file (data\_download.xml) \cite{strings_xml}. This makes the task of changing API URL’s and the format of the data simple.
+	To further improve the customisability of the application all API URL's and the structure of the XML files is set within a single XML file (data\_download.xml) \cite{strings_xml}. This makes the task of changing API URL's and the format of the data simple.
 
 \end{description}
 
 \section{Data storage}
-One of the made decisions when designing the application was deciding how the data for the application would be stored, within this section I will discuss the possible methods of storing the data and why I chose the method I chose.
+One of the important decisions when designing the application was deciding how the data for the application would be stored, within this section I will discuss the possible methods of storing the data and why I chose the method I chose.
 
 \subsection{Store the data as XML files}
 
@@ -40,14 +40,14 @@ There are several issues with this method, the first issue being that this metho
 
 The Android SDK \cite{android_sdk} comes with a set of libraries for creating and interacting with SQLite databases \cite{sqlite}. SQLite database can be indexed and are therefore quicker than the above-mentioned methods for searching the data \cite{sqlite}. 
 
-I decided to use an SQLite database \cite{sqlite} to store the data for the application. The data is parsed from XML \cite{xml} into usable objects and then stored in the SQLite database. Using an SQLite database allow the application to only load needed data into memory when needed, by using the WHERE operator when searching for data. Using an SQLite database also helped keep the data in organised structure, which would allow the data to be used by other applications if needed. 
+I decided to use an SQLite database \cite{sqlite} to store the data for the application. The data is parsed from XML \cite{xml} into usable objects and then stored in the SQLite database. Using an SQLite database allow the application to only load needed data into memory when needed, by using the WHERE operator when searching for data. Using an SQLite database also helped keep the data in an organised structure, which would allow the data to be used by other applications if needed. 
 
 The main issue with using SQLite database \cite{sqlite} is that the stored data may be larger than if the data was stored as a serialised object, but if the size of the database became an issue the database could be compressed.
 
 \subsection{Database design}
 As it had been decided that a database would be used to store the data, the next step was to design the database structure. The database tables have been normalised into third normal form. SQLite foreign key constraints were only introduced into the Android SDK \cite{android_sdk} at API version 16, as I wanted the application to have the largest reach possible I decided not to use foreign key constraints and therefore monitor foreign key relations manually. 
 
-The first table to be designed, was the drugs table. The purpose of this table is to contain all the drugs that are downloaded. Within the original designs I had planned to place all drug information within the drugs table, but as the drug information’s changed between drugs I decided it would be better to create a separate table for drug information’s.
+The first table to be designed, was the drugs table. The purpose of this table is to contain all the drugs that are downloaded. Within the original designs I had planned to place all drug information within the drugs table, but as the drug information's changed between drugs I decided it would be better to create a separate table for drug information's.
 
 \begin{center}
 \begin{longtable}{|l|l|l|p{8cm}|}
@@ -58,8 +58,8 @@ The first table to be designed, was the drugs table. The purpose of this table i
 name                & String             & No                  & Contains the drugs name.                                                         \\ \hline
 \end{longtable}
 \end{center}
-The next table to be designed, was drug information’s table. The purpose of this table was to hold a single piece of information about a drug, such as the method of administration or the flushing guidelines. Some drug information’s also contain a header helper. Header helpers are extra help information explaining the header. These are displayed to the user upon clicking the header or information button next to the header.
-
+The next table to be designed, was drug information's table. The purpose of this table was to hold a single piece of information about a drug, such as the method of administration or the flushing guidelines. Some drug information's also contain a header helper. Header helpers are extra help information explaining the header. These are displayed to the user upon clicking the header or information button next to the header.
+\newpage
 \begin{center}
 \begin{longtable}{|l|l|l|p{8cm}|}
 \caption{Table showing drugInformations database table structure}\tabularnewline
@@ -85,7 +85,7 @@ name                & String             & No                  & The name for th
 \end{longtable}
 \end{center}
 
-The final table to be designed, was the table containing the drug calculation information’s. This table contains all the information needed to perform the infusion rate or dosage calculations. As SQLite \cite{sqlite} does not support boolean types \cite{sqlite_dt} integer values (0 or 1) were used to represnt booleans. Integers representing booleans were used for if the patient weight required and if time is required columns.
+The final table to be designed, was the table containing the drug calculation information's. This table contains all the information needed to perform the infusion rate or dosage calculations. As SQLite \cite{sqlite} does not support boolean types \cite{sqlite_dt} integer values (0 or 1) were used to represnt booleans. Integers representing booleans were used for if the patient weight required and if time is required columns.
 
 
 \begin{center}
@@ -110,7 +110,7 @@ The next part of the design process was to decide how the data for the database 
 
 \subsection{Download the data using an AsyncTask}
 
-It would have been possible to download the data using an AsyncTask \cite{async_task} as they AsyncTasks create a new thread meaning they can be used for HTTP requests. Within the Android documentation it states that AsyncTasks should not be used for long running tasks (more than a few seconds) \cite{async_task}, due to this reason I decided not to use AsyncTasks for downloading the data. Another reason against using AsyncTasks is that they are attached to the activity that created them, so if the user minimises the application the task will also be killed, thus not allowing background downloading.
+It would have been possible to download the data using an AsyncTask \cite{async_task} as AsyncTasks create a new thread meaning they can be used for HTTP requests. Within the Android documentation it states that AsyncTasks should not be used for long running tasks (more than a few seconds) \cite{async_task}, due to this reason I decided not to use AsyncTasks for downloading the data. Another reason against using AsyncTasks is that they are attached to the activity that created them, so if the user minimises the application the task will also be killed, thus not allowing background downloading.
 
 \subsection{Download the data using a service}
 
@@ -133,9 +133,9 @@ When planning the application it was planned to create the application using a M
 \section{Database interactions class}
 A single database interaction class was designed. The purpose of this class was to handle all interactions with the database, thus keeping all SQL code into a single class. This class contains the method for creating and retrieving data, whilst also containing the methods for creating and updating the database.
 
-I wanted to be able to test the all methods within the database class without altering the original database, to achieve this a separate constructor was creating which prepends a suffix to the database files name, thus making the test database separate from the original one.
+I wanted to be able to test all methods within the database class without altering the original database, to achieve this a separate constructor was creating which prepends a suffix to the database files name, thus making the test database separate from the original one.
 
-Currently the amount of methods within this class isn’t very large, but if the application grows it would be a good idea to split this class into separate classes that handle different section of the database, for example a separate class for each table in the database.
+Currently the amount of methods within this class isn't very large, but if the application grows it would be a good idea to split this class into separate classes that handle different section of the database, for example a separate class for each table in the database.
 
 \section{Download data singleton}
 It had been decided that the downloading of data would be executed within a Robospice service \cite{robospice}. Robospice services like Android services run within there own thread \cite{robospice} and are therefore are not attached to a specific activity. Although Robospice services allow for the passing of progress from the service to the activity, they do not natively support the passing of data.
@@ -172,7 +172,7 @@ I decided that designing a splash activity would be the best way to solve this p
 
 \section{Common activities}
 Android provides the user with menu options when the user presses the menu button on the device \cite{android}. This menu contains items such as update, logout and exit. The menu buttons in most applications vary between activities, but within this project the menu items are the same throughout the application, the only time they change is when the user is logged out. 
-It is possible to create the menu item’s manually within each activity but I wanted to design the application so that the code is DRY. To achieve this I created a class that inherited Androids Activity class and implemented the Exit and About buttons for that class, this class could then be inherited within activities that needed to display the Home and About buttons. I then created an another class which inherited from that class adding buttons that can be shown once the user is logged in (Logout, Home, Browse, Calculator, Update). 
+It is possible to create the menu item's manually within each activity but I wanted to design the application so that the code is DRY. To achieve this I created a class that inherited Androids Activity class and implemented the Exit and About buttons for that class, this class could then be inherited within activities that needed to display the Home and About buttons. I then created an another class which inherited from that class adding buttons that can be shown once the user is logged in (Logout, Home, Browse, Calculator, Update). 
 
 Using this approach makes it easy to add items to the menu of all activities. If an activity needs a custom option adding to the menu this can be done easily within the activity.
 
@@ -210,9 +210,9 @@ After creating the simplistic design I wanted to keep the user interacted by pre
 When the user navigates to the browse drugs page they are presented with a list containing the complete list of drug indexes. The user can scroll through this list to select a drug that they would like to view. As the list contains over 3000 drugs finding a specific drug manually would take a long amount of time. To solve this issue I designed a search box that would be displayed above the list of drugs, when the user enters text into the search box the list of drugs is filtered to only display drugs that match the searched text. This greatly improves the speed at which a user finds a wanted drug.
 
 \subsection{Designing the view drugs page}
-The main challenge when designing the user interface was how to best display the drug monographs \cite{monograph} to the user. The information contained within drug monographs can be quite large and therefore challenging to fit onto a mobile device’s screen. Another challenge added to the designing of the interface was the header helpers. Header helpers are extra information on a header explaining its contents. The view drug page had to have a method of showing that a header has help information and must allow the user to access this information. There were several different methods considered for displaying the information, within this section I will describe each solution that was considered and conclude with the chosen design.
+The main challenge when designing the user interface was how to best display the drug monographs \cite{monograph} to the user. The information contained within drug monographs can be quite large and therefore challenging to fit onto a mobile device's screen. Another challenge added to the designing of the interface was the header helpers. Header helpers are extra information on a header explaining its contents. The view drug page had to have a method of showing that a header has help information and must allow the user to access this information. There were several different methods considered for displaying the information, within this section I will describe each solution that was considered and conclude with the chosen design.
 
-The initial idea and the one provided by the NHS within their mock-ups was to have a view drug page that contained only the drug name and clickable headers, were the clickable headers lead the user to a new page containing the information within that header. This approach would’ve allowed the data to be displayed to the user and would’ve fit nicely on a mobile screen. Although this approach would’ve been suitable for displaying the information, I believe it would not have been a practical solution, as if the user needed information from multiple headers they’d have to navigate into each header individually.
+The initial idea and the one provided by the NHS within their mock-ups was to have a view drug page that contained only the drug name and clickable headers, were the clickable headers lead the user to a new page containing the information within that header. This approach would've allowed the data to be displayed to the user and would've fit nicely on a mobile screen. Although this approach would've been suitable for displaying the information, I believe it would not have been a practical solution, as if the user needed information from multiple headers they'd have to navigate into each header individually.
 
 The next design that was considered was similar to the above design, but instead of opening the information within a new page, the information would expand down from the header once the user clicked the header. This design would allow the user to view all the information that they needed at once and it would fit appropriately on a mobile screen.  One issue with this approach was that I could not think of a method for showing that the header contains helping information.  
 
@@ -227,7 +227,7 @@ I wanted to keep the calculator page simple, hence why the calculator and view d
 
 The next step in designing the user interface to be easy to use, was to ensure that only inputs that are needed for the calculation are shown. When the user changes between dose and infusion rate calculations, the inputs that are no longer needed are hidden.
 
-To ensure that the user entered the correct values, above each input field is a label describing the input and the units (E.g. Patient weight, kg). This reassures the users that they’re using the correct field and that they’re using the correct units. Each input also restricts the users keyboard to a decimal keyboard, ensuring the user can only enter numerical values.
+To ensure that the user entered the correct values, above each input field is a label describing the input and the units (E.g. Patient weight, kg). This reassures the users that they're using the correct field and that they're using the correct units. Each input also restricts the users keyboard to a decimal keyboard, ensuring the user can only enter numerical values.
 
 To further improve the reliability of the calculator page warnings and errors are shown to the user. Errors are shown when the data enter is not valid, for example a patients weight being less than 0. Warnings are displayed to the user when the value entered seems incorrect, giving the user the option to change the value or to continue with the inputted value.
 
@@ -301,7 +301,7 @@ After deciding the features of the design I began creating user interface mock-u
 	\item[Login screen]
 	This is the first screen the user sees when opening the application for the first time. Once they login their details are saved so they should only have to login once.
 	\item[Download screen]
-	This page is shown when the user is downloading the database for the first time, or when they are updating the database. The tasks within this screen can take several minutes so a progress bar helps to show to the user that the task is still running and hasn’t crashed.
+	This page is shown when the user is downloading the database for the first time, or when they are updating the database. The tasks within this screen can take several minutes so a progress bar helps to show to the user that the task is still running and hasn't crashed.
 	\item[Main screen]
 	Shown once the user has successfully downloaded the database. This is the first screen a reoccurring user is sent to. This page allows the user to navigate to other screens.
 	\item[Browse drugs / calculators screen]
