@@ -28,52 +28,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8b27ac-123c-48d0-92e4-2d5d98b8ecc4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../IDEAS.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../TODO.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/source/r/test/debug/com/fewstera/injectablemedicinesguide/models/DrugCalculatorInfoTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/source/r/test/debug/com/fewstera/injectablemedicinesguide/tests/DrugTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../clientkeystore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../icon.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../major_project_lectures.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Finished.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page1.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page2.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page3.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page3.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page4.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../poster/Page4.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../test results/Integration tests.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../test results/Test Results - Tests.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../test results/Tests.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.apk" afterPath="$PROJECT_DIR$/app/app.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.pdf" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plan/MMP Plan.oplx/Actual.xml" afterPath="$PROJECT_DIR$/../../plan/MMP Plan.oplx/Actual.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/MainActivityTest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/MainActivityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plan/MMP Plan.oplx/__TOC.xml" afterPath="$PROJECT_DIR$/../../plan/MMP Plan.oplx/__TOC.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plan/MMP Plan.oplx/__changelog.xml" afterPath="$PROJECT_DIR$/../../plan/MMP Plan.oplx/__changelog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix2/appendix2.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix2/appendix2.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix2/appendix2.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Appendix2/appendix2.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter1/chapter1.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter2/chapter2.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter3/chapter3.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter3/chapter3.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter4/chapter4.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter4/chapter4.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter5/chapter5.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/Chapter5/chapter5.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/cover.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/cover.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.aux" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.lot" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.lot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.tex" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.toc" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/dissertation.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/References/references.bib" afterPath="$PROJECT_DIR$/../../documentation/Latex/FinalReport/References/references.bib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5b8b27ac-123c-48d0-92e4-2d5d98b8ecc4" name="Default" comment="" />
     <ignored path="InjectableMedicinesGuide.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -141,16 +96,16 @@
       <file leaf-file-name="data_downloads.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/data_downloads.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="61" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2580">
+            <state line="17" column="61" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2580">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="16" selection-start="9439" selection-end="9439" vertical-scroll-proportion="5.3550863" vertical-offset="0" max-vertical-offset="2925">
+            <state line="186" column="16" selection-start="9439" selection-end="9439" vertical-scroll-proportion="-25.8" vertical-offset="2145" max-vertical-offset="2925">
               <folding />
             </state>
           </provider>
@@ -160,26 +115,15 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="18" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="1290">
-              <folding>
-                <element signature="e#543#561#0" expanded="false" />
-                <element signature="e#931#956#0" expanded="false" />
-                <element signature="e#1085#1103#0" expanded="false" />
-                <element signature="e#1620#1638#0" expanded="false" />
-                <element signature="e#1833#1863#0" expanded="false" />
-                <element signature="e#2241#2279#0" expanded="false" />
-                <element signature="e#2523#2560#0" expanded="false" />
-                <element signature="e#2861#2902#0" expanded="false" />
-                <element signature="e#3204#3238#0" expanded="false" />
-                <element signature="e#3490#3524#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="18" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+            <state line="11" column="18" selection-start="263" selection-end="263" vertical-scroll-proportion="0.1809291" vertical-offset="17" max-vertical-offset="870">
               <folding />
             </state>
           </provider>
@@ -667,6 +611,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -805,8 +751,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -885,6 +829,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -910,19 +867,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1099,7 +1043,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3356974" sideWeight="0.31516057" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742316" sideWeight="0.49887976" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3356974" sideWeight="0.729649" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.49962658" order="6" side_tool="false" content_ui="tabs" />
@@ -1116,6 +1059,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27599102" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742316" sideWeight="0.49851632" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742316" sideWeight="0.49887976" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1184,9 +1128,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="25" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1365">
-          <folding />
-        </state>
+        <state line="38" column="25" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1365" />
       </provider>
       <provider editor-type-id="android-designer">
         <state />
@@ -1249,9 +1191,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_pre.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="10" selection-start="923" selection-end="923" vertical-scroll-proportion="2.7777777" vertical-offset="420" max-vertical-offset="1050">
-          <folding />
-        </state>
+        <state line="23" column="10" selection-start="923" selection-end="923" vertical-scroll-proportion="2.7777777" vertical-offset="420" max-vertical-offset="1050" />
       </provider>
       <provider editor-type-id="android-designer">
         <state />
@@ -1357,37 +1297,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadDrugsRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970">
-          <folding />
-        </state>
+        <state line="45" column="0" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadIndexRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="6" selection-start="4885" selection-end="4885" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2055">
-          <folding />
-        </state>
+        <state line="139" column="6" selection-start="4885" selection-end="4885" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2055" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1320">
-          <folding />
-        </state>
+        <state line="47" column="0" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1320" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/tests/MainActivityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="28" selection-start="3360" selection-end="3360" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="1965">
-          <folding />
-        </state>
+        <state line="85" column="28" selection-start="3360" selection-end="3360" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="1965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/ViewDrugActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="2970">
-          <folding />
-        </state>
+        <state line="38" column="0" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="2970" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
@@ -1399,32 +1329,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fewstera/injectablemedicinesguide/dataDownload/DownloadCalculationsRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-          <folding />
-        </state>
+        <state line="40" column="0" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="1290">
-          <folding>
-            <element signature="e#543#561#0" expanded="false" />
-            <element signature="e#931#956#0" expanded="false" />
-            <element signature="e#1085#1103#0" expanded="false" />
-            <element signature="e#1620#1638#0" expanded="false" />
-            <element signature="e#1833#1863#0" expanded="false" />
-            <element signature="e#2241#2279#0" expanded="false" />
-            <element signature="e#2523#2560#0" expanded="false" />
-            <element signature="e#2861#2902#0" expanded="false" />
-            <element signature="e#3204#3238#0" expanded="false" />
-            <element signature="e#3490#3524#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
@@ -1438,7 +1348,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="16" selection-start="9439" selection-end="9439" vertical-scroll-proportion="5.3550863" vertical-offset="0" max-vertical-offset="2925">
+        <state line="186" column="16" selection-start="9439" selection-end="9439" vertical-scroll-proportion="-25.8" vertical-offset="2145" max-vertical-offset="2925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="263" selection-end="263" vertical-scroll-proportion="0.1809291" vertical-offset="17" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
